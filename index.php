@@ -7,7 +7,7 @@ $parser-> addRoute('alimentation', array(
 
     )
 ));
-$parser-> addRoute('workout', array(
+/*$parser-> addRoute('workout', array(
 
     'basePage' => 'html/workout.xhtml'
 
