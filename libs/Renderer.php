@@ -31,6 +31,18 @@ class Renderer{
         return $data;
     }
 
+    public static function clean(string $data): string {
+
+        $matches = PcreRegex::getAll("/<[^\/<>]*Placeholder \/>/", $data);
+
+
+
+        foreach (($matches[0] ?? array()) as $match) {
+            $data = str_replace($match, '', $data);
+        }
+        return $data;
+    }
+
     private function replaceInclude(string $data): string{
 
         $matches = PcreRegex::getAll("/<include(.)*Placeholder \/>/", $data);
@@ -74,7 +86,10 @@ class Renderer{
         foreach (($matches[0] ?? array()) as $match) {
 
             $variableName = strtolower(str_replace('<', '', str_replace('Placeholder />', '', $match)));
-            $data = str_replace($match, ($variables[$variableName] ?? ''), $data);
+            if (array_key_exists($variableName, $variables)) {
+
+                $data = str_replace($match, $variables[$variableName], $data);
+            }
         }
     }
 
