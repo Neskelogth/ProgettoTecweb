@@ -8,12 +8,17 @@ class Renderer{
     public function __construct(){}
 
 
-    public function render(string $file, array $variables = array()): string {
+    public function render(string $html, array $variables = array()): string {
 
-        $data = $this->replaceInclude(self::removeComments(file_get_contents('tmphtml/' . $file  . '.xhtml')));
+        $data = $this->replaceInclude(self::removeComments($html));
         $this->replaceBlocks($data);
         $this->replaceVariables($data, $variables);
         return $data;
+    }
+
+    public function renderFile(string $file, array $variables = array()): string{
+
+        return $this-> render(file_get_contents('html/' . $file  . '.xhtml'), $variables);
     }
 
     private static function removeComments(string $data): string {
@@ -32,7 +37,7 @@ class Renderer{
 
         foreach (($matches[0] ?? array()) as $match) {
             $data = str_replace($match, $this->replaceInclude(self::removeComments(file_get_contents(
-                    'tmphtml/' . strtolower(str_replace('<include', '', str_replace('Placeholder />', '', $match) . '.xhtml'))
+                    'html/' . strtolower(str_replace('<include', '', str_replace('Placeholder />', '', $match) . '.xhtml'))
             ))), $data);
         }
 
@@ -49,8 +54,14 @@ class Renderer{
             $blockName = strtolower(str_replace('<blockSet', '', str_replace('Placeholder />', '', $match)));
             $blockBeginString = '<blockDef' . ucfirst($blockName) . 'Placeholder />';
             $blockBegin = strpos($data, $blockBeginString);
+            if($blockBegin === false){
+                continue;
+            }
             $blockEndString = '<blockEndPlaceholder />';
             $blockEnd = strpos($data, $blockEndString, $blockBegin);
+            if($blockEnd === false){
+                continue;
+            }
             $codeToReplace = substr($data, $blockBegin + strlen($blockBeginString), $blockEnd - $blockBegin - strlen($blockBeginString));
             $data = str_replace('<blockSet' . ucfirst($blockName) . 'Placeholder />', $codeToReplace, $data);
             $data = str_replace($blockBeginString . $codeToReplace . '<blockEndPlaceholder />', '', $data);
