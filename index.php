@@ -22,6 +22,17 @@ $parser-> addRoute('workout', function (string $data){
     'id' => 'content'
 ));
 
+$parser-> addRoute('split', function (string $data){
+    return $data;
+}, array(
+    'title' => '<splitPlaceholder /> - Workout - La Palestra',
+    'id' => 'content',
+    'brosplit' => ($_GET['type'] ?? "") == "bro",
+    'ppl' => ($_GET['type'] ?? "") == "ppl",
+    'ul' => ($_GET['type'] ?? "") == "ul",
+    'fb' => ($_GET['type'] ?? "") == "fb"
+));
+
 $parser-> addRoute('alimentation', function (string $data){
 
     return createAlimentationContent($data);

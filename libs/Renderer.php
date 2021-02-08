@@ -40,7 +40,9 @@ class Renderer{
         foreach (($matches[0] ?? array()) as $match) {
             $data = str_replace($match, '', $data);
         }
+
         return $data;
+        //return str_replace("\r", "", str_replace("\n", "", $data));
     }
 
     private function replaceInclude(string $data): string{
@@ -83,7 +85,6 @@ class Renderer{
     private function replaceIfs(string &$data, array $variables = array()){
 
         $matches = PcreRegex::getAll("/<if[^\/<>]*Placeholder \/>/", $data);
-
         foreach (($matches[0] ?? array()) as $match) {
 
             $ifVariableName = strtolower(str_replace('<if', '', str_replace('Placeholder />', '', $match)));
@@ -93,6 +94,7 @@ class Renderer{
             $ifBlockEndString = '<endIfPlaceholder />';
             $ifBlockEnd = stripos($data, $ifBlockEndString, $ifBlockBegin);
             if($ifBlockEnd === false){
+
                 continue;
             }
 
@@ -102,7 +104,6 @@ class Renderer{
 
                 $data = str_replace($ifBlockBeginString . $codeToReplace . $ifBlockEndString, $codeToReplace, $data);
             }else{
-
                 $data = str_replace($ifBlockBeginString . $codeToReplace . $ifBlockEndString, '', $data);
             }
         }

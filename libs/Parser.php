@@ -43,6 +43,7 @@ class Parser{
                 $data = $renderer->renderFile($route, $this->routesVariables[$route]);
                 $data = call_user_func($this->routes[$route], $data);
                 echo Renderer::clean($data);
+                //echo $data;
             }
         }
     }
