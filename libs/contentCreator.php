@@ -5,7 +5,6 @@ function createAlimentationContent(string $data): string{
 
     $renderer = new Renderer();
     $DBaccess = new DBaccess();
-    $DBaccess-> openDBConnection();
     $contentArray = ($DBaccess->getConnection() !== false ? $DBaccess->getRecipeQuery() : null);
     //$contentArray = null;
     if($contentArray !== null){
@@ -13,7 +12,7 @@ function createAlimentationContent(string $data): string{
         $recipes = "";
         foreach($contentArray as $recipe){
 
-            $recipes .= $renderer-> renderFile('recipeTemplate', array(
+            $recipes .= $renderer-> renderFile('alimentation/recipeTemplate', array(
 
                 'name' => $recipe['Nome'],
                 'singlerecipe' => '/?r=singleRecipe&id='.$recipe['ID'],
@@ -29,5 +28,63 @@ function createAlimentationContent(string $data): string{
 
         $data = $renderer-> render($data, array('recipes' => 'Nessuna ricetta'));
     }
+    return $data;
+}
+
+function createSingleRecipeContent(string $data, string $id): string{
+
+    $renderer = new Renderer();
+    $DBaccess = new DBaccess();
+    $contentArray = ($DBaccess->getConnection() !== false ? $DBaccess->getSingleRecipeQuery($id) : null);
+
+
+    if($contentArray !== null){
+
+        $data = $renderer-> render($data, array('recipetitle' => $contentArray['Nome']));
+        $tmpIngredientsArray = explode("\n", $contentArray['Ingredienti']);
+        $tmpMethodArray = explode("\n", $contentArray['Procedimento']);
+
+        $ingredientsList = "";
+        foreach($tmpIngredientsArray as $ingredient) {
+
+            if (!empty($ingredient)) {
+
+                $ingredientsList .= $renderer->renderFile('alimentation/singleIngredient',
+                    array('singleingredient' => $ingredient));
+            }
+        }
+
+        $methodList = "";
+
+        foreach ($tmpMethodArray as $step){
+
+            if (!empty($step)) {
+
+                $methodList .= $renderer->renderFile('alimentation/singleStep',
+                    array('step' => $step));
+            }
+        }
+
+        $hintPresent = $contentArray['Consigli'] != "Nessun consiglio.";
+
+        $recipe = $renderer->renderFile('alimentation/singleRecipeTemplate', array(
+            'recipename' => $contentArray['Nome'],
+            'path' => $contentArray['NomeImmagine'],
+            'alt' => $contentArray['AltImmagine'],
+            'ingredients' => $ingredientsList,
+            'number' => $contentArray['Persone'],
+            'method' => $methodList,
+            'hintpresent' => $hintPresent,
+            'hints' => $contentArray['Consigli']
+
+        ));
+
+        $data = $renderer-> render($data, array('singlerecipecontent' => $recipe));
+
+    }else{
+
+        $data = $renderer-> render($data, array());
+    }
+
     return $data;
 }

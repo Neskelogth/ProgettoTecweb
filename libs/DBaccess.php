@@ -9,7 +9,15 @@ class DBaccess{
 
     private $connection;
 
-    public function __construct(){}
+    public function __construct(){
+
+        $this->openDBConnection();
+    }
+
+    public function __destruct(){
+
+        $this->closeConnection();
+    }
 
     public function getConnection(){//ritorna un oggetto o false
 
@@ -44,23 +52,50 @@ class DBaccess{
             return null;
         }else{
 
-            $listaRicette = array();
-            while($riga = $queryResult-> fetch_assoc()){
+            $recipeList = array();
+            while($row = $queryResult-> fetch_assoc()){
 
-                $singolaRicetta = array(
-                    "ID" => $riga['ID'],
-                    "Nome" => base64_decode($riga['Nome']),
-                    "Descrizione" => base64_decode($riga['Descrizione']),
-                    "NomeImmagine" => base64_decode($riga['NomeImmagine']),
-                    "AltImmagine" => base64_decode($riga['AltImmagine'])
+                $singleRecipe = array(
+                    "ID" => $row['ID'],
+                    "Nome" => base64_decode($row['Nome']),
+                    "Descrizione" => base64_decode($row['Descrizione']),
+                    "NomeImmagine" => base64_decode($row['NomeImmagine']),
+                    "AltImmagine" => base64_decode($row['AltImmagine'])
                 );
 
-                array_push($listaRicette, $singolaRicetta);
+                array_push($recipeList, $singleRecipe);
             }
-            return $listaRicette;
+            return $recipeList;
         }
 
     }
 
+    public function getSingleRecipeQuery($id){
+
+        $querySelect = "SELECT * FROM alimentazione WHERE ID = " . intval($id);
+
+        $queryResult = $this-> connection-> query($querySelect);
+
+        if($queryResult-> num_rows == 0){
+
+            return null;
+        }else{
+
+            $row = $queryResult-> fetch_assoc();
+
+            $singolaRicetta = array(
+                "Nome" => base64_decode($row['Nome']),
+                //"Descrizione" =>base64_decode( $row['Descrizione']),
+                "NomeImmagine" => base64_decode($row['NomeImmagine']),
+                "AltImmagine" => base64_decode($row['AltImmagine']),
+                "Persone" => base64_decode($row['Persone']),
+                "Ingredienti" => base64_decode($row['Ingredienti']),
+                "Procedimento" => base64_decode($row['Procedimento']),
+                "Consigli" => base64_decode($row['Consigli'])
+            );
+
+            return $singolaRicetta;
+        }
+    }
 
 }
