@@ -50,24 +50,23 @@ class DBaccess{
         if($queryResult-> num_rows == 0){
 
             return null;
-        }else{
-
-            $recipeList = array();
-            while($row = $queryResult-> fetch_assoc()){
-
-                $singleRecipe = array(
-                    "ID" => $row['ID'],
-                    "Nome" => base64_decode($row['Nome']),
-                    "Descrizione" => base64_decode($row['Descrizione']),
-                    "NomeImmagine" => base64_decode($row['NomeImmagine']),
-                    "AltImmagine" => base64_decode($row['AltImmagine'])
-                );
-
-                array_push($recipeList, $singleRecipe);
-            }
-            return $recipeList;
         }
 
+        $recipeList = array();
+        while($row = $queryResult-> fetch_assoc()){
+
+           $singleRecipe = array(
+              "ID" => $row['ID'],
+              "Nome" => base64_decode($row['Nome']),
+              "Descrizione" => base64_decode($row['Descrizione']),
+              "NomeImmagine" => base64_decode($row['NomeImmagine']),
+              "AltImmagine" => base64_decode($row['AltImmagine'])
+           );
+
+           array_push($recipeList, $singleRecipe);
+        }
+
+        return $recipeList;
     }
 
     public function getSingleRecipeQuery($id){
@@ -79,23 +78,57 @@ class DBaccess{
         if($queryResult-> num_rows == 0){
 
             return null;
-        }else{
+        }
 
-            $row = $queryResult-> fetch_assoc();
+        $row = $queryResult-> fetch_assoc();
 
-            $singolaRicetta = array(
-                "Nome" => base64_decode($row['Nome']),
-                //"Descrizione" =>base64_decode( $row['Descrizione']),
-                "NomeImmagine" => base64_decode($row['NomeImmagine']),
-                "AltImmagine" => base64_decode($row['AltImmagine']),
-                "Persone" => base64_decode($row['Persone']),
-                "Ingredienti" => base64_decode($row['Ingredienti']),
-                "Procedimento" => base64_decode($row['Procedimento']),
-                "Consigli" => base64_decode($row['Consigli'])
+        $singolaRicetta = array(
+           "Nome" => base64_decode($row['Nome']),
+           "NomeImmagine" => base64_decode($row['NomeImmagine']),
+           "AltImmagine" => base64_decode($row['AltImmagine']),
+           "Persone" => base64_decode($row['Persone']),
+           "Ingredienti" => base64_decode($row['Ingredienti']),
+           "Procedimento" => base64_decode($row['Procedimento']),
+           "Consigli" => base64_decode($row['Consigli'])
+        );
+
+        return $singolaRicetta;
+
+    }
+
+    public function getNewsQuery($type){
+
+        $querySelect = "SELECT * FROM news ";
+        if($type == "workout" || $type == "alimentazione" || $type == "sito"){
+
+            $querySelect .= "WHERE tipo = '". ucfirst($type) ."'";
+        }
+
+        $queryResult = $this->connection->query($querySelect);
+
+        if($queryResult === false || $queryResult->num_rows == 0){
+
+            return null;
+        }
+
+        $newsList = array();
+        while($row = $queryResult->fetch_assoc()){
+
+            $notice = array(
+
+                'ID' => $row['ID'],
+                'Tipo' => $row['Tipo'],
+                'Titolo' => base64_decode($row['Titolo']),
+                'Testo' => base64_decode($row['Testo']),
+                'link' => $row['Link'] ?? ''
             );
 
-            return $singolaRicetta;
+            array_push($newsList, $notice);
+
         }
+
+        return $newsList;
     }
 
 }
+

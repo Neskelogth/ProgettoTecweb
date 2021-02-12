@@ -57,10 +57,13 @@ $parser-> addRoute('forum', function (string $data){
 ));
 
 $parser-> addRoute('news', function (string $data){
-    return $data;
+
+    $data = createNavMenuNews($data, $_GET['type'] ?? 'All');
+    return createNewsContent($data, $_GET['type'] ?? 'All');
 }, array(
     'title' => 'News - La Palestra',
-    'id' => 'content'
+    'id' => 'content',
+    'type' => ($_GET['type'] ?? '%%All%%')
 ));
 
 $parser-> onNotFound(function (){

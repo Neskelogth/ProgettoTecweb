@@ -100,10 +100,12 @@ class Renderer{
 
             $codeToReplace = substr($data, $ifBlockBegin + strlen($ifBlockBeginString), $ifBlockEnd - $ifBlockBegin - strlen($ifBlockBeginString));
 
+
             if($variables[$ifVariableName] ?? false){
 
                 $data = str_replace($ifBlockBeginString . $codeToReplace . $ifBlockEndString, $codeToReplace, $data);
             }else{
+
                 $data = str_replace($ifBlockBeginString . $codeToReplace . $ifBlockEndString, '', $data);
             }
         }
