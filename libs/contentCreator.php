@@ -1,6 +1,5 @@
 <?php
 
-
 function createAlimentationContent(string $data): string{
 
     $renderer = new Renderer();

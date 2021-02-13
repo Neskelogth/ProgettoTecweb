@@ -6,7 +6,24 @@ require_once "vendor/autoload.php";
 require_once "libs/contentCreator.php";
 require_once "libs/DBaccess.php";
 
+session_start();
+
 $parser = new Parser();
+
+$parser-> addRoute('login', function(string $data){
+
+    return $data;
+}, array(
+    'title' => 'Login - La Palestra'
+
+));
+
+$parser-> addRoute('signup', function(string $data){
+    return $data;
+}, array(
+
+    'title' => 'Signup - La Palestra'
+));
 
 $parser-> addRoute('home', function (string $data){
     return $data;
@@ -50,7 +67,8 @@ $parser-> addRoute('singleRecipe', function (string $data){
 ));
 
 $parser-> addRoute('forum', function (string $data){
-    return $data;
+
+    return createForumContent($data);
 }, array(
     'title' => 'Forum - La Palestra',
     'id' => 'content'

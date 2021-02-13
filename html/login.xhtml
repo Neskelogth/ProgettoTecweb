@@ -1,0 +1,47 @@
+<includeBasePlaceholder />
+
+<blockDefHeaderPlaceholder />
+
+<h1>Login</h1>
+
+<blockEndPlaceholder />
+
+<!--Breadcumb-->
+<blockDefBreadcrumbPlaceholder />
+
+<p>Ti trovi in <a href = "/?r=home" xml:lang="en">Home</a>  » Login </p>
+
+<blockEndPlaceholder />
+
+<!-- Menu -->
+<blockDefMenuPlaceholder />
+
+<ul>
+
+    <li xml:lang="en"><a href = "/?r=home">Home</a></li>
+    <li xml:lang="en"><a href = "/?r=workout">Workout</a></li>
+    <li><a href = "/?r=alimentation">Alimentazione</a></li>
+    <li xml:lang="en"><a href = "/?r=forum">Forum</a></li>
+    <li xml:lang="en"><a href = "/?r=news">News</a></li>
+
+</ul>
+
+<blockEndPlaceholder />
+
+
+<blockDefContentPlaceholder />
+
+    <div id="notLoggedIn">
+
+        <form method="POST" action = "api/login.php">
+            <fieldset>
+                <label id="loginUsername" for="usernameInputArea">Inserisci il tuo Username</label>
+                <input id="usernameInputArea" rows="1" cols="17" name="username"></input>
+                <label id="loginPassword" for="passwordInputArea">Inserisci la tua Password</label>
+                <input type = "password" id="passwordInputArea" rows="1" cols="17" name="password"></input>
+                <input type="submit" class="loginButton" name="login" value="Accedi"/>
+            </fieldset>
+        </form>
+    </div>
+
+<blockEndPlaceholder />

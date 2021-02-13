@@ -130,5 +130,40 @@ class DBaccess{
         return $newsList;
     }
 
+    public function getUsernameQuery(string $userName): bool{
+
+        $querySelect = "SELECT * FROM utente WHERE IDUtente = '".base64_encode($userName)."'";
+
+        $queryResult = $this-> connection-> query($querySelect);
+
+        return $queryResult !== false && $queryResult->num_rows != 0;
+
+    }
+
+    public function getCorrectPasswordQuery(string $userName, string $pssw):bool{
+
+        $querySelect = "SELECT * FROM utente WHERE Password = '". $pssw ."' AND IDUtente = '".base64_encode($userName)."'";
+        $queryResult = $this-> connection-> query($querySelect);
+
+        return $queryResult !== false && $queryResult->num_rows != 0;
+    }
+
+    public function getUserData($userName): array{
+
+        $querySelect = "SELECT IDUtente, Nome, Cognome, Email, Amministratore FROM utente WHERE IDUtente = '" . base64_encode($userName) ."'";
+        $queryResult = $this-> connection-> query($querySelect);
+
+        $row = $queryResult-> fetch_assoc();
+
+        return array(
+            'IDUtente' => base64_decode($row['IDUtente']),
+            'Nome' => base64_decode($row['Nome']),
+            'Cognome' => base64_decode($row['Cognome']),
+            'Email' => base64_decode($row['Email']),
+            'Admin' => $row['Amministratore'] == 1
+        );
+        
+    }
+
 }
 

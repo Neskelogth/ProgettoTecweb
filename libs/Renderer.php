@@ -93,20 +93,18 @@ class Renderer{
 
             $ifBlockEndString = '<endIfPlaceholder />';
             $ifBlockEnd = stripos($data, $ifBlockEndString, $ifBlockBegin);
-            if($ifBlockEnd === false){
+            if($ifBlockEnd !== false){
 
-                continue;
-            }
-
-            $codeToReplace = substr($data, $ifBlockBegin + strlen($ifBlockBeginString), $ifBlockEnd - $ifBlockBegin - strlen($ifBlockBeginString));
+                $codeToReplace = substr($data, $ifBlockBegin + strlen($ifBlockBeginString), $ifBlockEnd - $ifBlockBegin - strlen($ifBlockBeginString));
 
 
-            if($variables[$ifVariableName] ?? false){
+                if($variables[$ifVariableName] ?? false){
 
-                $data = str_replace($ifBlockBeginString . $codeToReplace . $ifBlockEndString, $codeToReplace, $data);
-            }else{
+                    $data = str_replace($ifBlockBeginString . $codeToReplace . $ifBlockEndString, $codeToReplace, $data);
+                }else{
 
-                $data = str_replace($ifBlockBeginString . $codeToReplace . $ifBlockEndString, '', $data);
+                    $data = str_replace($ifBlockBeginString . $codeToReplace . $ifBlockEndString, '', $data);
+                }
             }
         }
 
