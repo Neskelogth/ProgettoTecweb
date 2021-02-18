@@ -140,15 +140,15 @@ class DBaccess{
 
     }
 
-    public function getCorrectPasswordQuery(string $userName, string $pssw):bool{
+    public function getCorrectPasswordQuery(string $userName, string $hasehdPssw):bool{
 
-        $querySelect = "SELECT * FROM utente WHERE Password = '". $pssw ."' AND IDUtente = '".base64_encode($userName)."'";
+        $querySelect = "SELECT * FROM utente WHERE Password = '". $hashedPssw ."' AND IDUtente = '".base64_encode($userName)."'";
         $queryResult = $this-> connection-> query($querySelect);
 
         return $queryResult !== false && $queryResult->num_rows != 0;
     }
 
-    public function getUserData($userName): array{
+    public function getUserData(string $userName): array{
 
         $querySelect = "SELECT IDUtente, Nome, Cognome, Email, Amministratore FROM utente WHERE IDUtente = '" . base64_encode($userName) ."'";
         $queryResult = $this-> connection-> query($querySelect);
