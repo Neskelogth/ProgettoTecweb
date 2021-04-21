@@ -3,7 +3,15 @@
 <!--Header-->
 <blockDefHeaderPlaceholder />
 
-<h1>News</h1>
+<h1 xml:lang="en">News</h1>
+
+<ifNotloggedPlaceholder />
+<p><a xml:lang="en" href="/?r=login">Login</a> <span tabindex="-1" id="spacer"></span> <a xml:lang="en" href="/?r=signup">Singup</a></p>
+<endIfPlaceholder />
+
+<ifLoggedPlaceholder />
+<p><a xml:lang="en" href="/?r=logout">Logout</a></p>
+<endIfPlaceholder />
 
 <blockEndPlaceholder />
 
@@ -11,7 +19,7 @@
 <!-- Breadcrumb -->
 <blockDefBreadcrumbPlaceholder />
 
-<p>Ti trovi in <a href = "/?r=home" xml:lang="en">Home</a>  » <span>News</span></p>
+<p>Ti trovi in <a href = "/?r=home&prev=news" xml:lang="en">Home</a>  » %%News%%</p>
 
 <blockEndPlaceholder />
 

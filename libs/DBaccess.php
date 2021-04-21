@@ -140,7 +140,7 @@ class DBaccess{
 
     }
 
-    public function getCorrectPasswordQuery(string $userName, string $hasehdPssw):bool{
+    public function getCorrectPasswordQuery(string $userName, string $hashedPssw):bool{
 
         $querySelect = "SELECT * FROM utente WHERE Password = '". $hashedPssw ."' AND IDUtente = '".base64_encode($userName)."'";
         $queryResult = $this-> connection-> query($querySelect);
@@ -164,6 +164,7 @@ class DBaccess{
         );
         
     }
+
 
 }
 

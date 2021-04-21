@@ -84,6 +84,7 @@ class Renderer{
 
     private function replaceIfs(string &$data, array $variables = array()){
 
+        //var_dump($variables);
         $matches = PcreRegex::getAll("/<if[^\/<>]*Placeholder \/>/", $data);
         foreach (($matches[0] ?? array()) as $match) {
 
@@ -111,6 +112,7 @@ class Renderer{
     }
 
     private function replaceVariables(string &$data, array $variables): void{
+
 
         $matches = PcreRegex::getAll("/<[^\/<>]*Placeholder \/>/", $data);
         foreach (($matches[0] ?? array()) as $match) {

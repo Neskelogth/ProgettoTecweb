@@ -3,7 +3,15 @@
 <!-- Header -->
 <blockDefHeaderPlaceholder />
 
-<h1>Alimentazione</h1>
+    <h1>Alimentazione</h1>
+
+<ifNotloggedPlaceholder />
+    <p><a xml:lang="en" href="/?r=login&prev=<redirectPlaceholder />">Login</a> <span tabindex="-1" id="spacer"></span> <a xml:lang="en" href="/?r=signup">Singup</a></p>
+<endIfPlaceholder />
+
+<ifLoggedPlaceholder />
+    <p><a xml:lang="en" href="/?r=logout&prev=alimentation">Logout</a></p>
+<endIfPlaceholder />
 
 <blockEndPlaceholder />
 

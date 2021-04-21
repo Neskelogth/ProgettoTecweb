@@ -1,20 +1,18 @@
-<includeBasePlaceholder />
+<includeForumbasePlaceholder />
 
+<script type="text/javascript" />
 <!-- Header -->
 <blockDefHeaderPlaceholder />
 
 <h1>Forum</h1>
 
-<ifloggedPlaceholder />
-<loginPlaceholder />
-<signupPlaceholder />
+<ifNotloggedPlaceholder />
+<p><a xml:lang="en" href="/?r=login">Login</a> <span tabindex="-1" id="spacer"></span> <a xml:lang="en" href="/?r=signup">Singup</a></p>
 <endIfPlaceholder />
 
-
-<ifNotloggedinPlaceholder />
-<logoutPlaceholder />
+<ifLoggedPlaceholder />
+<p><a xml:lang="en" href="/?r=logout">Logout</a></p>
 <endIfPlaceholder />
-
 
 <blockEndPlaceholder />
 
@@ -43,6 +41,7 @@
 
 
 <blockDefContentPlaceholder />
+
 
 
 

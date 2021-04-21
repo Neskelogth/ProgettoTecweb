@@ -121,20 +121,6 @@ INSERT INTO `post` (`IDPost`, `IDUtente`, `Testo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `postlikato`
---
-
-DROP TABLE IF EXISTS `postlikato`;
-CREATE TABLE IF NOT EXISTS `postlikato` (
-  `IDPost` int(11) UNSIGNED NOT NULL,
-  `IDUtenteCheHaLikato` varchar(150) NOT NULL,
-  PRIMARY KEY (`IDPost`,`IDUtenteCheHaLikato`),
-  KEY `IDUtenteCheHaLikato` (`IDUtenteCheHaLikato`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `risposta`
 --
 
@@ -199,13 +185,6 @@ ALTER TABLE `likes`
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `POST_ibfk_1` FOREIGN KEY (`IDUtente`) REFERENCES `utente` (`IDUtente`);
-
---
--- Constraints for table `postlikato`
---
-ALTER TABLE `postlikato`
-  ADD CONSTRAINT `POSTLIKATO_ibfk_1` FOREIGN KEY (`IDPost`) REFERENCES `post` (`IDPost`),
-  ADD CONSTRAINT `POSTLIKATO_ibfk_2` FOREIGN KEY (`IDUtenteCheHaLikato`) REFERENCES `utente` (`IDUtente`);
 
 --
 -- Constraints for table `risposta`

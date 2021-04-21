@@ -1,0 +1,26 @@
+ <?php
+
+require_once "../libs/DBaccess.php.php";
+require_once "../libs/contentCreator.php";
+
+session_start();
+
+$dbaccess = new DBaccess();
+
+$dbaccess-> openDBconnection();
+
+$result = $dbaccess-> getRispostePost($_GET['IDPost'] ?? -1) ?? array();
+
+$response = array('ok'=> true, 'result' => array());
+
+foreach ($result as $item) {
+
+    array_push($response['result'], $item);
+}
+
+$response = json_encode($response);
+
+header("Content-Type: application/json; charset=UTF-8");
+header("Content-Length: " . strlen($response));
+
+echo $response;

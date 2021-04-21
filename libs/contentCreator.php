@@ -1,5 +1,7 @@
 <?php
 
+//session_start();
+
 function createAlimentationContent(string $data): string{
 
     $renderer = new Renderer();
@@ -208,5 +210,11 @@ function createNavMenuNews(string $data, string $type): string{
     ));
 
 
+    return $data;
+}
+
+function createForumContent(string $data){
+
+    //var_dump($data);
     return $data;
 }
