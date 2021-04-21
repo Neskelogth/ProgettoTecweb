@@ -140,6 +140,16 @@ class DBaccess{
 
     }
 
+    public function getMailQuery(string $mail): bool{
+
+        $querySelect = "SELECT * FROM utente WHERE Email = '".base64_encode($mail)."'";
+
+        $queryResult = $this-> connection-> query($querySelect);
+
+        return $queryResult !== false && $queryResult->num_rows != 0;
+
+    }
+
     public function getCorrectPasswordQuery(string $userName, string $hashedPssw):bool{
 
         $querySelect = "SELECT * FROM utente WHERE Password = '". $hashedPssw ."' AND IDUtente = '".base64_encode($userName)."'";
@@ -165,6 +175,20 @@ class DBaccess{
         
     }
 
+    public function insertUser($username, $mail, $name, $surname, $hashedPassword): bool{
 
+        $username = base64_encode($username);
+        $name = base64_encode($name);
+        $surname = base64_encode($surname);
+        $mail = base64_encode($mail);
+
+        $query = "INSERT INTO utente VALUES('$username','$mail', '$name', '$surname', '$hashedPassword', 0);";
+
+        $queryResult = $this-> connection-> query($query);
+
+        var_dump($queryResult);
+
+        return $queryResult !== false;
+    }
 }
 

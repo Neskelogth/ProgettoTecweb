@@ -10,8 +10,6 @@ $DBaccess = new DBaccess();
 $userName = $_POST['username'];
 $password = $_POST['password'];
 
-//echo $userName;
-
 //check if userName exists
 $existingUsername = ($DBaccess->getConnection() !== false) ? $DBaccess->getUsernameQuery($userName) : false;
 $correctPasswordForUser = ($DBaccess->getConnection() !== false) ? $DBaccess->getCorrectPasswordQuery($userName, hash("sha512", $password)) : false;
@@ -26,6 +24,7 @@ if($existingUsername && $correctPasswordForUser){
     $_SESSION['username'] = $userData['IDUtente'];
     $_SESSION['admin'] = $userData['Admin'];
 }
+$DBaccess->closeConnection();
 
 $toRedirect = urldecode($_POST['redirect'] ?? urlencode('/?r=home'));
 
