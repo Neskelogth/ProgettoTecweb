@@ -8,8 +8,6 @@ session_start();
 
 $dbaccess = new DBaccess();
 
-$dbaccess-> openDBconnection();
-
 $result = GetForumPageLogged($dbaccess);
 $messaggioPerForm = '';
 $nomeUtente = '';

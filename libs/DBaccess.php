@@ -14,11 +14,6 @@ class DBaccess{
         $this->openDBConnection();
     }
 
-    public function __destruct(){
-
-        $this->closeConnection();
-    }
-
     public function getConnection(){//ritorna un oggetto o false
 
         return $this-> connection;
@@ -189,6 +184,112 @@ class DBaccess{
         var_dump($queryResult);
 
         return $queryResult !== false;
+    }
+
+    public function getPostList($username =""){
+
+        /*         *
+         * Query formattata:
+         * SELECT post.IDPost,post.IDUtente, post.Testo, COUNT(likes.IDUtente) AS 'NumeroLike', ABS(ISNULL(MyLikes.IDPost) - 1) AS 'LeftLike'
+           FROM (post LEFT JOIN likes
+                        ON post.IDPost = likes.IDPost)
+                      LEFT JOIN (SELECT IDPost
+                                 FROM likes
+                                 WHERE IDUtente = '$username') AS MyLikes
+                        ON MyLikes.IDPost = likes.IDPost
+           GROUP BY post.IDPost
+           ORDER BY post.IDPost ASC
+         *
+         * Prende gli di, i testi e gli id utenti di ogni post, in più conta i like e calcola se l'utente corrente
+         * ha lasciato un like. Raggruppa per id del post e ordina i risultati tramite l'id del post.
+         *
+         * */
+        $username = base64_encode($username);
+
+        $querySelect = "SELECT post.IDPost,post.IDUtente, post.Testo, COUNT(likes.IDUtente) AS 'NumeroLike', ABS(ISNULL(MyLikes.IDPost) - 1) AS 'LeftLike' FROM (post LEFT JOIN likes ON post.IDPost = likes.IDPost) LEFT JOIN (SELECT IDPost FROM likes WHERE IDUtente = '".$username."') AS MyLikes ON MyLikes.IDPost = likes.IDPost GROUP BY post.IDPost ORDER BY post.IDPost ASC";
+
+        $queryResult = $this-> connection-> query($querySelect);
+
+        if($queryResult === false || $queryResult->num_rows == 0){
+
+            return null;
+        }
+
+        $postList = array();
+
+        while($row = $queryResult-> fetch_assoc()){
+
+            $singlePost = array(
+
+                "IDPost" => $row['IDPost'],
+                "IDUtente" => base64_decode($row['IDUtente']),
+                "NumeroLike" => $row['NumeroLike'],
+                "Testo" => base64_decode($row['Testo']),
+                "LeftLike" => $row['LeftLike'] == 1
+            );
+            array_push($postList, $singlePost);
+        }
+
+        //var_dump($postList);
+        return $postList;
+    }
+
+    public function leaveLike($username, $leftLike, $idPost){
+
+        $query = "";
+
+        if($leftLike){
+
+            $query = "INSERT IGNORE INTO likes VALUES (" . $idPost . ", '". $username . "')";
+        }else{
+
+            $query = "DELETE FROM likes WHERE IDUtente = '".$nomeUtente."' AND IDPost = ".$idPost;
+        }
+
+        $queryResult = $this-> connection-> query($query);
+
+        return $queryResult->affected_rows > 0;
+    }
+
+    public function insertAnswer($username,$text, $idPost):bool{
+
+        $query = "INSERT INTO risposta VALUES ('', '$username','$text', $idPost)";
+
+        $queryResult = $this->connection->queury($query);
+
+        return $queryResult;
+    }
+
+    public function getPostAnswer($idPost = 1){
+
+        $idPost = intval($idPost);
+
+        $querySelect = "SELECT * FROM risposta WHERE IDPost = $idPost ORDER BY IDRisposta ASC";
+
+
+        $queryResult = $this-> connection-> query($querySelect);
+
+        if($queryResult === false || $queryResult-> num_rows == 0){
+
+            return null;
+        }
+        else{
+
+            $answers = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+
+                $singleAnswer = array(
+                    "answerId" => $row['IDRisposta'],
+                    "userID" => base64_decode($row['IDutente']),
+                    "Text" => base64_decode($row['Testo']),
+                    "IDPost" => $row['IDPost']
+                );
+
+                array_push($answers, $singleAnswer);
+            }
+            return $answers;
+        }
+
     }
 }
 

@@ -1,13 +1,11 @@
 <?php
 
-require_once "libs/DBaccess.php";
-require_once "libs/Renderer.php";
+require_once "../libs/DBaccess.php";
+require_once "../libs/Renderer.php";
 
 session_start();
 
 $dbaccess = new DBaccess();
-
-//$dbaccess-> openDBconnection();
 
 $result = GetForumPageLogged($dbaccess);
 $messaggioPerForm = '';
@@ -23,7 +21,8 @@ $nomeUtente = $_SESSION["username"] ?? "";
 $leavingLike = $input["leavingLike"] ?? false;
 $idPost = intval($input["idPost"] ?? -1);
 
-//CONTROLLO ERRORI (TROPPO BANALE PER IL PROGETTO!!!!) Devono esserici questi controlli più altri più accurati (es nome siano solo caratteri, alemto tot caratteri...non trovare numeri su nome, chiocciole ecc)
+//CONTROLLO ERRORI (TROPPO BANALE PER IL PROGETTO!!!!) Devono esserici questi controlli più altri più accurati
+// (es nome siano solo caratteri, alemto tot caratteri...non trovare numeri su nome, chiocciole ecc)
 if(strlen($nomeUtente) != 0 && is_bool($leavingLike) && $idPost > 0) {
     //inserisco informazioni nel database
     $openDBconnection = $dbaccess->openDBconnection();

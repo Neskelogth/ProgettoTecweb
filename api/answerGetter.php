@@ -1,15 +1,17 @@
  <?php
 
-require_once "../libs/DBaccess.php.php";
+require_once "../libs/DBaccess.php";
 require_once "../libs/contentCreator.php";
 
 session_start();
 
-$dbaccess = new DBaccess();
+$DBaccess = new DBaccess();
 
-$dbaccess-> openDBconnection();
+$result = $DBaccess-> getPostAnswer($_GET['IDPost'] ?? -1) ?? array();
 
-$result = $dbaccess-> getRispostePost($_GET['IDPost'] ?? -1) ?? array();
+$DBaccess->closeConnection();
+
+//var_dump($result);
 
 $response = array('ok'=> true, 'result' => array());
 

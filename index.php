@@ -9,11 +9,7 @@ require_once "vendor/autoload.php";
 session_start();
 
 $parser = new Parser();
-
-//$_SESSION['username'] = 'Samuel';
-
 var_dump($_SESSION);
-
 $parser-> addRoute('login', function(string $data){
 
     return $data;

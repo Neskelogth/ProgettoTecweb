@@ -8,13 +8,13 @@ function sendComment(){
             credentials: 'same-origin',
             body: JSON.stringify({val: val, submit: true})})
             .then(response => response.json())
-            .then(json => getCommenti())
+            .then(json => getComments())
             .catch((e) => console.log(e));
     }
 
 }
 
-function getCommenti(){
+function getComments(){
 
     fetch("/api/commentsgetter.php")
         .then(response => response.json())
@@ -23,7 +23,17 @@ function getCommenti(){
             if(json.ok){
 
                 let res = json.result;
-                let el = document.getElementById("/api/commentsContainer");
+                let el = document.getElementById("commentsContainer");
+
+                if(res.length == 0) {
+
+                    el.remove();
+                    let p = document.createElement("p");
+                    p.innerHTML = "Non ci sono post";
+                    document.getElementById("content").appendChild(p);
+                    return;
+                }
+
                 el.replaceChildren();
                 for(let commentIndex in res){
 
@@ -86,12 +96,12 @@ function getCommenti(){
                                     button.setAttribute("type", "button");
                                     button.setAttribute("name", "miPiace");
                                     button.onclick = ()=>{
-                                        fetch("leavelike.php", {method: 'POST',
+                                        fetch("/api/leavelike.php", {method: 'POST',
                                             credentials: 'same-origin',
                                             body: JSON.stringify({leavingLike: !res[commentIndex].LeftLike, idPost: res[commentIndex].IDPost})
                                         })
                                             .then(response=> response.json())
-                                            .then(json=> getCommenti())
+                                            .then(json=> getComments())
                                     };
                                     button.appendChild(img);
                                     button.appendChild(span);
@@ -104,7 +114,7 @@ function getCommenti(){
                                         let img = document.createElement("img");
                                         img.classList.add("likeBicipite");
                                         img.setAttribute("src", !res[commentIndex].LeftLike ? "images/WhiteBicio.png" : "images/RedBicio.png");
-                                        img.setAttribute("alt", "Like non dato, bicipite bianco");
+                                        //img.setAttribute("alt", "Like non dato, bicipite bianco");
 
                                         return img;
 
@@ -198,7 +208,7 @@ function loadAnswers(idPost){
                         let div = document.createElement("div");
                         div.classList.add("answer");
                         let p = document.createElement("p");
-                        p.innerText = res[answerIndex].IDUtente;
+                        p.innerText = res[answerIndex].userID;
 
 
                         let textarea = document.createElement("textarea");
@@ -206,7 +216,7 @@ function loadAnswers(idPost){
                         textarea.setAttribute("rows", "3");
                         textarea.setAttribute("cols", "70");
                         textarea.setAttribute("readonly", "readonly");
-                        textarea.value = res[answerIndex].Testo;
+                        textarea.value = res[answerIndex].Text;
 
                         div.appendChild(p);
                         div.appendChild(textarea);
@@ -222,5 +232,5 @@ function loadAnswers(idPost){
 
 document.addEventListener('DOMContentLoaded', function(event) {
 
-    getCommenti();
+    getComments();
 });
