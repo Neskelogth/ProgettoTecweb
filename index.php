@@ -33,7 +33,8 @@ $parser-> addRoute('logout', function(string $data){
 $parser-> addRoute('signup', function(string $data){
     return $data;
 }, array(
-    'title' => 'Signup - La Palestra'
+    'title' => 'Signup - La Palestra',
+    'redirect' => $_GET['prev'] ?? urlencode('/?r=home')
 ));
 
 $parser-> addRoute('home', function (string $data){
