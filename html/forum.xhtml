@@ -46,7 +46,30 @@
 
 <blockDefContentPlaceholder />
 
+<ifLoggedPlaceholder />
 
+<dl class="commenti">
+    <dd id="loggato">
+        <label id="creazionePost" for="post0"></label>
+        <textarea id="post0" rows="10"></textarea> <br />
+        <button onclick="sendComment()">Pubblica post</button>
 
+    </dd>
+</dl>
+
+<endIfPlaceholder />
+
+<ifNotloggedPlaceholder />
+
+    <p>
+        Devi autenticarti per lasciare dei commenti
+    </p>
+    <p>
+        <a href="/?r=login&prev=<redirectPlaceholder />">Accedi</a>
+        o
+        <a href="/?r=signup&prev=<redirectPlaceholder />">Registrati</a>
+    </p>
+
+<endIfPlaceholder />
 
 <blockEndPlaceholder />

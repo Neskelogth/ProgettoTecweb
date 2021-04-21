@@ -9,7 +9,7 @@ INTRO
 }
 
 html{
-    background-image: url('images/sfondo.jpg');/*URL DA INSERIRE*/
+    background-image: url('../images/sfondo.jpg');/*URL DA INSERIRE*/
     background-color: rgb(0, 0, 0);
     width: 100%;
 }

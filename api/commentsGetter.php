@@ -7,7 +7,7 @@ session_start();
 
 $dbaccess = new DBaccess();
 
-$result = $dbaccess-> getListaPost($_SESSION['username'] ?? "") ?? array();
+$result = $dbaccess-> getPostsList($_SESSION['username'] ?? "") ?? array();
 
 
 $response = array('ok'=> true, 'result' => array());

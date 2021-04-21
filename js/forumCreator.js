@@ -1,14 +1,17 @@
-function inviaCommento(){
+function sendComment(){
 
-    let val = document.getElementById("post0").value;
-    document.getElementById("post0").value = "";
+    const val = document.getElementById("post0").value;
+    if(val != ""){
+        document.getElementById("post0").value = "";
 
-    fetch("/api/commentsubmitter.php", {method: 'POST',
-        credentials: 'same-origin',
-        body: JSON.stringify({val: val, submit: true})})
-        .then(response => response.json())
-        .then(json => getCommenti())
-        .catch((e) => console.log(e));
+        fetch("/api/commentsubmitter.php", {method: 'POST',
+            credentials: 'same-origin',
+            body: JSON.stringify({val: val, submit: true})})
+            .then(response => response.json())
+            .then(json => getCommenti())
+            .catch((e) => console.log(e));
+    }
+
 }
 
 function getCommenti(){
