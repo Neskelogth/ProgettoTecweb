@@ -25,10 +25,9 @@ $parser-> addRoute('login', function(string $data){
 $parser-> addRoute('logout', function(string $data){
 
     session_destroy();
-    $toRedirect = $_GET['prev'] ?? 'home';
+    $toRedirect = urldecode($_GET['prev'] ?? urlencode('/?r=home'));
 
-    echo $toRedirect;
-    header("location: /?r=$toRedirect");
+    header("location: $toRedirect");
 });
 
 $parser-> addRoute('signup', function(string $data){

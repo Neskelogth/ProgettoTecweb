@@ -6,11 +6,15 @@
     <h1>Alimentazione</h1>
 
 <ifNotloggedPlaceholder />
-    <p><a xml:lang="en" href="/?r=login&prev=<redirectPlaceholder />">Login</a> <span tabindex="-1" id="spacer"></span> <a xml:lang="en" href="/?r=signup">Singup</a></p>
+    <p>
+        <a xml:lang="en" href="/?r=login&prev=<redirectPlaceholder />">Login</a>
+        <span tabindex="-1" id="spacer"></span>
+        <a xml:lang="en" href="/?r=signup&prev=<redirectPlaceholder />">Singup</a>
+    </p>
 <endIfPlaceholder />
 
 <ifLoggedPlaceholder />
-    <p><a xml:lang="en" href="/?r=logout&prev=alimentation">Logout</a></p>
+    <p><a xml:lang="en" href="/?r=logout&prev=<redirectPlaceholder />">Logout</a></p>
 <endIfPlaceholder />
 
 <blockEndPlaceholder />
@@ -30,7 +34,7 @@
 
 <li xml:lang="en"><a href = "/?r=home">Home</a></li>
 <li xml:lang="en"><a href = "/?r=workout">Workout</a></li>
-<li>Alimentazione</li>
+<li id="currentLink">Alimentazione</li>
 <li xml:lang="en"><a href = "/?r=forum">Forum</a></li>
 <li xml:lang="en"><a href = "/?r=news">News</a></li>
 
