@@ -9,7 +9,8 @@ require_once "vendor/autoload.php";
 session_start();
 
 $parser = new Parser();
-var_dump($_SESSION);
+//var_dump($_SESSION);
+//var_dump($_COOKIE);
 $parser-> addRoute('login', function(string $data){
 
     return $data;

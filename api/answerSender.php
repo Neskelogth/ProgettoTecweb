@@ -8,11 +8,6 @@ session_start();
 
 $DBaccess = new DBaccess();
 
-//$result = GetForumPageLogged($dbaccess);
-//$messaggioPerForm = '';
-//$nomeUtente = '';
-//$testo = '';
-
 $response = array();
 
 //Stream standard
@@ -31,7 +26,8 @@ if(strlen($username)!=0 && strlen($text)>0 && $idPost > 0) {
         $response['ok'] = $DBaccess->insertAnswer($username,$text, $idPost);
     }else{
 
-        echo"Banana";
+        $response['ok'] = false;
+        //echo"Banana";
     }
 }
 $DBaccess-> closeConnection();

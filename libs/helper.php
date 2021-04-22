@@ -8,6 +8,6 @@ function cleanInput(string $data): string{
         $prev = $data;
         $data = strip_tags($data);
     }
-    var_dump($data);
+
     return $data;
 }

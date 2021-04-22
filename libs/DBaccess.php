@@ -36,7 +36,6 @@ class DBaccess{
         $this-> connection-> close();
     }
 
-    //affected rows è una variabile
     public function getRecipeQuery(){
 
         $querySelect = "SELECT ID, Nome, Descrizione, NomeImmagine, AltImmagine FROM ALIMENTAZIONE ORDER BY ID ASC";
@@ -238,24 +237,43 @@ class DBaccess{
 
         $query = "";
 
+        $username = base64_encode($username);
+
         if($leftLike){
 
-            $query = "INSERT IGNORE INTO likes VALUES (" . $idPost . ", '". $username . "')";
+            $query = "INSERT IGNORE INTO likes VALUES ( $idPost , '$username')";
         }else{
 
-            $query = "DELETE FROM likes WHERE IDUtente = '".$nomeUtente."' AND IDPost = ".$idPost;
+            $query = "DELETE FROM likes WHERE IDUtente = '".$username."' AND IDPost = ".$idPost;
         }
 
         $queryResult = $this-> connection-> query($query);
 
-        return $queryResult->affected_rows > 0;
+        //$this-> connection-> affected_rows;
+
+        return $queryResult;
     }
 
     public function insertAnswer($username,$text, $idPost):bool{
 
-        $query = "INSERT INTO risposta VALUES ('', '$username','$text', $idPost)";
+        $username = base64_encode($username);
+        $text = base64_encode($text);
 
-        $queryResult = $this->connection->queury($query);
+        $query = "INSERT INTO risposta (IDUtente, Testo, IDPost) VALUES ('$username','$text', 1);";
+
+        $queryResult = $this->connection->query($query);
+
+        return $queryResult;
+    }
+
+    public function insertPost($username, $text){
+
+        $username = base64_encode($username);
+        $text = base64_encode($text);
+
+        $query = "INSERT INTO post (IDUtente, numeroLike, Testo) VALUES ('$username',0,'$text')";
+
+        $queryResult = $this-> connection-> query($query);
 
         return $queryResult;
     }

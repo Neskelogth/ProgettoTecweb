@@ -7,11 +7,6 @@ session_start();
 
 $dbaccess = new DBaccess();
 
-$result = GetForumPageLogged($dbaccess);
-$messaggioPerForm = '';
-$nomeUtente = '';
-$leavingLike = '';
-
 $response = array();
 
 //Stream standard
@@ -23,15 +18,17 @@ $idPost = intval($input["idPost"] ?? -1);
 
 //CONTROLLO ERRORI (TROPPO BANALE PER IL PROGETTO!!!!) Devono esserici questi controlli più altri più accurati
 // (es nome siano solo caratteri, alemto tot caratteri...non trovare numeri su nome, chiocciole ecc)
+
 if(strlen($nomeUtente) != 0 && is_bool($leavingLike) && $idPost > 0) {
     //inserisco informazioni nel database
-    $openDBconnection = $dbaccess->openDBconnection();
-    if($openDBconnection==true){
-        $response['ok'] = $dbaccess->leaveLike($nomeUtente,$leavingLike, $idPost);
-        $dbaccess-> closeDBConnection();
 
+    if($dbaccess-> getConnection()){
+
+        $response['ok'] = $dbaccess-> leaveLike($nomeUtente,$leavingLike, $idPost);
     }
 }
+
+$dbaccess-> closeConnection();
 
 $response = json_encode($response);
 

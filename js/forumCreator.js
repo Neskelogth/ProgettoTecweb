@@ -1,22 +1,20 @@
 function sendComment(){
 
     const val = document.getElementById("post0").value;
-    if(val != ""){
-        document.getElementById("post0").value = "";
+    document.getElementById("post0").value = "";
 
-        fetch("/api/commentsubmitter.php", {method: 'POST',
+    fetch("/api/commentSubmitter.php", {method: 'POST',
             credentials: 'same-origin',
             body: JSON.stringify({val: val, submit: true})})
-            .then(response => response.json())
-            .then(json => getComments())
-            .catch((e) => console.log(e));
-    }
+        .then(response => response.json())
+        .then(json => getComments())
+        .catch((e) => console.log(e));
 
 }
 
 function getComments(){
 
-    fetch("/api/commentsgetter.php")
+    fetch("/api/commentsGetter.php")
         .then(response => response.json())
         .then(json=> {
 
@@ -80,6 +78,7 @@ function getComments(){
                                     let textarea = document.createElement("textarea");
                                     textarea.setAttribute("id", "post" + res[commentIndex].IDPost);
                                     textarea.classList.add("text");
+                                    textarea.classList.add("forumTextarea");
                                     textarea.setAttribute("rows", "10");
                                     textarea.setAttribute("cols", "85");
                                     textarea.setAttribute("name", "post" + res[commentIndex].IDPost);
