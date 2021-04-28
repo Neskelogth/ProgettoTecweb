@@ -259,7 +259,7 @@ class DBaccess{
         $username = base64_encode($username);
         $text = base64_encode($text);
 
-        $query = "INSERT INTO risposta (IDUtente, Testo, IDPost) VALUES ('$username','$text', 1);";
+        $query = "INSERT INTO risposta (IDUtente, Testo, IDPost) VALUES ('$username','$text', $idPost);";
 
         $queryResult = $this->connection->query($query);
 
