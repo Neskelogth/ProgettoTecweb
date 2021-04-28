@@ -57,12 +57,16 @@ $parser-> addRoute('workout', function (string $data){
 $parser-> addRoute('split', function (string $data){
     return $data;
 }, array(
-    'title' => '<splitPlaceholder /> - Workout - La Palestra',
+    'title' => '<typePlaceholder /> - Workout - La Palestra',
     'id' => 'content',
     'brosplit' => ($_GET['type'] ?? "") == "bro",
     'ppl' => ($_GET['type'] ?? "") == "ppl",
     'ul' => ($_GET['type'] ?? "") == "ul",
     'fb' => ($_GET['type'] ?? "") == "fb",
+    'type' => (($_GET['type'] ?? "") == "fb" ? "Full body" :
+        ($_GET['type'] ?? "") == "ppl" ? "Push pull legs" :
+            ($_GET['type'] ?? "") == "ul" ? "Upper-lower" :
+                ($_GET['type'] ?? "") == "bro" ? "Bro split" : ""),
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/?".http_build_query($_GET))
