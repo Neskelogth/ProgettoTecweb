@@ -92,7 +92,7 @@ $parser-> addRoute('singleRecipe', function (string $data){
 
 $parser-> addRoute('forum', function (string $data){
 
-    return createForumContent($data);
+    return $data;
 }, array(
     'title' => 'Forum - La Palestra',
     'id' => 'content',

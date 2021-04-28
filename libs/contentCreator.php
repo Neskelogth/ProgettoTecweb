@@ -211,7 +211,3 @@ function createNavMenuNews(string $data, string $type): string{
     return $data;
 }
 
-function createForumContent(string $data){
-
-    return $data;
-}
