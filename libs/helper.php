@@ -3,9 +3,9 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 use \Gobie\Regex\Wrappers\Pcre\PcreRegex;
 
-function handleClosureOfQuery(string $data): string{
+function handleClosureOfQuery(string $data, bool $withoutDouble): string{
 
-    $pos = strpos($data, "'");
+    $pos = $withoutDouble ? strpos($data, "'") : strpos($data, '"');
     $data = substr($data, 0, $pos);
 
     return $data;
@@ -37,7 +37,6 @@ function cleanInput(string $data, bool $testForMail =false): string{
         }
     }
 
-
     if(!$sanitazable){
 
         return "Fatal error";
@@ -45,19 +44,20 @@ function cleanInput(string $data, bool $testForMail =false): string{
 
     //clean for SQL injection
     //even if it was unneccessary due to the use of base64
-    //$testForSQLInjectionNumbers = "/(?i)OR \d+=\d+/";
-    //$testForSQLInjection = "/(?i)OR '(\w+)?'='(\w+)?'/";
-    //$testForCommentingSQL = "/--/";
+    //To perform a sql injection one MUST close the string so has to use either ' or "
+    //So if ' or " is present we just ignore it and what comes after it
     $testForPrematureClosureOfQuery = "/'/";
+    $testForPrematureClosureOfQueryDouble = '/"/';
 
     /*$commenting = PcreRegex::match($testForCommentingSQL, $data);
     $injecting = PcreRegex::match($testForSQLInjection, $data);
     $injectingNumbers = PcreRegex::match($testForSQLInjectionNumbers, $data);*/
     $closing = PcreRegex::match($testForPrematureClosureOfQuery, $data);
+    $closingDouble = PcreRegex::match($testForPrematureClosureOfQueryDouble, $data);
 
-    if($closing){
+    if($closing || $closingDouble){
 
-        $data = handleClosureOfQuery($data);
+        $data = handleClosureOfQuery($data, $closing);
     }
 
     return $data;
