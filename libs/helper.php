@@ -13,14 +13,6 @@ function handleClosureOfQuery(string $data, bool $withoutDouble): string{
 
 function cleanInput(string $data, bool $testForMail =false): string{
 
-    //strip tags and prevent tags inside tags
-    $prev = '';
-    while($prev != $data){
-
-        $prev = $data;
-        $data = strip_tags($data);
-    }
-
     $sanitazable = true;
 
     //clean mail if necessary
@@ -42,6 +34,16 @@ function cleanInput(string $data, bool $testForMail =false): string{
         return "Fatal error";
     }
 
+    //strip tags and prevent tags inside tags
+    //for example <scr<span>ipt> </scr</span>ipt> with a single pass of strip_tags would become <script></script>
+    //because the function removes the tag span
+    $prev = '';
+    while($prev != $data){
+
+        $prev = $data;
+        $data = strip_tags($data);
+    }
+
     //clean for SQL injection
     //even if it was unneccessary due to the use of base64
     //To perform a sql injection one MUST close the string so has to use either ' or "
@@ -49,9 +51,6 @@ function cleanInput(string $data, bool $testForMail =false): string{
     $testForPrematureClosureOfQuery = "/'/";
     $testForPrematureClosureOfQueryDouble = '/"/';
 
-    /*$commenting = PcreRegex::match($testForCommentingSQL, $data);
-    $injecting = PcreRegex::match($testForSQLInjection, $data);
-    $injectingNumbers = PcreRegex::match($testForSQLInjectionNumbers, $data);*/
     $closing = PcreRegex::match($testForPrematureClosureOfQuery, $data);
     $closingDouble = PcreRegex::match($testForPrematureClosureOfQueryDouble, $data);
 
