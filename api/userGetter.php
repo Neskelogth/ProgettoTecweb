@@ -1,4 +1,4 @@
- <?php
+<?php
 
 require_once "../libs/DBaccess.php";
 require_once "../libs/contentCreator.php";
@@ -7,7 +7,7 @@ session_start();
 
 $DBaccess = new DBaccess();
 
-$result = $DBaccess-> getPostAnswer($_GET['IDPost'] ?? -1) ?? array();
+$result = $DBaccess-> getUserList($_GET['IDPost'] ?? -1) ?? array();
 
 $DBaccess->closeConnection();
 

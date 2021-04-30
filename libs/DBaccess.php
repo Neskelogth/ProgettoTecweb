@@ -187,7 +187,7 @@ class DBaccess{
 
     public function getPostList($username =""){
 
-        /*         *
+        /*
          * Query formattata:
          * SELECT post.IDPost,post.IDUtente, post.Testo, COUNT(likes.IDUtente) AS 'NumeroLike', ABS(ISNULL(MyLikes.IDPost) - 1) AS 'LeftLike'
            FROM (post LEFT JOIN likes
@@ -249,8 +249,6 @@ class DBaccess{
 
         $queryResult = $this-> connection-> query($query);
 
-        //$this-> connection-> affected_rows;
-
         return $queryResult;
     }
 
@@ -259,7 +257,7 @@ class DBaccess{
         $username = base64_encode($username);
         $text = base64_encode($text);
 
-        $query = "INSERT INTO risposta (IDUtente, Testo, IDPost) VALUES ('$username','$text', 1);";
+        $query = "INSERT INTO risposta (IDUtente, Testo, IDPost) VALUES ('$username','$text', $idPost);";
 
         $queryResult = $this->connection->query($query);
 
@@ -308,6 +306,28 @@ class DBaccess{
             return $answers;
         }
 
+    }
+
+    public function getUserList(){
+
+        $query = "SELECT IDUtemte FROM  utente";
+
+        $result = $this-> connection-> query($query);
+
+        //not checking number of results since there is at least one user (the admin)
+        if($result === false){
+
+            return null;
+        }
+
+        $userList = array();
+
+        while($element = $result-> fetch_assoc()){
+
+            array_push($userList, $element);
+        }
+
+        return $userList;
     }
 }
 

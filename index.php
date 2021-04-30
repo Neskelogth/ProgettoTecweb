@@ -10,13 +10,13 @@ session_start();
 
 $parser = new Parser();
 //var_dump($_SESSION);
-//var_dump($_COOKIE);
 $parser-> addRoute('login', function(string $data){
 
     return $data;
 }, array(
     'title' => 'Login - La Palestra',
-    'redirect' => $_GET['prev'] ?? urlencode('/?r=home')
+    'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
+    'admin' => $_SESSION['admin'] ?? false
 ));
 
 $parser-> addRoute('logout', function(string $data){
@@ -31,7 +31,8 @@ $parser-> addRoute('signup', function(string $data){
     return $data;
 }, array(
     'title' => 'Signup - La Palestra',
-    'redirect' => $_GET['prev'] ?? urlencode('/?r=home')
+    'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
+    'admin' => $_SESSION['admin'] ?? false
 ));
 
 $parser-> addRoute('home', function (string $data){
@@ -41,7 +42,8 @@ $parser-> addRoute('home', function (string $data){
     'id' => 'contenthome',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET))
+    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'admin' => $_SESSION['admin'] ?? false
 ));
 
 $parser-> addRoute('workout', function (string $data){
@@ -51,21 +53,35 @@ $parser-> addRoute('workout', function (string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET))
+    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'admin' => $_SESSION['admin'] ?? false
+));
+
+$parser-> addRoute('adminPanel', function (string $data){
+    return $data;
+}, array(
+    'title' => 'Pannello amministratore - La Palestra',
+    'id' => 'content',
+    'redirect' => urlencode("/?".http_build_query($_GET)),
 ));
 
 $parser-> addRoute('split', function (string $data){
     return $data;
 }, array(
-    'title' => '<splitPlaceholder /> - Workout - La Palestra',
+    'title' => '<typePlaceholder /> - Workout - La Palestra',
     'id' => 'content',
     'brosplit' => ($_GET['type'] ?? "") == "bro",
     'ppl' => ($_GET['type'] ?? "") == "ppl",
     'ul' => ($_GET['type'] ?? "") == "ul",
     'fb' => ($_GET['type'] ?? "") == "fb",
+    'type' => (($_GET['type'] ?? "") == "fb" ? "Full body" :
+        ($_GET['type'] ?? "") == "ppl" ? "Push pull legs" :
+            ($_GET['type'] ?? "") == "ul" ? "Upper-lower" :
+                ($_GET['type'] ?? "") == "bro" ? "Bro split" : ""),
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET))
+    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'admin' => true //$_SESSION['admin'] ?? false
 ));
 
 $parser-> addRoute('alimentation', function (string $data){
@@ -76,7 +92,8 @@ $parser-> addRoute('alimentation', function (string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET))
+    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'admin' => $_SESSION['admin'] ?? false
 ));
 
 $parser-> addRoute('singleRecipe', function (string $data){
@@ -87,18 +104,20 @@ $parser-> addRoute('singleRecipe', function (string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET))
+    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'admin' => $_SESSION['admin'] ?? false
 ));
 
 $parser-> addRoute('forum', function (string $data){
 
-    return createForumContent($data);
+    return $data;
 }, array(
     'title' => 'Forum - La Palestra',
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET))
+    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'admin' => $_SESSION['admin'] ?? false
 ));
 
 $parser-> addRoute('news', function (string $data){
@@ -111,7 +130,8 @@ $parser-> addRoute('news', function (string $data){
     'type' => ($_GET['type'] ?? '%%All%%'),
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET))
+    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'admin' => $_SESSION['admin'] ?? false
 ));
 
 $parser-> onNotFound(function (){
