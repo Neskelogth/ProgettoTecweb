@@ -14,9 +14,6 @@ $password = $_POST['password'];
 $existingUsername = ($DBaccess->getConnection() !== false) ? $DBaccess->getUsernameQuery($userName) : false;
 $correctPasswordForUser = ($DBaccess->getConnection() !== false) ? $DBaccess->getCorrectPasswordQuery($userName, hash("sha512", $password)) : false;
 
-//var_dump($existingUsername);
-//var_dump($correctPasswordForUser);
-
 if($existingUsername && $correctPasswordForUser){
 
     $userData = $DBaccess->getUserData($userName);

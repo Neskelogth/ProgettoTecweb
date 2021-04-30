@@ -16,7 +16,7 @@ $toRedirect = urldecode($_POST['redirect'] ?? urlencode('/?r=home'));
 $DBaccess = new DBaccess();
 
 $existingUsername = ($DBaccess-> getConnection() !== false) ? $DBaccess->getUsernameQuery($username) : false;
-$existingMail = ($DBaccess-> getConnection() !== false) ? $DBaccess->getMailQuery($username) : false;
+$existingMail = ($DBaccess-> getConnection() !== false) ? $DBaccess->getMailQuery($mail) : false;
 
 if(!$existingUsername && !$existingMail && $password == $rePassword && $mail != "Fatal error"){
 
