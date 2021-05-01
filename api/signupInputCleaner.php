@@ -44,6 +44,7 @@ if($connection === false){
 }
 $DBaccess-> closeConnection();
 
+//checking if user exists
 if($existingUsername){
 
     $response['user'] = 'already_exists';
@@ -53,6 +54,27 @@ if($existingMail){
     $response['mail'] = 'already_exists';
 }
 
+//checking mail input
+$atPos = strpos($keys['mail'], '@');
+$dotPos = strrpos($keys['mail'], '.');
+
+if($atPos === false || $dotPos === false || $dotPos == strlen($keys['mail'] - 1)){
+
+    $response['mail'] = 'invalid_mail';
+}else{
+
+    //chech for valid mail and enough length of mail
+    if(!filter_var($keys['mail'], FILTER_VALIDATE_EMAIL || ($dotPos - $atPos) < 3) || $atPos < 3){
+
+        $keys['mail'] = filter_var($keys['mail'], FILTER_SANITIZE_EMAIL);
+        if(!filter_var($keys['mail'], FILTER_VALIDATE_EMAIL)){
+
+            $keys['mail'] = 'not_sanitazable';
+        }
+    }
+}
+
+//checking for sql injection
 $regex = "/(?i)^[a-z0-9]+$/";
 
 foreach($keys as $item){
