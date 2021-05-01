@@ -74,9 +74,10 @@ $parser-> addRoute('split', function (string $data){
     'ppl' => ($_GET['type'] ?? "") == "ppl",
     'ul' => ($_GET['type'] ?? "") == "ul",
     'fb' => ($_GET['type'] ?? "") == "fb",
-    'type' => ($_GET['type'] == "bro" ? "Bro split" :
-        ($_GET['type'] == "ppl" ? "Push pull legs" :
-            ($_GET['type'] == "ul" ? "Upper lower" : "Full body"))),
+    'type' => (($_GET['type'] ?? "") == "bro" ? "Bro split" :
+        (($_GET['type'] ?? "") == "ppl" ? "Push pull legs" :
+            (($_GET['type'] ?? "") == "ul" ? "Upper lower" :
+                (($_GET['type'] ?? "") == "fb" ? "Full body" : "")))),
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/?".http_build_query($_GET)),
