@@ -336,5 +336,14 @@ class DBaccess{
 
         return $userList;
     }
+
+    public function promoteToAdmin(string $user): bool{
+
+        $user = base64_encode($user);
+        $query = "UPDATE Utente SET Amministratore = 1 WHERE IDUtente='$user'";
+
+        return $this-> connection-> query($query);
+    }
+
 }
 
