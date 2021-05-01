@@ -310,11 +310,12 @@ class DBaccess{
 
     public function getUserList(){
 
-        $query = "SELECT IDUtemte FROM  utente";
+        $query = "SELECT IDUtente, Amministratore FROM  utente";
 
         $result = $this-> connection-> query($query);
 
         //not checking number of results since there is at least one user (the admin)
+        //if there are no users the page that calls this query is unreachable
         if($result === false){
 
             return null;
@@ -324,7 +325,13 @@ class DBaccess{
 
         while($element = $result-> fetch_assoc()){
 
-            array_push($userList, $element);
+            $user = array(
+
+                'username' => base64_decode($element['IDUtente']),
+                'admin' => $element['Amministratore'] == 1
+            );
+
+            array_push($userList, $user);
         }
 
         return $userList;

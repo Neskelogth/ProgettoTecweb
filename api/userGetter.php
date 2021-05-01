@@ -7,7 +7,7 @@ session_start();
 
 $DBaccess = new DBaccess();
 
-$result = $DBaccess-> getUserList($_GET['IDPost'] ?? -1) ?? array();
+$result = $DBaccess-> getUserList() ?? array();
 
 $DBaccess->closeConnection();
 
