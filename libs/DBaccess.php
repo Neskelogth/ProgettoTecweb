@@ -345,5 +345,40 @@ class DBaccess{
         return $this-> connection-> query($query);
     }
 
+    public function declassAdmin(string $user): bool{
+
+        $user = base64_encode($user);
+        $query = "UPDATE Utente SET Amministratore = 0 WHERE IDUtente='$user'";
+
+        return $this-> connection-> query($query);
+    }
+
+    public function getRecipeList(){
+
+        $query = "SELECT ID, nome FROM alimentazione";
+
+        $result = $this-> connection-> query($query);
+
+        if($result === false || $result-> num_rows == 0){
+
+            return null;
+        }
+
+        $recipeList = array();
+
+        while($element = $result-> fetch_assoc()){
+
+            $user = array(
+
+                'id' => $element['ID'],
+                'name' => base64_decode($element['nome'])
+            );
+
+            array_push($recipeList, $user);
+        }
+
+        return $recipeList;
+    }
+
 }
 

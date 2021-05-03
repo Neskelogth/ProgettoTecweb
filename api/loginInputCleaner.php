@@ -19,6 +19,8 @@ $keys = array(
     'password' => $_POST['password'] ?? ""
 );
 
+var_dump($keys);
+
 if((strpos($keys['user'], '"') + strpos($keys['user'], "'")) != -2){
 
     $response['user'] = 'that_was_a_SQL_injection_try';
