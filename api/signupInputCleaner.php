@@ -17,14 +17,16 @@ $response = array(
     'internalError' => array()
 );
 
+$input = json_decode(file_get_contents("php://input"), true);
+
 $keys = array(
 
-    'user' => $_POST['username'] ?? "",
-    'mail' => $_POST['mail'] ?? "",
-    'name' => $_POST['name'] ?? "",
-    'surname' => $_POST['surname'] ?? "",
-    'password' => $_POST['password'] ?? "",
-    'rePassword' => $_POST['rePassword'] ?? ""
+    'user' => $input['username'] ?? "",
+    'mail' => $input['mail'] ?? "",
+    'name' => $input['name'] ?? "",
+    'surname' => $input['surname'] ?? "",
+    'password' => $input['password'] ?? "",
+    'rePassword' => $input['rePassword'] ?? ""
 );
 
 $DBaccess = new DBaccess();

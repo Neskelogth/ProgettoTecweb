@@ -1,9 +1,11 @@
 async function verificadati(){
         var a;
-        await fetch('/api/loginInputCleaner.php' , {method: 'POST',
+        console.log(JSON.stringify({username: document.getElementById("usernameInputArea").value,
+            password: document.getElementById("passwordInputArea").value}))
+        fetch('/api/loginInputCleaner.php' , {method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({username: document.getElementById("usernameInputArea").value,
-                             password: document.getElementById("passwordInputArea").value})
+                              password: document.getElementById("passwordInputArea").value})
         })
         .then(response => a = response.json())
             

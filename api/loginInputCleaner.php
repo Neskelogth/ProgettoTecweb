@@ -9,19 +9,18 @@ session_start();
 
 $response = array(
     'user' => 'ok',
-    'password' => 'ok',
-    'internalError' => array()
+    'password' => 'ok'
 );
+
+$input = json_decode(file_get_contents("php://input"), true);
 
 $keys = array(
 
-    'user' => $_POST['username'] ?? "",
-    'password' => $_POST['password'] ?? ""
+    'user' => $input['username'] ?? "",
+    'password' => $input['password'] ?? "",
 );
 
-var_dump($keys);
-
-if((strpos($keys['user'], '"') + strpos($keys['user'], "'")) != -2){
+if((strpos($keys['user'], '"') || strpos($keys['user'], "'")) != false){
 
     $response['user'] = 'that_was_a_SQL_injection_try';
 }
@@ -29,6 +28,11 @@ if((strpos($keys['user'], '"') + strpos($keys['user'], "'")) != -2){
 if($keys['user'] == ""){
 
     $response['user'] = 'empty';
+}
+
+if($keys['password'] == ""){
+
+    $response['password'] = 'empty';
 }
 
 $response = json_encode($response);
