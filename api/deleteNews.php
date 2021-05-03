@@ -7,16 +7,17 @@ session_start();
 
 $DBaccess = new DBaccess();
 
-$result = $DBaccess-> getRecipeList() ?? array();
+$input = json_decode(file_get_contents("php://input"), true);
+
+$recipe = $input['id'];
+
+$result = $DBaccess->removeNews($recipe);
 
 $DBaccess->closeConnection();
 
-$response = array('ok'=> true, 'result' => array());
+$response = array();
 
-foreach ($result as $item) {
-
-    array_push($response['result'], $item);
-}
+$response['ok'] = $result;
 
 $response = json_encode($response);
 

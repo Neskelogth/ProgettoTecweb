@@ -1,14 +1,18 @@
 function loadElements(){
 
     const select = document.getElementById("userToPromote");
-    const secondSelect = document.getElementById("userToDeclass");
+    //const secondSelect = document.getElementById("userToDeclass");
+    const alimentationSelect = document.getElementById("recipe");
+    const newsSelect = document.getElementById("news");
 
     select.innerHTML = "";
-    secondSelect.innerHTML = "";
+    //secondSelect.innerHTML = "";
+    alimentationSelect.innerHTML = "";
+    newsSelect.innerHTML = "";
 
     fetch('/api/userGetter.php')
         .then(response => response.json())
-        .then((json )=> {
+        .then(json => {
 
             const users = json.result;
             users.forEach((element) => {
@@ -21,10 +25,10 @@ function loadElements(){
                 if(!element.admin){
 
                     select.appendChild(option);
-                }else{
+                }/*else{
 
                     secondSelect.appendChild(option);
-                }
+                }*/
 
             });
         });
@@ -34,17 +38,32 @@ function loadElements(){
         .then(json => {
 
             const recipes = json.result;
-            const select = document.getElementById("recipe");
 
             recipes.forEach((element) => {
 
                 let option = document.createElement("option");
                 option.setAttribute("value", element.id);
                 option.innerHTML = element.name;
-                select.appendChild(option)
+                alimentationSelect.appendChild(option)
             })
 
-        })
+        });
+
+    fetch('/api/newsGetter.php')
+        .then(response => response.json())
+        .then(json => {
+
+            const news = json.result;
+            console.log(news);
+            news.forEach((element) => {
+
+                let option = document.createElement("option");
+                option.setAttribute("value", element.id);
+                option.innerHTML = element.title;
+                newsSelect.appendChild(option)
+            })
+
+        });
 }
 
 function promote(){
@@ -62,10 +81,11 @@ function promote(){
                 const el = document.getElementById("errorMessage").setAttribute("display", "block");
                 el.innerHTML = "L'utente non è stato promosso a causa di un errore. Si prega di riprovare.";
             }
+            loadElements();
         });
-    loadElements();
-}
 
+}
+/*
 function declass(){
 
     fetch('/api/declassUser.php',{
@@ -84,10 +104,49 @@ function declass(){
         });
     loadElements();
 }
+*/
 
 function deleteRecipe(){
 
-    fetch('/spi/deleteRecipe')
+    fetch('/api/deleteRecipe.php',{
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify(
+            {recipe: document.getElementById("recipe").value})
+    })
+        .then(response=> response.json())
+        .then(json => {
+
+            if(!json.ok){
+
+                const el = document.getElementById("deleteRecipeError");
+                el.classList.remove("nascosto");
+                el.innerHTML = "La ricetta non è stata rimossa a causa di un errore. Si prega di riprovare.";
+            }
+            loadElements();
+        })
+
+}
+
+function deleteNews(){
+
+    fetch('/api/deleteNews.php',{
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify(
+            {id: document.getElementById("news").value})
+    })
+        .then(response=> response.json())
+        .then(json => {
+
+            if(!json.ok){
+
+                const el = document.getElementById("deleteNewsError");
+                el.classList.remove("nascosto");
+                el.innerHTML = "La news non è stata rimossa a causa di un errore. Si prega di riprovare.";
+            }
+            loadElements();
+        })
 }
 
 document.addEventListener('DOMContentLoaded', function(event) {

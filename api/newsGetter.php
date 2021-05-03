@@ -7,7 +7,7 @@ session_start();
 
 $DBaccess = new DBaccess();
 
-$result = $DBaccess-> getRecipeList() ?? array();
+$result = $DBaccess-> getNewsList() ?? array();
 
 $DBaccess->closeConnection();
 
