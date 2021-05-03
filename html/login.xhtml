@@ -36,16 +36,17 @@
 
     <div id="notLoggedIn">
 
-        <form method="POST" action = "api/login.php">
+        <form method="POST" action = "api/login.php" onsubmit = "event.preventDefault(); verificadati();">
             <fieldset>
                 <label id="loginUsername" for="usernameInputArea">Inserisci il tuo %%Username%%</label>
                 <input id="usernameInputArea" rows="1" cols="17" name="username"></input>
                 <label id="loginPassword" for="passwordInputArea">Inserisci la tua %%Password%%</label>
                 <input type = "password" id="passwordInputArea" rows="1" cols="17" name="password"></input>
                 <input type="hidden" tabindex="-1" value="<redirectPlaceholder />" name="redirect"/>
-                <input type="submit" class="loginButton" name="login" value="Accedi"/>
+                <input type="submit" onsubmit ="verificadati()" class="loginButton" name="login" value="Accedi"/>
             </fieldset>
         </form>
     </div>
+    <div id = "lol"></div>
 
 <blockEndPlaceholder />
