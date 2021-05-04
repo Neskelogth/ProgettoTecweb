@@ -36,20 +36,19 @@
 
     <div id="notLoggedIn">
 
-        <form method="POST" action = "api/login.php" autocomplete = "off" onsubmit = "return verificaverifica()">
+        <form method="POST" action = "api/login.php" onsubmit = "return verificaverifica()">
             <fieldset>
                 <input id = "valueerror"type="hidden" tabindex="-1" value="false"/>
                 <p id = "erroreusername" class = "nascosto rosso">username sbagliato</p>
                 <label id="loginUsername" for="usernameInputArea">Inserisci il tuo %%Username%%</label>
-                <input id="usernameInputArea" rows="1" cols="17" name="username" autocomplete = "off" oninput="verificadati()"></input>
+                <input id="usernameInputArea" rows="1" cols="17" name="username" oninput="verificadati()"></input>
                 <p id = "errorepassword" class = "nascosto rosso">password sbagliata</p>
                 <label id="loginPassword" for="passwordInputArea">Inserisci la tua %%Password%%</label>
-                <input type = "password" id="passwordInputArea" rows="1" cols="17" name="password" autocomplete = "off" oninput="verificadati()"></input>
+                <input type = "password" id="passwordInputArea" rows="1" cols="17" name="password" oninput="verificadati()"></input>
                 <input type="hidden" tabindex="-1" value="<redirectPlaceholder />" name="redirect"/>
                 <input type="submit" class="loginButton" name="login" value="Accedi"/>
             </fieldset>
         </form>
     </div>
-    <div id = "lol"></div>
 
 <blockEndPlaceholder />

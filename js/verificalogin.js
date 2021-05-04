@@ -28,7 +28,6 @@ async function verificadati(){
                 document.getElementById("errorepassword").classList.add("nascosto");
             }
         })
-    console.log(a);
     document.getElementById('valueerror').value = a;
 }
 

@@ -16,7 +16,8 @@ $parser-> addRoute('login', function(string $data){
 }, array(
     'title' => 'Login - La Palestra',
     'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
-    'admin' => $_SESSION['admin'] ?? false
+    'admin' => $_SESSION['admin'] ?? false,
+    'id' => 'content'
 ));
 
 $parser-> addRoute('logout', function(string $data){
@@ -32,7 +33,8 @@ $parser-> addRoute('signup', function(string $data){
 }, array(
     'title' => 'Signup - La Palestra',
     'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
-    'admin' => $_SESSION['admin'] ?? false
+    'admin' => $_SESSION['admin'] ?? false,
+    'id' => 'content'
 ));
 
 $parser-> addRoute('home', function (string $data){
