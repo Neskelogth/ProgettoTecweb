@@ -345,13 +345,14 @@ class DBaccess{
         return $this-> connection-> query($query);
     }
 
+    /*
     public function declassAdmin(string $user): bool{
 
         $user = base64_encode($user);
         $query = "UPDATE Utente SET Amministratore = 0 WHERE IDUtente='$user'";
 
         return $this-> connection-> query($query);
-    }
+    }*/
 
     public function getRecipeList(){
 
@@ -378,6 +379,51 @@ class DBaccess{
         }
 
         return $recipeList;
+    }
+
+    public function getNewsList(){
+
+        $query = "SELECT ID, titolo FROM news";
+
+        $result = $this-> connection-> query($query);
+
+        if($result === false || $result-> num_rows == 0){
+
+            return null;
+        }
+
+        $newsList = array();
+
+        while($element = $result-> fetch_assoc()){
+
+            $user = array(
+
+                'id' => $element['ID'],
+                'title' => base64_decode($element['titolo'])
+            );
+
+            array_push($newsList, $user);
+        }
+
+        return $newsList;
+    }
+
+    public function removeRecipe(int $id): bool{
+
+        $id = intval($id);
+        $query = "DELETE FROM alimentazione WHERE ID=$id;";
+
+        return $this-> connection-> query($query);
+
+    }
+
+    public function removeNews(int $id): bool{
+
+        $id = intval($id);
+        $query = "DELETE FROM news WHERE ID=$id;";
+
+        return $this-> connection-> query($query);
+
     }
 
 }

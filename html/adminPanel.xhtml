@@ -54,12 +54,13 @@
 
     <button onclick="promote()">Promuovi utente</button>
 
-    <p class="errorMessage"></p> <!-- METTERE DISPLAY:NONE -->
+    <p class="errorMessage nascosto"></p> <!-- METTERE DISPLAY:NONE -->
 
 </div>
 
 <div id = "declass">
 
+<!--
 <h2>Rimuovi ad amministratore</h2>
 
 <p>Utente da promuovere: </p>
@@ -70,10 +71,10 @@
 
 <button onclick="declass()">Declassa utente</button>
 
-<p class="errorMessage"></p> <!-- METTERE DISPLAY:NONE -->
+ <p class="errorMessage nascosot"></p>
 
 </div>
-
+-->
 <div>
 
     <h2>Elimina ricetta</h2>
@@ -82,7 +83,19 @@
 
     <button onclick="deleteRecipe()">Elimina ricetta</button>
 
-    <p class="errorMessage"></p> <!-- METTERE DISPLAY:NONE -->
+    <p class="deleteRecipeError nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+
+</div>
+
+<div>
+
+    <h2>Elimina news</h2>
+
+    <select id = "news"></select>
+
+    <button onclick="deleteNews()">Elimina news</button>
+
+    <p class="deleteNewsError nascosto"></p> <!-- METTERE DISPLAY:NONE -->
 
 </div>
 
@@ -91,7 +104,6 @@
 <div> Elimina ban</div>
 <div> Banna utente dal forum</div>
 <div> Aggiungi news</div>
-<div> Elimina news</div>
 <div> Banna dal sito</div>
 
 <div>
