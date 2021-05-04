@@ -27,4 +27,4 @@ $DBaccess->closeConnection();
 
 $toRedirect = urldecode($_POST['redirect'] ?? urlencode('/?r=home'));
 
-//header("location: $toRedirect");
+header("location: $toRedirect");

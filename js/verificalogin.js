@@ -1,28 +1,39 @@
 async function verificadati(){
-        var a;
-        console.log(JSON.stringify({username: document.getElementById("usernameInputArea").value,
-            password: document.getElementById("passwordInputArea").value}))
-        fetch('/api/loginInputCleaner.php' , {method: 'POST',
+        var a = true; 
+        await fetch('/api/loginInputCleaner.php' , {method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({username: document.getElementById("usernameInputArea").value,
                               password: document.getElementById("passwordInputArea").value})
         })
-        .then(response => a = response.json())
+        .then(response => response.json())
+        .then(json=> {
             
-            console.log("brufolo")
-            const user = a.user
-            const password = a.password
-            const internalError = a.internalError
+            const user = json.user
+            const password = json.password
 
             let el = document.getElementById("lol")
 
             if(user == 'empty'){
-                let p = document.createElement("p");
-                p.innerHTML = "Username non valido";
-                el.appendChild(p);
-                return false;
+                document.getElementById("erroreusername").classList.remove("nascosto");
+                a = false;
             }
-        console.log("sottopalla")
-        console.log(a)
-        //return true;
+            else{
+                document.getElementById("erroreusername").classList.add("nascosto");
+            }
+            if(password == 'empty'){
+                document.getElementById("errorepassword").classList.remove("nascosto");
+                a = false;
+            }
+            else{
+                document.getElementById("errorepassword").classList.add("nascosto");
+            }
+        })
+    console.log(a);
+    document.getElementById('valueerror').value = a;
 }
+
+function verificaverifica(){
+    return document.getElementById('valueerror').value == "true";
+}
+//setInterval(function(){console.log(document.getElementById("usernameInputArea").value
+// + " " + document.getElementById("passwordInputArea").value)},250)

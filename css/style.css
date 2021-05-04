@@ -632,9 +632,13 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 
 
+.rosso{
+	color: red;
+}
 
-
-
+.nascosto{
+	display: none;
+}
 
 
 

@@ -34,6 +34,8 @@ if($keys['password'] == ""){
 
     $response['password'] = 'empty';
 }
+//var_dump($input);
+
 
 $response = json_encode($response);
 
