@@ -352,7 +352,8 @@ class DBaccess{
         $query = "UPDATE Utente SET Amministratore = 0 WHERE IDUtente='$user'";
 
         return $this-> connection-> query($query);
-    }*/
+    }
+    */
 
     public function getRecipeList(){
 
@@ -425,6 +426,34 @@ class DBaccess{
         return $this-> connection-> query($query);
 
     }
+
+    public function getNewsTypesList(){
+
+        $query = "SELECT DISTINCT tipo FROM news";
+
+        $result = $this-> connection-> query($query);
+
+        if($result === false || $result-> num_rows == 0){
+
+            return null;
+        }
+
+        $typesList = array();
+
+        while($element = $result-> fetch_assoc()){
+
+            $user = array(
+
+                'type' => $element['tipo']
+            );
+
+            array_push($typesList, $user);
+        }
+
+        return $typesList;
+    }
+
+
 
 }
 

@@ -4,6 +4,7 @@ function loadElements(){
     //const secondSelect = document.getElementById("userToDeclass");
     const alimentationSelect = document.getElementById("recipe");
     const newsSelect = document.getElementById("news");
+    const newsTypesSelect = document.getElementById("type");
 
     select.innerHTML = "";
     //secondSelect.innerHTML = "";
@@ -63,6 +64,21 @@ function loadElements(){
                 newsSelect.appendChild(option)
             })
 
+        });
+
+    fetch('/api/newsTypesGetter.php')
+        .then(response => response.json())
+        .then(json => {
+
+            const types = json.result;
+
+            types.forEach((element) => {
+
+                const option = document.createElement("option");
+                option.setAttribute("value", element.type);
+                option.innerHTML = element.type;
+                newsTypesSelect.appendChild(option);
+            });
         });
 }
 
@@ -153,3 +169,28 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     loadElements();
 });
+
+function validateNewNews(){
+
+    fetch('/api/newsSender.php',{
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify({
+
+            type: document.getElementById("type").value,
+            title: document.getElementById("newsTitle").value,
+            text: document.getElementById("newsText").value,
+            link: document.getElementById("newsLink").value
+        })
+    })
+        .then(response => response.json())
+        .then(json => {
+
+            if(!json.ok){
+
+                const el = document.getElementById("addNewsError");
+                el.classList.remove("nascosto");
+                el.innerHTML = "La news non è stata aggiunta a causa di un errore. Si prega di riprovare.";
+            }
+        })
+}

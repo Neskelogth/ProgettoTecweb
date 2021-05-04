@@ -63,6 +63,10 @@ $parser-> addRoute('adminPanel', function (string $data){
     'title' => 'Pannello amministratore - La Palestra',
     'id' => 'content',
     'redirect' => urlencode("/?".http_build_query($_GET)),
+    'errortitle' => ($_GET['eti'] ?? "") == "true",
+    'errorlink' => ($_GET['el'] ?? "" ) == "true",
+    'errortext' => ($_GET['ete'] ?? "") == "true",
+    'errortyoe' => ($_GET['ety'] ?? "") == "true"
 ));
 
 $parser-> addRoute('split', function (string $data){

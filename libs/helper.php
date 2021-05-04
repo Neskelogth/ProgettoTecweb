@@ -1,5 +1,6 @@
 <?php
 
+require_once 'DBaccess.php';
 require_once __DIR__ . "/../vendor/autoload.php";
 use \Gobie\Regex\Wrappers\Pcre\PcreRegex;
 
@@ -9,6 +10,33 @@ function handleClosureOfQuery(string $data, bool $withoutDouble): string{
     $data = substr($data, 0, $pos);
 
     return $data;
+}
+
+function validateType(string $type): bool{
+
+    $DBaccess = new DBAccess();
+    $types = array();
+    if($DBaccess-> getConnection()){
+
+        $types = $DBaccess-> getNewsTypesList();
+    }
+
+    return in_array($type, $types);
+}
+
+function validateLink(string $link): bool{
+
+    return filter_var($link, FILTER_VALIDATE_URL);
+}
+
+function validateTitle(string $title): bool{
+
+    return strlen($title) > 0 && strlen($title) < 50;
+}
+
+function validateText(string $text): bool{
+
+    return strlen($text) > 0;
 }
 
 function cleanInput(string $data, bool $testForMail =false): string{

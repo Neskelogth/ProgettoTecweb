@@ -99,11 +99,44 @@
 
 </div>
 
+<div>
+
+    <h2>Aggiungi news</h2>
+    <p>Si prega di inserire, per motivi di accessibilità, le parole in inglese aggiungendo un
+        doppio simbolo percentuale (%%)  sia prima che dopo la parola in questione</p>
+
+    <form action = "" onsubmit = "return validateNewNews()">
+
+        <label for="type" id="newsTypeLabel">Inserisci il tipo della news (massimo 50 caratteri)</label>
+
+        <ifErrortitlePlaceholder />
+
+            <p>Si prega di ricontrollare il titolo della news, si tenga presente il limite di 50 caratteri</p>
+
+        <endIfPlacheolder />
+
+        <select id = "type"></select>
+        <label for="newsTitle" id="newsTitleLabel" >Inserisci il titolo della news</label>
+        <input type="text" id = "newsTitle" maxlength="50"></input>
+        <label for="newsTitle" id="newsTextLabel">Inserisci il testo della news</label>
+        <textarea rows="10" cols="85" id = "newsText" maxlength="50"></textarea>
+        <label for="newsTitle" id="newsLinkLabel">Inserisci il link della fonte della news</label>
+        <input type = "text" id = "newsLink"></input>
+        <input type = "submit" value = "Aggiungi"/>
+
+    </form>
+
+    <p class="addNewsError nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+
+</div>
+
+
+
+
 <div> Aggiungi ricetta</div>
 <div> Elimina post</div>
 <div> Elimina ban</div>
 <div> Banna utente dal forum</div>
-<div> Aggiungi news</div>
 <div> Banna dal sito</div>
 
 <div>
