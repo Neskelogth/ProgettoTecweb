@@ -7,14 +7,13 @@ session_start();
 
 $dbaccess = new DBaccess();
 
-$result = $dbaccess-> getPostList($_SESSION['username'] ?? "") ?? array();
+$input = json_decode(file_get_contents("php://input"), true);
 
-$response = array('ok'=> true, 'result' => array());
+$idPost = intval($input['id']) ?? -1;
 
-foreach ($result as $item) {
+$result = $dbaccess-> getText($idPost) ?? array();
 
-    array_push($response['result'], $item);
-}
+$response = array('ok'=> true, 'result' => $result);
 
 $response = json_encode($response);
 

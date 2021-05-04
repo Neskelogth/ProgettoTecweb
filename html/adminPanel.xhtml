@@ -33,15 +33,6 @@
 
 <h1>Pannello di controllo admin</h1>
 
-<!--
-    Promuovi utente
-    Banna utente dal forum (?)
-    Elimina post
-    Aggiungi/elimina ricetta
-    Banna utente dal sito (?)
-    Elimina utente dal sito
- -->
-
 <div id = "promotion">
 
     <h2>Promuovi ad amministratore</h2>
@@ -54,7 +45,7 @@
 
     <button onclick="promote()">Promuovi utente</button>
 
-    <p class="errorMessage nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+    <p id="errorMessage" class="rosso nascosto"></p> <!-- METTERE DISPLAY:NONE -->
 
 </div>
 <!--
@@ -83,7 +74,7 @@
 
     <button onclick="deleteRecipe()">Elimina ricetta</button>
 
-    <p class="deleteRecipeError nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+    <p id="deleteRecipeError" class="rosso nascosto"></p> <!-- METTERE DISPLAY:NONE -->
 
 </div>
 
@@ -95,9 +86,23 @@
 
     <button onclick="deleteNews()">Elimina news</button>
 
-    <p class="deleteNewsError nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+    <p id="deleteNewsError" class="rosso nascosto"></p> <!-- METTERE DISPLAY:NONE -->
 
 </div>
+
+<div id="deletePost">
+    <h2>Elimina post</h2>
+
+    <select id = "post" onchange = "findText() "></select>
+
+    <textarea readonly="readonly" rows="10" cols="85" id = "postText"></textarea>
+
+    <button onclick="deletePost()">Elimina Post</button>
+
+    <p id="deletePostError" class="rosso nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+
+</div>
+
 
 <div id="addNews">
 
@@ -107,19 +112,39 @@
 
     <form action = "" onsubmit = "return validateNewNews()">
 
-        <label for="type" id="newsTypeLabel">Inserisci il tipo della news (massimo 50 caratteri)</label>
+        <ifErrortypePlaceholder />
+
+        <p class = "rosso">Qualcosa è andato storto con il tipo, si prega di riselezionarlo</p>
+
+        <endIfPlaceholder />
+
+        <label for="type" id="newsTypeLabel">Inserisci il tipo della news</label>
+        <select id = "type"></select>
 
         <ifErrortitlePlaceholder />
 
-            <p>Si prega di ricontrollare il titolo della news, si tenga presente il limite di 50 caratteri</p>
+        <p class = "rosso">Si prega di ricontrollare il titolo della news, si tenga presente il limite di 50 caratteri</p>
 
-        <endIfPlacheolder />
+        <endIfPlaceholder />
 
-        <select id = "type"></select>
-        <label for="newsTitle" id="newsTitleLabel" >Inserisci il titolo della news</label>
+        <label for="newsTitle" id="newsTitleLabel" >Inserisci il titolo della news  (massimo 50 caratteri)</label>
         <input type="text" id = "newsTitle" maxlength="50"></input>
+
+        <ifErrortextPlaceholder />
+
+        <p class = "rosso">Il testo dell'input non può essere vuoto</p>
+
+        <endIfPlaceholder />
+
         <label for="newsTitle" id="newsTextLabel">Inserisci il testo della news</label>
         <textarea rows="10" cols="85" id = "newsText" maxlength="50"></textarea>
+
+        <ifErrorlinkPlaceholder />
+
+        <p class = "rosso">Si prega di inserire un link valido</p>
+
+        <endIfPlaceholder />
+
         <label for="newsTitle" id="newsLinkLabel">Inserisci il link della fonte della news</label>
         <input type = "text" id = "newsLink"></input>
         <input type = "submit" value = "Aggiungi"/>
@@ -134,17 +159,18 @@
 
 
 <div id="addRecipe"> Aggiungi ricetta</div>
-<div id="deletePost"> Elimina post</div>
+
 <div id="revokeBan"> Revoca ban</div>
 <div id= "banUserFromForum"> Banna utente dal Forum</div>
 <div id= "banUserFromSite"> Banna dal Sito</div>
 
+<!--
 <div id= "removeAccount">
 
 <h2>Rimuovi account</h2>
 
 </div>
-
+-->
 
 
 

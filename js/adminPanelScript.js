@@ -5,11 +5,15 @@ function loadElements(){
     const alimentationSelect = document.getElementById("recipe");
     const newsSelect = document.getElementById("news");
     const newsTypesSelect = document.getElementById("type");
+    const textArea = document.getElementById("postText");
+    const postSelect = document.getElementById("post");
 
     select.innerHTML = "";
     //secondSelect.innerHTML = "";
     alimentationSelect.innerHTML = "";
     newsSelect.innerHTML = "";
+    postSelect.innerHTML = "";
+    textArea.innerHTML = "";
 
     fetch('/api/userGetter.php')
         .then(response => response.json())
@@ -55,7 +59,7 @@ function loadElements(){
         .then(json => {
 
             const news = json.result;
-            console.log(news);
+
             news.forEach((element) => {
 
                 let option = document.createElement("option");
@@ -63,6 +67,24 @@ function loadElements(){
                 option.innerHTML = element.title;
                 newsSelect.appendChild(option)
             })
+
+        });
+
+    fetch('/api/commentGetter.php')
+        .then(response => response.json())
+        .then(json => {
+
+            const posts = json.result;
+
+            posts.forEach((element) => {
+
+                const option = document.createElement("option");
+                option.setAttribute("value", element.id);
+                option.innerHTML = element.id;
+                postSelect.appendChild(option);
+            });
+
+            textArea.innerHTML = posts[0].text;
 
         });
 
@@ -165,10 +187,6 @@ function deleteNews(){
         })
 }
 
-document.addEventListener('DOMContentLoaded', function(event) {
-
-    loadElements();
-});
 
 function validateNewNews(){
 
@@ -186,11 +204,66 @@ function validateNewNews(){
         .then(response => response.json())
         .then(json => {
 
+            const el = document.getElementById("addNewsError");
             if(!json.ok){
 
-                const el = document.getElementById("addNewsError");
                 el.classList.remove("nascosto");
                 el.innerHTML = "La news non è stata aggiunta a causa di un errore. Si prega di riprovare.";
+            }else{
+
             }
         })
 }
+
+function findText(){
+
+    const postId = document.getElementById("post").value;
+    const textArea = document.getElementById("postText");
+
+    fetch('/api/textFinder.php', {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify({
+            id: postId
+        })
+    })
+        .then(response => response.json())
+        .then(json => {
+
+            textArea.innerHTML = json.result;
+        });
+}
+
+function deletePost(){
+
+    const postId = document.getElementById("post").value;
+    document.getElementById("postText").innerHTML = "";
+
+    fetch('/api/deletePost.php', {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify({
+            id: postId
+        })
+    })
+        .then(response => response.json())
+        .then(json => {
+
+            const el = document.getElementById("deletePostError");
+            if(!json.ok){
+
+                el.classList.remove("nascosto");
+            }else{
+                el.classList.add("nascosto");
+                loadElements();
+            }
+
+        });
+    })
+
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+
+    loadElements();
+});

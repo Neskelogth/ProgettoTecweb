@@ -2,7 +2,7 @@
 
 class DBaccess{
 
-    private const HOST_DB = "127.0.0.1";
+    private const HOST_DB = "127.0.0.1:3307";
     private const USERNAME = "mtesser";
     private const PASSWORD = "ikee4Doongaem7ju";
     private const DATABASE_NAME = "mtesser";
@@ -453,7 +453,61 @@ class DBaccess{
         return $typesList;
     }
 
+    public function getPostsList(){
 
+        $query = "SELECT IDPost, Testo FROM post";
 
+        $result = $this-> connection-> query($query);
+
+        if($result === false || $result-> num_rows == 0){
+
+            return null;
+        }
+
+        $posts = array();
+
+        while($element = $result-> fetch_assoc()){
+
+            $post = array(
+
+                'id' => $element['IDPost'],
+                'text' => base64_decode($element['Testo'])
+            );
+
+            array_push($posts, $post);
+        }
+
+        return $posts;
+
+    }
+
+    public function getText($idPost): string{
+
+        $query = "SELECT Testo FROM post WHERE IDPost = $idPost";
+
+        $result = $this-> connection-> query($query);
+
+        if($result === false || $result-> num_rows == 0){
+
+            return "";
+        }
+
+        $element = $result-> fetch_assoc();
+
+        return base64_decode($element['Testo']);
+
+    }
+
+    public function deletePost($idPost):bool{
+
+        $query1 = "DELETE FROM risposta WHERE IDPost = $idPost";
+        $query2 = "DELETE FROM post WHERE IDPost = $idPost";
+
+        $result1 = $this->connection-> query($query1);
+        $result2 = $this->connection-> query($query2);
+
+        return $result2;
+
+    }
 }
 
