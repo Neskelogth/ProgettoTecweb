@@ -12,6 +12,10 @@ INTRO
 	display: none;
 }
 
+.rosso{
+	color: red;
+}
+
 html{
     background-image: url('../images/sfondo.png');/*URL DA INSERIRE*/
 	background-repeat: repeat;
@@ -78,6 +82,7 @@ body{
 	width: 70%;
 	border-left: 2px solid rgb(0, 0, 0);   
 	padding-left: 0.7em;
+	margin-top: 1em;
 	min-height: 65em;
 }
 /* Inizio Home*/
@@ -106,6 +111,8 @@ body{
 	width: 50%;
 	display: block;
 	margin: auto;
+	margin-top:1em;
+	margin-bottom:1em;
 }
 
 .recipeTitle{
@@ -135,6 +142,7 @@ body{
 
 	padding: .3em; 
 	padding-left: .5em;
+	margin-bottom:1em;
 }
 
 /*Singola ricetta*/
@@ -287,6 +295,13 @@ body{
 	border-bottom: 3px solid rgba(25, 25, 112);
 	padding-bottom: 0.25em;
 }
+
+.redirectcompleto {
+	border-bottom: 3px solid rgba(25, 25, 112);
+}
+
+
+
 .contentnews{
 	padding-right: 6em;
 	min-height: 77vh;
@@ -489,7 +504,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 .contenutoWorkout{
-	padding-top:1em;
 	min-height:50vh;
 }
 
@@ -518,7 +532,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 #workoutTitle{
-	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	padding-bottom: 0.5em;
 	padding-top: 0.25em;
@@ -636,6 +649,81 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	margin: auto;
 }
 
+
+
+#content h1{
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 0.25em;
+	background-color:rgb(135, 206, 235);
+	margin-right: -2em;
+	text-align: left;
+	border: 4px solid rgba(25, 25, 112);
+}
+
+#promotion h2{
+	width: 14em;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 0.25em;
+	background-color:rgb(135, 206, 235);
+	margin-right: -2em;
+	text-align: left;
+	border: 4px solid rgba(25, 25, 112);
+}
+
+#promotion h2{
+	width: 14em;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 0.25em;
+	background-color:rgb(135, 206, 235);
+	margin-right: -2em;
+	text-align: left;
+	border: 4px solid rgba(25, 25, 112);
+}
+
+#deleteRecipe h2{
+	width: 14em;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 0.25em;
+	background-color:rgb(135, 206, 235);
+	margin-right: -2em;
+	text-align: left;
+	border: 4px solid rgba(25, 25, 112);
+
+}
+
+#deleteNews h2{
+	width: 14em;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 0.25em;
+	background-color:rgb(135, 206, 235);
+	margin-right: -2em;
+	text-align: left;
+	border: 4px solid rgba(25, 25, 112);
+
+}
+
+#addNews h2{
+	width: 14em;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 0.25em;
+	background-color:rgb(135, 206, 235);
+	margin-right: -2em;
+	text-align: left;
+	border: 4px solid rgba(25, 25, 112);
+
+}
 
 
 
