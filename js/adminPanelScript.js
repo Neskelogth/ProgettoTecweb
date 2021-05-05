@@ -15,6 +15,7 @@ function loadElements(){
     postSelect.innerHTML = "";
     textArea.innerHTML = "";
 
+    //working
     fetch('/api/userGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -38,6 +39,7 @@ function loadElements(){
             });
         });
 
+    //working
     fetch('/api/recipeGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -54,6 +56,7 @@ function loadElements(){
 
         });
 
+    //working
     fetch('/api/newsGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -70,6 +73,7 @@ function loadElements(){
 
         });
 
+    //wokring
     fetch('/api/commentGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -80,7 +84,8 @@ function loadElements(){
 
                 const option = document.createElement("option");
                 option.setAttribute("value", element.id);
-                option.innerHTML = element.id;
+                const firstPart = element.text.slice(0, 20);
+                option.innerHTML = (element.id + " - " + firstPart + "...");
                 postSelect.appendChild(option);
             });
 
@@ -88,6 +93,7 @@ function loadElements(){
 
         });
 
+    //working
     fetch('/api/newsTypesGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -104,6 +110,7 @@ function loadElements(){
         });
 }
 
+//tested
 function promote(){
 
     fetch('/api/promoteUser.php',{
@@ -123,6 +130,7 @@ function promote(){
         });
 
 }
+//tested
 /*
 function declass(){
 
@@ -144,6 +152,7 @@ function declass(){
 }
 */
 
+//tested
 function deleteRecipe(){
 
     fetch('/api/deleteRecipe.php',{
@@ -166,6 +175,7 @@ function deleteRecipe(){
 
 }
 
+//tested
 function deleteNews(){
 
     fetch('/api/deleteNews.php',{
@@ -215,6 +225,7 @@ function validateNewNews(){
         })
 }
 
+//tested
 function findText(){
 
     const postId = document.getElementById("post").value;
@@ -257,12 +268,10 @@ function deletePost(){
                 el.classList.add("nascosto");
                 loadElements();
             }
-
         });
-    })
-
 }
 
+//working
 document.addEventListener('DOMContentLoaded', function(event) {
 
     loadElements();
