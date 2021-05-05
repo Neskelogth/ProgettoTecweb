@@ -19,7 +19,6 @@ INTRO
 html{
     background-image: url('../images/sfondo.png');/*URL DA INSERIRE*/
 	background-repeat: repeat;
-	background-size: contain;
     background-color: rgb(0, 0, 0);
     width: 100%;
 }
@@ -230,7 +229,6 @@ body{
 /* Inizio News*/
 
 #titolonews{
-	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	padding-bottom: 0.5em;
 	padding-top: 0.25em;
@@ -311,6 +309,7 @@ body{
 }
 #navnews{
 	padding-top: 1em;
+	padding-bottom: 1em;
 }
 #navnews li{
 	
@@ -512,6 +511,10 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	text-decoration: none;
 }
 
+.contenutoWorkout p{
+	padding-bottom: 2em;
+}
+
 #splitsMenu{
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
@@ -532,14 +535,11 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 #workoutTitle{
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
+	background-color: rgb(0, 174, 239);  
+	color: rgb(255, 255, 255);
+	padding: .3em;
+	padding-left: .5em;
+	border: 3px solid rgba(25, 25, 112);
 }
 
 /* Comuni a tutte le pagine di split*/
@@ -944,26 +944,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 	/*INIZIO WORKOUT*/
 
-	#introToSplitsTitle{
 
-		margin-right: 0em;
-		border: 3px solid rgba(25, 25, 112);
-		padding: .25em;
-	}
-
-	#beneficiTitle{
-
-		margin-right: 0em;
-		border: 3px solid rgba(25, 25, 112);
-		padding: .25em;
-	}
-
-	#whichSplitTitle{
-
-		margin-right: 0em;
-		border: 3px solid rgba(25, 25, 112);
-		padding: .25em;
-	}
 
 	/*FINE WORKOUT*/
 
@@ -974,26 +955,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 		font-size: .9em;
 	}
 
-	#coseTitle{
-
-		margin-right: 0em;
-		border: 3px solid rgba(25, 25, 112);
-		padding: .25em;
-	}
-
-	#whyTitle{
-
-		margin-right: 0em;
-		border: 3px solid rgba(25, 25, 112);
-		padding: .25em;
-	}
-
-	#exampleTitle{
-
-		margin-right: 0em;
-		border: 3px solid rgba(25, 25, 112);
-		padding: .25em;
-	}
 
 	#splitTable{
 
@@ -1031,7 +992,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	.recipeTitle{
 
 		border: 3px solid rgb(25, 25, 112);
-		border-bottom: none;
+		/*border-bottom: none;*/
 	}
 
 	.recipeAd{
@@ -1183,9 +1144,11 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 	#titolonews{
 
-		margin: 0em;
-		margin-bottom: .7em;
-		border: 3px solid rgba(25, 25, 112)
+		background-color: rgb(0, 174, 239);  
+		color: rgb(255, 255, 255);
+		padding: .3em;
+		padding-left: .5em;
+		border: 3px solid rgba(25, 25, 112);
 	}
 
 	.news{
@@ -1195,6 +1158,10 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	}
 
 	/*FINE NEWS*/
+
+	/*LOGIN*/
+
+
 
 }
 
@@ -1238,6 +1205,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	padding-left: 0.7em;
 	resize: none;
 	width:70%;
+
 }
 
 .loginButton{
@@ -1247,20 +1215,26 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	font-size: 100%;
 	font-weight: bold;
 	display:block;
-	margin-left:8em;
+	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	
 }
 
 #notLoggedIn label{
 	display: block;
 	margin-top:0.5em;
 	margin-bottom:0.5em;
+	text-align: center;
 }
 
 #notLoggedIn fieldset{
 	border: 2px solid rgb(0, 0, 139);
 	background-color: rgb(135, 206, 235);
-	margin-left: 12em;
-	margin-right: 12em;
+	margin-left: 10em;
+	margin-right: 10em;
+	text-align: center;
+	width:70%;
 }
 
 
