@@ -14,6 +14,7 @@ function loadElements(){
     newsSelect.innerHTML = "";
     postSelect.innerHTML = "";
     textArea.innerHTML = "";
+    newsTypesSelect.innerHTML = "";
 
     //working
     fetch('/api/userGetter.php')
@@ -103,8 +104,8 @@ function loadElements(){
             types.forEach((element) => {
 
                 const option = document.createElement("option");
-                option.setAttribute("value", element.type);
-                option.innerHTML = element.type;
+                option.setAttribute("value", element);
+                option.innerHTML = element;
                 newsTypesSelect.appendChild(option);
             });
         });
@@ -130,6 +131,7 @@ function promote(){
         });
 
 }
+
 //tested
 /*
 function declass(){
@@ -197,8 +199,8 @@ function deleteNews(){
         })
 }
 
-
-function validateNewNews(){
+//tested
+function sendNews(){
 
     fetch('/api/newsSender.php',{
         method: 'POST',
@@ -214,14 +216,7 @@ function validateNewNews(){
         .then(response => response.json())
         .then(json => {
 
-            const el = document.getElementById("addNewsError");
-            if(!json.ok){
-
-                el.classList.remove("nascosto");
-                el.innerHTML = "La news non è stata aggiunta a causa di un errore. Si prega di riprovare.";
-            }else{
-
-            }
+            window.location.replace(json.red);
         })
 }
 
@@ -245,6 +240,7 @@ function findText(){
         });
 }
 
+//tested
 function deletePost(){
 
     const postId = document.getElementById("post").value;
@@ -269,6 +265,26 @@ function deletePost(){
                 loadElements();
             }
         });
+}
+
+function sendRecipe(){
+
+    fetch('/api/recipeSender.php', {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify({
+
+            name: document.getElementById("recipeTitle").value,
+            description: document.getElementById("recipeDescription").value,
+            link: document.getElementById("recipeImage").value,
+            alt: document.getElementById("recipeAlt").value,
+            ingredients: document.getElementById("recipeIngredients").value,
+            method: document.getElementById("recipeMethod").value,
+            hints: document.getElementById("recipeHint").value,
+            people: document.getElementById("recipepeople").value,
+
+        })
+    })
 }
 
 //working

@@ -2,7 +2,7 @@
 
 class DBaccess{
 
-    private const HOST_DB = "127.0.0.1";
+    private const HOST_DB = "127.0.0.1:3307";
     private const USERNAME = "mtesser";
     private const PASSWORD = "ikee4Doongaem7ju";
     private const DATABASE_NAME = "mtesser";
@@ -118,7 +118,6 @@ class DBaccess{
             );
 
             array_push($newsList, $notice);
-
         }
 
         return $newsList;
@@ -197,7 +196,7 @@ class DBaccess{
                                  WHERE IDUtente = '$username') AS MyLikes
                         ON MyLikes.IDPost = likes.IDPost
            GROUP BY post.IDPost
-           ORDER BY post.IDPost ASC
+           ORDER BY post.IDPost DESC
          *
          * Prende gli di, i testi e gli id utenti di ogni post, in più conta i like e calcola se l'utente corrente
          * ha lasciato un like. Raggruppa per id del post e ordina i risultati tramite l'id del post.
@@ -205,7 +204,7 @@ class DBaccess{
          * */
         $username = base64_encode($username);
 
-        $querySelect = "SELECT post.IDPost,post.IDUtente, post.Testo, COUNT(likes.IDUtente) AS 'NumeroLike', ABS(ISNULL(MyLikes.IDPost) - 1) AS 'LeftLike' FROM (post LEFT JOIN likes ON post.IDPost = likes.IDPost) LEFT JOIN (SELECT IDPost FROM likes WHERE IDUtente = '".$username."') AS MyLikes ON MyLikes.IDPost = likes.IDPost GROUP BY post.IDPost ORDER BY post.IDPost ASC";
+        $querySelect = "SELECT post.IDPost,post.IDUtente, post.Testo, COUNT(likes.IDUtente) AS 'NumeroLike', ABS(ISNULL(MyLikes.IDPost) - 1) AS 'LeftLike' FROM (post LEFT JOIN likes ON post.IDPost = likes.IDPost) LEFT JOIN (SELECT IDPost FROM likes WHERE IDUtente = '".$username."') AS MyLikes ON MyLikes.IDPost = likes.IDPost GROUP BY post.IDPost ORDER BY post.IDPost DESC";
 
         $queryResult = $this-> connection-> query($querySelect);
 
@@ -229,7 +228,6 @@ class DBaccess{
             array_push($postList, $singlePost);
         }
 
-        //var_dump($postList);
         return $postList;
     }
 
@@ -429,7 +427,7 @@ class DBaccess{
 
     public function getNewsTypesList(){
 
-        $query = "SELECT DISTINCT tipo FROM news";
+        $query = "SHOW COLUMNS FROM news LIKE 'Tipo'";
 
         $result = $this-> connection-> query($query);
 
@@ -438,17 +436,14 @@ class DBaccess{
             return null;
         }
 
-        $typesList = array();
+        $element = $result-> fetch_assoc();
+        $types = $element['Type'];
+        $types = substr($types, 6, strlen($types) - 7);
+        $types = str_replace("'", "", $types);
+        $typesList = explode(",", $types);
 
-        while($element = $result-> fetch_assoc()){
+        //(?i)enum\(('\w+',)+('\w+')\)
 
-            $user = array(
-
-                'type' => $element['tipo']
-            );
-
-            array_push($typesList, $user);
-        }
 
         return $typesList;
     }
@@ -478,7 +473,6 @@ class DBaccess{
         }
 
         return $posts;
-
     }
 
     public function getText($idPost): string{
@@ -508,6 +502,22 @@ class DBaccess{
 
         return $result2;
 
+    }
+
+    public function insertNews($type, $title, $text, $link): bool{
+
+        $title = base64_encode($title);
+        $text = base64_encode($text);
+        //$link = base64_encode($link)
+
+        $query = "";
+        if($link != "") {
+            $query = "INSERT INTO news (Tipo, Titolo, Testo, Link) VALUES ('$type', '$title', '$text', '$link')";
+        }else{
+            $query = "INSERT INTO news (Tipo, Titolo, Testo) VALUES ('$type', '$title', '$text')";
+        }
+
+        return $this-> connection-> query($query);
     }
 }
 

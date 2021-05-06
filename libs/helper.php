@@ -4,14 +4,7 @@ require_once 'DBaccess.php';
 require_once __DIR__ . "/../vendor/autoload.php";
 use \Gobie\Regex\Wrappers\Pcre\PcreRegex;
 
-function handleClosureOfQuery(string $data, bool $withoutDouble): string{
-
-    $pos = $withoutDouble ? strpos($data, "'") : strpos($data, '"');
-    $data = substr($data, 0, $pos);
-
-    return $data;
-}
-
+//check if type is one of the existent types
 function validateType(string $type): bool{
 
     $DBaccess = new DBAccess();
@@ -81,11 +74,6 @@ function cleanInput(string $data, bool $testForMail =false): string{
 
     $closing = PcreRegex::match($testForPrematureClosureOfQuery, $data);
     $closingDouble = PcreRegex::match($testForPrematureClosureOfQueryDouble, $data);
-
-    if($closing || $closingDouble){
-
-        $data = handleClosureOfQuery($data, $closing);
-    }
 
     return $data;
 }

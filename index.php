@@ -9,7 +9,7 @@ require_once "vendor/autoload.php";
 session_start();
 
 $parser = new Parser();
-//var_dump($_SESSION);
+
 $parser-> addRoute('login', function(string $data){
 
     return $data;
@@ -65,10 +65,10 @@ $parser-> addRoute('adminPanel', function (string $data){
     'title' => 'Pannello amministratore - La Palestra',
     'id' => 'content',
     'redirect' => urlencode("/?".http_build_query($_GET)),
-    'Errortitle' => ($_GET['eti'] ?? "") != "error",
-    'Errorlink' => ($_GET['el'] ?? "" ) != "error",
-    'Errortext' => ($_GET['ete'] ?? "") != "error",
-    'Errortyoe' => ($_GET['ety'] ?? "") != "error"
+    'errortitle' => ($_GET['eti'] ?? "") == "error",
+    'errorlink' => ($_GET['eli'] ?? "" ) == "error",
+    'errortext' => ($_GET['ete'] ?? "") == "error",
+    'errortyoe' => ($_GET['ety'] ?? "") == "error"
 ));
 
 $parser-> addRoute('split', function (string $data){

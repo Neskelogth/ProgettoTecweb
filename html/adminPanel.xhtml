@@ -110,8 +110,6 @@
     <p>Si prega di inserire, per motivi di accessibilità, le parole in inglese aggiungendo un
         doppio simbolo percentuale (%%)  sia prima che dopo la parola in questione</p>
 
-    <form action = "" onsubmit = "return validateNewNews()">
-
         <ifErrortypePlaceholder />
 
         <p class = "rosso">Qualcosa è andato storto con il tipo, si prega di riselezionarlo</p>
@@ -147,18 +145,55 @@
 
         <label for="newsTitle" id="newsLinkLabel">Inserisci il link della fonte della news</label>
         <input type = "text" id = "newsLink"></input>
-        <input type = "submit" value = "Aggiungi"/>
+        <input type = "button" onclick = "sendNews()" value = "Aggiungi"/>
 
-    </form>
-
-    <p class="addNewsError nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+    <!--<p class="addNewsError nascosto"></p>  METTERE DISPLAY:NONE -->
 
 </div>
 
 
 
 
-<div id="addRecipe"> Aggiungi ricetta</div>
+<div id="addRecipe">
+    <h2>Aggiungi ricetta</h2>
+
+    <p>Si prega di inserire, per motivi di accessibilità, le parole in inglese aggiungendo un
+        doppio simbolo percentuale (%%)  sia prima che dopo la parola in questione</p>
+
+    <label for="recipeTitle" id="recipeTitleLabel">Inserisci il nome della ricetta</label>
+    <input type="text" id="recipeTitle" maxlength="60"></input>
+
+    <label for="recipeDescription" id="recipeDescriptionLabel">Inserisci una breve descrizione della ricetta</label>
+    <input type="text" id="recipeDescription" maxlength="100"></input>
+
+    <label for="recipeImage" id="recipeImageLabel">Inserisci il nome dell'immagine della ricetta (incluso il formato).
+        Ricorda di mettere l'immagine nell'apposita cartella img perchè funzioni</label>
+    <input type="text" id="recipeImage" maxlength="25"></input>
+
+    <label for="recipeAlt" id="recipeAltLabel">Inserisci un testo alternativo da visualuzzare nel caso in cui l'immagine
+        non sia disponibile</label>
+    <input type="text" id="recipeAlt" maxlength="25"></input>
+
+    <label for="recipeIngredients" id="recipeIngredientsLabel">Inserisci gli ingredienti della ricetta.
+        Separare i diversi ingredienti andando a capo</label>
+    <textarea rows="15" cols="85" id="recipeIngredients"></textarea>
+
+    <label for="recipeMethod" id="recipeMethodLabel">Inserisci il procedimento per preparare la ricetta.
+        Separare i diversi passi andando a capo</label>
+    <textarea rows="15" cols="85" id="recipeMethod"></textarea>
+
+    <label for="recipeHint" id="recipeHintLabel">Inserisci eventuali consigli per la preparazione.
+        Separare i diversi consigli andando a capo</label>
+    <textarea rows="15" cols="85" id="recipeHint"></textarea>
+
+    <label for="recipePeople" id="recipePeopleLabel">Inserisci il numero di persone per cui sono le dosi della ricetta.
+        Ricorda di aggiungere la parola persone (o fette nel caso di un dolce) alla fine</label>
+    <input type="text" id="recipePeople" maxlength="25"></input>
+
+    <input type="button" value="Aggiungi ricetta" onclick="sendRecipe()"/>
+
+
+</div>
 
 <div id="revokeBan"> Revoca ban</div>
 <div id= "banUserFromForum"> Banna utente dal Forum</div>
