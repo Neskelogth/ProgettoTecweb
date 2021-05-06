@@ -40,6 +40,7 @@ body{
 #header h1{
 
     color: rgb(0, 174, 239);
+	margin-left: .5em;
 }
 
 #header p{
@@ -499,22 +500,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 /* Workout */
 
-.contenutoBroSplit{
-	padding-top:1em;
-}
-
-.contenutoPPL{
-	padding-top:1em;
-}
-
-.contenutoUpperLower{
-	padding-top:1em;
-}
-
-.contenutoFullBody{
-	padding-top:1em;
-}
-
 .contenutoWorkout{
 	min-height:50vh;
 }
@@ -525,8 +510,17 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 .contenutoWorkout p{
-	padding-bottom: 2em;
+	padding-bottom: .5em;
+	margin-top:0.5em;
+	margin-left: .5em;
 }
+
+.contenutoWorkout img{
+	margin-top:1em;
+	margin-bottom:1em;
+}
+
+
 
 #splitsMenu{
 	margin-top: 0.5em;
@@ -540,11 +534,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	margin-left: 1em;
 	padding-right: 6em;
 	padding-left: 0.5em;
-}
-
-.contenutoWorkout p{
-	margin-top:0.5em;
-	margin-bottom:0.5em;
 }
 
 #workoutTitle{
@@ -562,8 +551,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	margin-left: 2em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
 
 }
 
@@ -612,10 +599,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 /*Bro Split*/
-.contenutoBroSplit p{
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-}
+
 
 #arnold{
 	width: 100%;
@@ -623,10 +607,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 /*Push-Pull-Legs*/
 
-.contenutoPPL p{
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-}
 
 #pplImg{
 	width: 100%;
@@ -637,10 +617,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 /*UpperLower*/
 
-.contenutoUpperLower p{
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-}
 
 #upperlower{
 	width: 100%;
@@ -649,12 +625,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 /*FullBody*/
-
-.contenutoFullBody p{
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-
-}
 
 #fullbody{
 	width: 70%;
@@ -671,7 +641,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	padding-left: 0.25em;
 	background-color:rgb(135, 206, 235);
 	margin-right: -2em;
-	text-align: left;
+	text-align: center;
 	border: 4px solid rgba(25, 25, 112);
 }
 
