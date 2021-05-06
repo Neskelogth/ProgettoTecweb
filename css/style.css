@@ -405,18 +405,38 @@ body{
 	font-size: 100%;
 	font-weight: bold;
 }
+
+.commenti button{
+	margin-left: 2.5em;
+	padding: 1em;
+	background-color:rgb(135, 206, 235);
+	border: 4px solid rgba(25, 25, 112);
+}
+
+
+
+.post textarea {
+	background-color:rgb(239, 250, 255);
+	border: 4px solid rgba(25, 25, 112);
+	margin-left: 1em;
+	margin-top: 1em;
+	margin-bottom: .5em;
+}
+
 .commenti{
 	margin-left: 0.5em;
 }
+
+
 .commenti textarea{
 	width: 90%;
 	/*height: 100%;*/
 	display:block;
-	margin-left: 2.4em;
-	margin-right: 2.4em;
-	padding-top: 0.5em;
-	padding-left: 0.7em;
 	resize: none;
+	margin-left: 2.5em;
+	padding: 1em;
+	background-color:rgb(239, 250, 255);
+	border: 4px solid rgba(25, 25, 112);
 }
 
 .commenti fieldset{
@@ -428,6 +448,7 @@ body{
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 	padding-top: 1em;
+	margin-left: 2.5em;
 	padding-bottom: 1em;
 }
 .post h2{
@@ -440,15 +461,20 @@ body{
 	margin-top: -1.5em;
 	margin-bottom: 0.3em;
 }
+/*
 .post button{
-	padding: 0.3em 0.3em 0.3em 0.3em;
-	font-weight: bold;
+	
+	
 }
-
+*/
 .miPiaceButton, .leaveAnswer{
 	display: inline-block;
 	margin-top: 0.5em;
 	margin-bottom: 0.7em;
+	border: 2px solid rgba(25, 25, 112);
+	background-color: rgb(135, 206, 235); 
+	padding: 0.3em 0.3em 0.3em 0.3em;
+	font-weight: bold;
 }
 
 .likeBicipite{
@@ -471,6 +497,10 @@ body{
 	display: block;
 	margin-left: 2.4em;
 	margin-bottom: 0.5em;
+}
+
+.answer{
+	
 }
 
 /*.comm{
@@ -640,6 +670,9 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	margin: auto;
 }
 
+#content button:hover{
+	opacity: 0.8;
+}
 
 
 #content h1{
@@ -829,8 +862,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	border: 4px solid rgba(25, 25, 112);
 }
 */
-
-
 
 
 
@@ -1066,19 +1097,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 		width: 90%;
 	}
 
-	.commenti{
-
-		margin: 0em;
-		padding: 0em;
-	}
-
-	.commenti textarea{
-
-		margin: auto;
-		margin-bottom: .5em;
-		padding: 0em;
-		width: 90%;
-	}
 
 	.post h2{
 		margin-bottom: 1.5em;
