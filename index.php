@@ -68,7 +68,7 @@ $parser-> addRoute('adminPanel', function (string $data){
     'errortitle' => ($_GET['eti'] ?? "") == "error",
     'errorlink' => ($_GET['eli'] ?? "" ) == "error",
     'errortext' => ($_GET['ete'] ?? "") == "error",
-    'errortyoe' => ($_GET['ety'] ?? "") == "error",
+    'errortype' => ($_GET['ety'] ?? "") == "error",
     'errorrecipetitle' => ($_GET['ert'] ?? "") == 'error',
     'errorrecipedecr' => ($_GET['erd'] ?? "") == 'error',
     'errorrecipeimage' => ($_GET['erd'] ?? "") == 'error',
