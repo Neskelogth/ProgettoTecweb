@@ -45,7 +45,8 @@
 
     <button onclick="promote()">Promuovi utente</button>
 
-    <p id="errorMessage" class="rosso nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+    <p id="errorMessage" class="rosso nascosto">
+        L'utente non è stato promosso a causa di un errore. Si prega di riprovare.</p> <!-- METTERE DISPLAY:NONE -->
 
 </div>
 <!--
@@ -74,7 +75,8 @@
 
     <button onclick="deleteRecipe()">Elimina ricetta</button>
 
-    <p id="deleteRecipeError" class="rosso nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+    <p id="deleteRecipeError" class="rosso nascosto">
+        La ricetta non è stata rimossa a causa di un errore. Si prega di riprovare.</p> <!-- METTERE DISPLAY:NONE -->
 
 </div>
 
@@ -86,7 +88,8 @@
 
     <button onclick="deleteNews()">Elimina news</button>
 
-    <p id="deleteNewsError" class="rosso nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+    <p id="deleteNewsError" class="rosso nascosto">
+        La news non è stata rimossa a causa di un errore. Si prega di riprovare.</p> <!-- METTERE DISPLAY:NONE -->
 
 </div>
 
@@ -160,23 +163,45 @@
     <p>Si prega di inserire, per motivi di accessibilità, le parole in inglese aggiungendo un
         doppio simbolo percentuale (%%)  sia prima che dopo la parola in questione</p>
 
+    <ifErrorrecipetitlePlaceholder />
+    <p class = "rosso">Il nome della ricetta non può essere vuoto</p>
+    <endIfPlaceholder />
+
     <label for="recipeTitle" id="recipeTitleLabel">Inserisci il nome della ricetta</label>
     <input type="text" id="recipeTitle" maxlength="60"></input>
 
+    <ifErrorrecipedescrPlaceholder />
+    <p class = "rosso">La descrizione della ricetta non può essere vuota</p>
+    <endIfPlaceholder />
+
     <label for="recipeDescription" id="recipeDescriptionLabel">Inserisci una breve descrizione della ricetta</label>
     <input type="text" id="recipeDescription" maxlength="100"></input>
+
+    <ifErrorrecipeimagePlaceholder />
+    <p class = "rosso">Il campo con il nome dell'immagine non può essere vuoto</p>
+    <endIfPlaceholder />
 
     <label for="recipeImage" id="recipeImageLabel">Inserisci il nome dell'immagine della ricetta (incluso il formato).
         Ricorda di mettere l'immagine nell'apposita cartella img perchè funzioni</label>
     <input type="text" id="recipeImage" maxlength="25"></input>
 
+
     <label for="recipeAlt" id="recipeAltLabel">Inserisci un testo alternativo da visualuzzare nel caso in cui l'immagine
         non sia disponibile</label>
     <input type="text" id="recipeAlt" maxlength="25"></input>
 
+    <ifErrorrecipeingredientsPlaceholder />
+    <p class = "rosso">Gli ingredienti della ricetta non possono essere vuoti</p>
+    <endIfPlaceholder />
+
+
     <label for="recipeIngredients" id="recipeIngredientsLabel">Inserisci gli ingredienti della ricetta.
         Separare i diversi ingredienti andando a capo</label>
     <textarea rows="15" cols="85" id="recipeIngredients"></textarea>
+
+    <ifErrorrecipemethodPlaceholder />
+    <p class = "rosso">Il procedimento per la realizzazione della ricetta non può essere vuoto</p>
+    <endIfPlaceholder />
 
     <label for="recipeMethod" id="recipeMethodLabel">Inserisci il procedimento per preparare la ricetta.
         Separare i diversi passi andando a capo</label>
@@ -185,6 +210,11 @@
     <label for="recipeHint" id="recipeHintLabel">Inserisci eventuali consigli per la preparazione.
         Separare i diversi consigli andando a capo</label>
     <textarea rows="15" cols="85" id="recipeHint"></textarea>
+
+    <ifErrorrecipepeoplePlaceholder />
+    <p class = "rosso">Il numero di persone non può essere vuoto</p>
+    <endIfPlaceholder />
+
 
     <label for="recipePeople" id="recipePeopleLabel">Inserisci il numero di persone per cui sono le dosi della ricetta.
         Ricorda di aggiungere la parola persone (o fette nel caso di un dolce) alla fine</label>
@@ -195,9 +225,29 @@
 
 </div>
 
-<div id="revokeBan"> Revoca ban</div>
-<div id= "banUserFromForum"> Banna utente dal Forum</div>
-<div id= "banUserFromSite"> Banna dal Sito</div>
+<div id="revokeBan">
+    <h2>Revoca ban</h2>
+
+    <select id="banned"></select>
+
+    <p id="errorBanMessage">
+        L'utente non è stato bannato a causa di un errore, si prega di riprovare.</p>
+
+    <input type="button" value="Sbanna utente" onclick="unbanUser()"/>
+</div>
+
+<div id= "banUserFromForum">
+
+    <h2>Banna utente dal Forum</h2>
+
+    <select id="notBanned"></select>
+
+    <p id="errorUnbanMessage">
+        L'utente non è stato sbannato a causa di un errore, si prega di riprovare.</p>
+
+    <input type="button" value="Banna utente" onclick="banUser()"/>
+
+</div>
 
 <!--
 <div id= "removeAccount">

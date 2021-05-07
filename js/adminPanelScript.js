@@ -7,6 +7,8 @@ function loadElements(){
     const newsTypesSelect = document.getElementById("type");
     const textArea = document.getElementById("postText");
     const postSelect = document.getElementById("post");
+    const banSelect = document.getElementById("notBanned");
+    const unbanSelect = document.getElementById("banned");
 
     select.innerHTML = "";
     //secondSelect.innerHTML = "";
@@ -15,6 +17,8 @@ function loadElements(){
     postSelect.innerHTML = "";
     textArea.innerHTML = "";
     newsTypesSelect.innerHTML = "";
+    banSelect.innerHTML = "";
+    unbanSelect.innerHTML = "";
 
     //working
     fetch('/api/userGetter.php')
@@ -36,6 +40,13 @@ function loadElements(){
 
                     secondSelect.appendChild(option);
                 }*/
+                if(element.banned){
+
+                    unbanSelect.appendChild(option);
+                }else{
+
+                    banSelect.appendChild(option);
+                }
 
             });
         });
@@ -124,8 +135,7 @@ function promote(){
 
             if(!json.ok){
 
-                const el = document.getElementById("errorMessage").setAttribute("display", "block");
-                el.innerHTML = "L'utente non è stato promosso a causa di un errore. Si prega di riprovare.";
+                const el = document.getElementById("errorMessage").classList.remove("nascosto");
             }
             loadElements();
         });
@@ -170,7 +180,6 @@ function deleteRecipe(){
 
                 const el = document.getElementById("deleteRecipeError");
                 el.classList.remove("nascosto");
-                el.innerHTML = "La ricetta non è stata rimossa a causa di un errore. Si prega di riprovare.";
             }
             loadElements();
         })
@@ -193,7 +202,6 @@ function deleteNews(){
 
                 const el = document.getElementById("deleteNewsError");
                 el.classList.remove("nascosto");
-                el.innerHTML = "La news non è stata rimossa a causa di un errore. Si prega di riprovare.";
             }
             loadElements();
         })
@@ -267,6 +275,7 @@ function deletePost(){
         });
 }
 
+//tested
 function sendRecipe(){
 
     fetch('/api/recipeSender.php', {
@@ -281,10 +290,56 @@ function sendRecipe(){
             ingredients: document.getElementById("recipeIngredients").value,
             method: document.getElementById("recipeMethod").value,
             hints: document.getElementById("recipeHint").value,
-            people: document.getElementById("recipepeople").value,
-
+            people: document.getElementById("recipePeople").value
         })
     })
+        .then(response => response.json())
+        .then(json => {
+
+            window.location.replace(json.red);
+        })
+}
+
+function banUser(){
+
+    const userToBan = document.getElementById("notBanned").value;
+
+    fetch('/api/banUser.php', {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify({
+            user: userToBan
+        })
+        .then(response => response.json())
+        .then(json => {
+
+            if(!json.ok){
+
+                const el = document.getElementById("errorBanMessage").classList.remove("nascosto");
+            }
+        })
+    });
+}
+
+function unbanUser(){
+
+    const userToUnban = document.getElementById("banned").value;
+
+    fetch('/api/unbanUser.php', {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify({
+            user: userToBan
+        })
+            .then(response => response.json())
+            .then(json => {
+
+                if(!json.ok){
+
+                    const el = document.getElementById("errorUnbanMessage").classList.remove("nascosto");
+                }
+            })
+    });
 }
 
 //working

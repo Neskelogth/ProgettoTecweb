@@ -222,12 +222,12 @@ body{
 	font-size: 1.1em;
 }
 
-#ingredients ul, #method ul{
+#ingredients ul, #method ul, #hint ul{
 
 	padding-left: .9em;
 }
 
-#ingredients li, #method li{
+#ingredients li, #method li, #hint li{
 
 	padding-top: .1em;
 }

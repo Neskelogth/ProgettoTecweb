@@ -22,16 +22,39 @@ function validateLink(string $link): bool{
     return filter_var($link, FILTER_VALIDATE_URL);
 }
 
-function validateTitle(string $title): bool{
+function validateText(string $text, array $options =null): bool{
 
-    return strlen($title) > 0 && strlen($title) < 50;
-}
+    if($options['checkForFormat'] ?? false){
 
-function validateText(string $text): bool{
+        $pos = strpos($text, '.');
+        if($pos == false || $pos == strlen($text) - 1){
+
+            return false;
+        }
+    }
+
+    if($options['checkOnlyName'] ?? false){
+
+        if(!strpos($text, '/')){
+
+            return false;
+        }
+    }
 
     return strlen($text) > 0;
 }
 
+function cleanFromTags(string $text): string{
+
+    $prev = '';
+    while($prev != $text){
+
+        $prev = $text;
+        $text = strip_tags($text);
+    }
+    return $text;
+}
+/*
 function cleanInput(string $data, bool $testForMail =false): string{
 
     $sanitazable = true;
@@ -77,3 +100,4 @@ function cleanInput(string $data, bool $testForMail =false): string{
 
     return $data;
 }
+*/

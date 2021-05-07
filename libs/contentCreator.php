@@ -65,6 +65,21 @@ function createSingleRecipeContent(string $data, string $id): string{
         }
 
         $hintPresent = $contentArray['Consigli'] != "Nessun consiglio.";
+        $hintList = "";
+
+        if($hintPresent){
+            $tmpHintArray = explode("\n", $contentArray['Consigli']);
+            //var_dump($tmpHintArray);
+
+            foreach($tmpHintArray as $hint){
+                var_dump($hint);
+                if(!empty($hint)){
+
+                    $hintList .= $renderer-> renderFile('alimentation/singleHint',
+                        array('hint' => $hint));
+                }
+            }
+        }
 
         $recipe = $renderer->renderFile('alimentation/singleRecipeTemplate', array(
             'recipename' => $contentArray['Nome'],
@@ -74,7 +89,7 @@ function createSingleRecipeContent(string $data, string $id): string{
             'number' => $contentArray['Persone'],
             'method' => $methodList,
             'hintpresent' => $hintPresent,
-            'hints' => $contentArray['Consigli']
+            'hints' => $hintList
 
         ));
 

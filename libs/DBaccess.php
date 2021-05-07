@@ -153,7 +153,7 @@ class DBaccess{
 
     public function getUserData(string $userName): array{
 
-        $querySelect = "SELECT IDUtente, Nome, Cognome, Email, Amministratore FROM utente WHERE IDUtente = '" . base64_encode($userName) ."'";
+        $querySelect = "SELECT IDUtente, Nome, Cognome, Email, Amministratore, Bannato FROM utente WHERE IDUtente = '" . base64_encode($userName) ."'";
         $queryResult = $this-> connection-> query($querySelect);
 
         $row = $queryResult-> fetch_assoc();
@@ -163,7 +163,8 @@ class DBaccess{
             'Nome' => base64_decode($row['Nome']),
             'Cognome' => base64_decode($row['Cognome']),
             'Email' => base64_decode($row['Email']),
-            'Admin' => $row['Amministratore'] == 1
+            'Admin' => $row['Amministratore'] == 1,
+            'Bannato' => $row['Bannato'] == 1
         );
         
     }
@@ -175,11 +176,9 @@ class DBaccess{
         $surname = base64_encode($surname);
         $mail = base64_encode($mail);
 
-        $query = "INSERT INTO utente VALUES('$username','$mail', '$name', '$surname', '$hashedPassword', 0);";
+        $query = "INSERT INTO utente VALUES('$username','$mail', '$name', '$surname', '$hashedPassword', 0, 0);";
 
         $queryResult = $this-> connection-> query($query);
-
-        var_dump($queryResult);
 
         return $queryResult !== false;
     }
@@ -308,7 +307,7 @@ class DBaccess{
 
     public function getUserList(){
 
-        $query = "SELECT IDUtente, Amministratore FROM  utente";
+        $query = "SELECT IDUtente, Amministratore, Bannato FROM  utente";
 
         $result = $this-> connection-> query($query);
 
@@ -326,7 +325,8 @@ class DBaccess{
             $user = array(
 
                 'username' => base64_decode($element['IDUtente']),
-                'admin' => $element['Amministratore'] == 1
+                'admin' => $element['Amministratore'] == 1,
+                'banned' => $element['Bannato'] == 1
             );
 
             array_push($userList, $user);
@@ -442,9 +442,6 @@ class DBaccess{
         $types = str_replace("'", "", $types);
         $typesList = explode(",", $types);
 
-        //(?i)enum\(('\w+',)+('\w+')\)
-
-
         return $typesList;
     }
 
@@ -508,7 +505,6 @@ class DBaccess{
 
         $title = base64_encode($title);
         $text = base64_encode($text);
-        //$link = base64_encode($link)
 
         $query = "";
         if($link != "") {
@@ -518,6 +514,46 @@ class DBaccess{
         }
 
         return $this-> connection-> query($query);
+    }
+
+    public function insertRecipe($name, $description, $link, $alt, $ingredients, $method, $hints, $people): bool{
+
+        $name = base64_encode($name);
+        $description = base64_encode($description);
+        $alt = base64_encode($alt);
+        $ingredients = base64_encode($ingredients);
+        $method = base64_encode($method);
+        $hints = base64_encode($hints);
+        $people = base64_encode($people);
+        /*
+         *
+         * INSERT INTO alimentazione (Nome, Descrizione, NomeImmagine, AltImmagine, Ingredienti, Procedimento, Consigli, Persone)
+         *      VALUES('$name', '$description', '$link', '$alt', '$ingredients', '$method', '$hints', '$people')
+         *
+         * */
+        $query = "INSERT INTO alimentazione (Nome, Descrizione, NomeImmagine, AltImmagine, Ingredienti, Procedimento, Consigli, Persone) VALUES('$name', '$description', '$link', '$alt', '$ingredients', '$method', '$hints', '$people')";
+
+        return $this-> connection-> query($query);
+    }
+
+    public function banUser(string $user): bool{
+
+        $user = base64_encode($user);
+
+        $query = "UPDATE utente SET Bannato=1 WHERE IDUtente='$user'";
+
+        return $this-> connection-> query($query);
+
+    }
+
+    public function unbanUser(string $user): bool{
+
+        $user = base64_encode($user);
+
+        $query = "UPDATE utente SET Bannato=0 WHERE IDUtente='$user'";
+
+        return $this-> connection-> query($query);
+
     }
 }
 

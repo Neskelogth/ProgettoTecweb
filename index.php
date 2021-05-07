@@ -9,7 +9,7 @@ require_once "vendor/autoload.php";
 session_start();
 
 $parser = new Parser();
-
+//var_dump($_SESSION);
 $parser-> addRoute('login', function(string $data){
 
     return $data;
@@ -68,7 +68,15 @@ $parser-> addRoute('adminPanel', function (string $data){
     'errortitle' => ($_GET['eti'] ?? "") == "error",
     'errorlink' => ($_GET['eli'] ?? "" ) == "error",
     'errortext' => ($_GET['ete'] ?? "") == "error",
-    'errortyoe' => ($_GET['ety'] ?? "") == "error"
+    'errortyoe' => ($_GET['ety'] ?? "") == "error",
+    'errorrecipetitle' => ($_GET['ert'] ?? "") == 'error',
+    'errorrecipedecr' => ($_GET['erd'] ?? "") == 'error',
+    'errorrecipeimage' => ($_GET['erd'] ?? "") == 'error',
+    'errorrecipeingredients' => ($_GET['eri'] ?? "") == 'error',
+    'errorrecipemethod' => ($_GET['erm'] ?? "") == 'error',
+    'errorrecipepeople' => ($_GET['erp'] ?? "") == 'error',
+    'errorrecipehint' => ($_GET['erh'] ?? "") == 'error',
+    'errorrecipealt' => ($_GET['era'] ?? "") == 'error'
 ));
 
 $parser-> addRoute('split', function (string $data){
@@ -123,7 +131,9 @@ $parser-> addRoute('forum', function (string $data){
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/?".http_build_query($_GET)),
-    'admin' => $_SESSION['admin'] ?? false
+    'admin' => $_SESSION['admin'] ?? false,
+    'banned' => $_SESSION['banned'] ?? false,
+    'loggednotBanned' => ($_SESSION['username'] ?? false) && !($_SESSION['banned'] ?? false)
 ));
 
 $parser-> addRoute('news', function (string $data){

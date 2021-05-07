@@ -22,7 +22,9 @@ if($existingUsername && $correctPasswordForUser){
 
     $_SESSION['username'] = $userData['IDUtente'];
     $_SESSION['admin'] = $userData['Admin'];
+    $_SESSION['banned'] = $userData['Bannato'];
 }
+
 $DBaccess->closeConnection();
 
 $toRedirect = urldecode($_POST['redirect'] ?? urlencode('/?r=home'));

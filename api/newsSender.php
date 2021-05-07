@@ -12,15 +12,14 @@ $response = array();
 //Stream standard
 $input = json_decode(file_get_contents("php://input"), true);
 
-$type = $input['type'];
-$title = $input['title'];
-$text = $input['text'];
+$type = cleanFromTags($input['type']);
+$title = cleanFromTags($input['title']);
+$text = cleanFromTags($input['text']);
 $link = $input['link'] ?? "";
 
 
-
 $validLink = true;
-$validTitle = validateTitle($title);
+$validTitle = validateText($title);
 if($link != ""){
     $validLink = validateLink($link);
 }
