@@ -47,6 +47,10 @@ input[type=button]:hover{
 	opacity: 0.8;
 }
 
+a:hover{
+	opacity: 0.8;
+}
+
 
 #logo{
 	display:block;
@@ -64,6 +68,16 @@ input[type=button]:hover{
 #header p{
 	text-align: right;
 	padding-right: .5em;
+	margin-bottom: .5em;;
+}
+
+#header a{
+	border: 2px solid rgb(0, 174, 239);
+	padding: .2em;
+}
+
+#header a:hover{
+	opacity: 0.8;
 }
 
 #breadcrumb, #recipeBreadcrumb, #workoutBreadcrumb{
@@ -101,6 +115,11 @@ input[type=button]:hover{
 
 	color: rgb(0, 174, 239);
 	text-decoration: none;
+}
+
+#menu ul a:hover{
+
+	opacity: 0.8;
 }
 /*
 #currentLink{
@@ -507,6 +526,7 @@ input[type=button]:hover{
 	max-height: 3em;
 	max-width: 90%;
 	margin: auto;
+	background-color: transparent;
 }
 
 .miPiaceButton {
@@ -1219,6 +1239,9 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 /*LOGIN/SIGNUP di ogni pagina*/
+
+
+
 
 #loginandsignup{
 	margin-left: 56em;
