@@ -30,6 +30,24 @@ body{
 	font-family: "Arial", "Helvetica" ,sans-serif;
 }
 
+button{
+	padding: .2em;
+	background-color:rgb(135, 206, 235);
+	border: 4px solid rgba(25, 25, 112);
+}
+
+input[type=button]{
+	padding: .2em;
+	background-color:rgb(135, 206, 235);
+	border: 4px solid rgba(25, 25, 112);
+
+}
+
+input[type=button]:hover{
+	opacity: 0.8;
+}
+
+
 #logo{
 	display:block;
 	margin-left:auto;
@@ -393,7 +411,7 @@ body{
 	margin-left: 4em;
 }
 
-.contentForum h2{
+.contentForum h3{
 	margin-left: 8em;
 	padding-top: 0.5em;
 	padding-bottom: 1em;
@@ -451,14 +469,15 @@ body{
 	margin-left: 2.5em;
 	padding-bottom: 1em;
 }
-.post h2{
-	margin-left: 13em;
+.post h3{
+	margin-top:.5em;
+	margin-left: 15em;
 }
 .post label{
 	font-weight: bold;
 	display:block;
 	margin-left: 2em;
-	margin-top: -1.5em;
+	margin-top: 0em;
 	margin-bottom: 0.3em;
 }
 /*
@@ -467,6 +486,11 @@ body{
 	
 }
 */
+
+.leaveAnswer{
+	margin-left: 0em;
+ }
+
 .miPiaceButton, .leaveAnswer{
 	display: inline-block;
 	margin-top: 0.5em;
@@ -477,15 +501,17 @@ body{
 	font-weight: bold;
 }
 
+
 .likeBicipite{
 	height: 10%;
 	max-height: 3em;
 	max-width: 90%;
 	margin: auto;
+	background-color: transparent;
 }
 
 .miPiaceButton {
-	margin-left: 2.4em;
+	margin-left: 1em;
 	margin-right: 0.5em;
 }
 
@@ -494,13 +520,29 @@ body{
 }
 
 .othersComment{
-	display: block;
+	
 	margin-left: 2.4em;
 	margin-bottom: 0.5em;
 }
 
 .answer{
-	
+	display:inline-block;
+	margin-top: 1em;
+}
+
+.answer p{
+
+	margin-left:1em;
+	font-weight: bold;
+
+}
+
+.answer textarea{
+	margin-left: 7em;
+}
+
+.text{
+	margin-top: 9em;
 }
 
 /*.comm{
@@ -696,173 +738,135 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 
+
+
+
+
+/* Pannello amministratore*/
+
 #promotion{
 	margin-bottom: 1em;
 }
 
-/*
 #promotion h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
+	margin-bottom: 1em;
 }
-*/
+
+#promotion p{
+	margin-bottom:.5em;
+}
+
 #deleteRecipe{
 	margin-bottom: 1em;
 }
-/*
+
 #deleteRecipe h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
-
-}
-*/
-#deleteNews{
 	margin-bottom: 1em;
 }
-/*
+
+#deleteNews {
+	margin-bottom: 1em;
+}
+
 #deleteNews h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
+	margin-bottom: 1em;
+}
 
-}
-*/
-#addNews{
-	margin-bottom: 1em;
-}
-/*
-#addNews h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
-
-}
-*/
-#removeAccount{
-	margin-bottom: 1em;
-}
-/*
-#removeAccount h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
-}
-*/
-#addRecipe{
-	margin-bottom: 1em;
-}
-/*
-#addRecipe h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
-}
-*/
 #deletePost{
 	margin-bottom: 1em;
 }
-/*
+
 #deletePost h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
+	margin-bottom: 1em;
 }
-*/
+
+#deletePost select{
+	margin-bottom: 1em;
+}
+
+#deletePost textarea{
+	margin-bottom: 1em;
+	border: 3px solid rgba(25, 25, 112);
+}
+
+#addNews{
+	margin-bottom: 1em;
+}
+
+#addNews h2{
+	margin-bottom: 1em;
+}
+
+#addNews p{
+	margin-bottom: 1em;
+}
+
+#newsTypeLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#type{
+	display: block;
+	margin-bottom: 1em;
+}
+
+#newsTitleLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#newsTitle{
+	display: block;
+	margin-bottom: 1em;
+}
+
+#newsTextLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#newsText{
+	border: 3px solid rgba(25, 25, 112);
+	display: block;
+	margin-bottom: 1em;
+}
+
+#newsLinkLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#newsLink{
+	display: block;
+	margin-bottom: .5em;
+}
+
+
+#removeAccount{
+	margin-bottom: 1em;
+}
+
+#addRecipe{
+	margin-bottom: 1em;
+}
+
+
+
 #revokeBan{
 	margin-bottom: 1em;
 }
-/*
-#revokeBan h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
-}
-*/
+
+
+
 
 #banUserFromForum{
 	margin-bottom: 1em;
 }
-/*
-#banUserFromForum h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
-}
 
-*/
 #banUserFromSite{
 	margin-bottom: 1em;
 }
-/*
-#banUserFromSite h2{
-	width: 14em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: left;
-	border: 4px solid rgba(25, 25, 112);
-}
-*/
-
 
 
 

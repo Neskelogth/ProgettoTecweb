@@ -47,10 +47,10 @@ function getComments(){
                             form.appendChild(fieldset);
                             return form;
                         })(
-                            ((h2, label, textarea, button, risposta, button1, containerRisposte)=> {
+                            ((h3, label, textarea, button, risposta, button1, containerRisposte)=> {
 
                                 let fieldset = document.createElement("fieldset");
-                                fieldset.appendChild(h2);
+                                fieldset.appendChild(h3);
                                 fieldset.appendChild(label);
                                 fieldset.appendChild(textarea);
                                 fieldset.appendChild(button);
@@ -62,9 +62,9 @@ function getComments(){
                             })(
                                 (()=>{
 
-                                    let h2 = document.createElement("h2");
-                                    h2.innerText = res[commentIndex].IDUtente;
-                                    return h2;
+                                    let h3 = document.createElement("h3");
+                                    h3.innerText = res[commentIndex].IDUtente;
+                                    return h3;
                                 })(),
                                 (()=>{
 
@@ -151,7 +151,7 @@ function getComments(){
 
                                         document.getElementById("answer_post" + res[commentIndex].IDPost).style.display = "inline-block";
                                         let el = document.getElementsByClassName("leaveAnswer")[commentIndex];
-                                        el.style.marginLeft = "2.4em";
+                                        //el.style.marginLeft = "5em";
                                         el.innerText = "Invia Risposta";
                                         el.onclick = ()=>{
 
