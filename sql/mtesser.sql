@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Creato il: Apr 24, 2021 alle 13:40
+-- Creato il: Mag 08, 2021 alle 09:19
 -- Versione del server: 10.4.13-MariaDB
 -- Versione PHP: 7.3.21
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `alimentazione` (
   `Consigli` text NOT NULL,
   `Persone` varchar(30) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `alimentazione`
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `Testo` text NOT NULL,
   `Link` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=252 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `news`
@@ -96,12 +96,12 @@ CREATE TABLE IF NOT EXISTS `news` (
 
 INSERT INTO `news` (`ID`, `Tipo`, `Titolo`, `Testo`, `Link`) VALUES
 (12, 'Workout', 'YQ==', 'YQ==', 'https://en.wikipedia.org/wiki/92nd_Academy_Awards'),
-(235, 'Alimentazione', 'bQ==', 'bQ==', NULL),
 (236, 'Workout', 'aw==', 'aw==', 'https://mail.google.com/mail/u/1/#inbox'),
 (239, 'Alimentazione', 'YW5hdHJh', 'YW5hdHJh', 'https://en.wikipedia.org/wiki/Anatra'),
 (240, 'Workout', 'c3Nzcw==', 'c3Nzcw==', ''),
 (241, 'Sito', 'ZGRk', 'ZGRk', ''),
-(242, 'Alimentazione', 'bW9vZGxl', 'bW9vZGxl', 'https://elearning.unipd.it/math/course/index.php?categoryid=39');
+(242, 'Alimentazione', 'bW9vZGxl', 'bW9vZGxl', 'https://elearning.unipd.it/math/course/index.php?categoryid=39'),
+(251, 'Workout', 'ZWlvaWs=', 'c2RmZ2hqaw==', NULL);
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `Testo` text NOT NULL,
   PRIMARY KEY (`IDPost`),
   KEY `IDUtente` (`IDUtente`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `post`
@@ -142,15 +142,14 @@ CREATE TABLE IF NOT EXISTS `risposta` (
   PRIMARY KEY (`IDRisposta`),
   KEY `IDPost` (`IDPost`),
   KEY `IDutente` (`IDutente`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `risposta`
 --
 
 INSERT INTO `risposta` (`IDRisposta`, `IDutente`, `Testo`, `IDPost`) VALUES
-(1, 'U2FtdWVsSw==', 'Q2lhb29vVGkgY29uc2lnbGlvIGRpIG1ldHRlcmUgcHJpbWEgbCdhbGJ1bWUgZSBsYSBmYXJpbmEgZSBkb3BvIGFnZ2l1bmdlcmUgYW5jaGUgaWwgcmVzdG8gZGVnbGkgaW5ncmVkaWVudGkhRmFjY2kgc2FwZXJlIWNpYW9vbyA6KQ==', 1),
-(4, 'Q2lhbw==', 'ZGZnaGprbMOy', 1);
+(1, 'U2FtdWVsSw==', 'Q2lhb29vVGkgY29uc2lnbGlvIGRpIG1ldHRlcmUgcHJpbWEgbCdhbGJ1bWUgZSBsYSBmYXJpbmEgZSBkb3BvIGFnZ2l1bmdlcmUgYW5jaGUgaWwgcmVzdG8gZGVnbGkgaW5ncmVkaWVudGkhRmFjY2kgc2FwZXJlIWNpYW9vbyA6KQ==', 1);
 
 -- --------------------------------------------------------
 
@@ -166,6 +165,7 @@ CREATE TABLE IF NOT EXISTS `utente` (
   `Email` varchar(150) NOT NULL,
   `Password` text NOT NULL,
   `Amministratore` tinyint(1) NOT NULL,
+  `Bannato` tinyint(1) NOT NULL,
   PRIMARY KEY (`IDUtente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -173,12 +173,12 @@ CREATE TABLE IF NOT EXISTS `utente` (
 -- Dump dei dati per la tabella `utente`
 --
 
-INSERT INTO `utente` (`IDUtente`, `Nome`, `Cognome`, `Email`, `Password`, `Amministratore`) VALUES
-('Q2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'a0c299b71a9e59d5ebb07917e70601a3570aa103e99a7bb65a58e780ec9077b1902d1dedb31b1457beda595fe4d71d779b6ca9cad476266cc07590e31d84b206', 0),
-('RW1tYVJvdmVyb25p', 'RW1tYQ==', 'Um92ZXJvbmk=', 'RW1tYVJvdmVAZ21haWwuY29t', '4c805fb46914992490f05b904e30b2a3840ad5dd48336b21addd503474866a11ab2ce1147f4b1c51de3d35bcd28a55c09054b7953887c66e014fddba9cdb2944', 1),
-('TWFyY29Eag==', 'TWFyY28=', 'VWRlcnpv', 'TWFyY29VZEBnbWFpbC5jb20=', '11c724908c020116ef6776ee0c627f7d8df5bc9caf4face309f0486ed7e6205c404a8b2c4548753787a917edd8b5e63c136557ee047c3fad859aecdc15c58dfa', 0),
-('TWFyY29UZXNzZXI=', 'TWFyY28=', 'VGVzc2Vy', 'TWFyY29UOVRAZ21haWwuY29t', '7350746c2106c01ec4b85b75fc5d9e9d32e1103667bd11fe45b5d983a8ba12bf7a6d2f14ec6a92de176cdfe90bb4bc6e9efcd5ea37316af5d3b52033172bc041', 1),
-('U2FtdWVsSw==', 'U2FtdWVs', 'S29zdGFkaW5vdg==', 'ZGVyS29zdGFAZ21haWwuY29t', '3330e27b41e71af747cb6bde4ac8078d4d7339f30309fe4578263f1a750cb68168d5f1fc8c2e275d338e7bbf9520a8c5f9019eb8ac3e93e3a5b4012599df7f56', 0);
+INSERT INTO `utente` (`IDUtente`, `Nome`, `Cognome`, `Email`, `Password`, `Amministratore`, `Bannato`) VALUES
+('Q2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'a0c299b71a9e59d5ebb07917e70601a3570aa103e99a7bb65a58e780ec9077b1902d1dedb31b1457beda595fe4d71d779b6ca9cad476266cc07590e31d84b206', 1, 0),
+('RW1tYVJvdmVyb25p', 'RW1tYQ==', 'Um92ZXJvbmk=', 'RW1tYVJvdmVAZ21haWwuY29t', '4c805fb46914992490f05b904e30b2a3840ad5dd48336b21addd503474866a11ab2ce1147f4b1c51de3d35bcd28a55c09054b7953887c66e014fddba9cdb2944', 1, 0),
+('TWFyY29Eag==', 'TWFyY28=', 'VWRlcnpv', 'TWFyY29VZEBnbWFpbC5jb20=', '11c724908c020116ef6776ee0c627f7d8df5bc9caf4face309f0486ed7e6205c404a8b2c4548753787a917edd8b5e63c136557ee047c3fad859aecdc15c58dfa', 1, 0),
+('TWFyY29UZXNzZXI=', 'TWFyY28=', 'VGVzc2Vy', 'TWFyY29UOVRAZ21haWwuY29t', '7350746c2106c01ec4b85b75fc5d9e9d32e1103667bd11fe45b5d983a8ba12bf7a6d2f14ec6a92de176cdfe90bb4bc6e9efcd5ea37316af5d3b52033172bc041', 1, 0),
+('U2FtdWVsSw==', 'U2FtdWVs', 'S29zdGFkaW5vdg==', 'ZGVyS29zdGFAZ21haWwuY29t', '3330e27b41e71af747cb6bde4ac8078d4d7339f30309fe4578263f1a750cb68168d5f1fc8c2e275d338e7bbf9520a8c5f9019eb8ac3e93e3a5b4012599df7f56', 0, 0);
 
 --
 -- Limiti per le tabelle scaricate

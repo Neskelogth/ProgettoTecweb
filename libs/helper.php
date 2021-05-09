@@ -54,7 +54,7 @@ function cleanFromTags(string $text): string{
     }
     return $text;
 }
-/*
+
 function cleanInput(string $data, bool $testForMail =false): string{
 
     $sanitazable = true;
@@ -100,4 +100,3 @@ function cleanInput(string $data, bool $testForMail =false): string{
 
     return $data;
 }
-*/
