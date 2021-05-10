@@ -17,7 +17,11 @@ $parser-> addRoute('login', function(string $data){
     'title' => 'Login - La Palestra',
     'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
     'admin' => $_SESSION['admin'] ?? false,
-    'id' => 'content'
+    'id' => 'content',
+    'errorusernamenonvalido' => ($_GET['eusnv'] ?? "") == "error",
+    'errorpasswordnonvalido' => ($_GET['epanv'] ?? "") == "error",
+    'errorusernamenonesistente' => ($_GET['eusne'] ?? "") == "error",
+    'errorpasswordnonesistente' => ($_GET['epane'] ?? "") == "error"
 ));
 
 $parser-> addRoute('logout', function(string $data){

@@ -5,28 +5,86 @@ require_once __DIR__ . "/../libs/helper.php";
 
 session_start();
 
+$response = array();
 
+//$input = json_decode(file_get_contents("php://input"), true);
 
-$DBaccess = new DBaccess();
 
 $userName = $_POST['username'];
 $password = $_POST['password'];
 
+$validuserName = validateText($userName);
+$validpassword = validateText($password);
 
-$existingUsername = ($DBaccess->getConnection() !== false) ? $DBaccess->getUsernameQuery($userName) : false;
-$correctPasswordForUser = ($DBaccess->getConnection() !== false) ? $DBaccess->getCorrectPasswordQuery($userName, hash("sha512", $password)) : false;
 
-if($existingUsername && $correctPasswordForUser){
+if ($validuserName && $validpassword){
 
-    $userData = $DBaccess->getUserData($userName);
+    $DBaccess = new DBaccess();
 
-    $_SESSION['username'] = $userData['IDUtente'];
-    $_SESSION['admin'] = $userData['Admin'];
-    $_SESSION['banned'] = $userData['Bannato'];
+    $existingUsername = ($DBaccess->getConnection() !== false) ? $DBaccess->getUsernameQuery($userName) : false;
+    $correctPasswordForUser = ($DBaccess->getConnection() !== false) ? $DBaccess->getCorrectPasswordQuery($userName, hash("sha512", $password)) : false;
+
+
+    if($existingUsername && $correctPasswordForUser){
+
+        $response['ok'] = true;
+        $userData = $DBaccess->getUserData($userName);
+    
+        $_SESSION['username'] = $userData['IDUtente'];
+        $_SESSION['admin'] = $userData['Admin'];
+        $_SESSION['banned'] = $userData['Bannato'];
+        
+        $response['red'] = '/?r=home';
+
+    }else{
+    
+        $elements = array(
+            'r' => 'login'
+        );
+
+        if(!$existingUsername){
+
+            $elements['eusne'] = 'error';
+        }
+
+        if(!$existingPassword){
+            
+            $elements['epane'] = 'error';
+        }
+
+        $response['ok']= false;
+        $redirect = '/?' . http_build_query($elements);
+        $response['red'] = $redirect;
+                
+    }
+    $DBaccess->closeConnection(); 
+
+}else{
+
+    $response['ok']= false;
+
+    $elements = array(
+        'r' => 'login'
+    );
+
+    if(!$validuserName){
+
+        $elements['eusnv'] = 'error';
+    }
+    if(!$validpassword){
+
+        $elements['epanv'] = 'error';
+    }
+    
+    $redirect = '/?' . http_build_query($elements);
+
+    $response['red'] = $redirect;
 }
 
-$DBaccess->closeConnection();
 
-$toRedirect = urldecode($_POST['redirect'] ?? urlencode('/?r=home'));
+
+
+$toRedirect = $response['red'];
+
 
 header("location: $toRedirect");

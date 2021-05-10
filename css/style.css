@@ -43,7 +43,36 @@ input[type=button]{
 
 }
 
+input[type=password]{
+	margin-bottom: 1em;
+	border: 3px solid rgba(25, 25, 112);
+
+}
+
+input{
+	margin-bottom: 1em;
+	border: 3px solid rgba(25, 25, 112);
+
+}
+
 input[type=button]:hover{
+	opacity: 0.8;
+}
+
+select{
+	margin-bottom: 1em;
+	border: 3px solid rgba(25, 25, 112);
+	padding: .2 em;
+}
+
+input[type=text]{
+	margin-bottom: 1em;
+	border: 3px solid rgba(25, 25, 112);
+	padding: .2 em;
+}
+
+
+a:hover{
 	opacity: 0.8;
 }
 
@@ -64,6 +93,16 @@ input[type=button]:hover{
 #header p{
 	text-align: right;
 	padding-right: .5em;
+	margin-bottom: .5em;;
+}
+
+#header a{
+	border: 2px solid rgb(0, 174, 239);
+	padding: .2em;
+}
+
+#header a:hover{
+	opacity: 0.8;
 }
 
 #breadcrumb, #recipeBreadcrumb, #workoutBreadcrumb{
@@ -85,7 +124,7 @@ input[type=button]:hover{
 #menu{
 
     float: left;
-	width: 5%;
+	width: 19%;
 }
 
 #menu ul{
@@ -102,6 +141,11 @@ input[type=button]:hover{
 	color: rgb(0, 174, 239);
 	text-decoration: none;
 }
+
+#menu ul a:hover{
+
+	opacity: 0.8;
+}
 /*
 #currentLink{
 	padding-left: .3em;
@@ -109,13 +153,12 @@ input[type=button]:hover{
 */
 
 #content{
-    margin-left: 17%;
-	width: 70%;
-	/*display:inline-block;*/
+    margin-left: 20%;
+	/*width: 70%;*/
 	border-left: 2px solid rgb(0, 0, 0);   
 	padding-left: 0.7em;
-	margin-bottom:2em;
-	margin-top: 1em; /* funziona solo con inline-block */
+	padding-right: 0.7em;
+	margin-top: 1em;
 	min-height: 65em;
 
 }
@@ -315,7 +358,6 @@ input[type=button]:hover{
 
 .news{
 	margin-bottom: 1em;
-	margin-right: -4em;
 	list-style-type: none;
 }
 .news a {
@@ -439,6 +481,7 @@ input[type=button]:hover{
 	margin-left: 1em;
 	margin-top: 1em;
 	margin-bottom: .5em;
+	display: block;
 }
 
 .commenti{
@@ -466,7 +509,6 @@ input[type=button]:hover{
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 	padding-top: 1em;
-	margin-left: 2.5em;
 	padding-bottom: 1em;
 }
 .post h3{
@@ -589,8 +631,8 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 .contenutoWorkout p{
-	padding-bottom: .5em;
-	margin-top:0.5em;
+	padding-bottom: 1em;
+	margin-top:1em;
 	margin-left: .5em;
 }
 
@@ -708,8 +750,10 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 #fullbody{
 	width: 70%;
-	display: block;
+	display: flex;
 	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 #content button:hover{
@@ -723,7 +767,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	padding-top: 0.25em;
 	padding-left: 0.25em;
 	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
 	text-align: center;
 	border: 4px solid rgba(25, 25, 112);
 }
@@ -851,22 +894,228 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	margin-bottom: 1em;
 }
 
+#addRecipe h2{
+	margin-bottom: 1em;
+}
+
+#addRecipe p{
+	margin-bottom: .5em;
+}
+
+
+
+#recipeTitleLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeTitle{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeDescriptionLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeDescription{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeImageLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+
+#recipeImage{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeAltLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeAlt{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeIngredientsLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeIngredients{
+	display: block;
+	margin-bottom: .5em;
+	border: 3px solid rgba(25, 25, 112);
+}
+
+#recipeMethodLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeMethod{
+	display: block;
+	margin-bottom: .5em;
+	border: 3px solid rgba(25, 25, 112);
+}
+
+#recipeHintLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipeHint{
+	display: block;
+	margin-bottom: .5em;
+	border: 3px solid rgba(25, 25, 112);
+}
+
+#recipePeopleLabel{
+	display: block;
+	margin-bottom: .5em;
+}
+
+#recipePeople{
+	display: block;
+	margin-bottom: .5em;
+}
+
 
 
 #revokeBan{
 	margin-bottom: 1em;
 }
 
+#revokeBan h2{
+	margin-bottom: 1em;
+}
 
+#revokeBan select{
+	margin-bottom: 1em;
+}
 
+#errorBanMessage{
+	margin-bottom: 1em;
+}
 
 #banUserFromForum{
 	margin-bottom: 1em;
 }
 
-#banUserFromSite{
+#banUserFromForum h2{
 	margin-bottom: 1em;
 }
+
+#notBanned{
+	margin-bottom: 1em;
+}
+
+#errorUnbanMessage{
+	margin-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -960,6 +1209,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 		margin: 0em;
 		margin-top: 1.5em;
 		padding: 0em;
+		min-height: 20em;
 	}
 
 	#chisiamo p{
@@ -1096,12 +1346,13 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 		text-align: center;
 	}
 
+	/*
 	#post0{
 
 		width: 90%;
 	}
 
-
+*/
 	.post h2{
 		margin-bottom: 1.5em;
 		text-align: center;
@@ -1221,6 +1472,9 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 /*LOGIN/SIGNUP di ogni pagina*/
 
+
+
+
 #loginandsignup{
 	margin-left: 56em;
 	margin-right: 0;
@@ -1232,9 +1486,17 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	text-decoration: none;
 }
 
+
 #notLoggedIn p{
 	margin-top: 1em;
 	margin-bottom: 3em;
+}
+
+#usernameInputArea{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	
 }
 
 /*INIZIO LOGIN*/
@@ -1253,6 +1515,24 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	min-height: 40vh;
 }
 
+#notLoggedIn input[type=text]{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#notLoggedIn input[type=password]{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+#notLoggedIn input[type=submit]{
+	padding: .2em;
+	background-color:rgb(255, 255, 255);
+	border: 4px solid rgba(25, 25, 112);
+}
 
 #notLoggedIn textarea{
 	display:inline-block;
@@ -1289,10 +1569,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 #notLoggedIn fieldset{
 	border: 2px solid rgb(0, 0, 139);
 	background-color: rgb(135, 206, 235);
-	margin-left: 10em;
-	margin-right: 10em;
-	text-align: center;
-	width:70%;
+	width:100%;
 }
 
 #notLoggedIn h2{
@@ -1317,7 +1594,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 .contentSignUp{
-	text-align:center;
 	min-height: 60vh;
 }
 
@@ -1332,6 +1608,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	resize: none;
 	width:70%;
 }
+
 
 .signUpButton{
 	margin-top: 1.5em;
