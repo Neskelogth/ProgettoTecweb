@@ -1486,9 +1486,17 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	text-decoration: none;
 }
 
+
 #notLoggedIn p{
 	margin-top: 1em;
 	margin-bottom: 3em;
+}
+
+#usernameInputArea{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	
 }
 
 /*INIZIO LOGIN*/
@@ -1507,11 +1515,23 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	min-height: 40vh;
 }
 
+#notLoggedIn input[type=text]{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#notLoggedIn input[type=password]{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
 #notLoggedIn input[type=submit]{
 	padding: .2em;
 	background-color:rgb(255, 255, 255);
 	border: 4px solid rgba(25, 25, 112);
-
 }
 
 #notLoggedIn textarea{
@@ -1549,10 +1569,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 #notLoggedIn fieldset{
 	border: 2px solid rgb(0, 0, 139);
 	background-color: rgb(135, 206, 235);
-	margin-left: 10em;
-	margin-right: 10em;
-	text-align: center;
-	width:70%;
+	width:100%;
 }
 
 #notLoggedIn h2{
@@ -1577,7 +1594,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 .contentSignUp{
-	text-align:center;
 	min-height: 60vh;
 }
 
@@ -1592,6 +1608,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	resize: none;
 	width:70%;
 }
+
 
 .signUpButton{
 	margin-top: 1.5em;
