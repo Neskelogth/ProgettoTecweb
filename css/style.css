@@ -49,6 +49,12 @@ input[type=password]{
 
 }
 
+input{
+	margin-bottom: 1em;
+	border: 3px solid rgba(25, 25, 112);
+
+}
+
 input[type=button]:hover{
 	opacity: 0.8;
 }
@@ -118,7 +124,7 @@ a:hover{
 #menu{
 
     float: left;
-	width: 5%;
+	width: 19%;
 }
 
 #menu ul{
@@ -147,13 +153,12 @@ a:hover{
 */
 
 #content{
-    margin-left: 17%;
-	width: 70%;
-	/*display:inline-block;*/
+    margin-left: 20%;
+	/*width: 70%;*/
 	border-left: 2px solid rgb(0, 0, 0);   
 	padding-left: 0.7em;
-	margin-bottom:2em;
-	margin-top: 1em; /* funziona solo con inline-block */
+	padding-right: 0.7em;
+	margin-top: 1em;
 	min-height: 65em;
 
 }
@@ -353,7 +358,6 @@ a:hover{
 
 .news{
 	margin-bottom: 1em;
-	margin-right: -4em;
 	list-style-type: none;
 }
 .news a {
@@ -477,6 +481,7 @@ a:hover{
 	margin-left: 1em;
 	margin-top: 1em;
 	margin-bottom: .5em;
+	display: block;
 }
 
 .commenti{
@@ -504,7 +509,6 @@ a:hover{
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 	padding-top: 1em;
-	margin-left: 2.5em;
 	padding-bottom: 1em;
 }
 .post h3{
@@ -627,8 +631,8 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 .contenutoWorkout p{
-	padding-bottom: .5em;
-	margin-top:0.5em;
+	padding-bottom: 1em;
+	margin-top:1em;
 	margin-left: .5em;
 }
 
@@ -746,8 +750,10 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 #fullbody{
 	width: 70%;
-	display: block;
+	display: flex;
 	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 #content button:hover{
@@ -761,7 +767,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	padding-top: 0.25em;
 	padding-left: 0.25em;
 	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
 	text-align: center;
 	border: 4px solid rgba(25, 25, 112);
 }
@@ -1035,6 +1040,97 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 640px){
 
     /*INZIIO PARTE COMUNE*/
@@ -1113,6 +1209,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 		margin: 0em;
 		margin-top: 1.5em;
 		padding: 0em;
+		min-height: 20em;
 	}
 
 	#chisiamo p{
@@ -1249,12 +1346,13 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 		text-align: center;
 	}
 
+	/*
 	#post0{
 
 		width: 90%;
 	}
 
-
+*/
 	.post h2{
 		margin-bottom: 1.5em;
 		text-align: center;
