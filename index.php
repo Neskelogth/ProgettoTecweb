@@ -89,7 +89,9 @@ $parser-> addRoute('adminPanel', function (string $data){
     'errorrecipemethod' => ($_GET['erm'] ?? "") == 'error',
     'errorrecipepeople' => ($_GET['erp'] ?? "") == 'error',
     'errorrecipehint' => ($_GET['erh'] ?? "") == 'error',
-    'errorrecipealt' => ($_GET['era'] ?? "") == 'error'
+    'errorrecipealt' => ($_GET['era'] ?? "") == 'error',
+    'admin' => $_SESSION['admin'] ?? false,
+    'notadmin' => !($_SESSION['admin'] ?? false)
 ));
 
 $parser-> addRoute('split', function (string $data){

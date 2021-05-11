@@ -31,6 +31,18 @@
 
 <blockDefContentPlaceholder />
 
+<ifNotadminPlaceholder />
+
+<p>Solo un admin può accedere a questa pagina</p>
+
+<endIfPlaceholder />
+
+<ifAdminPlaceholder />
+
+<p>Sei un admin</p>
+
+<endIfPlaceholder />
+
 <h1>Pannello di controllo admin</h1>
 
 <div id = "promotion">
@@ -245,7 +257,7 @@
 
     <select id="banned"></select>
 
-    <p id="errorBanMessage">
+    <p id="errorBanMessage" class="rosso nascosto">
         L'utente non è stato bannato a causa di un errore, si prega di riprovare.</p>
 
     <input type="button" value="Sbanna utente" onclick="unbanUser()"/>
@@ -257,7 +269,7 @@
 
     <select id="notBanned"></select>
 
-    <p id="errorUnbanMessage">
+    <p id="errorUnbanMessage" class="rosso nascosto">
         L'utente non è stato sbannato a causa di un errore, si prega di riprovare.</p>
 
     <input type="button" value="Banna utente" onclick="banUser()"/>
@@ -268,11 +280,15 @@
 
 <h2>Rimuovi account</h2>
 
+<p>Quest'azione comporta l'eliminazione di tutti i post, like e di tutte le risposte dell'utente selezionato</p>
+
 <select id="remove"></select>
 
-<button onclick="deleteAccount()" id="removingAccount" value = "Rimouvi account">
+<input type="button" onclick="deleteAccount()" id="removingAccount" value = "Rimouvi account" />
+
+<p id="errorRemoveMessage" class="rosso nascosto">
+    L'utente non è stato eliminato a causa di un errore, si prega di riprovare.</p>
 
 </div>
-
 
 <blockEndPlaceholder />

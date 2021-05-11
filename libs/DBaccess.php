@@ -563,5 +563,23 @@ class DBaccess{
 
         return $this-> connection-> query($query);
     }
+
+    public function deleteUser($user){
+
+        $user = base64_encode($user);
+
+        $queryLikes = "DELETE FROM likes WHERE IDUtente = '$user'";
+        $queryAnswers = "DELETE FROM risposta WHERE IDUtente = '$user'";
+        $queryPosts = "DELETE FROM post WHERE IDUtente = '$user' ";
+        $queryUser = "DELETE FROM utente WHERE IDUtente = '$user'";
+
+        $resultLikes = $this-> connection-> query($queryLikes);
+        $resultAnswers = $this-> connection-> query($queryAnswers);
+        $resultPosts = $this-> connection-> query($queryPosts);
+        $resultUser = $this-> connection-> query($queryUser);
+
+        return $resultAnswers && $resultLikes && $resultPosts && $resultUser;
+    }
+
 }
 

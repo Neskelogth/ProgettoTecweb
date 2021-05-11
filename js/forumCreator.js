@@ -21,7 +21,6 @@ function getComments(){
             if(json.ok){
 
                 let res = json.result;
-                console.log(res);
                 let el = document.getElementById("commentsContainer");
 
                 if(res.length == 0) {

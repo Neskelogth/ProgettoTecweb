@@ -467,6 +467,7 @@ function findTextAndAnswer(){
 
 }
 
+//tested
 function deleteAnswer(){
 
     const idAnswer = document.getElementById("answer").value;
@@ -490,6 +491,31 @@ function deleteAnswer(){
                document.getElementById("deleteAnswerError").classList.add("nascosto");
             }
             loadElements();
+        });
+}
+
+function deleteAccount(){
+
+    fetch('/api/deleteAccount.php',{
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify({
+            user: document.getElementById("remove").value
+        })
+    })
+        .then(response => response.json())
+        .then(json => {
+
+            if(!json.ok){
+
+                document.getElementById("errorRemoveMessage").classList.remove("nascosto");
+            }else{
+
+                document.getElementById("errorRemoveMessage").classList.add("nascosto");
+            }
+
+            loadElements();
+
         });
 }
 
