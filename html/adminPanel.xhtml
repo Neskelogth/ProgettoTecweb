@@ -98,11 +98,26 @@
 
     <select id = "post" onchange = "findText() "></select>
 
-    <textarea readonly="readonly" rows="10" cols="85" id = "postText"></textarea>
+    <textarea readonly="readonly" rows="10" cols="90" id = "postText"></textarea>
 
     <button onclick="deletePost()">Elimina Post</button>
 
     <p id="deletePostError" class="rosso nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+
+</div>
+
+<div id="deleteAnswer">
+<h2>Elimina risposta</h2>
+
+<select id = "post1" onchange = "findTextAndAnswer()"></select>
+<textarea readonly="readonly" rows="10" cols="90" id = "postText1"></textarea>
+
+<select id = "answer" onchange="findAnswerText()"></select>
+<textarea readonly="readonly" rows="10" cols="90" id = "answerText1"></textarea>
+
+<button onclick="deleteAnswer()">Elimina risposta</button>
+
+<p id="deleteAnswerError" class="rosso nascosto"></p>
 
 </div>
 
@@ -138,7 +153,7 @@
         <endIfPlaceholder />
 
         <label for="newsTitle" id="newsTextLabel">Inserisci il testo della news</label>
-        <textarea rows="10" cols="85" id = "newsText" maxlength="50"></textarea>
+        <textarea rows="10" cols="90" id = "newsText" maxlength="50"></textarea>
 
         <ifErrorlinkPlaceholder />
 
@@ -197,7 +212,7 @@
 
     <label for="recipeIngredients" id="recipeIngredientsLabel">Inserisci gli ingredienti della ricetta.
         Separare i diversi ingredienti andando a capo</label>
-    <textarea rows="15" cols="85" id="recipeIngredients"></textarea>
+    <textarea rows="15" cols="90" id="recipeIngredients"></textarea>
 
     <ifErrorrecipemethodPlaceholder />
     <p class = "rosso">Il procedimento per la realizzazione della ricetta non può essere vuoto</p>
@@ -205,11 +220,11 @@
 
     <label for="recipeMethod" id="recipeMethodLabel">Inserisci il procedimento per preparare la ricetta.
         Separare i diversi passi andando a capo</label>
-    <textarea rows="15" cols="85" id="recipeMethod"></textarea>
+    <textarea rows="15" cols="90" id="recipeMethod"></textarea>
 
     <label for="recipeHint" id="recipeHintLabel">Inserisci eventuali consigli per la preparazione.
         Separare i diversi consigli andando a capo</label>
-    <textarea rows="15" cols="85" id="recipeHint"></textarea>
+    <textarea rows="15" cols="90" id="recipeHint"></textarea>
 
     <ifErrorrecipepeoplePlaceholder />
     <p class = "rosso">Il numero di persone non può essere vuoto</p>
