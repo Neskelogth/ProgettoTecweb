@@ -158,10 +158,16 @@ a:hover{
 	border-left: 2px solid rgb(0, 0, 0);   
 	padding-left: 0.7em;
 	padding-right: 0.7em;
-	margin-top: 1em;
+	/*margin-top: 1em;*/
 	min-height: 65em;
 
 }
+
+#content h1{
+
+	margin-top: 1em;
+}
+
 /* Inizio Home*/
 
 #contenthome{

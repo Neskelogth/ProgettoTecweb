@@ -34,12 +34,21 @@ function loadElements(){
 
                 let option = document.createElement("option");
                 let option2 = document.createElement("option");
+                let option3 = document.createElement("option");
                 option.setAttribute("value", element.username);
                 option2.setAttribute("value", element.username);
+                option3.setAttribute("value", element.username);
                 option.setAttribute("class", "userSelection");
                 option2.setAttribute("class", "userSelection");
+                option3.setAttribute("class", "userSelection");
                 option.innerHTML = element.username;
                 option2.innerHTML = element.username;
+                option3.innerHTML = element.username;
+
+                if(element.username != json.current){
+                    document.getElementById("remove").appendChild(option3);
+                }
+
 
                 if(!element.admin){
 
@@ -49,11 +58,15 @@ function loadElements(){
                     secondSelect.appendChild(option);
                 }*/
                 if(!element.banned){
+                    if(element.username != json.current){
 
-                    banSelect.appendChild(option2);
+                        banSelect.appendChild(option2);
+                    }
                 }else{
+                    if(element.username != json.current){
 
-                    unbanSelect.appendChild(option2);
+                        unbanSelect.appendChild(option2);
+                    }
                 }
 
             });
@@ -468,6 +481,7 @@ function deleteAnswer(){
         .then(response => response.json())
         .then(json => {
 
+            json.ok = false;
             if(!json.ok){
 
                 document.getElementById("deleteAnswerError").classList.remove("nascosto");

@@ -11,7 +11,7 @@ $result = $DBaccess-> getUserList() ?? array();
 
 $DBaccess->closeConnection();
 
-$response = array('ok'=> true, 'result' => array());
+$response = array('ok'=> true, 'result' => array(), 'current' => $_SESSION['username'] ?? "");
 
 foreach ($result as $item) {
 
