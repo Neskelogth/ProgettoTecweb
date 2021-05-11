@@ -2,7 +2,7 @@
 
 class DBaccess{
 
-    private const HOST_DB = "127.0.0.1";
+    private const HOST_DB = "127.0.0.1:3307";
     private const USERNAME = "mtesser";
     private const PASSWORD = "ikee4Doongaem7ju";
     private const DATABASE_NAME = "mtesser";
@@ -177,7 +177,7 @@ class DBaccess{
         $surname = base64_encode($surname);
         $mail = base64_encode($mail);
 
-        $query = "INSERT INTO utente VALUES('$username','$mail', '$name', '$surname', '$hashedPassword', 0, 0);";
+        $query = "INSERT INTO utente VALUES('$username', '$name', '$surname', '$mail', '$hashedPassword', 0, 0);";
 
         $queryResult = $this-> connection-> query($query);
 
