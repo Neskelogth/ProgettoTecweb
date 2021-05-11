@@ -53,6 +53,11 @@
                     <p class = "rosso">Questo username non esiste</p>
 
                 <endIfPlaceholder />
+                <ifErrorsqlinjectiontryPlaceholder />
+                
+                    <p class = "rosso">SQL injection try</p>
+
+                <endIfPlaceholder />
 
                 <label id="loginUsername" for="usernameInputArea">Inserisci il tuo %%Username%%</label>
                 <input id="usernameInputArea" rows="1" cols="17" name="username" ></input>

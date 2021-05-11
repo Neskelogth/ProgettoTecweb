@@ -21,7 +21,8 @@ $parser-> addRoute('login', function(string $data){
     'errorusernamenonvalido' => ($_GET['eusnv'] ?? "") == "error",
     'errorpasswordnonvalido' => ($_GET['epanv'] ?? "") == "error",
     'errorusernamenonesistente' => ($_GET['eusne'] ?? "") == "error",
-    'errorpasswordnonesistente' => ($_GET['epane'] ?? "") == "error"
+    'errorpasswordnonesistente' => ($_GET['epane'] ?? "") == "error",
+    'errorsqlinjectiontry' => ($_GET['sqlit'] ?? "") == "error"
 ));
 
 $parser-> addRoute('logout', function(string $data){
@@ -38,7 +39,15 @@ $parser-> addRoute('signup', function(string $data){
     'title' => 'Signup - La Palestra',
     'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
     'admin' => $_SESSION['admin'] ?? false,
-    'id' => 'content'
+    'id' => 'content',
+    'errorusernamenonvalido' => ($_GET['eusnv'] ?? "") == "error",
+    'errorusernameesistente' => ($_GET['euses'] ?? "") == "error",
+    'erroremailnonvalida' => ($_GET['eemnv'] ?? "") == "error",
+    'erroremailesistente' => ($_GET['eemes'] ?? "") == "error",
+    'errornomenonvalido' => ($_GET['enonv'] ?? "") == "error",
+    'errorcognomenonvalido' => ($_GET['econv'] ?? "") == "error",
+    'errorpasswordnonvalida' => ($_GET['epanv'] ?? "") == "error",
+    'errorpasswordnoncorrispondente' => ($_GET['epanc'] ?? "") == "error"
 ));
 
 $parser-> addRoute('home', function (string $data){

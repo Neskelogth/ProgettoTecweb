@@ -13,23 +13,25 @@ $response = array();
 $userName = $_POST['username'];
 $password = $_POST['password'];
 
-$validuserName = validateText($userName);
-$validpassword = validateText($password);
+$validuserName = validateCredentials($userName);
+$validpassword = validateCredentials($password);
+$sqlinjectiontry = sqlInjectionTry($userName);
 
 
-if ($validuserName && $validpassword){
+if($validuserName && $validpassword && !$sqlinjectiontry){
 
     $DBaccess = new DBaccess();
 
     $existingUsername = ($DBaccess->getConnection() !== false) ? $DBaccess->getUsernameQuery($userName) : false;
     $correctPasswordForUser = ($DBaccess->getConnection() !== false) ? $DBaccess->getCorrectPasswordQuery($userName, hash("sha512", $password)) : false;
 
-
     if($existingUsername && $correctPasswordForUser){
 
         $response['ok'] = true;
         $userData = $DBaccess->getUserData($userName);
-    
+        
+        
+
         $_SESSION['username'] = $userData['IDUtente'];
         $_SESSION['admin'] = $userData['Admin'];
         $_SESSION['banned'] = $userData['Bannato'];
@@ -55,9 +57,8 @@ if ($validuserName && $validpassword){
         $response['ok']= false;
         $redirect = '/?' . http_build_query($elements);
         $response['red'] = $redirect;
-                
+        $DBaccess->closeConnection();        
     }
-    $DBaccess->closeConnection(); 
 
 }else{
 
@@ -75,14 +76,14 @@ if ($validuserName && $validpassword){
 
         $elements['epanv'] = 'error';
     }
+    if($sqlinjectiontry){
+        $elements['sqlit'] = 'error';
+    }
     
     $redirect = '/?' . http_build_query($elements);
 
     $response['red'] = $redirect;
 }
-
-
-
 
 $toRedirect = $response['red'];
 

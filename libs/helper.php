@@ -100,3 +100,42 @@ function cleanInput(string $data, bool $testForMail =false): string{
 
     return $data;
 }
+
+
+
+
+
+function validateCredentials(string $text):bool{
+    return strlen($text) > 0;    
+}
+
+function sqlInjectionTry(string $text): bool{
+    if((strpos($text, '"') || strpos($text, "'")) != false){
+
+        return true;
+    }
+    return false;
+}
+
+function validateEmail(string $text):bool{
+    
+    $atPos = strpos($text, '@');
+    $dotPos = strrpos($text, '.');
+
+    if($atPos === false || $dotPos === false || $dotPos == (strlen($text) - 1)){
+
+        return false;
+
+    }else{
+
+        if(!filter_var($text, FILTER_VALIDATE_EMAIL) || ($dotPos - $atPos) < 3 || $atPos < 3){
+
+            $text = filter_var($text, FILTER_SANITIZE_EMAIL);
+            if(!filter_var($text, FILTER_VALIDATE_EMAIL)){
+
+                return false;
+            }
+        }
+    }
+    return true;
+}
