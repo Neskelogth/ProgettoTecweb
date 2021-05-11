@@ -29,10 +29,13 @@ function loadElements(){
             users.forEach((element) => {
 
                 let option = document.createElement("option");
+                let option2 = document.createElement("option");
                 option.setAttribute("value", element.username);
+                option2.setAttribute("value", element.username);
                 option.setAttribute("class", "userSelection");
+                option2.setAttribute("class", "userSelection");
                 option.innerHTML = element.username;
-                console.log(option);
+                option2.innerHTML = element.username;
 
                 if(!element.admin){
 
@@ -41,12 +44,12 @@ function loadElements(){
 
                     secondSelect.appendChild(option);
                 }*/
-                if(element.banned){
+                if(!element.banned){
 
-                    unbanSelect.appendChild(option);
+                    banSelect.appendChild(option2);
                 }else{
 
-                    banSelect.appendChild(option);
+                    unbanSelect.appendChild(option2);
                 }
 
             });
