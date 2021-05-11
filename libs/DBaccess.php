@@ -97,6 +97,7 @@ class DBaccess{
 
             $querySelect .= "WHERE tipo = '". ucfirst($type) ."'";
         }
+        $querySelect .= "ORDER BY ID DESC";
 
         $queryResult = $this->connection->query($querySelect);
 
@@ -554,6 +555,13 @@ class DBaccess{
 
         return $this-> connection-> query($query);
 
+    }
+
+    public function deleteAnswer(int $idAnswer){
+
+        $query = "DELETE FROM risposta WHERE IDRisposta = $idAnswer";
+
+        return $this-> connection-> query($query);
     }
 }
 

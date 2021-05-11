@@ -9,6 +9,8 @@ function loadElements(){
     const postSelect = document.getElementById("post");
     const banSelect = document.getElementById("notBanned");
     const unbanSelect = document.getElementById("banned");
+    const postSelect1 = document.getElementById("post1");
+    const postTextArea1 = document.getElementById("postText1");
 
     select.innerHTML = "";
     //secondSelect.innerHTML = "";
@@ -19,6 +21,8 @@ function loadElements(){
     newsTypesSelect.innerHTML = "";
     banSelect.innerHTML = "";
     unbanSelect.innerHTML = "";
+    postSelect1.innerHTML = "";
+    postTextArea1.innerHTML = "";
 
     //working
     fetch('/api/userGetter.php')
@@ -99,13 +103,20 @@ function loadElements(){
             posts.forEach((element) => {
 
                 const option = document.createElement("option");
+                const option2 = document.createElement("option");
                 option.setAttribute("value", element.id);
+                option2.setAttribute("value", element.id);
                 const firstPart = element.text.slice(0, 20);
                 option.innerHTML = (element.id + " - " + firstPart + "...");
+                option2.innerHTML = (element.id + " - " + firstPart + "...");
                 postSelect.appendChild(option);
+                postSelect1.appendChild(option2);
             });
 
-            textArea.innerHTML = posts[0].text;
+            const text = posts[0].text;
+            textArea.innerHTML = text;
+            postTextArea1.innerHTML = text;
+            findAnswers(posts[0].id);
 
         });
 
@@ -346,6 +357,126 @@ function unbanUser(){
                 }
                 loadElements();
             });
+}
+
+//tested
+function findAnswers(id){
+
+    const answerSelect = document.getElementById("answer");
+    answerSelect.innerHTML = "";
+
+    fetch("/api/answerGetter.php?IDPost=" + id)
+        .then(response => response.json())
+        .then(json => {
+
+            const answers = json.result;
+            const textArea = document.getElementById("answerText1");
+
+            if(answers.length > 0){
+
+                const answerSelect = document.getElementById("answer");
+                answers.forEach((element) => {
+
+                    const option = document.createElement("option");
+                    option.setAttribute("value", element.answerId);
+                    const string = element.answerId + " - " + element.Text.slice(0, 20);
+                    option.innerHTML = string;
+
+                    answerSelect.appendChild(option);
+                });
+
+                textArea.innerHTML = answers[0].Text;
+            }
+            else{
+
+                textArea.innerHTML = "Non ci sono risposte a questo post";
+            }
+
+        });
+}
+
+//tested
+function findAnswerText(){
+
+    const id = document.getElementById("post1").value;
+    const answerId = document.getElementById("answer").value;
+    const textArea = document.getElementById("answerText1");
+
+    console.log(answerId);
+
+    fetch('/api/answerGetter.php?IDPost=' + id)
+        .then(response => response.json())
+        .then(json => {
+
+            let answers = json.result;
+            let answer;
+
+            if(answers.length > 0){
+                answers.forEach((element) => {
+
+                    if(element.answerId == answerId){
+                        console.log(element);
+                        answer = element.Text;
+                    }
+                })
+                console.log(answer);
+                textArea.innerHTML = answer;
+            }else{
+
+                textArea.innerHTML = "Non ci sono risposte a questo post";
+            }
+
+        });
+}
+
+//tested
+function findTextAndAnswer(){
+
+    const idPost = document.getElementById("post1").value;
+    const textArea = document.getElementById("postText1");
+
+
+    fetch('/api/commentsGetter.php')
+        .then(response => response.json())
+        .then(json => {
+
+            const result = json.result;
+            result.forEach((element) => {
+
+                if(element.IDPost == idPost){
+
+                    textArea.innerHTML = element.Testo;
+                }
+            });
+
+            findAnswers(idPost);
+        });
+
+}
+
+function deleteAnswer(){
+
+    const idAnswer = document.getElementById("answer").value;
+
+    fetch('/api/deleteAnswer.php', {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: JSON.stringify({
+            answerId: idAnswer
+        })
+    })
+        .then(response => response.json())
+        .then(json => {
+
+            if(!json.ok){
+
+                document.getElementById("deleteAnswerError").classList.remove("nascosto");
+            }else{
+
+               document.getElementById("deleteAnswerError").classList.add("nascosto");
+            }
+            loadElements();
+        });
 }
 
 //working
