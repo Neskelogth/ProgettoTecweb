@@ -32,6 +32,7 @@ function loadElements(){
                 option.setAttribute("value", element.username);
                 option.setAttribute("class", "userSelection");
                 option.innerHTML = element.username;
+                console.log(option);
 
                 if(!element.admin){
 
@@ -303,6 +304,7 @@ function sendRecipe(){
 function banUser(){
 
     const userToBan = document.getElementById("notBanned").value;
+    console.log(userToBan)
 
     fetch('/api/banUser.php', {
         method: 'POST',
@@ -310,6 +312,7 @@ function banUser(){
         body: JSON.stringify({
             user: userToBan
         })
+    })
         .then(response => response.json())
         .then(json => {
 
@@ -317,8 +320,7 @@ function banUser(){
 
                 const el = document.getElementById("errorBanMessage").classList.remove("nascosto");
             }
-        })
-    });
+        });
 }
 
 function unbanUser(){
@@ -329,8 +331,9 @@ function unbanUser(){
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({
-            user: userToBan
+            user: userToUnban
         })
+    })
             .then(response => response.json())
             .then(json => {
 
@@ -338,8 +341,8 @@ function unbanUser(){
 
                     const el = document.getElementById("errorUnbanMessage").classList.remove("nascosto");
                 }
-            })
-    });
+                loadElements();
+            });
 }
 
 //working

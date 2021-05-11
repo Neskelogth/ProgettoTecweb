@@ -1,5 +1,7 @@
 <?php
 
+require_once "../libs/DBaccess.php";
+
 $input = json_decode(file_get_contents("php://input"), true);
 
 $user = $input['user'];
@@ -9,7 +11,7 @@ $DBaccess = new DBaccess();
 
 if($DBaccess-> getConnection()){
 
-    $response['ok'] = $DBaccess-> banUser();
+    $response['ok'] = $DBaccess-> banUser($user);
 }else{
 
     $response['ok'] = false;
