@@ -164,7 +164,7 @@ $parser-> addRoute('forum', function (string $data){
     'redirect' => urlencode("/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false,
     'banned' => $_SESSION['banned'] ?? false,
-    'loggednotBanned' => ($_SESSION['username'] ?? false) && !($_SESSION['banned'] ?? false)
+    'loggednotbanned' => ($_SESSION['username'] ?? false) && !($_SESSION['banned'] ?? false)
 ));
 
 $parser-> addRoute('news', function (string $data){
