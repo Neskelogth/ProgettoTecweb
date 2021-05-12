@@ -7,10 +7,10 @@ session_start();
 
 $response = array();
 
-$username = /*cleanInput(*/$_POST['username']/*)*/;
+$username = cleanInput($_POST['username']);
 $name = cleanInput($_POST['name']);
 $surname = cleanInput($_POST['surname']);
-$mail = /*cleanInput(*/$_POST['mail']/*, true)*/;
+$mail = cleanInput($_POST['mail'], true);
 $password = cleanInput($_POST['password']);
 $rePassword = cleanInput($_POST['rePassword']);
 $toRedirect = urldecode($_POST['redirect'] ?? urlencode('/?r=home'));
@@ -41,10 +41,24 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
 
             $_SESSION['username'] = $username;
             $SESSION['admin'] = false;
-            $response['red'] = $toRedirect;
-        }else{
 
-            $response['red'] = "/?r=signup";
+            $response['red'] = $toRedirect;
+            //$response['red'] = '/?r=home';
+
+        }else{
+            
+            $response['ok']= false;
+
+//            $response['red'] = "/?r=signup";
+
+            $elements = array(
+                'r' => 'signup'
+            );
+
+            $elements['edbfa'] = 'error';
+
+            $redirect = '/?' . http_build_query($elements);
+            $response['red'] = $redirect;
         }
 
     }else{

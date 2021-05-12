@@ -44,6 +44,11 @@
 
 <form method="POST" action = "api/signup.php">
     <fieldset>
+        <ifErrordatabasefailPlaceholder />
+                
+            <p class = "rosso">Il database non è raggiungibile</p>
+
+        <endIfPlaceholder />
         <ifErrorusernamenonvalidoPlaceholder />
                 
             <p class = "rosso">Lo username non è valido</p>

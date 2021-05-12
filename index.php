@@ -47,7 +47,8 @@ $parser-> addRoute('signup', function(string $data){
     'errornomenonvalido' => ($_GET['enonv'] ?? "") == "error",
     'errorcognomenonvalido' => ($_GET['econv'] ?? "") == "error",
     'errorpasswordnonvalida' => ($_GET['epanv'] ?? "") == "error",
-    'errorpasswordnoncorrispondente' => ($_GET['epanc'] ?? "") == "error"
+    'errorpasswordnoncorrispondente' => ($_GET['epanc'] ?? "") == "error",
+    'errordatabasefail' => ($_GET['edbfa'] ?? "") == "error"
 ));
 
 $parser-> addRoute('home', function (string $data){

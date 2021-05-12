@@ -30,51 +30,61 @@ body{
 	font-family: "Arial", "Helvetica" ,sans-serif;
 }
 
+
+/*PULSANTI GENERALI*/
+
 button{
 	padding: .2em;
 	background-color:rgb(135, 206, 235);
-	border: 4px solid rgba(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
+	border-radius: 6px;
 }
 
 input[type=button]{
 	padding: .2em;
 	background-color:rgb(135, 206, 235);
-	border: 4px solid rgba(25, 25, 112);
-
-}
-
-input[type=password]{
-	margin-bottom: 1em;
-	border: 3px solid rgba(25, 25, 112);
-
-}
-
-input{
-	margin-bottom: 1em;
-	border: 3px solid rgba(25, 25, 112);
-
+	border: 2px solid rgb(25, 25, 112);
+	border-radius: 6px;
 }
 
 input[type=button]:hover{
 	opacity: 0.8;
 }
 
+
+/*INPUT GENERALI*/
+
+
+
+input[type=password]{
+	margin-bottom: 1em;
+	border: 1px solid rgb(25, 25, 112);
+
+}
+
+input{
+	margin-bottom: 1em;
+	border: 1px solid rgb(25, 25, 112);
+
+}
+
 select{
 	margin-bottom: 1em;
-	border: 3px solid rgba(25, 25, 112);
+	border: 1px solid rgb(25, 25, 112);
 	padding: .2 em;
 }
 
 input[type=text]{
 	margin-bottom: 1em;
-	border: 3px solid rgba(25, 25, 112);
+	border: 1px solid rgb(25, 25, 112);
 	padding: .2 em;
 }
-
 
 a:hover{
 	opacity: 0.8;
 }
+
+
 
 
 #logo{
@@ -97,15 +107,19 @@ a:hover{
 }
 
 #header a{
-	border: 2px solid rgb(0, 174, 239);
+	border: 2px solid rgb(25, 25, 112);
+	background-color: rgb(135, 206, 235); 
+	color:rgb(0, 0, 0);
 	padding: .2em;
+	border-radius: 6px;
+	text-decoration: none;
 }
 
 #header a:hover{
 	opacity: 0.8;
 }
 
-#breadcrumb, #recipeBreadcrumb, #workoutBreadcrumb{
+#breadcrumb{
     background-color: rgb(0, 174, 239);
     color: white;
     font-weight: 600;
@@ -115,11 +129,12 @@ a:hover{
     /*margin-bottom: .3em;*/
 }
 
-#breadcrumb a, #recipeBreadcrumb a, #workoutBreadcrumb a{
+#breadcrumb a{
 
 	color: rgb(255, 255, 255);
 	text-decoration: none;
 }
+
 
 #menu{
 
@@ -146,11 +161,11 @@ a:hover{
 
 	opacity: 0.8;
 }
-/*
-#currentLink{
-	padding-left: .3em;
-}
-*/
+
+
+
+
+/*General Content div*/
 
 #content{
     margin-left: 20%;
@@ -160,13 +175,39 @@ a:hover{
 	padding-right: 0.7em;
 	/*margin-top: 1em;*/
 	min-height: 65em;
-
 }
+
+#content a{
+	color: rgb(0, 174, 239);
+	text-decoration: none;
+}
+
+#content button:hover{
+	opacity: 0.8;
+}
+
 
 #content h1{
-
 	margin-top: 1em;
+	margin-bottom: 2em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 0.25em;
+	background-color:rgb(135, 206, 235);
+	text-align: center;
+	border: 4px solid rgb(25, 25, 112);
 }
+
+
+#content h2{
+	background-color: rgb(0, 174, 239);  
+	color: rgb(255, 255, 255);
+	padding: .3em;
+	padding-left: .5em;
+	border: 3px solid rgb(25, 25, 112);
+}
+
+/*Fine General Content div*/
 
 /* Inizio Home*/
 
@@ -182,13 +223,16 @@ a:hover{
     padding-top: 1em;
     padding-left: 2em;
 }
+
+
 /* Fine Home*/
 
-/* Inizio Pagina generale delle ricette*/
 
-.contentalimentazione {
-	padding-top: 1em;
-}
+
+
+
+
+/* Inizio Pagina generale delle ricette*/
 
 .recipeImage{
 	width: 50%;
@@ -204,7 +248,7 @@ a:hover{
 	color: rgb(255, 255, 255);
 	padding: .3em;
 	padding-left: .5em;
-	border: 3px solid rgba(25, 25, 112);
+	border: 3px solid rgb(25, 25, 112);
 	
 }
 
@@ -216,7 +260,7 @@ a:hover{
 
 .recipeAd{
 
-	border: 2px solid rgba(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
 	border-top: none;
 	margin-bottom: .5em;
 }
@@ -310,35 +354,17 @@ a:hover{
 
 /* Fine Pagina generale delle ricette*/
 
-/* Inizio News*/
-/*
-#titolonews{
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
-	margin-right: -2em;
-	text-align: center;
-	border: 4px solid rgba(25, 25, 112);
-}
 
-*/
 
-/* ?????
-#sottotitolonews{
-	padding-bottom: 0.5em;
-	background-color:  rgba(0, 174, 239 , 0.85);
-	border: 3px solid rgba(25, 25, 112);
-	padding-left: 0.5em;
-	padding-top: 0.25em;
-	
-}*/
+
+
+
+/*Inizio News*/
 
 .sottotitolonews{
 	padding-bottom: 0.5em;
 	background-color:  rgba(0, 174, 239 , 0.85);
-	border: 3px solid rgba(25, 25, 112);
+	border: 3px solid rgb(25, 25, 112);
 	padding-left: 0.5em;
 	padding-top: 0.25em;
 	
@@ -348,18 +374,18 @@ a:hover{
 	padding-left: 0.5em;
 	padding-top: 0.25em;
 	padding-bottom: 0.25em;
-	border-bottom: 2px solid rgba(25, 25, 112);
-	border-left: 3px solid rgba(25, 25, 112);
-	border-right: 3px solid rgba(25, 25, 112);
+	border-bottom: 2px solid rgb(25, 25, 112);
+	border-left: 3px solid rgb(25, 25, 112);
+	border-right: 3px solid rgb(25, 25, 112);
 }
 
 .minititolonews{
 	padding-left: 0.5em;
 	padding-top: 0.25em;
 	padding-bottom: 0.25em;
-	border-bottom: 2px solid rgba(25, 25, 112);
-	border-left: 3px solid rgba(25, 25, 112);
-	border-right: 3px solid rgba(25, 25, 112);
+	border-bottom: 2px solid rgb(25, 25, 112);
+	border-left: 3px solid rgb(25, 25, 112);
+	border-right: 3px solid rgb(25, 25, 112);
 }
 
 .news{
@@ -372,28 +398,20 @@ a:hover{
 .news p {
 	padding-top: 0.25em;
 	padding-left: 0.5em;
-	border-left: 3px solid rgba(25, 25, 112);
-	border-right: 3px solid rgba(25, 25, 112);
+	border-left: 3px solid rgb(25, 25, 112);
+	border-right: 3px solid rgb(25, 25, 112);
 	padding-bottom: 0.25em;
 }
 .testonotizia {
-	border-bottom: 3px solid rgba(25, 25, 112);
+	border-bottom: 3px solid rgb(25, 25, 112);
 	padding-bottom: 0.25em;
 }
 
 .redirectcompleto {
-	border-bottom: 3px solid rgba(25, 25, 112);
+	border-bottom: 3px solid rgb(25, 25, 112);
 }
 
 
-
-.contentnews{
-	padding-right: 6em;
-	min-height: 77vh;
-}
-.contentnews a {
-	color: rgb(0, 174, 239);
-}
 #navnews{
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -409,25 +427,13 @@ a:hover{
 #navnews li a {
 	text-decoration: none;
 }
-.contentinserimentonews{
-	padding-top: 1em;
-	padding-left: 2em;
-}
 
 #forminsertnews fieldset{
-		/*margin-top: 0.5em;
-		margin-bottom: 0.5em;
-		padding-bottom: 0.5em;
-		padding-top: 0.25em;
-		
-		background-color:rgb(135, 206, 235); 
-		margin-right: -2em;
-		text-align: center;*/
 		background-color: rgba(176,224,230,0.99);
 		padding-top: 1em;
 		padding-left: 1em;
 		padding-bottom: 1em;
-		border: 4px solid rgba(25, 25, 112);
+		border: 4px solid rgb(25, 25, 112);
 }
 
 #forminsertnews fieldset label {
@@ -446,24 +452,20 @@ a:hover{
 
 #buttonnews{
 	padding: 0.25em;
-	border: 2.25px solid rgba(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
 	font-size: medium;
 	font-weight: bold;
 }
 /* Fine News*/
 
+
+
+
+
+
+
 /*Inizio Forum*/
 
-.contentForum h1{
-	padding-top: 0.5em;
-	margin-left: 4em;
-}
-
-.contentForum h3{
-	margin-left: 8em;
-	padding-top: 0.5em;
-	padding-bottom: 1em;
-}
 .AccessButton{
 	margin-top: 1.5em;
 	margin-left: 17em;
@@ -476,18 +478,19 @@ a:hover{
 	margin-left: 2.5em;
 	padding: 1em;
 	background-color:rgb(135, 206, 235);
-	border: 4px solid rgba(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
 }
 
 
 
 .post textarea {
 	background-color:rgb(239, 250, 255);
-	border: 4px solid rgba(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
 	margin-left: 1em;
 	margin-top: 1em;
 	margin-bottom: .5em;
 	display: block;
+	resize: none;
 }
 
 .commenti{
@@ -503,11 +506,12 @@ a:hover{
 	margin-left: 2.5em;
 	padding: 1em;
 	background-color:rgb(239, 250, 255);
-	border: 4px solid rgba(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
+	resize: none;
 }
 
 .commenti fieldset{
-	border: 2px solid rgba(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
 	background-color: rgb(135, 206, 235); 
 }
 
@@ -528,12 +532,6 @@ a:hover{
 	margin-top: 0em;
 	margin-bottom: 0.3em;
 }
-/*
-.post button{
-	
-	
-}
-*/
 
 .leaveAnswer{
 	margin-left: 0em;
@@ -543,7 +541,7 @@ a:hover{
 	display: inline-block;
 	margin-top: 0.5em;
 	margin-bottom: 0.7em;
-	border: 2px solid rgba(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
 	background-color: rgb(135, 206, 235); 
 	padding: 0.3em 0.3em 0.3em 0.3em;
 	font-weight: bold;
@@ -587,19 +585,14 @@ a:hover{
 
 .answer textarea{
 	margin-left: 7em;
+	resize: none;
 }
 
-.text{
+textarea .text{
 	margin-top: 9em;
 }
 
-/*.comm{
-	margin-left: 1em;
-	padding: 0.3em 0.3em 0.3em 0.3em;
-	display: none;
-}*/
-
-#creazionePostL{
+#creazionePost{
 	font-weight: bold;
 	display:block;
 	margin-left: 2em;
@@ -617,36 +610,46 @@ a:hover{
 	padding-right: 0.5em;
 }
 
-
-/* MANCA SISTEMARE COUNT DEI MI PIACE (non so come fare)
-Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahahahahahaha Chi non salta interista è! è!Chi non salta interista è! è!*/ 
-
 /*Fine Forum*/
+
+
+
+
+
 
 /*Inizio parte Workout*/
 
 /* Workout */
 
-.contenutoWorkout{
-	min-height:50vh;
+
+#introToWS h2{
+	margin-bottom: 1em;
 }
 
-.contenutoWorkout a{
-	color: rgb(0, 174, 239);
-	text-decoration: none;
-}
-
-.contenutoWorkout p{
-	padding-bottom: 1em;
-	margin-top:1em;
+#introToWS p{
+	margin-bottom: 1em;
 	margin-left: .5em;
 }
 
-.contenutoWorkout img{
-	margin-top:1em;
-	margin-bottom:1em;
+
+#benefits h2{
+	margin-bottom: 1em;
 }
 
+#benefits p{
+	margin-bottom: 1em;
+	margin-left: .5em;
+}
+
+
+#whichSplit h2{
+	margin-bottom: 1em;
+}
+
+#whichSplit p{
+	margin-bottom: 1em;
+	margin-left: .5em;
+}
 
 
 #splitsMenu{
@@ -663,31 +666,53 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	padding-left: 0.5em;
 }
 
-/*
-#workoutTitle{
-	background-color: rgb(0, 174, 239);  
-	color: rgb(255, 255, 255);
-	padding: .3em;
-	padding-left: .5em;
-	border: 3px solid rgba(25, 25, 112);
+
+#whatis h2{
+	margin-bottom: 1em;
 }
-*/
-/* Comuni a tutte le pagine di split*/
 
+#whatis p{
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
 
-.splitMuscles ul{
+#whatis img{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#whatis ul{
 	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+	margin-bottom: 2em;
 	margin-left: 2em;
-
 }
+
+
+#why h2{
+	margin-bottom: 1em;
+}
+
+#why p{
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
+
+
+#example h2{
+	margin-bottom: 1em;
+}
+
+#example p{
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
+
 
 #splitTable{
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	padding-bottom: 0.5em;
 	padding-top: 0.25em;
-	padding-left: 1.25em;
 }
 
 #splitTable table{
@@ -696,7 +721,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 #splitTable td, th{
-		border: 1px solid rgba(25, 25, 112);
+		border: 1px solid rgb(25, 25, 112);
 }
 
 #splitTable td{
@@ -726,33 +751,29 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	width: 100%
 }
 
-/*Bro Split*/
 
+/*Immagini workout interne*/
 
 #arnold{
 	width: 100%;
 }
 
-/*Push-Pull-Legs*/
-
-
 #pplImg{
 	width: 100%;
 	display: block;
 	margin: auto;
+	margin-top: 2em;
+	margin-bottom: 1em;
+
 }
-
-
-/*UpperLower*/
-
 
 #upperlower{
 	width: 100%;
 	display: block;
 	margin: auto;
+	margin-top: 2em;
+	margin-bottom: 1em;
 }
-
-/*FullBody*/
 
 #fullbody{
 	width: 70%;
@@ -762,31 +783,65 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	margin-bottom: 1em;
 }
 
-#content button:hover{
-	opacity: 0.8;
+/*Fine parte workout*/
+
+
+
+
+/*LOGIN e SIGNUP*/
+
+#notLoggedIn h2{
+	margin-top: 1em;
+	margin-bottom: .5em;
 }
 
-
-#content h1{
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
+#notLoggedIn fieldset{
+	border: 2px solid rgb(0, 0, 139);
+	background-color: rgb(135, 206, 235);
+	width:100%;
 	text-align: center;
-	border: 4px solid rgba(25, 25, 112);
 }
 
-
-#content h2{
-	background-color: rgb(0, 174, 239);  
-	color: rgb(255, 255, 255);
-	padding: .3em;
-	padding-left: .5em;
-	border: 3px solid rgba(25, 25, 112);
+#notLoggedIn p{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left: auto;
+	margin-right: auto;
 }
 
+#usernameInputArea{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
 
+#passwordInputArea{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.loginButton{
+
+	padding: .2em;
+	background-color:rgb(255, 255, 255);
+	border: 2px solid rgb(25, 25, 112);
+	font-size: 100%;
+	font-weight: bold;
+	display:block;
+	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border-radius: 6px;
+}
+
+#notLoggedIn label{
+	display: block;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+	text-align: center;
+}
 
 
 
@@ -843,7 +898,36 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 #deletePost textarea{
 	margin-bottom: 1em;
-	border: 3px solid rgba(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
+	resize: none;
+}
+
+#deletePost button{
+	margin-bottom: 1em;
+	display: block;
+}
+
+#deleteAnswer{
+	margin-bottom: 1em;
+}
+
+#deleteAnswer h2{
+	margin-bottom: 1em;
+}
+
+#deleteAnswer textarea{
+	margin-bottom: 1em;
+	border: 2px solid rgb(25, 25, 112);
+	resize: none;
+}
+
+#deleteAnswer select{
+	margin-bottom: 1em;
+}
+
+#deleteAnswer button{
+	margin-bottom: 1em;
+	display: block;
 }
 
 #addNews{
@@ -856,6 +940,11 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 #addNews p{
 	margin-bottom: 1em;
+}
+
+#addNews input{
+	margin-bottom: 1em;
+	display: block;
 }
 
 #newsTypeLabel{
@@ -884,7 +973,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 }
 
 #newsText{
-	border: 3px solid rgba(25, 25, 112);
+	border: 1px solid rgb(25, 25, 112);
 	display: block;
 	margin-bottom: 1em;
 }
@@ -967,7 +1056,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 #recipeIngredients{
 	display: block;
 	margin-bottom: .5em;
-	border: 3px solid rgba(25, 25, 112);
+	border: 1px solid rgb(25, 25, 112);
 }
 
 #recipeMethodLabel{
@@ -978,7 +1067,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 #recipeMethod{
 	display: block;
 	margin-bottom: .5em;
-	border: 3px solid rgba(25, 25, 112);
+	border: 1px solid rgb(25, 25, 112);
 }
 
 #recipeHintLabel{
@@ -989,7 +1078,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 #recipeHint{
 	display: block;
 	margin-bottom: .5em;
-	border: 3px solid rgba(25, 25, 112);
+	border: 1px solid rgb(25, 25, 112);
 }
 
 #recipePeopleLabel{
@@ -999,7 +1088,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 #recipePeople{
 	display: block;
-	margin-bottom: .5em;
+	margin-bottom: 1em;
 }
 
 
@@ -1036,9 +1125,21 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	margin-bottom: 1em;
 }
 
+#removeAccount{
+	margin-bottom: 1em;
+}
 
+#removeAccount h2{
+	margin-bottom: 1em;
+}
 
+#removeAccount p{
+	margin-bottom: .5em;
+}
 
+#removeAccount select{
+	margin-bottom: 1em;
+}
 
 
 
@@ -1142,6 +1243,12 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 
 
+
+
+
+
+
+/*MEDIA QUERY*/
 
 
 
@@ -1325,28 +1432,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 	/*INZIO FORUM*/
 
-	.contentForum{
-
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-
-	.contentForum h1{
-
-		margin: 0em;
-		padding: 0em;
-		text-align: center;
-	}
-
-	.contentForum h2{
-
-		margin: 0em;
-		padding: 0em;
-		font-size: 1.2em;
-		margin-bottom: .5em;
-		
-	}
 
 	.commenti{
 
@@ -1427,7 +1512,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 		color: rgb(255, 255, 255);
 		padding: .3em;
 		padding-left: .5em;
-		border: 3px solid rgba(25, 25, 112);
+		border: 1px solid rgb(25, 25, 112);
 	}
 
 	.news{
@@ -1439,214 +1524,5 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	/*FINE NEWS*/
 
 	/*LOGIN*/
-
-/*
-	#notLoggedIn textarea{
-	display:inline-block;
-	margin-left: 2.4em;
-	margin-right: 2.4em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.7em;
-	width:70%;
-
 }
 
-.loginButton{
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: 0.75em 0.5em 0.75em 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	display:block;
-	margin: auto;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	
-}
-
-#notLoggedIn label{
-	display: block;
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-	text-align: center;
-}
-
-#notLoggedIn fieldset{
-	border: 2px solid rgb(0, 0, 139);
-	background-color: rgb(135, 206, 235);
-	margin-left: 10em;
-	margin-right: 10em;
-	text-align: center;
-	width:70%;
-}
-
-*/
-}
-
-/*LOGIN/SIGNUP di ogni pagina*/
-
-
-
-
-#loginandsignup{
-	margin-left: 56em;
-	margin-right: 0;
-	margin-bottom:0.25em;
-}
-
-#loginandsignup a{
-	color: rgb(0, 174, 239);
-	text-decoration: none;
-}
-
-
-#notLoggedIn p{
-	margin-top: 1em;
-	margin-bottom: 3em;
-}
-
-#usernameInputArea{
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-	
-}
-
-/*INIZIO LOGIN*/
-
-.contentLogin h1{
-	padding-top: 0.5em;
-}
-
-.contentLogin h2{
-	padding-top: 0.5em;
-	padding-bottom: 1em;
-}
-
-.contentLogin{
-	text-align:center;
-	min-height: 40vh;
-}
-
-#notLoggedIn input[type=text]{
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-#notLoggedIn input[type=password]{
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-
-#notLoggedIn input[type=submit]{
-	padding: .2em;
-	background-color:rgb(255, 255, 255);
-	border: 4px solid rgba(25, 25, 112);
-}
-
-#notLoggedIn textarea{
-	display:inline-block;
-	margin-left: 2.4em;
-	margin-right: 2.4em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.7em;
-	resize: none;
-	width:70%;
-
-}
-
-.loginButton{
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: 0.75em 0.5em 0.75em 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	display:block;
-	margin: auto;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	
-}
-
-#notLoggedIn label{
-	display: block;
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-	text-align: center;
-}
-
-#notLoggedIn fieldset{
-	border: 2px solid rgb(0, 0, 139);
-	background-color: rgb(135, 206, 235);
-	width:100%;
-}
-
-#notLoggedIn h2{
-	background-color: rgb(0, 174, 239);  
-	color: rgb(255, 255, 255);
-	padding: .3em;
-	padding-left: .5em;
-	border: 3px solid rgba(25, 25, 112);
-	margin-bottom: 3em;
-}
-
-/*FINE LOGIN*/
-
-/*INIZIO SIGN UP*/
-.contentSignUp h1{
-	padding-top: 0.5em;
-}
-
-.contentSignUp h2{
-	padding-top: 0.5em;
-	padding-bottom: 1em;
-}
-
-.contentSignUp{
-	min-height: 60vh;
-}
-
-
-#nonRegistrato textarea{
-	display:inline-block;
-	margin-left: 2.4em;
-	margin-right: 2.4em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.7em;
-	resize: none;
-	width:70%;
-}
-
-
-.signUpButton{
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: 0.75em 0.5em 0.75em 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	display:block;
-	margin-left:8em;
-}
-
-#nonRegistrato label{
-	display: block;
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-}
-
-#nonRegistrato fieldset{
-	border: 2px solid rgb(0, 0, 139);
-	background-color: rgb(135, 206, 235);
-	margin-left: 12em;
-	margin-right: 12em;
-}
-
-#registrato h3{
-	margin-top:3em;
-}
