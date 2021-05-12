@@ -6,7 +6,7 @@ INTRO
 *{
     padding: 0em;
     margin: 0em;
-}  
+}
 .nascosto{
 	display: none;
 }
@@ -33,16 +33,13 @@ body{
 button{
 	padding: .2em;
 	background-color:rgb(135, 206, 235);
-	border: 2px solid rgb(25, 25, 112);
-	border-radius: 6px;
-
+	border: 4px solid rgba(25, 25, 112);
 }
 
 input[type=button]{
 	padding: .2em;
 	background-color:rgb(135, 206, 235);
-	border: 2px solid rgba(25, 25, 112);
-	border-radius: 6px;
+	border: 4px solid rgba(25, 25, 112);
 
 }
 
@@ -313,6 +310,30 @@ a:hover{
 
 /* Fine Pagina generale delle ricette*/
 
+/* Inizio News*/
+/*
+#titolonews{
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 0.25em;
+	background-color:rgb(135, 206, 235);
+	margin-right: -2em;
+	text-align: center;
+	border: 4px solid rgba(25, 25, 112);
+}
+
+*/
+
+/* ?????
+#sottotitolonews{
+	padding-bottom: 0.5em;
+	background-color:  rgba(0, 174, 239 , 0.85);
+	border: 3px solid rgba(25, 25, 112);
+	padding-left: 0.5em;
+	padding-top: 0.25em;
+	
+}*/
 
 .sottotitolonews{
 	padding-bottom: 0.5em;
@@ -394,6 +415,14 @@ a:hover{
 }
 
 #forminsertnews fieldset{
+		/*margin-top: 0.5em;
+		margin-bottom: 0.5em;
+		padding-bottom: 0.5em;
+		padding-top: 0.25em;
+		
+		background-color:rgb(135, 206, 235); 
+		margin-right: -2em;
+		text-align: center;*/
 		background-color: rgba(176,224,230,0.99);
 		padding-top: 1em;
 		padding-left: 1em;
@@ -420,7 +449,6 @@ a:hover{
 	border: 2.25px solid rgba(25, 25, 112);
 	font-size: medium;
 	font-weight: bold;
-	border-radius: 6px;
 }
 /* Fine News*/
 
@@ -436,22 +464,19 @@ a:hover{
 	padding-top: 0.5em;
 	padding-bottom: 1em;
 }
-
 .AccessButton{
 	margin-top: 1.5em;
 	margin-left: 17em;
 	padding: 1.25em 0.5em 1.25em 0.5em;
 	font-size: 100%;
 	font-weight: bold;
-	border-radius: 6px;
 }
 
 .commenti button{
 	margin-left: 2.5em;
 	padding: 1em;
 	background-color:rgb(135, 206, 235);
-	border: 4px solid rgb(25, 25, 112);
-	border-radius: 6px;
+	border: 4px solid rgba(25, 25, 112);
 }
 
 
@@ -522,7 +547,6 @@ a:hover{
 	background-color: rgb(135, 206, 235); 
 	padding: 0.3em 0.3em 0.3em 0.3em;
 	font-weight: bold;
-	border-radius: 6px;
 }
 
 
@@ -537,7 +561,6 @@ a:hover{
 .miPiaceButton {
 	margin-left: 1em;
 	margin-right: 0.5em;
-	border-radius: 6px;
 }
 
 .LikeCount{
@@ -576,10 +599,11 @@ a:hover{
 	display: none;
 }*/
 
-#creazionePost{
+#creazionePostL{
 	font-weight: bold;
 	display:block;
 	margin-left: 2em;
+	margin-top: 1em;
 	margin-bottom: 0.3em;
 }
 
@@ -591,8 +615,11 @@ a:hover{
 	font-weight: bold;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
-	border-radius: 6px;
 }
+
+
+/* MANCA SISTEMARE COUNT DEI MI PIACE (non so come fare)
+Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahahahahahaha Chi non salta interista è! è!Chi non salta interista è! è!*/ 
 
 /*Fine Forum*/
 
@@ -636,6 +663,15 @@ a:hover{
 	padding-left: 0.5em;
 }
 
+/*
+#workoutTitle{
+	background-color: rgb(0, 174, 239);  
+	color: rgb(255, 255, 255);
+	padding: .3em;
+	padding-left: .5em;
+	border: 3px solid rgba(25, 25, 112);
+}
+*/
 /* Comuni a tutte le pagine di split*/
 
 
@@ -752,169 +788,6 @@ a:hover{
 
 
 
-#loginandsignup{
-	margin-left: 56em;
-	margin-right: 0;
-	margin-bottom:0.25em;
-}
-
-#loginandsignup a{
-	color: rgb(0, 174, 239);
-	text-decoration: none;
-}
-
-
-#notLoggedIn p{
-	margin-top: 1em;
-	margin-bottom: 3em;
-}
-
-#usernameInputArea{
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-	
-}
-
-/*INIZIO LOGIN*/
-
-.contentLogin h1{
-	padding-top: 0.5em;
-}
-
-.contentLogin h2{
-	padding-top: 0.5em;
-	padding-bottom: 1em;
-}
-
-.contentLogin{
-	text-align:center;
-	min-height: 40vh;
-}
-
-#notLoggedIn input[type=text]{
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-#notLoggedIn input[type=password]{
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-
-#notLoggedIn input[type=submit]{
-	padding: .2em;
-	background-color:rgb(255, 255, 255);
-	border: 4px solid rgba(25, 25, 112);
-}
-
-#notLoggedIn textarea{
-	display:inline-block;
-	margin-left: 2.4em;
-	margin-right: 2.4em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.7em;
-	resize: none;
-	width:70%;
-
-}
-
-.loginButton{
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: 0.75em 0.5em 0.75em 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	display:block;
-	margin: auto;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	border-radius: 6px;
-	
-}
-
-#notLoggedIn label{
-	display: block;
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-	text-align: center;
-}
-
-#notLoggedIn fieldset{
-	border: 2px solid rgb(0, 0, 139);
-	background-color: rgb(135, 206, 235);
-	width:100%;
-}
-
-#notLoggedIn h2{
-	background-color: rgb(0, 174, 239);  
-	color: rgb(255, 255, 255);
-	padding: .3em;
-	padding-left: .5em;
-	border: 3px solid rgba(25, 25, 112);
-	margin-bottom: 3em;
-}
-
-/*FINE LOGIN*/
-
-/*INIZIO SIGN UP*/
-.contentSignUp h1{
-	padding-top: 0.5em;
-}
-
-.contentSignUp h2{
-	padding-top: 0.5em;
-	padding-bottom: 1em;
-}
-
-.contentSignUp{
-	min-height: 60vh;
-}
-
-
-#nonRegistrato textarea{
-	display:inline-block;
-	margin-left: 2.4em;
-	margin-right: 2.4em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.7em;
-	resize: none;
-	width:70%;
-}
-
-
-.signUpButton{
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: 0.75em 0.5em 0.75em 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	display:block;
-	margin-left:8em;
-	border-radius: 6px;
-}
-
-#nonRegistrato label{
-	display: block;
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-}
-
-#nonRegistrato fieldset{
-	border: 2px solid rgb(0, 0, 139);
-	background-color: rgb(135, 206, 235);
-	margin-left: 12em;
-	margin-right: 12em;
-}
-
-#registrato h3{
-	margin-top:3em;
-}
 
 
 
@@ -1608,3 +1481,164 @@ a:hover{
 
 
 
+#loginandsignup{
+	margin-left: 56em;
+	margin-right: 0;
+	margin-bottom:0.25em;
+}
+
+#loginandsignup a{
+	color: rgb(0, 174, 239);
+	text-decoration: none;
+}
+
+
+#notLoggedIn p{
+	margin-top: 1em;
+	margin-bottom: 3em;
+}
+
+#usernameInputArea{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+/*INIZIO LOGIN*/
+
+.contentLogin h1{
+	padding-top: 0.5em;
+}
+
+.contentLogin h2{
+	padding-top: 0.5em;
+	padding-bottom: 1em;
+}
+
+.contentLogin{
+	text-align:center;
+	min-height: 40vh;
+}
+
+#notLoggedIn input[type=text]{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#notLoggedIn input[type=password]{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+#notLoggedIn input[type=submit]{
+	padding: .2em;
+	background-color:rgb(255, 255, 255);
+	border: 4px solid rgba(25, 25, 112);
+}
+
+#notLoggedIn textarea{
+	display:inline-block;
+	margin-left: 2.4em;
+	margin-right: 2.4em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 0.7em;
+	resize: none;
+	width:70%;
+
+}
+
+.loginButton{
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	padding: 0.75em 0.5em 0.75em 0.5em;
+	font-size: 100%;
+	font-weight: bold;
+	display:block;
+	margin: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	
+}
+
+#notLoggedIn label{
+	display: block;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+	text-align: center;
+}
+
+#notLoggedIn fieldset{
+	border: 2px solid rgb(0, 0, 139);
+	background-color: rgb(135, 206, 235);
+	width:100%;
+}
+
+#notLoggedIn h2{
+	background-color: rgb(0, 174, 239);  
+	color: rgb(255, 255, 255);
+	padding: .3em;
+	padding-left: .5em;
+	border: 3px solid rgba(25, 25, 112);
+	margin-bottom: 3em;
+}
+
+/*FINE LOGIN*/
+
+/*INIZIO SIGN UP*/
+.contentSignUp h1{
+	padding-top: 0.5em;
+}
+
+.contentSignUp h2{
+	padding-top: 0.5em;
+	padding-bottom: 1em;
+}
+
+.contentSignUp{
+	min-height: 60vh;
+}
+
+
+#nonRegistrato textarea{
+	display:inline-block;
+	margin-left: 2.4em;
+	margin-right: 2.4em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 0.7em;
+	resize: none;
+	width:70%;
+}
+
+
+.signUpButton{
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	padding: 0.75em 0.5em 0.75em 0.5em;
+	font-size: 100%;
+	font-weight: bold;
+	display:block;
+	margin-left:8em;
+}
+
+#nonRegistrato label{
+	display: block;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+
+#nonRegistrato fieldset{
+	border: 2px solid rgb(0, 0, 139);
+	background-color: rgb(135, 206, 235);
+	margin-left: 12em;
+	margin-right: 12em;
+}
+
+#registrato h3{
+	margin-top:3em;
+}

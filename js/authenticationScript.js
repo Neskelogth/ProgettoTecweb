@@ -5,7 +5,14 @@ function verifylogin() {
 
     var uhoh = true;
     if(username == ""){
-        
+        var a = window.location.href;
+        var b = a.split("&").forEach((Element) => {
+            if(Element == 'eusne=error'){
+                window.location.replace('/?r=login');
+                document.getElementById("erroreusername").classList.remove("nascosto");        
+            }
+        });
+        console.log(b);
         document.getElementById("erroreusername").classList.remove("nascosto");
         uhoh = false;    
     }
