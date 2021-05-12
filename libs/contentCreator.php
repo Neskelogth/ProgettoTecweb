@@ -72,7 +72,7 @@ function createSingleRecipeContent(string $data, string $id): string{
             //var_dump($tmpHintArray);
 
             foreach($tmpHintArray as $hint){
-                var_dump($hint);
+
                 if(!empty($hint)){
 
                     $hintList .= $renderer-> renderFile('alimentation/singleHint',

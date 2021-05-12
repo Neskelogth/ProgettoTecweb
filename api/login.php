@@ -49,7 +49,7 @@ if($validuserName && $validpassword && !$sqlinjectiontry){
             $elements['eusne'] = 'error';
         }
 
-        if(!$validpassword){
+        if(!$correctPasswordForUser){
             
             $elements['epane'] = 'error';
         }
@@ -77,6 +77,7 @@ if($validuserName && $validpassword && !$sqlinjectiontry){
         $elements['epanv'] = 'error';
     }
     if($sqlinjectiontry){
+
         $elements['sqlit'] = 'error';
     }
     
