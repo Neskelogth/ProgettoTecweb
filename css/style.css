@@ -52,7 +52,9 @@ input[type=button]:hover{
 }
 
 
-/*----------------*/
+/*INPUT GENERALI*/
+
+
 
 input[type=password]{
 	margin-bottom: 1em;
@@ -78,10 +80,11 @@ input[type=text]{
 	padding: .2 em;
 }
 
-
 a:hover{
 	opacity: 0.8;
 }
+
+
 
 
 #logo{
@@ -116,7 +119,7 @@ a:hover{
 	opacity: 0.8;
 }
 
-#breadcrumb, #recipeBreadcrumb, #workoutBreadcrumb{
+#breadcrumb{
     background-color: rgb(0, 174, 239);
     color: white;
     font-weight: 600;
@@ -126,11 +129,12 @@ a:hover{
     /*margin-bottom: .3em;*/
 }
 
-#breadcrumb a, #recipeBreadcrumb a, #workoutBreadcrumb a{
+#breadcrumb a{
 
 	color: rgb(255, 255, 255);
 	text-decoration: none;
 }
+
 
 #menu{
 
@@ -157,11 +161,11 @@ a:hover{
 
 	opacity: 0.8;
 }
-/*
-#currentLink{
-	padding-left: .3em;
-}
-*/
+
+
+
+
+/*General Content div*/
 
 #content{
     margin-left: 20%;
@@ -172,6 +176,38 @@ a:hover{
 	/*margin-top: 1em;*/
 	min-height: 65em;
 }
+
+#content a{
+	color: rgb(0, 174, 239);
+	text-decoration: none;
+}
+
+#content button:hover{
+	opacity: 0.8;
+}
+
+
+#content h1{
+	margin-top: 1em;
+	margin-bottom: 2em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 0.25em;
+	background-color:rgb(135, 206, 235);
+	text-align: center;
+	border: 4px solid rgb(25, 25, 112);
+}
+
+
+#content h2{
+	background-color: rgb(0, 174, 239);  
+	color: rgb(255, 255, 255);
+	padding: .3em;
+	padding-left: .5em;
+	border: 3px solid rgb(25, 25, 112);
+}
+
+/*Fine General Content div*/
 
 /* Inizio Home*/
 
@@ -187,13 +223,16 @@ a:hover{
     padding-top: 1em;
     padding-left: 2em;
 }
+
+
 /* Fine Home*/
 
-/* Inizio Pagina generale delle ricette*/
 
-.contentalimentazione {
-	padding-top: 1em;
-}
+
+
+
+
+/* Inizio Pagina generale delle ricette*/
 
 .recipeImage{
 	width: 50%;
@@ -316,6 +355,12 @@ a:hover{
 /* Fine Pagina generale delle ricette*/
 
 
+
+
+
+
+/*Inizio News*/
+
 .sottotitolonews{
 	padding-bottom: 0.5em;
 	background-color:  rgba(0, 174, 239 , 0.85);
@@ -367,14 +412,6 @@ a:hover{
 }
 
 
-
-.contentnews{
-	padding-right: 6em;
-	min-height: 77vh;
-}
-.contentnews a {
-	color: rgb(0, 174, 239);
-}
 #navnews{
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -389,10 +426,6 @@ a:hover{
 }
 #navnews li a {
 	text-decoration: none;
-}
-.contentinserimentonews{
-	padding-top: 1em;
-	padding-left: 2em;
 }
 
 #forminsertnews fieldset{
@@ -425,18 +458,14 @@ a:hover{
 }
 /* Fine News*/
 
+
+
+
+
+
+
 /*Inizio Forum*/
 
-.contentForum h1{
-	padding-top: 0.5em;
-	margin-left: 4em;
-}
-
-.contentForum h3{
-	margin-left: 8em;
-	padding-top: 0.5em;
-	padding-bottom: 1em;
-}
 .AccessButton{
 	margin-top: 1.5em;
 	margin-left: 17em;
@@ -503,12 +532,6 @@ a:hover{
 	margin-top: 0em;
 	margin-bottom: 0.3em;
 }
-/*
-.post button{
-	
-	
-}
-*/
 
 .leaveAnswer{
 	margin-left: 0em;
@@ -569,13 +592,7 @@ textarea .text{
 	margin-top: 9em;
 }
 
-/*.comm{
-	margin-left: 1em;
-	padding: 0.3em 0.3em 0.3em 0.3em;
-	display: none;
-}*/
-
-#creazionePostL{
+#creazionePost{
 	font-weight: bold;
 	display:block;
 	margin-left: 2em;
@@ -593,36 +610,46 @@ textarea .text{
 	padding-right: 0.5em;
 }
 
-
-/* MANCA SISTEMARE COUNT DEI MI PIACE (non so come fare)
-Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahahahahahaha Chi non salta interista è! è!Chi non salta interista è! è!*/ 
-
 /*Fine Forum*/
+
+
+
+
+
 
 /*Inizio parte Workout*/
 
 /* Workout */
 
-.contenutoWorkout{
-	min-height:50vh;
+
+#introToWS h2{
+	margin-bottom: 1em;
 }
 
-.contenutoWorkout a{
-	color: rgb(0, 174, 239);
-	text-decoration: none;
-}
-
-.contenutoWorkout p{
-	margin-top: 1em;
+#introToWS p{
 	margin-bottom: 1em;
 	margin-left: .5em;
 }
 
-.contenutoWorkout img{
-	margin-top: 5em;
-	margin-bottom:1em;
+
+#benefits h2{
+	margin-bottom: 1em;
 }
 
+#benefits p{
+	margin-bottom: 1em;
+	margin-left: .5em;
+}
+
+
+#whichSplit h2{
+	margin-bottom: 1em;
+}
+
+#whichSplit p{
+	margin-bottom: 1em;
+	margin-left: .5em;
+}
 
 
 #splitsMenu{
@@ -639,12 +666,47 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	padding-left: 0.5em;
 }
 
-.splitMuscles ul{
+
+#whatis h2{
+	margin-bottom: 1em;
+}
+
+#whatis p{
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
+
+#whatis img{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#whatis ul{
 	margin-top: 0.5em;
 	margin-bottom: 2em;
 	margin-left: 2em;
-
 }
+
+
+#why h2{
+	margin-bottom: 1em;
+}
+
+#why p{
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
+
+
+#example h2{
+	margin-bottom: 1em;
+}
+
+#example p{
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
+
 
 #splitTable{
 	margin-top: 0.5em;
@@ -689,15 +751,12 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	width: 100%
 }
 
-/*Bro Split*/
 
+/*Immagini workout interne*/
 
 #arnold{
 	width: 100%;
 }
-
-/*Push-Pull-Legs*/
-
 
 #pplImg{
 	width: 100%;
@@ -708,10 +767,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 }
 
-
-/*UpperLower*/
-
-
 #upperlower{
 	width: 100%;
 	display: block;
@@ -719,8 +774,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	margin-top: 2em;
 	margin-bottom: 1em;
 }
-
-/*FullBody*/
 
 #fullbody{
 	width: 70%;
@@ -730,50 +783,24 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	margin-bottom: 1em;
 }
 
-#content button:hover{
-	opacity: 0.8;
-}
+/*Fine parte workout*/
 
 
-#content h1{
+
+
+/*LOGIN e SIGNUP*/
+
+#notLoggedIn h2{
 	margin-top: 1em;
-	margin-bottom: 2em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 0.25em;
-	background-color:rgb(135, 206, 235);
+	margin-bottom: .5em;
+}
+
+#notLoggedIn fieldset{
+	border: 2px solid rgb(0, 0, 139);
+	background-color: rgb(135, 206, 235);
+	width:100%;
 	text-align: center;
-	border: 4px solid rgb(25, 25, 112);
 }
-
-
-#content h2{
-	background-color: rgb(0, 174, 239);  
-	color: rgb(255, 255, 255);
-	padding: .3em;
-	padding-left: .5em;
-	border: 3px solid rgb(25, 25, 112);
-}
-
-
-
-/*LOGIN/SIGNUP di ogni pagina*/
-
-
-
-
-#loginandsignup{
-	margin-left: 56em;
-	margin-right: 0;
-	margin-bottom:0.25em;
-}
-
-#loginandsignup a{
-	color: rgb(0, 174, 239);
-	text-decoration: none;
-}
-
-
 
 #notLoggedIn p{
 	margin-top: 1em;
@@ -789,58 +816,17 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	
 }
 
-/*INIZIO LOGIN*/
-
-.contentLogin h1{
-	padding-top: 0.5em;
-}
-
-.contentLogin h2{
-	padding-top: 0.5em;
-	padding-bottom: 1em;
-}
-
-.contentLogin{
-	text-align:center;
-	min-height: 40vh;
-}
-
-#notLoggedIn input[type=text]{
+#passwordInputArea{
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
-}
-
-#notLoggedIn input[type=password]{
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-
-#notLoggedIn input[type=submit]{
-	padding: .2em;
-	background-color:rgb(255, 255, 255);
-	border: 2px solid rgb(25, 25, 112);
-}
-
-#notLoggedIn textarea{
-	display:inline-block;
-	margin-left: 2.4em;
-	margin-right: 2.4em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.7em;
-	resize: none;
-	width:70%;
-	resize: none;
-
 }
 
 .loginButton{
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: 0.75em 0.5em 0.75em 0.5em;
+
+	padding: .2em;
+	background-color:rgb(255, 255, 255);
+	border: 2px solid rgb(25, 25, 112);
 	font-size: 100%;
 	font-weight: bold;
 	display:block;
@@ -857,82 +843,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 	text-align: center;
 }
 
-#notLoggedIn fieldset{
-	border: 2px solid rgb(0, 0, 139);
-	background-color: rgb(135, 206, 235);
-	width:100%;
-	text-align: center;
-}
-
-#notLoggedIn h2{
-	background-color: rgb(0, 174, 239);  
-	color: rgb(255, 255, 255);
-	padding: .3em;
-	padding-left: .5em;
-	border: 3px solid rgb(25, 25, 112);
-	margin-bottom: 3em;
-}
-
-/*FINE LOGIN*/
-
-/*INIZIO SIGN UP*/
-.contentSignUp h1{
-	padding-top: 0.5em;
-}
-
-.contentSignUp h2{
-	padding-top: 0.5em;
-	padding-bottom: 1em;
-}
-
-.contentSignUp{
-	min-height: 60vh;
-}
-
-
-#nonRegistrato textarea{
-	display:inline-block;
-	margin-left: 2.4em;
-	margin-right: 2.4em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.7em;
-	resize: none;
-	width:70%;
-	resize: none;
-}
-
-/*
-
-.signUpButton{
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: 0.75em 0.5em 0.75em 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	display:block;
-	margin-left:8em;
-	border: 6px;
-}
-*/
-
-
-#nonRegistrato label{
-	display: block;
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-}
-
-#nonRegistrato fieldset{
-	border: 2px solid rgb(0, 0, 139);
-	background-color: rgb(135, 206, 235);
-	margin-left: 12em;
-	margin-right: 12em;
-}
-
-#registrato h3{
-	margin-top:3em;
-}
 
 
 
@@ -1330,7 +1240,7 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 
 
-
+/*MEDIA QUERY*/
 
 
 
@@ -1514,28 +1424,6 @@ Si farà in php tranquilla Emma*/ /*Milan Lazio 3-2 Siamo ancora primi Muahahaha
 
 	/*INZIO FORUM*/
 
-	.contentForum{
-
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-
-	.contentForum h1{
-
-		margin: 0em;
-		padding: 0em;
-		text-align: center;
-	}
-
-	.contentForum h2{
-
-		margin: 0em;
-		padding: 0em;
-		font-size: 1.2em;
-		margin-bottom: .5em;
-		
-	}
 
 	.commenti{
 
