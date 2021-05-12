@@ -7,10 +7,10 @@ session_start();
 
 $response = array();
 
-$username = /*cleanInput(*/$_POST['username']/*)*/;
+$username = cleanInput($_POST['username']);
 $name = cleanInput($_POST['name']);
 $surname = cleanInput($_POST['surname']);
-$mail = /*cleanInput(*/$_POST['mail']/*, true)*/;
+$mail = cleanInput($_POST['mail'], true);
 $password = cleanInput($_POST['password']);
 $rePassword = cleanInput($_POST['rePassword']);
 $toRedirect = urldecode($_POST['redirect'] ?? urlencode('/?r=home'));
@@ -37,17 +37,26 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
         $insertResult = $DBaccess-> insertUser($username, $mail, $name, $surname, hash('sha512', $password));
         $DBaccess->closeConnection();
 
-        /*if($insertResult){
+        if($insertResult){
 
             $_SESSION['username'] = $username;
             $SESSION['admin'] = false;
+            $response['red'] = '/?r=home';
 
         }else{
+            
+            $response['ok']= false;
 
-            $response['red'] = "/?r=signup";
-        }*/
+            $elements = array(
+                'r' => 'signup'
+            );
 
-        $response['red'] = '/?r=home';
+            $elements['edbfa'] = 'error';
+
+            $redirect = '/?' . http_build_query($elements);
+            $response['red'] = $redirect;  
+        }
+
     }else{
         
         $elements = array(
@@ -70,7 +79,8 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
 
             $elements['eemnv'] = 'error';
         }
-        var_dump($redirect);
+
+
         $response['ok']= false;
         $redirect = '/?' . http_build_query($elements);
         $response['red'] = $redirect;
