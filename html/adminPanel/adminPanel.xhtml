@@ -1,0 +1,248 @@
+<h1>Pannello di controllo admin</h1>
+
+<div id = "promotion">
+
+<h2>Promuovi ad amministratore</h2>
+
+<p>Utente da promuovere: </p>
+
+<select id="userToPromote">
+
+</select>
+
+<button onclick="promote()">Promuovi utente</button>
+
+<p id="errorMessage" class="rosso nascosto">
+    L'utente non è stato promosso a causa di un errore. Si prega di riprovare.</p> <!-- METTERE DISPLAY:NONE -->
+
+</div>
+
+<!--
+<div id = "declass">
+
+<h2>Rimuovi ad amministratore</h2>
+
+<p>Utente da promuovere: </p>
+
+<select id="userToDeclass">
+
+</select>
+
+<button onclick="declass()">Declassa utente</button>
+
+<p class="errorMessage nascosot"></p>
+
+</div>
+-->
+
+<div id="deleteRecipe">
+
+<h2>Elimina ricetta</h2>
+
+<select id = "recipe"></select>
+
+<button onclick="deleteRecipe()">Elimina ricetta</button>
+
+<p id="deleteRecipeError" class="rosso nascosto">
+    La ricetta non è stata rimossa a causa di un errore. Si prega di riprovare.</p> <!-- METTERE DISPLAY:NONE -->
+
+</div>
+
+<div id= "deleteNews">
+
+<h2>Elimina news</h2>
+
+<select id = "news"></select>
+
+<button onclick="deleteNews()">Elimina news</button>
+
+<p id="deleteNewsError" class="rosso nascosto">
+    La news non è stata rimossa a causa di un errore. Si prega di riprovare.</p> <!-- METTERE DISPLAY:NONE -->
+
+</div>
+
+<div id="deletePost">
+<h2>Elimina post</h2>
+
+<select id = "post" onchange = "findText() "></select>
+
+<textarea readonly="readonly" rows="10" cols="90" id = "postText"></textarea>
+
+<button onclick="deletePost()">Elimina Post</button>
+
+<p id="deletePostError" class="rosso nascosto"></p> <!-- METTERE DISPLAY:NONE -->
+
+</div>
+
+<div id="deleteAnswer">
+<h2>Elimina risposta</h2>
+
+<select id = "post1" onchange = "findTextAndAnswer()"></select>
+<textarea readonly="readonly" rows="10" cols="90" id = "postText1"></textarea>
+
+<select id = "answer" onchange="findAnswerText()"></select>
+<textarea readonly="readonly" rows="10" cols="90" id = "answerText1"></textarea>
+
+<button onclick="deleteAnswer()">Elimina risposta</button>
+
+<p id="deleteAnswerError" class="rosso nascosto"></p>
+
+</div>
+
+
+<div id="addNews">
+
+<h2>Aggiungi news</h2>
+<p>Si prega di inserire, per motivi di accessibilità, le parole in inglese aggiungendo un
+    doppio simbolo percentuale (%%)  sia prima che dopo la parola in questione</p>
+
+<ifErrortypePlaceholder />
+
+<p class = "rosso">Qualcosa è andato storto con il tipo, si prega di riselezionarlo</p>
+
+<endIfPlaceholder />
+
+<label for="type" id="newsTypeLabel">Inserisci il tipo della news</label>
+<select id = "type"></select>
+
+<ifErrortitlePlaceholder />
+
+<p class = "rosso">Si prega di ricontrollare il titolo della news, si tenga presente il limite di 50 caratteri</p>
+
+<endIfPlaceholder />
+
+<label for="newsTitle" id="newsTitleLabel" >Inserisci il titolo della news  (massimo 50 caratteri)</label>
+<input type="text" id = "newsTitle" maxlength="50"></input>
+
+<ifErrortextPlaceholder />
+
+<p class = "rosso">Il testo dell'input non può essere vuoto</p>
+
+<endIfPlaceholder />
+
+<label for="newsTitle" id="newsTextLabel">Inserisci il testo della news</label>
+<textarea rows="10" cols="90" id = "newsText" maxlength="50"></textarea>
+
+<ifErrorlinkPlaceholder />
+
+<p class = "rosso">Si prega di inserire un link valido</p>
+
+<endIfPlaceholder />
+
+<label for="newsTitle" id="newsLinkLabel">Inserisci il link della fonte della news</label>
+<input type = "text" id = "newsLink"></input>
+<input type = "button" onclick = "sendNews()" value = "Aggiungi"/>
+
+<!--<p class="addNewsError nascosto"></p>  METTERE DISPLAY:NONE -->
+
+</div>
+
+
+
+
+<div id="addRecipe">
+<h2>Aggiungi ricetta</h2>
+
+<p>Si prega di inserire, per motivi di accessibilità, le parole in inglese aggiungendo un
+    doppio simbolo percentuale (%%)  sia prima che dopo la parola in questione</p>
+
+<ifErrorrecipetitlePlaceholder />
+<p class = "rosso">Il nome della ricetta non può essere vuoto</p>
+<endIfPlaceholder />
+
+<label for="recipeTitle" id="recipeTitleLabel">Inserisci il nome della ricetta</label>
+<input type="text" id="recipeTitle" maxlength="60"></input>
+
+<ifErrorrecipedescrPlaceholder />
+<p class = "rosso">La descrizione della ricetta non può essere vuota</p>
+<endIfPlaceholder />
+
+<label for="recipeDescription" id="recipeDescriptionLabel">Inserisci una breve descrizione della ricetta</label>
+<input type="text" id="recipeDescription" maxlength="100"></input>
+
+<ifErrorrecipeimagePlaceholder />
+<p class = "rosso">Il campo con il nome dell'immagine non può essere vuoto</p>
+<endIfPlaceholder />
+
+<label for="recipeImage" id="recipeImageLabel">Inserisci il nome dell'immagine della ricetta (incluso il formato).
+    Ricorda di mettere l'immagine nell'apposita cartella img perchè funzioni</label>
+<input type="text" id="recipeImage" maxlength="25"></input>
+
+
+<label for="recipeAlt" id="recipeAltLabel">Inserisci un testo alternativo da visualizzare nel caso in cui l'immagine
+    non sia disponibile</label>
+<input type="text" id="recipeAlt" maxlength="25"></input>
+
+<ifErrorrecipeingredientsPlaceholder />
+<p class = "rosso">Gli ingredienti della ricetta non possono essere vuoti</p>
+<endIfPlaceholder />
+
+
+<label for="recipeIngredients" id="recipeIngredientsLabel">Inserisci gli ingredienti della ricetta.
+    Separare i diversi ingredienti andando a capo</label>
+<textarea rows="15" cols="90" id="recipeIngredients"></textarea>
+
+<ifErrorrecipemethodPlaceholder />
+<p class = "rosso">Il procedimento per la realizzazione della ricetta non può essere vuoto</p>
+<endIfPlaceholder />
+
+<label for="recipeMethod" id="recipeMethodLabel">Inserisci il procedimento per preparare la ricetta.
+    Separare i diversi passi andando a capo</label>
+<textarea rows="15" cols="90" id="recipeMethod"></textarea>
+
+<label for="recipeHint" id="recipeHintLabel">Inserisci eventuali consigli per la preparazione.
+    Separare i diversi consigli andando a capo</label>
+<textarea rows="15" cols="90" id="recipeHint"></textarea>
+
+<ifErrorrecipepeoplePlaceholder />
+<p class = "rosso">Il numero di persone non può essere vuoto</p>
+<endIfPlaceholder />
+
+
+<label for="recipePeople" id="recipePeopleLabel">Inserisci il numero di persone per cui sono le dosi della ricetta.
+    Ricorda di aggiungere la parola persone (o fette nel caso di un dolce) alla fine</label>
+<input type="text" id="recipePeople" maxlength="25"></input>
+
+<input type="button" value="Aggiungi ricetta" onclick="sendRecipe()"/>
+
+
+</div>
+
+<div id="revokeBan">
+<h2>Revoca ban</h2>
+
+<select id="banned"></select>
+
+<p id="errorBanMessage" class="rosso nascosto">
+    L'utente non è stato bannato a causa di un errore, si prega di riprovare.</p>
+
+<input type="button" value="Sbanna utente" onclick="unbanUser()"/>
+</div>
+
+<div id= "banUserFromForum">
+
+<h2>Banna utente dal Forum</h2>
+
+<select id="notBanned"></select>
+
+<p id="errorUnbanMessage" class="rosso nascosto">
+    L'utente non è stato sbannato a causa di un errore, si prega di riprovare.</p>
+
+<input type="button" value="Banna utente" onclick="banUser()"/>
+
+</div>
+
+<div id= "removeAccount">
+
+<h2>Rimuovi account</h2>
+
+<p>Quest'azione comporta l'eliminazione di tutti i post, like e di tutte le risposte dell'utente selezionato</p>
+
+<select id="remove"></select>
+
+<input type="button" onclick="deleteAccount()" id="removingAccount" value = "Rimouvi account" />
+
+<p id="errorRemoveMessage" class="rosso nascosto">
+    L'utente non è stato eliminato a causa di un errore, si prega di riprovare.</p>
+
+</div>

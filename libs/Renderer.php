@@ -130,7 +130,7 @@ class Renderer{
         foreach(($matches[0] ?? array()) as $match) {
 
             $word = substr($match, 2, strlen($match) - 4);
-            $data = str_replace("%%".$word."%%", "<span xml:lang = 'en'>".$word."</span>", $data);
+            $data = str_replace("%%".$word."%%", "<span xml:lang = 'en' lang = 'en'>".$word."</span>", $data);
         }
     }
 

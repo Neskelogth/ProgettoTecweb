@@ -32,22 +32,21 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
     $existingMail = ($DBaccess-> getConnection() !== false) ? $DBaccess->getMailQuery($mail) : false;
 
     if(!$existingUsername && !$existingMail && $password == $rePassword && $veryvalidemail){
-        
-        $response['ok'] = true;
+
         $insertResult = $DBaccess-> insertUser($username, $mail, $name, $surname, hash('sha512', $password));
         $DBaccess->closeConnection();
+        $response['ok'] = $insertResult;
 
-        /*if($insertResult){
+        if($insertResult){
 
             $_SESSION['username'] = $username;
             $SESSION['admin'] = false;
-
+            $response['red'] = $toRedirect;
         }else{
 
             $response['red'] = "/?r=signup";
-        }*/
+        }
 
-        $response['red'] = '/?r=home';
     }else{
         
         $elements = array(
@@ -70,7 +69,7 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
 
             $elements['eemnv'] = 'error';
         }
-        var_dump($redirect);
+
         $response['ok']= false;
         $redirect = '/?' . http_build_query($elements);
         $response['red'] = $redirect;
@@ -116,8 +115,6 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
 }
 
 $toRedirect = $response['red'];
-
-
 header("location: $toRedirect");
 
 

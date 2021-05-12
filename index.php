@@ -9,7 +9,7 @@ require_once "vendor/autoload.php";
 session_start();
 
 $parser = new Parser();
-//var_dump($_SESSION);
+//var_dump($_GET);
 $parser-> addRoute('login', function(string $data){
 
     return $data;
@@ -73,10 +73,12 @@ $parser-> addRoute('workout', function (string $data){
 ));
 
 $parser-> addRoute('adminPanel', function (string $data){
-    return $data;
+    return createAdminContent($data);
 }, array(
     'title' => 'Pannello amministratore - La Palestra',
     'id' => 'content',
+    'logged' => $_SESSION['username'] ?? false,
+    'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/?".http_build_query($_GET)),
     'errortitle' => ($_GET['eti'] ?? "") == "error",
     'errorlink' => ($_GET['eli'] ?? "" ) == "error",
@@ -92,6 +94,19 @@ $parser-> addRoute('adminPanel', function (string $data){
     'errorrecipealt' => ($_GET['era'] ?? "") == 'error',
     'admin' => $_SESSION['admin'] ?? false,
     'notadmin' => !($_SESSION['admin'] ?? false)
+));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$parser-> addRoute('profile', function(string $data){
+
+        return createProfileContent($data);
+},array(
+
+    'title' => 'Profilo utente - La palestra',
+    'id' => 'content',
+    'logged' => $_SESSION['username'] ?? false,
+    'notlogged' => !($_SESSION['username'] ?? false),
+    'redirect' => $_GET['prev'] ?? urlencode('/?r=home')
 ));
 
 $parser-> addRoute('split', function (string $data){
@@ -110,7 +125,7 @@ $parser-> addRoute('split', function (string $data){
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/?".http_build_query($_GET)),
-    'admin' => true //$_SESSION['admin'] ?? false
+    'admin' => $_SESSION['admin'] ?? false
 ));
 
 $parser-> addRoute('alimentation', function (string $data){

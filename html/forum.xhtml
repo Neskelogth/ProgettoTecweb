@@ -37,6 +37,9 @@
 <li><a href = "/?r=alimentation">Alimentazione</a></li>
 <li xml:lang="en" id="currentLink">Forum</li>
 <li xml:lang="en"><a href = "/?r=news">News</a></li>
+<ifLoggedPlaceholder />
+<li><a href = "/?r=profile">Profilo</a></li>
+<endIfPlaceholder />
 <ifAdminPlaceholder />
 <li><a href="/?r=adminPanel">Pannello admin</a></li>
 <endIfPlaceholder />
@@ -47,6 +50,7 @@
 
 <blockDefContentPlaceholder />
 
+<ifLoggednotbannedPlaceholder />
 
 <dl class="commenti">
     <dd id="loggato">
@@ -57,6 +61,8 @@
 
     </dd>
 </dl>
+
+<endIfPlaceholder />
 
 
 <ifBannedPlaceholder />

@@ -564,7 +564,7 @@ class DBaccess{
         return $this-> connection-> query($query);
     }
 
-    public function deleteUser($user){
+    public function deleteUser(string $user): bool{
 
         $user = base64_encode($user);
 
@@ -579,6 +579,18 @@ class DBaccess{
         $resultUser = $this-> connection-> query($queryUser);
 
         return $resultAnswers && $resultLikes && $resultPosts && $resultUser;
+    }
+
+    public function changeData(string $user, string $name, string $surname, string $email): bool{
+
+        $user = base64_encode($user);
+        $name = base64_encode($name);
+        $surname = base64_encode($surname);
+        $email = base64_encode($email);
+
+        $query = "UPDATE utente SET Nome = '$name', Cognome = '$surname', Email = '$email' WHERE IDUtente = '$user'";
+
+        return $this-> connection-> query($query);
     }
 
 }

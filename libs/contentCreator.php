@@ -226,3 +226,28 @@ function createNavMenuNews(string $data, string $type): string{
     return $data;
 }
 
+function createAdminContent(string $data): string{
+
+    $renderer = new Renderer();
+
+    $content = $renderer-> renderFile('adminPanel/adminPanel', array());
+
+    $data = $renderer-> render($data, array(
+        'admincontent' => $content
+    ));
+
+    return $data;
+
+}
+
+function createProfileContent(string $data):string{
+    $renderer = new Renderer();
+
+    $content = $renderer-> renderFile('profile/profile', array());
+
+    $data = $renderer-> render($data, array(
+        'usercontent' => $content
+    ));
+
+    return $data;
+}

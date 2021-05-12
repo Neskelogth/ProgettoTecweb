@@ -9,7 +9,7 @@ $response = array();
 
 //$input = json_decode(file_get_contents("php://input"), true);
 
-
+$toRedirect = $_POST['redirect'];
 $userName = $_POST['username'];
 $password = $_POST['password'];
 
@@ -36,7 +36,7 @@ if($validuserName && $validpassword && !$sqlinjectiontry){
         $_SESSION['admin'] = $userData['Admin'];
         $_SESSION['banned'] = $userData['Bannato'];
         
-        $response['red'] = '/?r=home';
+        $response['red'] = $toRedirect;
 
     }else{
     
@@ -49,7 +49,7 @@ if($validuserName && $validpassword && !$sqlinjectiontry){
             $elements['eusne'] = 'error';
         }
 
-        if(!$existingPassword){
+        if(!$validpassword){
             
             $elements['epane'] = 'error';
         }
@@ -86,6 +86,5 @@ if($validuserName && $validpassword && !$sqlinjectiontry){
 }
 
 $toRedirect = $response['red'];
-
 
 header("location: $toRedirect");
