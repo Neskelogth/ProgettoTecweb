@@ -2,7 +2,7 @@
 
 class DBaccess{
 
-    private const HOST_DB = "127.0.0.1";
+    private const HOST_DB = "127.0.0.1:3307";
     private const USERNAME = "mtesser";
     private const PASSWORD = "ikee4Doongaem7ju";
     private const DATABASE_NAME = "mtesser";
@@ -14,7 +14,7 @@ class DBaccess{
         $this->openDBConnection();
     }
 
-    public function getConnection(){//ritorna un oggetto o false
+    public function getConnection(){
 
         return $this-> connection;
     }
@@ -198,7 +198,7 @@ class DBaccess{
            GROUP BY post.IDPost
            ORDER BY post.IDPost DESC
          *
-         * Prende gli di, i testi e gli id utenti di ogni post, in più conta i like e calcola se l'utente corrente
+         * Prende gli id, i testi e gli id utenti di ogni post, in più conta i like e calcola se l'utente corrente
          * ha lasciato un like. Raggruppa per id del post e ordina i risultati tramite l'id del post.
          *
          * */

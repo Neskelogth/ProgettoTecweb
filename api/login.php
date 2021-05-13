@@ -9,9 +9,9 @@ $response = array();
 
 //$input = json_decode(file_get_contents("php://input"), true);
 
-$toRedirect = $_POST['redirect'];
-$userName = $_POST['username'];
-$password = $_POST['password'];
+$toRedirect = $_POST['redirect'] ?? urlencode('/?r=login');
+$userName = $_POST['username'] ?? "";
+$password = $_POST['password'] ?? "";
 
 $validuserName = validateCredentials($userName);
 $validpassword = validateCredentials($password);
@@ -36,7 +36,7 @@ if($validuserName && $validpassword && !$sqlinjectiontry){
         $_SESSION['admin'] = $userData['Admin'];
         $_SESSION['banned'] = $userData['Bannato'];
         
-        $response['red'] = $toRedirect;
+        $response['red'] = urldecode($toRedirect);
 
     }else{
     

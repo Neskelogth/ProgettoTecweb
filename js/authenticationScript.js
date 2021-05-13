@@ -1,5 +1,7 @@
 function verifylogin() {
-    
+
+    return true;
+
     const username=  document.getElementById("usernameInputArea").value;
     const password = document.getElementById("passwordInputArea").value;
 

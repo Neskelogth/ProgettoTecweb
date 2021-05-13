@@ -39,14 +39,14 @@
 
     <div id="notLoggedIn">
         <h2>Accedi al Sito</h2>
-        <form method="POST" action = "api/login.php" onsubmit = "return verifylogin()">
+        <form method="POST" action = "api/login.php" onsubmit = "return verifylogin();">
             <fieldset>
 
                 <!--input id = "valueerror"type="hidden" tabindex="-1" value="false"/-->
 
                 <ifSqlPlaceholder />
 
-                <p id="sql" class="rosso">Si ricorda che non sono permessi apostrofi o doppi apici nel login</p>
+                <p id="sqlError" class="rosso">Si ricorda che non sono permessi apostrofi o doppi apici nel login</p>
 
                 <endIfPlaceholder />
 
@@ -85,7 +85,7 @@
                 <endIfPlaceholder />
                 <label id="loginPassword" for="passwordInputArea">Inserisci la tua %%Password%%</label>
                 <input type = "password" id="passwordInputArea" rows="1" cols="17" name="password" ></input>
-                <!--input type="hidden" tabindex="-1" value="<redirectPlaceholder />" name="redirect"-->
+                <input type="hidden" tabindex="-1" value="<redirectPlaceholder />" name="redirect" />
                 <input type="submit" class="loginButton" name="login" value="Accedi"/>
             </fieldset>
         </form>
