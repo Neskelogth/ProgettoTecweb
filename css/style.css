@@ -622,6 +622,16 @@ textarea .text{
 /* Workout */
 
 
+#premise h2{
+	margin-bottom: 1em;
+}
+
+#premise p{
+	margin-bottom: 1em;
+	margin-left: .5em;
+}
+
+
 #introToWS h2{
 	margin-bottom: 1em;
 }
