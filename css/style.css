@@ -71,13 +71,13 @@ input{
 select{
 	margin-bottom: 1em;
 	border: 1px solid rgb(25, 25, 112);
-	padding: .2 em;
+	padding: .2em;
 }
 
 input[type=text]{
 	margin-bottom: 1em;
 	border: 1px solid rgb(25, 25, 112);
-	padding: .2 em;
+	padding: .2em;
 }
 
 a:hover{
@@ -177,10 +177,12 @@ a:hover{
 	min-height: 65em;
 }
 
+/*
 #content a{
 	color: rgb(0, 174, 239);
 	text-decoration: none;
 }
+*/
 
 #content button:hover{
 	opacity: 0.8;
@@ -474,8 +476,11 @@ a:hover{
 	font-weight: bold;
 }
 
+.commenti{
+	margin-bottom: 4em;
+}
 .commenti button{
-	margin-left: 2.5em;
+
 	padding: 1em;
 	background-color:rgb(135, 206, 235);
 	border: 2px solid rgb(25, 25, 112);
@@ -489,21 +494,17 @@ a:hover{
 	margin-left: 1em;
 	margin-top: 1em;
 	margin-bottom: .5em;
+	padding: .3em;
 	display: block;
 	resize: none;
 }
-
-.commenti{
-	margin-left: 0.5em;
-}
-
 
 .commenti textarea{
 	width: 90%;
 	/*height: 100%;*/
 	display:block;
 	resize: none;
-	margin-left: 2.5em;
+
 	padding: 1em;
 	background-color:rgb(239, 250, 255);
 	border: 2px solid rgb(25, 25, 112);
@@ -595,11 +596,11 @@ textarea .text{
 #creazionePost{
 	font-weight: bold;
 	display:block;
-	margin-left: 2em;
 	margin-top: 1em;
 	margin-bottom: 0.3em;
 }
 
+/*
 .Inviabutton{
 	margin-left: 2em;
 	margin-bottom: 0.5em;
@@ -610,6 +611,7 @@ textarea .text{
 	padding-right: 0.5em;
 }
 
+*/
 /*Fine Forum*/
 
 
@@ -674,6 +676,11 @@ textarea .text{
 	margin-left: 1em;
 	padding-right: 6em;
 	padding-left: 0.5em;
+}
+
+#splitsMenu a{
+	color:rgb(0, 174, 239);  
+	text-decoration: none;
 }
 
 
@@ -855,6 +862,7 @@ textarea .text{
 
 
 
+
 /*Pagina profilo*/
 
 .readonly{
@@ -862,9 +870,34 @@ textarea .text{
 	readonly: readonly;
 }
 
+#change label{
+	padding-right: .5em;
+	margin-bottom: .5em;
+	display: block;
+}
+
+#change input{
+	padding-right: .5em;
+
+	display: block;
+}
+
+
+#change input[type=button]{
+	margin-top: 3em;
+	display: block;
+}
+
+
+
+
 
 
 /* Pannello amministratore*/
+
+#notAdmin{
+	margin-top: 1em;
+}
 
 #promotion{
 	margin-bottom: 1em;
@@ -1315,7 +1348,6 @@ textarea .text{
 	}
 
 	#content{
-
 		border: none;
 		width: 100%;
 		margin: 0em;
@@ -1446,9 +1478,10 @@ textarea .text{
 	.commenti{
 
 		width: 100%;
+
 	}
 
-	#creazionePostL{
+	#creazionePost{
 
 		margin: 0em;
 		padding: 0em;
