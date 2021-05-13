@@ -476,6 +476,10 @@ a:hover{
 	font-weight: bold;
 }
 
+#bannedFromForum{
+	margin-top: 1em;
+}
+
 .commenti{
 	margin-bottom: 4em;
 }
@@ -500,11 +504,9 @@ a:hover{
 }
 
 .commenti textarea{
-	width: 90%;
-	/*height: 100%;*/
+	width: 96%;
 	display:block;
 	resize: none;
-
 	padding: 1em;
 	background-color:rgb(239, 250, 255);
 	border: 2px solid rgb(25, 25, 112);
@@ -529,7 +531,7 @@ a:hover{
 .post label{
 	font-weight: bold;
 	display:block;
-	margin-left: 2em;
+	margin-left: 1em;
 	margin-top: 0em;
 	margin-bottom: 0.3em;
 }
@@ -942,6 +944,7 @@ textarea .text{
 #deletePost textarea{
 	margin-bottom: 1em;
 	border: 2px solid rgb(25, 25, 112);
+	padding: .3em;
 	resize: none;
 }
 
@@ -961,6 +964,7 @@ textarea .text{
 #deleteAnswer textarea{
 	margin-bottom: 1em;
 	border: 2px solid rgb(25, 25, 112);
+	padding: .3em;
 	resize: none;
 }
 
@@ -1016,7 +1020,8 @@ textarea .text{
 }
 
 #newsText{
-	border: 1px solid rgb(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
+	padding: .3em;
 	display: block;
 	margin-bottom: 1em;
 }
@@ -1099,7 +1104,8 @@ textarea .text{
 #recipeIngredients{
 	display: block;
 	margin-bottom: .5em;
-	border: 1px solid rgb(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
+	padding: .3em;
 }
 
 #recipeMethodLabel{
@@ -1110,7 +1116,8 @@ textarea .text{
 #recipeMethod{
 	display: block;
 	margin-bottom: .5em;
-	border: 1px solid rgb(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
+	padding: .3em;
 }
 
 #recipeHintLabel{
@@ -1121,7 +1128,8 @@ textarea .text{
 #recipeHint{
 	display: block;
 	margin-bottom: .5em;
-	border: 1px solid rgb(25, 25, 112);
+	border: 2px solid rgb(25, 25, 112);
+	padding: .3em;
 }
 
 #recipePeopleLabel{
