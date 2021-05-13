@@ -69,7 +69,7 @@ function getComments(){
 
                                     let label = document.createElement("label");
                                     label.setAttribute("for", "post" + res[commentIndex].IDPost);
-                                    label.innerText = "Post:";
+                                    label.innerText = "ha postato:";
                                     return label;
 
                                 })(),
@@ -80,7 +80,7 @@ function getComments(){
                                     textarea.classList.add("text");
                                     textarea.classList.add("forumTextarea");
                                     textarea.setAttribute("rows", "10");
-                                    textarea.setAttribute("cols", "85");
+                                    textarea.setAttribute("cols", "100");
                                     textarea.setAttribute("name", "post" + res[commentIndex].IDPost);
                                     textarea.setAttribute("readonly", "readonly");
                                     textarea.innerText = res[commentIndex].Testo;
@@ -207,13 +207,13 @@ function loadAnswers(idPost){
                         let div = document.createElement("div");
                         div.classList.add("answer");
                         let p = document.createElement("p");
-                        p.innerText = res[answerIndex].userID;
+                        p.innerText = res[answerIndex].userID + " ha risposto:";
 
 
                         let textarea = document.createElement("textarea");
                         textarea.classList.add("text");
                         textarea.setAttribute("rows", "3");
-                        textarea.setAttribute("cols", "70");
+                        textarea.setAttribute("cols", "90");
                         textarea.setAttribute("readonly", "readonly");
                         textarea.value = res[answerIndex].Text;
 
