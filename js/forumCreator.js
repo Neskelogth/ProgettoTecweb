@@ -49,6 +49,7 @@ function getComments(){
                             ((h3, label, textarea, button, risposta, button1, containerRisposte)=> {
 
                                 let fieldset = document.createElement("fieldset");
+                                fieldset.classList.add("forumFieldset");
                                 fieldset.appendChild(h3);
                                 fieldset.appendChild(label);
                                 fieldset.appendChild(textarea);
@@ -80,7 +81,7 @@ function getComments(){
                                     textarea.classList.add("text");
                                     textarea.classList.add("forumTextarea");
                                     textarea.setAttribute("rows", "10");
-                                    textarea.setAttribute("cols", "100");
+                                    //textarea.setAttribute("cols", "100");
                                     textarea.setAttribute("name", "post" + res[commentIndex].IDPost);
                                     textarea.setAttribute("readonly", "readonly");
                                     textarea.innerText = res[commentIndex].Testo;
@@ -132,8 +133,9 @@ function getComments(){
                                     let textarea = document.createElement("textarea");
                                     textarea.setAttribute("id", "answer_post" + res[commentIndex].IDPost);
                                     textarea.classList.add("text");
+                                    textarea.classList.add("answerPostTextarea")
                                     textarea.setAttribute("rows", "3");
-                                    textarea.setAttribute("cols", "70");
+                                    //textarea.setAttribute("cols", "70");
                                     textarea.setAttribute("name", "answer_post" + res[commentIndex].IDPost);
                                     textarea.style.display = "none";
 

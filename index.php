@@ -107,7 +107,8 @@ $parser-> addRoute('profile', function(string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' => !($_SESSION['username'] ?? false),
-    'redirect' => $_GET['prev'] ?? urlencode('/?r=home')
+    'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
+    'admin' => $_SESSION['admin'] ?? false
 ));
 
 $parser-> addRoute('split', function (string $data){

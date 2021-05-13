@@ -498,7 +498,21 @@ a:hover{
 	border: 2px solid rgb(25, 25, 112);
 }
 
+.forumFieldset{
 
+	max-width: 100%;
+}
+
+.answerPostTextarea{
+
+	width: 80%;
+}
+
+.forumTextarea{
+
+	width: 95%;
+	height: 50%;
+}
 
 .post textarea {
 	background-color:rgb(239, 250, 255);
@@ -595,6 +609,7 @@ a:hover{
 }
 
 .answer textarea{
+	width: 85%;
 	margin-left: 7em;
 	resize: none;
 }
