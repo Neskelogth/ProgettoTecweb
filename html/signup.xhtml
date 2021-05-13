@@ -42,61 +42,66 @@
 <h2>Crea un Nuovo Utente</h2>
 <p>Nella creazione di un nuovo utente, non è ammesso l'uso di Apostrofi.</p>
 
-<form method="POST" action = "api/signup.php">
+<form method="POST" action = "api/signup.php" onsubmit="return verifysignup();">
     <fieldset>
         <ifErrordatabasefailPlaceholder />
                 
-            <p class = "rosso">Il database non è raggiungibile</p>
+            <p id = "edbfa" class = "rosso">Il %%database%% non è raggiungibile</p>
 
         <endIfPlaceholder />
+        <p id = "erroreusername" class = "rosso nascosto">Questo username non è valido</p>
         <ifErrorusernamenonvalidoPlaceholder />
                 
-            <p class = "rosso">Lo username non è valido</p>
+            <p id = "eusnv" class = "rosso">Lo %%username%% non è valido</p>
 
         <endIfPlaceholder />
         <ifErrorusernameesistentePlaceholder />
                 
-            <p class = "rosso">Questo username è già stato utilizzato</p>
+            <p id = "euses" class = "rosso">Questo %%username%% è già stato utilizzato</p>
 
         <endIfPlaceholder />
         <label for="username">Inserisci il tuo %%username%%</label>
         <input type="text" id="username" name="username"/>
+        <p id = "emailnonvalida" class = "rosso nascosto">Questa email non è valida</p>
         <ifErroremailnonvalidaPlaceholder />
                 
-            <p class = "rosso">L'email non è valida</p>
+            <p id = "eemnv" class = "rosso">L'%%email%% non è valida</p>
 
         <endIfPlaceholder />
         <ifErroremailesistentePlaceholder />
                 
-            <p class = "rosso">Questa email è già stata utilizzata</p>
+            <p id = "eemes" class = "rosso">Questa %%email%% è già stata utilizzata</p>
 
         <endIfPlaceholder />
         <label for="mail">Inserisci il tuo indirizzo %%email%%</label>
         <input type="email" id="mail" name="mail"/>
+        <p id = "nomenonvalido" class = "rosso nascosto">Questo nome non è valido</p>
         <ifErrornomenonvalidoPlaceholder />
                 
-            <p class = "rosso">Il nome non è valido</p>
+            <p id = "enonv" class = "rosso">Il nome non è valido</p>
 
         <endIfPlaceholder />
         <label for="name">Inserisci il tuo nome</label>
         <input type="text" id="name" name="name"/>
+        <p id = "cognomenonvalido" class = "rosso nascosto">Questo cognome non è valido</p>
         <ifErrorcognomenonvalidoPlaceholder />
                 
-            <p class = "rosso">Il cognome non è valido</p>
+            <p id = "econv" class = "rosso">Il cognome non è valido</p>
 
         <endIfPlaceholder />
         <label for="surname">Inserisci il tuo cognome</label>
         <input type="text" id="surname" name="surname"/>
+        <p id = "errorepassword" class = "nascosto rosso">La password non è valida</p>
         <ifErrorpasswordnonvalidaPlaceholder />
                 
-            <p class = "rosso">La password non è valida</p>
+            <p id = "epanv" class = "rosso">La %%password%% non è valida</p>
 
         <endIfPlaceholder />
         <label for="password">Inserisci la tua %%password%%</label>
         <input type="password" id="password" name="password"/>
         <ifErrorpasswordnoncorrispondentePlaceholder />
                 
-            <p class = "rosso">Le due password non corrispondono</p>
+            <p id = "epanc" class = "rosso">Le due %%password%% non corrispondono</p>
 
         <endIfPlaceholder />
         <label for="rePassword">Reinserisci la tua %%password%%</label>
