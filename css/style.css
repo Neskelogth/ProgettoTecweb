@@ -62,6 +62,7 @@ input[type=password]{
 
 }
 
+
 input{
 	margin-bottom: 1em;
 	border: 1px solid rgb(25, 25, 112);
@@ -78,6 +79,13 @@ input[type=text]{
 	margin-bottom: 1em;
 	border: 1px solid rgb(25, 25, 112);
 	padding: .2em;
+}
+
+input[type=email]{
+	margin-bottom: 1em;
+	border: 1px solid rgb(25, 25, 112);
+	padding: .2em;
+
 }
 
 a:hover{
@@ -1311,15 +1319,17 @@ textarea .text{
 		background-color: rgb(255, 255, 255);
 	}
 
-	#header img{
-
-		display: none;
+	#logo{
+		display: block;
+		margin: auto;
 	}
 
 	#header h1{
 
 		font-size: 2em;
 		text-align: center;
+		margin: 0em;
+		margin-bottom: .5em;
 	}
 
 	#breadcrumb{
@@ -1357,9 +1367,13 @@ textarea .text{
 
 	#content{
 		border: none;
-		width: 100%;
-		margin: 0em;
+		width: 96%;
+		margin: .5em;
 		padding: 0em;
+	}
+
+	textarea{
+		width:96%
 	}
 
 	#content p{
@@ -1378,7 +1392,7 @@ textarea .text{
 		width: 100%;
 		border: none;
 		margin: 0em;
-		margin-top: 1.5em;
+		margin-top: 3em;
 		padding: 0em;
 		min-height: 20em;
 	}
@@ -1398,10 +1412,6 @@ textarea .text{
 
 	/*INIZIO ALLENAMENTO SPECIFICO*/
 
-	#workoutBreadcrumb{
-
-		font-size: .9em;
-	}
 
 
 	#splitTable{
@@ -1427,11 +1437,6 @@ textarea .text{
 
 	/*INZIO ALIMENTAZIONE*/
 
-	.contentalimentazione{
-
-		padding: 0em;
-	}
-
 	.recipeImage{
 
 		width: 100%;
@@ -1452,11 +1457,6 @@ textarea .text{
 	/*FINE ALIMENTAZIONE*/
 
 	/*INIZIO SINGOLA RICETTA*/
-
-	#recipeBreadcrumb	{
-
-		font-size: .8em;
-	}	
 
 	#recipeContent{
 
@@ -1550,20 +1550,9 @@ textarea .text{
 		margin-top: .4em;
 	}
 
-	#navnews ul li{
-
-		display: inline-block;
-		margin-bottom: .3em;
-		font-size: .95em;
-	}
-
-	#titolonews{
-
-		background-color: rgb(0, 174, 239);  
-		color: rgb(255, 255, 255);
-		padding: .3em;
-		padding-left: .5em;
-		border: 1px solid rgb(25, 25, 112);
+	#navnews li{
+		display: block;
+		text-align: center;
 	}
 
 	.news{
@@ -1575,5 +1564,16 @@ textarea .text{
 	/*FINE NEWS*/
 
 	/*LOGIN*/
+
+
+	/*PROFILO*/
+
+	#change{
+		text-align: center;
+	}
+
+	#change input{
+		width: 99%
+	}
 }
 
