@@ -521,6 +521,7 @@ a:hover{
 
 .forumTextarea{
 	display: block;
+	box-sizing:border-box;
 	width: 95%;
 	height: 50%;
 }
@@ -625,7 +626,9 @@ a:hover{
 
 .answer textarea{
 	width: 85%;
-	margin-left: 7em;
+	box-sizing:border-box;
+	margin-right: 3em;
+	margin-left: 3em;
 	resize: none;
 }
 
