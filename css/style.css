@@ -30,7 +30,11 @@ body{
 	font-family: "Arial", "Helvetica" ,sans-serif;
 }
 
-
+.aiuti{
+	position:absolute;
+	height:0;
+	overflow:hidden;
+	}
 /*PULSANTI GENERALI*/
 
 button{
