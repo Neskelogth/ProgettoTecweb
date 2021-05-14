@@ -217,6 +217,12 @@ a:hover{
 	border: 3px solid rgb(25, 25, 112);
 }
 
+#back{
+
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
 /*Fine General Content div*/
 
 /* Inizio Home*/
@@ -355,7 +361,13 @@ a:hover{
 #ingredients li, #method li, #hint li{
 
 	padding-top: .1em;
+	margin-bottom: 0.5em;
 }
+
+#ingredients p{
+	margin-bottom: 0.5em;
+}
+
 
 #hint p{
 
@@ -428,7 +440,7 @@ a:hover{
 }
 #navnews li{
 	
-	margin-left: 0.01em;
+	margin-right: 0.5em;
 	display: inline;
 	padding : 0.25em;
 	font-weight: bolder;   
@@ -703,6 +715,13 @@ textarea .text{
 	padding-left: 0.5em;
 }
 
+#splitsMenu ul li{
+	margin-bottom: 0.5em;
+}
+
+
+
+
 #splitsMenu a{
 	color:rgb(0, 174, 239);  
 	text-decoration: none;
@@ -793,6 +812,21 @@ textarea .text{
 	width: 100%
 }
 
+#elencobs li {
+	margin-bottom: 0.5em;
+}
+
+#elencoppl1 li {
+	margin-bottom: 0.5em;
+}
+
+#elencoppl2 li {
+	margin-bottom: 0.5em;
+}
+
+#elencoul li {
+	margin-bottom: 0.5em;
+}
 
 /*Immagini workout interne*/
 

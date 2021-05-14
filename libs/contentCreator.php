@@ -149,7 +149,7 @@ function createNavMenuNews(string $data, string $type): string{
 
     $menuItemAll = $renderer->renderFile('news/singleNavElement', array(
        'getlink' => '/?r=news',
-       'navtext' => '%%Top news%%'
+       'navtext' => '%%All news%%'
     ));
 
     $menuItemWorkout = $renderer->renderFile('news/singleNavElement', array(
@@ -169,7 +169,7 @@ function createNavMenuNews(string $data, string $type): string{
 
 
     $menuItemAllNonLink = $renderer->renderFile('news/nonLinkNavElement', array(
-        'text' => '%%Top news%%'
+        'text' => '%%All news%%'
     ));
 
     $menuItemWorkoutNonLink = $renderer->renderFile('news/nonLinkNavElement', array(
