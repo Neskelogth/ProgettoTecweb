@@ -516,14 +516,17 @@ a:hover{
 }
 
 .answerPostTextarea{
-
 	width: 80%;
 }
 
 .forumTextarea{
-
+	display: block;
 	width: 95%;
 	height: 50%;
+}
+
+.block{
+	display:block;
 }
 
 .post textarea {
@@ -533,8 +536,11 @@ a:hover{
 	margin-top: 1em;
 	margin-bottom: .5em;
 	padding: .3em;
-	display: block;
 	resize: none;
+}
+
+.confirmLeaveAnswer{
+	margin-left: 2em;
 }
 
 .commenti textarea{
@@ -570,9 +576,6 @@ a:hover{
 	margin-bottom: 0.3em;
 }
 
-.leaveAnswer{
-	margin-left: 0em;
- }
 
 .miPiaceButton, .leaveAnswer{
 	display: inline-block;

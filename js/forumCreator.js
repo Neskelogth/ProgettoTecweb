@@ -137,7 +137,7 @@ function getComments(){
                                     textarea.setAttribute("rows", "3");
                                     //textarea.setAttribute("cols", "70");
                                     textarea.setAttribute("name", "answer_post" + res[commentIndex].IDPost);
-                                    textarea.style.display = "none";
+                                    textarea.classList.add("nascosto");
 
                                     return textarea;
 
@@ -149,11 +149,13 @@ function getComments(){
                                     button2.setAttribute("type", "button");
                                     button2.setAttribute("name", "UserAnswer");
                                     button2.onclick = (btn2 = button2)=>{
-
-                                        document.getElementById("answer_post" + res[commentIndex].IDPost).style.display = "inline-block";
+                                        button2.classList.add("confirmLeaveAnswer");
+                                        document.getElementById("answer_post" + res[commentIndex].IDPost).classList.remove("nascosto");
+                                        document.getElementById("answer_post" + res[commentIndex].IDPost).classList.add("block");
                                         let el = document.getElementsByClassName("leaveAnswer")[commentIndex];
                                         //el.style.marginLeft = "5em";
                                         el.innerText = "Invia Risposta";
+
                                         el.onclick = ()=>{
 
                                             fetch("/api/answerSender.php",{method: 'POST',
@@ -162,11 +164,12 @@ function getComments(){
                                                 .then(response=> response.json())
                                                 .then(json=> {
                                                     document.getElementById("answer_post" + res[commentIndex].IDPost).value = "";
-                                                    loadAnswers(res[commentIndex].IDPost);
+                                                    getComments();
                                                 })
                                         };
                                     };
                                     button2.innerText = "Aggiungi una risposta";
+                                    button2.classList.remove("confirmLeaveAnswer");
 
                                     return button2;
 
