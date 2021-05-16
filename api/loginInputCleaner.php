@@ -1,9 +1,6 @@
 <?php
 
 require_once "../libs/DBaccess.php";
-require_once "../libs/Renderer.php";
-require_once __DIR__ . "/../vendor/autoload.php";
-use \Gobie\Regex\Wrappers\Pcre\PcreRegex;
 
 session_start();
 

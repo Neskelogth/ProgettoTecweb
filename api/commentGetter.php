@@ -1,7 +1,7 @@
 <?php
 
 require_once "../libs/DBaccess.php";
-require_once "../libs/contentCreator.php";
+
 
 session_start();
 
