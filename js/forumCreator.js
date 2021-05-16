@@ -218,7 +218,7 @@ function loadAnswers(idPost){
                         let textarea = document.createElement("textarea");
                         textarea.classList.add("text");
                         textarea.setAttribute("rows", "3");
-                        textarea.setAttribute("cols", "90");
+                        //textarea.setAttribute("cols", "90");
                         textarea.setAttribute("readonly", "readonly");
                         textarea.value = res[answerIndex].Text;
 
