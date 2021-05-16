@@ -7,13 +7,13 @@ session_start();
 
 $response = array();
 
-$username = cleanInput($_POST['username']);
-$name = cleanInput($_POST['name']);
-$surname = cleanInput($_POST['surname']);
-$mail = cleanInput($_POST['mail'], true);
-$password = cleanInput($_POST['password']);
-$rePassword = cleanInput($_POST['rePassword']);
-$toRedirect = urldecode($_POST['redirect'] ?? urlencode('/?r=home'));
+$username = cleanFromTags($_POST['username']);
+$name = cleanFromTags($_POST['name']);
+$surname = cleanFromTags($_POST['surname']);
+$mail = cleanFromTags($_POST['mail'], true);
+$password = cleanFromTags($_POST['password']);
+$rePassword = cleanFromTags($_POST['rePassword']);
+$toRedirect = urldecode(cleanFromTags($_POST['redirect'] ?? urlencode('/?r=home')));
 
 $validusername = validateCredentials($username);
 $validemail = validateCredentials($mail);
@@ -49,7 +49,7 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
             
             $response['ok']= false;
 
-//            $response['red'] = "/?r=signup";
+            //$response['red'] = "/?r=signup";
 
             $elements = array(
                 'r' => 'signup'

@@ -1,20 +1,20 @@
 <?php
 
 require_once "../libs/DBaccess.php";
+require_once "../libs/helper.php";
 
 $input = json_decode(file_get_contents("php://input"), true);
 
-$user = $input['user'];
+$user = cleanFromTags($input['user'] ?? "");
 $response = array();
+
+$response['ok'] = false;
 
 $DBaccess = new DBaccess();
 
-if($DBaccess-> getConnection()){
+if($DBaccess-> getConnection() && validateCredentials($user)){
 
     $response['ok'] = $DBaccess-> banUser($user);
-}else{
-
-    $response['ok'] = false;
 }
 
 $DBaccess-> closeConnection();

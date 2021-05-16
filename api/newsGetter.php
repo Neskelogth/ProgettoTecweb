@@ -6,7 +6,12 @@ session_start();
 
 $DBaccess = new DBaccess();
 
-$result = $DBaccess-> getNewsList() ?? array();
+$result = array();
+
+if($DBaccess-> getConnection()){
+
+    $result = $DBaccess-> getNewsList();
+}
 
 $DBaccess->closeConnection();
 

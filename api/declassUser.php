@@ -1,16 +1,22 @@
 <?php
 
 require_once "../libs/DBaccess.php";
+require_once "../libs/helper.php";
 
 session_start();
 
-$DBaccess = new DBaccess();
-
 $input = json_decode(file_get_contents("php://input"), true);
 
-$user = $input['user'];
+$user = cleanFromTags($input['user'] ?? "");
 
-$result = $DBaccess-> declassAdmin($user);
+$result = false;
+
+$DBaccess = new DBaccess();
+
+if($DBaccess-> getConnection() && validateCredentials($user)){
+
+    $result = $DBaccess-> declassAdmin($user);
+}
 
 $DBaccess->closeConnection();
 

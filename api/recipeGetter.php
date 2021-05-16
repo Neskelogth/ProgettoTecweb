@@ -4,9 +4,14 @@ require_once "../libs/DBaccess.php";
 
 session_start();
 
+$result = array();
+
 $DBaccess = new DBaccess();
 
-$result = $DBaccess-> getRecipeList() ?? array();
+if($DBaccess-> getConnection()){
+
+    $result = $DBaccess-> getRecipeList();
+}
 
 $DBaccess->closeConnection();
 

@@ -9,9 +9,9 @@ $response = array();
 
 //$input = json_decode(file_get_contents("php://input"), true);
 
-$toRedirect = $_POST['redirect'] ?? urlencode('/?r=login');
-$userName = $_POST['username'] ?? "";
-$password = $_POST['password'] ?? "";
+$toRedirect = cleanFromTags($_POST['redirect'] ?? urlencode('/?r=login'));
+$userName = cleanFromTags($_POST['username'] ?? "");
+$password = cleanFromTags($_POST['password'] ?? "");
 
 $validuserName = validateCredentials($userName);
 $validpassword = validateCredentials($password);
@@ -29,8 +29,6 @@ if($validuserName && $validpassword && !$sqlinjectiontry){
 
         $response['ok'] = true;
         $userData = $DBaccess->getUserData($userName);
-        
-        
 
         $_SESSION['username'] = $userData['IDUtente'];
         $_SESSION['admin'] = $userData['Admin'];

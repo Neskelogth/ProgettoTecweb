@@ -10,13 +10,13 @@ $response = array();
 //Stream standard
 $input = json_decode(file_get_contents("php://input"), true);
 
-$name = $input['name'];
-$surname = $input['surname'];
-$email = $input['email'];
-$user = $_SESSION['username'];
+$name = cleanFromTags($input['name']);
+$surname = cleanFromTags($input['surname']);
+$email = cleanFromTags($input['email']);
+$user = cleanFromTags($_SESSION['username']);
 
 $dbaccess = new DBaccess();
-if($dbaccess-> getConnection()){
+if($dbaccess-> getConnection() && validateCredentials($user) && validateText($name) && validateText($surname) && validateEmail($email)){
 
     $response['ok'] = $dbaccess-> changeData($user, $name, $surname, $email);
     $dbaccess-> closeConnection();

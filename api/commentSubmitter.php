@@ -5,26 +5,21 @@ require_once "../libs/helper.php";
 
 session_start();
 
-$DBaccess = new DBaccess();
-
 $response = array();
 
 //Stream standard
 $input = json_decode(file_get_contents("php://input"), true);
 
+$username = cleanFromTags($_SESSION["username"] ?? "");
+$text = cleanFromTags($input["val"] ?? "");
+
+$DBaccess = new DBaccess();
+
 if(array_key_exists('submit', $input)) {
 
-    $username = $_SESSION["username"] ?? "";
-    $text = cleanInput($input["val"] ?? "");
+    if(validateCredentials($username) && validateText($text) && $DBaccess-> getConnection()) {
 
-    //CONTROLLO ERRORI (TROPPO BANALE PER IL PROGETTO!!!!) Devono esserici questi controlli più altri più accurati
-    // (es nome siano solo caratteri, alemto tot caratteri...non trovare numeri su nome, chiocciole ecc)
-    if(strlen($username) > 0 && strlen($text) > 0) {
-
-        if($DBaccess-> getConnection()){
-
-            $response['ok'] = $DBaccess->insertPost($username,$text);
-        }
+        $response['ok'] = $DBaccess->insertPost($username,$text);
     }
 }
 $DBaccess-> closeConnection();

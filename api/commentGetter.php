@@ -2,12 +2,18 @@
 
 require_once "../libs/DBaccess.php";
 
-
 session_start();
 
-$dbaccess = new DBaccess();
+$result = array();
 
-$result = $dbaccess-> getPostsList() ?? array();
+$DBaccess = new DBaccess();
+
+if($DBaccess -> getConnection()){
+
+    $result = $DBaccess-> getPostsList() ?? array();
+}
+
+$DBaccess-> closeConnection();
 
 $response = array('ok'=> true, 'result' => array());
 

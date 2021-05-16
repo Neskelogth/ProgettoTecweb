@@ -13,19 +13,19 @@ $response = array(
     'surname' => 'ok',
     'password' => 'ok',
     'rePassword' => 'ok',
-    'internalError' => array()
+    'internalError' => 'none'
 );
 
 $input = json_decode(file_get_contents("php://input"), true);
 
 $keys = array(
 
-    'user' => $input['username'] ?? "",
-    'mail' => $input['mail'] ?? "",
-    'name' => $input['name'] ?? "",
-    'surname' => $input['surname'] ?? "",
-    'password' => $input['password'] ?? "",
-    'rePassword' => $input['rePassword'] ?? ""
+    'user' => cleanFromTags($input['username'] ?? ""),
+    'mail' => cleanFromTags($input['mail'] ?? ""),
+    'name' => cleanFromTags($input['name'] ?? ""),
+    'surname' => cleanFromTags($input['surname'] ?? ""),
+    'password' => cleanFromTags($input['password'] ?? ""),
+    'rePassword' => cleanFromTags($input['rePassword'] ?? "")
 );
 
 $DBaccess = new DBaccess();
@@ -75,7 +75,6 @@ if($atPos === false || $dotPos === false || $dotPos == strlen($keys['mail'] - 1)
     }
 }
 
-//checking for sql injection
 $regex = "/(?i)^[a-z0-9]+$/";
 
 foreach($keys as $item){

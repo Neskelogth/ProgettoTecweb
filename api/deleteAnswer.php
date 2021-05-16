@@ -4,13 +4,18 @@ require_once "../libs/DBaccess.php";
 
 session_start();
 
-$dbaccess = new DBaccess();
-
 $input = json_decode(file_get_contents("php://input"), true);
 
-$idAnswer = intval($input['answerId']) ?? -1;
+$idAnswer = intval($input['answerId'] ?? -1);
 
-$result = $dbaccess-> deleteAnswer($idAnswer) ?? false;
+$result = false;
+
+$DBaccess = new DBaccess();
+
+if($DBaccess-> getConnection()){
+
+    $result = $DBaccess-> deleteAnswer($idAnswer);
+}
 
 $response = array('ok'=> $result);
 

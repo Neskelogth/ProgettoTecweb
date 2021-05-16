@@ -5,17 +5,15 @@ require_once "../libs/helper.php";
 
 session_start();
 
-
-
 $response = array();
 
 //Stream standard
 $input = json_decode(file_get_contents("php://input"), true);
 
-$type = cleanFromTags($input['type']);
-$title = cleanFromTags($input['title']);
-$text = cleanFromTags($input['text']);
-$link = $input['link'] ?? "";
+$type = cleanFromTags($input['type'] ?? "Workout");
+$title = cleanFromTags($input['title'] ?? "");
+$text = cleanFromTags($input['text'] ?? "");
+$link = $input['link'] ?? ""; //it's not necessary to clean tags here since it would be not pass URL validation
 
 
 $validLink = true;
@@ -29,7 +27,7 @@ $validType = validateType($type);
 
 if($validLink && $validText && $validTitle && $validType) {
     $DBaccess = new DBaccess();
-    //inserisco informazioni nel database
+
     if($DBaccess->getConnection()){
 
         $response['ok'] = $DBaccess->insertNews($type,$title, $text, $link);

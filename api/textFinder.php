@@ -4,13 +4,17 @@ require_once "../libs/DBaccess.php";
 
 session_start();
 
-$dbaccess = new DBaccess();
-
 $input = json_decode(file_get_contents("php://input"), true);
 
-$idPost = intval($input['id']) ?? -1;
+$idPost = intval($input['id'] ?? -1);
 
-$result = $dbaccess-> getText($idPost) ?? array();
+$result = array();
+
+$DBaccess = new DBaccess();
+if($DBaccess -> getConnection()){
+
+    $result = $DBaccess-> getText($idPost);
+}
 
 $response = array('ok'=> true, 'result' => $result);
 

@@ -494,6 +494,7 @@ function deleteAnswer(){
         });
 }
 
+
 //tested
 function deleteAccount(){
 

@@ -1,6 +1,7 @@
 <?php
 
 require_once "../libs/DBaccess.php";
+require_once "../libs/helper.php";
 
 session_start();
 
@@ -11,19 +12,15 @@ $response = array();
 //Stream standard
 $input = json_decode(file_get_contents("php://input"), true);
 
-$nomeUtente = $_SESSION["username"] ?? "";
+$nomeUtente = cleanFromTags($_SESSION["username"] ?? "");
 $leavingLike = $input["leavingLike"] ?? false;
 $idPost = intval($input["idPost"] ?? -1);
 
-//CONTROLLO ERRORI (TROPPO BANALE PER IL PROGETTO!!!!) Devono esserici questi controlli più altri più accurati
-// (es nome siano solo caratteri, alemto tot caratteri...non trovare numeri su nome, chiocciole ecc)
-
-if(strlen($nomeUtente) != 0 && is_bool($leavingLike) && $idPost > 0) {
-    //inserisco informazioni nel database
+if(validateCredentials($nomeUtente) && is_bool($leavingLike) && $idPost > -1) {
 
     if($dbaccess-> getConnection()){
 
-        $response['ok'] = $dbaccess-> leaveLike($nomeUtente,$leavingLike, $idPost);
+        $response['ok'] = $dbaccess-> leaveLike($nomeUtente, $leavingLike, $idPost);
     }
 }
 

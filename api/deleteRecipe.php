@@ -4,13 +4,18 @@ require_once "../libs/DBaccess.php";
 
 session_start();
 
-$DBaccess = new DBaccess();
-
 $input = json_decode(file_get_contents("php://input"), true);
 
-$recipe = $input['recipe'];
+$recipe = intval($input['recipe'] ?? -1);
 
-$result = $DBaccess->removeRecipe($recipe);
+$result = false;
+
+$DBaccess = new DBaccess();
+
+if($DBaccess-> getConnection()){
+
+    $result = $DBaccess->removeRecipe($recipe);
+}
 
 $DBaccess->closeConnection();
 

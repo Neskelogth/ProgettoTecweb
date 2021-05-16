@@ -1,15 +1,16 @@
 <?php
 
 require_once "../libs/DBaccess.php";
+require_once "../libs/helper.php";
 
 $input = json_decode(file_get_contents("php://input"), true);
 
-$user = $input['user'];
+$user = cleanFromTags($input['user'] ?? "");
 $response = array();
 
 $DBaccess = new DBaccess();
 
-if ($DBaccess->getConnection()) {
+if ($DBaccess->getConnection() && validateCredentials($user)) {
 
     $response['ok'] = $DBaccess-> unbanUser($user);
 } else {

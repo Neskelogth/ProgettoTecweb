@@ -1,12 +1,21 @@
 <?php
 
 require_once "../libs/DBaccess.php";
+require_once "../libs/helper.php";
 
 session_start();
 
-$dbaccess = new DBaccess();
+$user = cleanFromTags($_SESSION['username'] ?? "");
+$result = array();
 
-$result = $dbaccess-> getPostList($_SESSION['username'] ?? "") ?? array();
+$DBaccess = new DBaccess();
+
+if($DBaccess-> getConnection()) {
+
+    $result = $DBaccess->getPostList($user);
+}
+
+$DBaccess-> closeConnection();
 
 $response = array('ok'=> true, 'result' => array());
 

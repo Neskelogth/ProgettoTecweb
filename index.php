@@ -97,7 +97,6 @@ $parser-> addRoute('adminPanel', function (string $data){
     'notadmin' => !($_SESSION['admin'] ?? false)
 ));
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $parser-> addRoute('profile', function(string $data){
 
         return createProfileContent($data);
@@ -107,7 +106,7 @@ $parser-> addRoute('profile', function(string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' => !($_SESSION['username'] ?? false),
-    'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
+    'redirect' => urlencode("/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false
 ));
 
