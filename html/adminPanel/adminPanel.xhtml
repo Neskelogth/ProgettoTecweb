@@ -66,6 +66,8 @@
 
 <select id = "post" onchange = "findText() "></select>
 
+<label for = "postText">Post da eliminare</label>
+
 <textarea readonly="readonly" rows="10" cols="90" id = "postText"></textarea>
 
 <button onclick="deletePost()">Elimina Post</button>
@@ -77,10 +79,14 @@
 <div id="deleteAnswer">
 <h2>Elimina risposta</h2>
 
+
 <select id = "post1" onchange = "findTextAndAnswer()"></select>
+<label for = "postText1">Post selezionato</label>
 <textarea readonly="readonly" rows="10" cols="90" id = "postText1"></textarea>
 
+
 <select id = "answer" onchange="findAnswerText()"></select>
+<label for = "answerText1">Risposta da eliminare</label>
 <textarea readonly="readonly" rows="10" cols="90" id = "answerText1"></textarea>
 
 <button onclick="deleteAnswer()">Elimina risposta</button>
@@ -210,6 +216,7 @@
 
 <div id="revokeBan">
 <h2>Revoca ban</h2>
+
 
 <select id="banned"></select>
 
