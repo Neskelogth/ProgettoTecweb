@@ -4,11 +4,9 @@
 
 <h2>Promuovi ad amministratore</h2>
 
-<p>Utente da promuovere: </p>
+<label for = "userToPromote">Utente da promuovere: </label>
 
-<select id="userToPromote">
-
-</select>
+<select id="userToPromote"></select>
 
 <button onclick="promote()">Promuovi utente</button>
 
@@ -17,27 +15,11 @@
 
 </div>
 
-<!--
-<div id = "declass">
-
-<h2>Rimuovi ad amministratore</h2>
-
-<p>Utente da promuovere: </p>
-
-<select id="userToDeclass">
-
-</select>
-
-<button onclick="declass()">Declassa utente</button>
-
-<p class="errorMessage nascosot"></p>
-
-</div>
--->
-
 <div id="deleteRecipe">
 
 <h2>Elimina ricetta</h2>
+
+<label for = "recipe">Ricetta da eliminare: </label>
 
 <select id = "recipe"></select>
 
@@ -52,6 +34,8 @@
 
 <h2>Elimina news</h2>
 
+<label for = "news">Notizia da eliminare: </label>
+
 <select id = "news"></select>
 
 <button onclick="deleteNews()">Elimina news</button>
@@ -64,9 +48,11 @@
 <div id="deletePost">
 <h2>Elimina post</h2>
 
+<label for = "post">Post da eliminare: </label>
+
 <select id = "post" onchange = "findText() "></select>
 
-<label for = "postText">Post da eliminare</label>
+<label for = "postText">Testo del post da eliminare: </label>
 
 <textarea readonly="readonly" rows="10" cols="90" id = "postText"></textarea>
 
@@ -79,14 +65,14 @@
 <div id="deleteAnswer">
 <h2>Elimina risposta</h2>
 
-
+<label for = "post1">Post selezionato: </label>
 <select id = "post1" onchange = "findTextAndAnswer()"></select>
-<label for = "postText1">Post selezionato</label>
+<label for = "postText1">Testo del post selezionato: </label>
 <textarea readonly="readonly" rows="10" cols="90" id = "postText1"></textarea>
 
-
+<label for = "answer">Risposta da eliminare: </label>
 <select id = "answer" onchange="findAnswerText()"></select>
-<label for = "answerText1">Risposta da eliminare</label>
+<label for = "answerText1">Testo della risposta da eliminare: </label>
 <textarea readonly="readonly" rows="10" cols="90" id = "answerText1"></textarea>
 
 <button onclick="deleteAnswer()">Elimina risposta</button>
@@ -109,6 +95,7 @@
 <endIfPlaceholder />
 
 <label for="type" id="newsTypeLabel">Inserisci il tipo della news</label>
+
 <select id = "type"></select>
 
 <ifErrortitlePlaceholder />
@@ -217,6 +204,7 @@
 <div id="revokeBan">
 <h2>Revoca ban</h2>
 
+<label for = "banned">Utente a cui revocare il ban: </label>
 
 <select id="banned"></select>
 
@@ -229,6 +217,8 @@
 <div id= "banUserFromForum">
 
 <h2>Banna utente dal Forum</h2>
+
+<label for = "notBanned">Utente da bannare: </label>
 
 <select id="notBanned"></select>
 
@@ -244,6 +234,8 @@
 <h2>Rimuovi account</h2>
 
 <p>Quest'azione comporta l'eliminazione di tutti i post, like e di tutte le risposte dell'utente selezionato</p>
+
+<label for = "remove">Utente a cui rimuovere l'account: </label>
 
 <select id="remove"></select>
 

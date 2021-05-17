@@ -190,18 +190,13 @@ a:hover{
 	min-height: 65em;
 }
 
-/*
-#content a{
-	color: rgb(0, 174, 239);
-	text-decoration: none;
-}
-*/
 #content a:visited {
-	color: rgb(15, 170, 15);
+	color: rgb(0, 110, 204);
 }
 
 #content a {
 	text-decoration: underline;
+	color: rgb(0, 0, 255);
 }
 
 #content button:hover{
@@ -282,7 +277,7 @@ a:hover{
 
 .recipeTitle{
 
-	background-color:  rgb(0, 110, 204);
+	background-color:  rgb(0,110 ,204);
 	color: rgb(255, 255, 255);
 	padding: .3em;
 	padding-left: .5em;
@@ -307,7 +302,10 @@ a:hover{
 
 	padding: .3em;
 	padding-left: .5em;
-	margin-bottom:1em;
+}
+
+.linkricetta{
+	padding-left: 0.5em;
 }
 
 /*Singola ricetta*/
@@ -994,8 +992,11 @@ textarea .text{
 	margin-bottom: 1em;
 }
 
-#promotion p{
-	margin-bottom:.5em;
+#promotion select{
+
+	margin-top: 1em;
+	display: block;
+	margin-top: 1em;
 }
 
 #deleteRecipe{
@@ -1006,12 +1007,22 @@ textarea .text{
 	margin-bottom: 1em;
 }
 
+#deleteRecipe select{
+	display: block;
+	margin-top: 1em;
+}
+
 #deleteNews {
 	margin-bottom: 1em;
 }
 
 #deleteNews h2{
 	margin-bottom: 1em;
+}
+
+#deleteNews select{
+	display: block;
+	margin-top: 1em;
 }
 
 #deletePost{
@@ -1024,6 +1035,8 @@ textarea .text{
 
 #deletePost select{
 	margin-bottom: 1em;
+	display: block;
+	margin-top: 1em;
 }
 
 #deletePost textarea{
@@ -1031,6 +1044,7 @@ textarea .text{
 	border: 2px solid rgb(25, 25, 112);
 	padding: .3em;
 	resize: none;
+	margin-top: 1em;
 }
 
 #deletePost button{
@@ -1051,10 +1065,14 @@ textarea .text{
 	border: 2px solid rgb(25, 25, 112);
 	padding: .3em;
 	resize: none;
+	margin-top: 1em;
+	display: block;
 }
 
 #deleteAnswer select{
 	margin-bottom: 1em;
+	display: block;
+	margin-top: 1em;
 }
 
 #deleteAnswer button{
@@ -1239,6 +1257,8 @@ textarea .text{
 
 #revokeBan select{
 	margin-bottom: 1em;
+	display: block;
+	margin-top: 1em;
 }
 
 #errorBanMessage{
@@ -1251,6 +1271,13 @@ textarea .text{
 
 #banUserFromForum h2{
 	margin-bottom: 1em;
+}
+
+
+#banUserFromForum select{
+	
+	margin-top: 1em;
+	display: block;
 }
 
 #notBanned{
@@ -1275,6 +1302,8 @@ textarea .text{
 
 #removeAccount select{
 	margin-bottom: 1em;
+	display: block;
+	margin-top: 1em;
 }
 
 
@@ -1568,7 +1597,7 @@ textarea .text{
 
 	#creazionePost{
 
-		margin: 0em;
+		margin: 0;
 		padding: 0em;
 		text-align: center;
 	}
