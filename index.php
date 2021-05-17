@@ -81,18 +81,6 @@ $parser-> addRoute('adminPanel', function (string $data){
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/?".http_build_query($_GET)),
-    'errortitle' => ($_GET['eti'] ?? "") == "error",
-    'errorlink' => ($_GET['eli'] ?? "" ) == "error",
-    'errortext' => ($_GET['ete'] ?? "") == "error",
-    'errortype' => ($_GET['ety'] ?? "") == "error",
-    'errorrecipetitle' => ($_GET['ert'] ?? "") == 'error',
-    'errorrecipedecr' => ($_GET['erd'] ?? "") == 'error',
-    'errorrecipeimage' => ($_GET['erd'] ?? "") == 'error',
-    'errorrecipeingredients' => ($_GET['eri'] ?? "") == 'error',
-    'errorrecipemethod' => ($_GET['erm'] ?? "") == 'error',
-    'errorrecipepeople' => ($_GET['erp'] ?? "") == 'error',
-    'errorrecipehint' => ($_GET['erh'] ?? "") == 'error',
-    'errorrecipealt' => ($_GET['era'] ?? "") == 'error',
     'admin' => $_SESSION['admin'] ?? false,
     'notadmin' => !($_SESSION['admin'] ?? false)
 ));

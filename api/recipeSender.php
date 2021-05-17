@@ -11,7 +11,7 @@ $input = json_decode(file_get_contents("php://input"), true);
 
 $name = cleanFromTags($input['name']);
 $description = cleanFromTags($input['description']);
-$link = cleanFromTags($input['link']);
+$imageName = cleanFromTags($input['imageName']);
 $alt = cleanFromTags($input['alt']);
 $ingredients = cleanFromTags($input['ingredients']);
 $method = cleanFromTags($input['method']);
@@ -26,20 +26,20 @@ $opts = array(
 
 $validName = validateText($name);
 $validDescription = validateText($description);
-$validLink = validateText($link, $opts);
+$validImageName = validateText($imageName, $opts);
 $validAlt = validateText($alt);
 $validIngredients = validateText($ingredients);
 $validMethod = validateText($method);
 $validHints = cleanFromTags($hints);
 $validPeople = validateText($people);
 
-if($validAlt && $validDescription && $validHints && $validIngredients && $validLink && $validMethod && $validName && $validPeople){
+if($validAlt && $validDescription && $validHints && $validIngredients && $validImageName && $validMethod && $validName && $validPeople){
 
     $DBaccess = new DBaccess();
 
     if($DBaccess-> getConnection()){
 
-        $response['ok'] = $DBaccess-> insertRecipe($name, $description, $link, $alt, $ingredients, $method, $hints, $people);
+        $response['ok'] = $DBaccess-> insertRecipe($name, $description, $imageName, $alt, $ingredients, $method, $hints, $people);
     }else{
 
         $response['ok'] = false;
@@ -68,9 +68,9 @@ if($validAlt && $validDescription && $validHints && $validIngredients && $validL
         $elements['erm'] = 'error';
     }
 
-    if(!$validLink){
+    if(!$validImageName){
 
-        $elements['erl'] = 'error';
+        $elements['erim'] = 'error';
     }
 
     if(!$validIngredients){

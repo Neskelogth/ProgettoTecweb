@@ -230,7 +230,20 @@ function createAdminContent(string $data): string{
 
     $renderer = new Renderer();
 
-    $content = $renderer-> renderFile('adminPanel/adminPanel', array());
+    $content = $renderer-> renderFile('adminPanel/adminPanel', array(
+        'eti' => ($_GET['eti'] ?? "") == "error",
+        'errorlink' => ($_GET['eli'] ?? "" ) == "error",
+        'errortext' => ($_GET['ete'] ?? "") == "error",
+        'errortype' => ($_GET['ety'] ?? "") == "error",
+        'errorrecipetitle' => ($_GET['ert'] ?? "") == 'error',
+        'errorrecipedecr' => ($_GET['erd'] ?? "") == 'error',
+        'errorrecipeimage' => ($_GET['erim'] ?? "") == 'error',
+        'errorrecipeingredients' => ($_GET['eri'] ?? "") == 'error',
+        'errorrecipemethod' => ($_GET['erm'] ?? "") == 'error',
+        'errorrecipepeople' => ($_GET['erp'] ?? "") == 'error',
+        'errorrecipehint' => ($_GET['erh'] ?? "") == 'error',
+        'errorrecipealt' => ($_GET['era'] ?? "") == 'error'
+    ));
 
     $data = $renderer-> render($data, array(
         'admincontent' => $content

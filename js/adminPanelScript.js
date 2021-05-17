@@ -1,7 +1,6 @@
 function loadElements(){
 
     const select = document.getElementById("userToPromote");
-    //const secondSelect = document.getElementById("userToDeclass");
     const alimentationSelect = document.getElementById("recipe");
     const newsSelect = document.getElementById("news");
     const newsTypesSelect = document.getElementById("type");
@@ -11,9 +10,9 @@ function loadElements(){
     const unbanSelect = document.getElementById("banned");
     const postSelect1 = document.getElementById("post1");
     const postTextArea1 = document.getElementById("postText1");
+    const deleteUserSelect = document.getElementById("remove");
 
     select.innerHTML = "";
-    //secondSelect.innerHTML = "";
     alimentationSelect.innerHTML = "";
     newsSelect.innerHTML = "";
     postSelect.innerHTML = "";
@@ -23,6 +22,7 @@ function loadElements(){
     unbanSelect.innerHTML = "";
     postSelect1.innerHTML = "";
     postTextArea1.innerHTML = "";
+    deleteUserSelect.innerHTML = "";
 
     //working
     fetch('/api/userGetter.php')
@@ -30,6 +30,10 @@ function loadElements(){
         .then(json => {
 
             const users = json.result;
+            onlyBanned = onlyBannedUsers(users);
+            noBanned = noUserBanned(users);
+            console.log(noBanned)
+
             users.forEach((element) => {
 
                 let option = document.createElement("option");
@@ -46,6 +50,7 @@ function loadElements(){
                 option3.innerHTML = element.username;
 
                 if(element.username != json.current){
+
                     document.getElementById("remove").appendChild(option3);
                 }
 
@@ -53,23 +58,41 @@ function loadElements(){
                 if(!element.admin){
 
                     select.appendChild(option);
-                }/*else{
+                }
 
-                    secondSelect.appendChild(option);
-                }*/
                 if(!element.banned){
                     if(element.username != json.current){
 
                         banSelect.appendChild(option2);
                     }
                 }else{
-                    if(element.username != json.current){
+                   if(element.username != json.current){
 
-                        unbanSelect.appendChild(option2);
+                       unbanSelect.appendChild(option2);
                     }
                 }
-
             });
+
+            if(onlyBanned){
+
+                const option = document.createElement("option");
+                option.setAttribute("value", "0");
+                option.innerHTML = "Non ci sono utenti non bannati"
+                console.log("onlyBanned")
+
+                banSelect.appendChild(option);
+            }
+
+            if(noBanned){
+
+                const option = document.createElement("option");
+                option.setAttribute("value", "0");
+                option.innerHTML = "Non ci sono utenti bannati"
+                console.log("noBanned")
+
+                unbanSelect.appendChild(option);
+            }
+
         });
 
     //working
@@ -150,6 +173,33 @@ function loadElements(){
         });
 }
 
+function onlyBannedUsers(users){
+
+    let onlyBanned = true;
+    users.forEach((user) => {
+
+        if(!user.banned){
+
+            onlyBanned = false;
+        }
+    });
+
+    return onlyBanned;
+}
+
+function noUserBanned(users){
+
+    let noBanned = true;
+    users.forEach((user) => {
+
+        if(user.banned){
+
+            noBanned = false;
+        }
+    });
+    return noBanned;
+}
+
 //tested
 function promote(){
 
@@ -167,7 +217,7 @@ function promote(){
             }
             loadElements();
         });
-
+    clearErrors();
 }
 
 //tested
@@ -189,7 +239,7 @@ function deleteRecipe(){
             }
             loadElements();
         })
-
+    clearErrors();
 }
 
 //tested
@@ -211,6 +261,7 @@ function deleteNews(){
             }
             loadElements();
         })
+    clearErrors();
 }
 
 //tested
@@ -277,12 +328,16 @@ function deletePost(){
             }else{
                 el.classList.add("nascosto");
                 loadElements();
+
             }
         });
+    clearErrors();
 }
 
 //tested
 function sendRecipe(){
+
+    console.log()
 
     fetch('/api/recipeSender.php', {
         method: 'POST',
@@ -292,6 +347,7 @@ function sendRecipe(){
             name: document.getElementById("recipeTitle").value,
             description: document.getElementById("recipeDescription").value,
             link: document.getElementById("recipeImage").value,
+            imageName: document.getElementById("recipeImage").value,
             alt: document.getElementById("recipeAlt").value,
             ingredients: document.getElementById("recipeIngredients").value,
             method: document.getElementById("recipeMethod").value,
@@ -325,7 +381,9 @@ function banUser(){
 
                 const el = document.getElementById("errorBanMessage").classList.remove("nascosto");
             }
+            loadElements();
         });
+    clearErrors();
 }
 
 function unbanUser(){
@@ -348,6 +406,7 @@ function unbanUser(){
                 }
                 loadElements();
             });
+    clearErrors();
 }
 
 //tested
@@ -442,7 +501,6 @@ function findTextAndAnswer(){
 
             findAnswers(idPost);
         });
-
 }
 
 //tested
@@ -470,6 +528,7 @@ function deleteAnswer(){
             }
             loadElements();
         });
+    clearErrors();
 }
 
 
@@ -493,10 +552,67 @@ function deleteAccount(){
 
                 document.getElementById("errorRemoveMessage").classList.add("nascosto");
             }
-
             loadElements();
 
         });
+    clearErrors();
+}
+
+//tested
+function clearErrors(){
+
+    //clearing news Errors
+    if(document.getElementById("typeError")){
+
+        document.getElementById("typeError").remove();
+    }
+
+    if(document.getElementById("newsTitleError")){
+
+        document.getElementById("newsTitleError").remove();
+    }
+
+    if(document.getElementById("newsTextError")){
+
+        document.getElementById("newsTextError").remove();
+    }
+
+    if(document.getElementById("newsLinkError")){
+
+        document.getElementById("newsLinkError").remove();
+    }
+
+    //clearing recipe errors
+
+    if(document.getElementById("recipeNameError")){
+
+        document.getElementById("recipeNameError").remove();
+    }
+
+    if(document.getElementById("recipeDescriptionError")){
+
+        document.getElementById("recipeDescriptionError").remove();
+    }
+
+    if(document.getElementById("recipeImageError")){
+
+        document.getElementById("recipeImageError").remove();
+    }
+
+    if(document.getElementById("recipeIngredientsError")){
+
+        document.getElementById("recipeIngredientsError").remove();
+    }
+
+    if(document.getElementById("recipeMethodError")){
+
+        document.getElementById("recipeMethodError").remove();
+    }
+
+    if(document.getElementById("recipePeopleError")){
+
+        document.getElementById("recipePeopleError").remove();
+    }
 }
 
 //working
