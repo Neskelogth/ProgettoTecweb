@@ -2,7 +2,7 @@
 
 class DBaccess{
 
-    private const HOST_DB = "127.0.0.1";
+    private const HOST_DB = "127.0.0.1:3307";
     private const USERNAME = "mtesser";
     private const PASSWORD = "ikee4Doongaem7ju";
     private const DATABASE_NAME = "mtesser";
@@ -343,16 +343,6 @@ class DBaccess{
 
         return $this-> connection-> query($query);
     }
-
-    /*
-    public function declassAdmin(string $user): bool{
-
-        $user = base64_encode($user);
-        $query = "UPDATE Utente SET Amministratore = 0 WHERE IDUtente='$user'";
-
-        return $this-> connection-> query($query);
-    }
-    */
 
     public function getRecipeList(){
 

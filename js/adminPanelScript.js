@@ -171,28 +171,6 @@ function promote(){
 }
 
 //tested
-/*
-function declass(){
-
-    fetch('/api/declassUser.php',{
-        method: 'POST',
-        credentials: 'same-origin',
-        body: JSON.stringify({user: document.getElementById("userToDeclass").value})
-    })
-        .then(response => response.json())
-        .then(json => {
-
-            if(!json.ok){
-
-                const el = document.getElementById("errorMessage").setAttribute("display", "block");
-                el.innerHTML = "L'utente non è stato declassato a causa di un errore. Si prega di riprovare.";
-            }
-        });
-    loadElements();
-}
-*/
-
-//tested
 function deleteRecipe(){
 
     fetch('/api/deleteRecipe.php',{
