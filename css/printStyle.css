@@ -9,17 +9,18 @@ Stile css per stampa
 }
 
 html{
-    font-family: "Times New Roman", Times, serif;
-    font-size:12pt;
+	font-family: "Times New Roman", Times, serif;
+	font-size:12pt;
 }
 
 #header{
-    padding:0.1em 1.5em 0.5em;
+	padding:0.1em 1.5em 0.5em;
 }
+
 #header h1{
     text-align: center;
 }
-#header img{
+#logo{
     display:none;
 }
 #breadcrumb{

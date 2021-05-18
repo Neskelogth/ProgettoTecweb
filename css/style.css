@@ -1718,3 +1718,385 @@ textarea .text{
 		width: 99%
 	}
 }
+
+/**MEDIA QUERY PER STAMPA*/
+@media print {
+	/*
+Stile css per stampa
+*/
+
+/*GENERALE*/
+
+#menu{
+    display: none;
+}
+
+html{
+	font-family: "Times New Roman", Times, serif;
+	font-size:12pt;
+}
+
+#header{
+	padding:0.1em 1.5em 0.5em;
+}
+
+#header h1{
+    text-align: center;
+}
+#logo{
+    display:none;
+}
+#breadcrumb{
+    margin-top: -3em;
+    padding:1em 1.5em;
+}
+
+#content{
+    padding:0.1em 1.5em 0.5em;
+    margin-top: -2em;
+}
+
+#loginandsignup{
+	margin-left: 56em;
+	margin-right: 0em;
+	margin-bottom:0.25em;
+	display: inline;
+}
+
+#loginandsignup a{
+	display:inline-block;
+	margin-right: 0.5em; /* non c'è da marco ud quindi boh*/
+}
+
+/*FINE GENERALE*/
+
+/*INIZIO HOME*/
+
+#contenthome{
+    padding:0.1em 1.5em 0.5em;
+    margin-top: -2em;
+}
+
+/*FINE HOME*/
+
+/*INIZIO WORKOUT PAGINA*/
+#splitTable{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	padding-top: 0.25em;
+	padding-left: 1.25em;
+}
+
+#splitTable table{
+	margin-bottom: 1em;
+	border-collapse: collapse;
+}
+
+#splitTable td, th{
+		border: 1px solid rgba(0, 0, 0);
+}
+#splitTable td{
+	padding-left:0.25em;
+}
+
+#splitTable th{
+	padding-bottom: 0.25em;
+	padding-top: 0.25em;
+	margin-top:1em;
+	margin-bottom: 3em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.setrep{
+	text-align:center;
+}
+
+#splitTable td{
+	padding-top: 0.25em;
+	table-layout: auto;
+	width: 100%
+}
+
+/*FINE WORKOUT PAGINA*/
+
+/*INIZIO ALIMENTAZIONE PAGINA GENERALE*/
+
+.recipeImage{
+	width: 30%;
+	display: block;
+    margin: auto;
+}
+
+.recipeTitle{
+	padding: .3em;
+	padding-left: .5em;
+    border: 1px solid rgba(0, 0, 0);
+}
+
+.recipeAd{
+	border: 1px solid rgba(0, 0, 0);
+	border-top: none;
+    margin-bottom: .5em;
+    margin-left: 0em;
+    padding-top: 0.3em;
+}
+
+.recipeAdText{
+    padding-left: .5em;
+}
+
+/* INIZIO PAGINA RICETTA SINGOLA*/
+
+#recipeInnerImage{
+	height: 60%;
+	max-height: 20em;
+    max-width: 60%;
+    margin: auto;
+}
+#back{
+    display: none;
+}
+
+/* FINE PAGINA RICETTA SINGOLA*/
+
+/* INIZIO PAGINA FORUM*/
+
+.AccessButton{
+	margin-top: 1.5em;
+	margin-left: 23em;
+	padding: 1.25em 0.5em 1.25em 0.5em;
+	font-size: 100%;
+	font-weight: bold;
+}
+.commenti{
+	margin-left: -2.5em;
+}
+
+.commenti fieldset{
+	border: 2px solid rgba(0, 0, 0);
+	padding-right: 1em;
+}
+.commenti textarea{
+	width: 90%;
+	display:block;
+	margin-left: 2.4em;
+	margin-right: 2.4em;
+	padding-top: 0.5em;
+	padding-left: 0.7em;
+	resize: none;
+}
+
+.post{
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+.post h2{
+	margin-left: 13em;
+}
+.post label{
+	font-weight: bold;
+	display:block;
+	margin-left: 2em;
+	margin-top: -1.5em;
+	margin-bottom: 0.3em;
+}
+.post button{
+	padding: 0.3em 0.3em 0.3em 0.3em;
+	font-weight: bold;
+}
+
+.miPiaceButton, .leaveAnswer{
+	display: inline-block;
+	margin-top: 0.5em;
+	margin-bottom: 0.7em;
+}
+
+.likeBicipite{
+	height: 10%;
+	max-height: 3em;
+	max-width: 90%;
+	margin: auto;
+}
+
+.miPiaceButton {
+	margin-left: 2.4em;
+	margin-right: 0.5em;
+}
+
+.LikeCount{
+	font-size: large;
+}
+
+.othersComment{
+	display: block;
+	margin-left: 2.4em;
+	margin-bottom: 0.5em;
+}
+
+#creazionePostL{
+	font-weight: bold;
+	display:block;
+	margin-left: 2em;
+	margin-top: 1em;
+	margin-bottom: 0.3em;
+}
+
+.Inviabutton{
+	margin-left: 2em;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+	font-size: 100%;
+	font-weight: bold;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+/* FINE PAGINA FORUM*/
+
+
+/* INIZIO PAGINA NEWS*/
+
+.news a:link:after, a:visited:after {
+    content: " [" attr(href) "] ";
+	font-size:90%;
+	/*QUA LA PROF AVEVA DETTO A LEZ CHE E' MEGLIO USARE CSS3 CON QUESTO 
+	a[href^="/"]:after{
+		content: " (http://www.sito.it" attr(href) ") ";
+	} 
+	MA A ME NON FUNZIONA QUINDI BOH*/
+}
+
+#sottotitolonews{
+	border: 3px solid rgba(0, 0, 0);
+	padding-left: 0.5em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+.sottotitolonews{
+	padding-bottom: 0.5em;
+	border: 3px solid rgba(0, 0, 0);
+	padding-left: 0.5em;
+	padding-top: 0.25em;
+}
+#minititolonews{
+    padding-left: 0.5em;
+	padding-top: 0.25em;
+	border-bottom: 2px solid rgba(0, 0, 0);
+	border-left: 3px solid rgba(0, 0, 0);
+    border-right: 3px solid rgba(0, 0, 0);
+    margin-top: -1.5em;
+}
+.minititolonews{
+	padding-left: 1em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	border-bottom: 2px solid rgba(0, 0, 0);
+	border-left: 3px solid rgba(0, 0, 0);
+	border-right: 3px solid rgba(0, 0, 0);
+	margin-top: -1.1em;
+}
+.news p {
+	padding-left: 0.5em;
+	border-bottom: 3px solid rgba(0, 0, 0);
+	border-left: 3px solid rgba(0, 0, 0);
+	border-right: 3px solid rgba(0, 0, 0);
+	padding-bottom: 0.30em;
+	padding-top: 0.25em;
+    margin-top: -1.3em;
+}
+
+#navnews {
+    margin-left: -2.5em;
+}
+#navnews ul li{
+	margin-left: 0.01em;
+	display: inline;
+	padding : 0.25em;
+	font-weight: bolder;   
+    border: 2px solid rgba(0, 0, 0);
+}
+
+/* FINE PAGINA NEWS*/
+
+/*INIZIO LOGIN*/
+.contentLogin{     /* non so se lasciarlo al centro o fare come le altre che sono a sinistra e spostare tutto un po' più su */
+	text-align:center;
+}
+
+#notLoggedIn textarea{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 0.7em;
+	resize: none;
+}
+
+.loginButton{
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	padding: 0.75em 0.5em 0.75em 0.5em;
+	font-size: 100%;
+	font-weight: bold;
+	display:block;
+	margin-left:5.5em;
+}
+
+#notLoggedIn label{
+	display: block;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+
+#notLoggedIn fieldset{
+	border: 2px solid rgba(0, 0, 0);
+	margin-left: 12em;
+	margin-right: 12em;
+}
+
+#loggedIn h3{
+	margin-top:2em;
+}
+
+/*FINE LOGIN*/
+
+/*INIZIO SIGN UP*/
+
+.contentSignUp{
+	text-align:center;
+}
+
+#nonRegistrato textarea{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 0.7em;
+	resize: none;
+}
+
+.signUpButton{
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	padding: 0.75em 0.5em 0.75em 0.5em;
+	font-size: 100%;
+	font-weight: bold;
+	display:block;
+	margin-left:4.5em;
+}
+
+#nonRegistrato label{
+	display: block;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+
+#nonRegistrato fieldset{
+	border: 2px solid rgba(0, 0, 0);
+	margin-left: 12em;
+	margin-right: 12em;
+}
+
+#registrato h3{
+	margin-top:2em;
+}
+
+/*FINE SIGN UP*/
+}
