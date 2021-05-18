@@ -1730,9 +1730,6 @@ textarea .text{
 
 /**MEDIA QUERY PER STAMPA*/
 @media print {
-	/*
-Stile css per stampa
-*/
 
 /*GENERALE*/
 
@@ -1749,6 +1746,13 @@ html{
 	padding:0.1em 1.5em 0.5em;
 }
 
+#header a{
+	padding: .2em;
+	border-radius: 6px;
+	text-decoration: underline;
+	border: none;
+}
+
 #header h1{
     text-align: center;
 }
@@ -1762,73 +1766,37 @@ html{
 
 #content{
     padding:0.1em 1.5em 0.5em;
-    margin-top: -2em;
+	overflow: hidden;
 }
 
-#loginandsignup{
-	margin-left: 56em;
-	margin-right: 0em;
-	margin-bottom:0.25em;
-	display: inline;
+.aiuti{
+	display: none;
 }
 
-#loginandsignup a{
-	display:inline-block;
-	margin-right: 0.5em; /* non c'è da marco ud quindi boh*/
+#content h1{
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-align: center;
+	border: none;
 }
 
+
+#content h2{
+	border: none;
+}
 /*FINE GENERALE*/
 
 /*INIZIO HOME*/
 
-#contenthome{
+#contenthome h1{
     padding:0.1em 1.5em 0.5em;
-    margin-top: -2em;
 }
-
+#contenthome {
+	overflow: hidden;
+}
 /*FINE HOME*/
 
-/*INIZIO WORKOUT PAGINA*/
-#splitTable{
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-	padding-left: 1.25em;
-}
 
-#splitTable table{
-	margin-bottom: 1em;
-	border-collapse: collapse;
-}
-
-#splitTable td, th{
-		border: 1px solid rgba(0, 0, 0);
-}
-#splitTable td{
-	padding-left:0.25em;
-}
-
-#splitTable th{
-	padding-bottom: 0.25em;
-	padding-top: 0.25em;
-	margin-top:1em;
-	margin-bottom: 3em;
-	padding-left: 1em;
-	padding-right: 1em;
-}
-
-.setrep{
-	text-align:center;
-}
-
-#splitTable td{
-	padding-top: 0.25em;
-	table-layout: auto;
-	width: 100%
-}
-
-/*FINE WORKOUT PAGINA*/
 
 /*INIZIO ALIMENTAZIONE PAGINA GENERALE*/
 
@@ -1839,22 +1807,21 @@ html{
 }
 
 .recipeTitle{
+	color:  rgb(0, 0, 0); /*anche negli altri casi??*/
 	padding: .3em;
 	padding-left: .5em;
-    border: 1px solid rgba(0, 0, 0);
+	border: 3px solid rgb(0, 0, 0);
+
 }
 
-.recipeAd{
-	border: 1px solid rgba(0, 0, 0);
+
+#content dd{
+	padding-bottom: 0.5em;
+	border: 2px solid rgb(0, 0, 0);
 	border-top: none;
-    margin-bottom: .5em;
-    margin-left: 0em;
-    padding-top: 0.3em;
+	margin-bottom: .5em;
 }
 
-.recipeAdText{
-    padding-left: .5em;
-}
 
 /* INIZIO PAGINA RICETTA SINGOLA*/
 
@@ -1862,7 +1829,7 @@ html{
 	height: 60%;
 	max-height: 20em;
     max-width: 60%;
-    margin: auto;
+	margin-bottom: 1.5em;
 }
 #back{
     display: none;
@@ -1871,66 +1838,118 @@ html{
 /* FINE PAGINA RICETTA SINGOLA*/
 
 /* INIZIO PAGINA FORUM*/
-
 .AccessButton{
 	margin-top: 1.5em;
-	margin-left: 23em;
+	margin-left: 17em;
 	padding: 1.25em 0.5em 1.25em 0.5em;
 	font-size: 100%;
 	font-weight: bold;
 }
+
+#bannedFromForum{
+	margin-top: 1em;
+}
+
 .commenti{
-	margin-left: -2.5em;
+	margin-bottom: 4em;
+}
+.commenti button{
+
+	padding: 1em;
+	background-color:rgb(135, 206, 235);
+	border: 2px solid rgb(25, 25, 112);
+}
+
+.forumFieldset{
+
+	max-width: 100%;
+}
+
+.answerPostTextarea{
+	width: 80%;
+}
+
+.forumTextarea{
+	display: block;
+	box-sizing:border-box;
+	width: 95%;
+	height: 50%;
+	overflow: hidden;
+}
+
+.block{
+	display:block;
+}
+
+.post textarea {
+	background-color:rgb(239, 250, 255);
+	border: 2px solid rgb(25, 25, 112);
+	margin-left: 1em;
+	margin-top: 1em;
+	margin-bottom: .5em;
+	padding: .3em;
+	resize: none;
+}
+
+.confirmLeaveAnswer{
+	margin-left: 1em;
+}
+
+.commenti textarea{
+	width: 96%;
+	display:block;
+	resize: none;
+	padding: 1em;
+	background-color:rgb(239, 250, 255);
+	border: 2px solid rgb(25, 25, 112);
+	resize: none;
 }
 
 .commenti fieldset{
-	border: 2px solid rgba(0, 0, 0);
-	padding-right: 1em;
-}
-.commenti textarea{
-	width: 90%;
-	display:block;
-	margin-left: 2.4em;
-	margin-right: 2.4em;
-	padding-top: 0.5em;
-	padding-left: 0.7em;
-	resize: none;
+	border: 2px solid rgb(25, 25, 112);
+	background-color: rgb(135, 206, 235);
 }
 
 .post{
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
-.post h2{
-	margin-left: 13em;
+.post h3{
+	margin-top:.5em;
+	margin-left: 15em;
 }
 .post label{
 	font-weight: bold;
 	display:block;
-	margin-left: 2em;
-	margin-top: -1.5em;
+	margin-left: 1em;
+	margin-top: 0em;
 	margin-bottom: 0.3em;
 }
-.post button{
-	padding: 0.3em 0.3em 0.3em 0.3em;
-	font-weight: bold;
-}
+
 
 .miPiaceButton, .leaveAnswer{
 	display: inline-block;
 	margin-top: 0.5em;
 	margin-bottom: 0.7em;
+	border: 2px solid rgb(25, 25, 112);
+	background-color: rgb(135, 206, 235);
+	padding: 0.3em 0.3em 0.3em 0.3em;
+	font-weight: bold;
 }
+
 
 .likeBicipite{
 	height: 10%;
 	max-height: 3em;
 	max-width: 90%;
 	margin: auto;
+	background-color: transparent;
 }
 
 .miPiaceButton {
-	margin-left: 2.4em;
+	margin-left: 1em;
 	margin-right: 0.5em;
 }
 
@@ -1939,28 +1958,44 @@ html{
 }
 
 .othersComment{
-	display: block;
+
 	margin-left: 2.4em;
 	margin-bottom: 0.5em;
 }
 
-#creazionePostL{
+.answer{
+	/*display:inline-block;*/
+	margin-top: 1em;
+	overflow: hidden;
+}
+
+.answer p{
+
+	margin-left:1em;
+	font-weight: bold;
+
+}
+
+.answer textarea{
+	width: 85%;
+	box-sizing:border-box;
+	margin-right: 3em;
+	margin-left: 3em;
+	resize: none;
+}
+
+textarea .text{
+	margin-top: 9em;
+}
+
+#creazionePost{
 	font-weight: bold;
 	display:block;
-	margin-left: 2em;
 	margin-top: 1em;
 	margin-bottom: 0.3em;
 }
 
-.Inviabutton{
-	margin-left: 2em;
-	margin-bottom: 0.5em;
-	margin-top: 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-}
+
 /* FINE PAGINA FORUM*/
 
 
