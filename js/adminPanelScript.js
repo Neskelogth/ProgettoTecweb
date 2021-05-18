@@ -30,9 +30,8 @@ function loadElements(){
         .then(json => {
 
             const users = json.result;
-            onlyBanned = onlyBannedUsers(users);
-            noBanned = noUserBanned(users);
-            console.log(noBanned)
+            onlyBanned = onlyBannedUsers(users, json.current);
+            noBanned = noUserBanned(users, json.current);
 
             users.forEach((element) => {
 
@@ -76,21 +75,27 @@ function loadElements(){
             if(onlyBanned){
 
                 const option = document.createElement("option");
-                option.setAttribute("value", "0");
-                option.innerHTML = "Non ci sono utenti non bannati"
-                console.log("onlyBanned")
+                option.setAttribute("value", "-1");
+                option.innerHTML = "Non ci sono utenti non bannati";
+                document.getElementById("ban").setAttribute("disabled", "true");
 
                 banSelect.appendChild(option);
+            }else{
+
+                document.getElementById("ban").removeAttribute("disabled");
             }
 
             if(noBanned){
 
                 const option = document.createElement("option");
-                option.setAttribute("value", "0");
-                option.innerHTML = "Non ci sono utenti bannati"
-                console.log("noBanned")
+                option.setAttribute("value", "-1");
+                option.innerHTML = "Non ci sono utenti bannati";
+                document.getElementById("revoke").setAttribute("disabled", "true");
 
                 unbanSelect.appendChild(option);
+            }else{
+
+                document.getElementById("revoke").removeAttribute("disabled");
             }
 
         });
@@ -173,28 +178,35 @@ function loadElements(){
         });
 }
 
-function onlyBannedUsers(users){
+function onlyBannedUsers(users, current){
 
     let onlyBanned = true;
     users.forEach((user) => {
 
-        if(!user.banned){
+        if(user.username != current){
 
-            onlyBanned = false;
+            if(!user.banned){
+
+                onlyBanned = false;
+            }
         }
     });
 
     return onlyBanned;
 }
 
-function noUserBanned(users){
+function noUserBanned(users, current){
 
     let noBanned = true;
+
     users.forEach((user) => {
 
-        if(user.banned){
+        if(user.username != current) {
 
-            noBanned = false;
+            if (user.banned) {
+
+                noBanned = false;
+            }
         }
     });
     return noBanned;
@@ -365,7 +377,6 @@ function sendRecipe(){
 function banUser(){
 
     const userToBan = document.getElementById("notBanned").value;
-    console.log(userToBan)
 
     fetch('/api/banUser.php', {
         method: 'POST',
