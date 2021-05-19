@@ -182,11 +182,10 @@ a:hover{
 
 #content{
     margin-left: 20%;
-	/*width: 70%;*/
 	border-left: 2px solid rgb(0, 0, 0);
 	padding-left: 0.7em;
 	padding-right: 0.7em;
-	/*margin-top: 1em;*/
+	padding-top: 1em;
 	min-height: 65em;
 }
 
@@ -266,6 +265,7 @@ a:hover{
 
 
 /* Inizio Pagina generale delle ricette*/
+
 
 .recipeImage{
 	width: 50%;
@@ -456,7 +456,7 @@ a:hover{
 
 #navnews{
 	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-bottom: 2em;
 }
 #navnews li{
 
@@ -687,7 +687,6 @@ textarea .text{
 /*Inizio parte Workout*/
 
 /* Workout */
-
 
 #premise h2{
 	margin-bottom: 1em;
