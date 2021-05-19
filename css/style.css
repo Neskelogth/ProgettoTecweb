@@ -236,7 +236,7 @@ a:hover{
 #contenthome{
     margin-left: 17%;
     width: 70%;
-	padding : 14em 2em 16em 2em;
+	padding : 5em 2em 16em 2em;
 	border-left: 2px solid rgb(0, 0, 0);
     text-align: center;
 }
@@ -250,7 +250,6 @@ a:hover{
 	margin-bottom: 1em;
 	color:  rgb(0, 110, 204);
 	font-size: 3em;
-
 }
 
 #contenthome h2 {
@@ -271,9 +270,10 @@ a:hover{
 	width: 50%;
 	display: block;
 	margin: auto;
-	margin-top:1em;
-	margin-bottom:1em;
+	/*padding-top:1em;
+	margin-bottom:1em;*/
 }
+
 
 .recipeTitle{
 
@@ -285,10 +285,21 @@ a:hover{
 
 }
 
-.recipeTitle a{
 
+.recipeTitle a{
 	color: rgb(255, 255, 255);
 	text-decoration: none;
+}
+
+.recipeBody{
+	border-left: 3px solid rgb(25, 25, 112);
+	border-right: 3px solid rgb(25, 25, 112);
+	border-bottom: 3px solid rgb(25, 25, 112);
+	margin-bottom: 2em;
+}
+
+.linkRecipe{
+	margin-bottom: 0.5em;
 }
 
 .recipeAd{
@@ -302,10 +313,12 @@ a:hover{
 
 	padding: .3em;
 	padding-left: .5em;
+	border-top: 3px solid rgb(25, 25, 112);
 }
 
 .linkricetta{
 	padding-left: 0.5em;
+	padding-bottom: 1em;
 }
 
 /*Singola ricetta*/
@@ -412,14 +425,6 @@ a:hover{
 
 }
 
-#minititolonews{
-	padding-left: 0.5em;
-	padding-top: 0.25em;
-	padding-bottom: 0.25em;
-	border-bottom: 2px solid rgb(25, 25, 112);
-	border-left: 3px solid rgb(25, 25, 112);
-	border-right: 3px solid rgb(25, 25, 112);
-}
 
 .minititolonews{
 	padding-left: 0.5em;
@@ -1767,6 +1772,27 @@ tbody th{
 	}
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*MEDIA QUERY PER STAMPA*/
 @media print {
 
@@ -1790,17 +1816,24 @@ html{
 	border-radius: 6px;
 	text-decoration: underline;
 	border: none;
+	color: rgb(0, 0, 0);
 }
 
 #header h1{
     text-align: center;
+	color: rgb(0, 0, 0);
 }
 #logo{
     display:none;
 }
 #breadcrumb{
+	color: rgb(0, 0, 0);
     margin-top: -3em;
     padding:1em 1.5em;
+}
+
+#breadcrumb a{
+	color: rgb(0, 0, 0);
 }
 
 #content{
@@ -1821,17 +1854,19 @@ html{
 
 
 #content h2{
-	border: none;
+	color: rgb(0, 0, 0);
 }
 /*FINE GENERALE*/
 
 /*INIZIO HOME*/
 
-#contenthome h1{
-    padding:0.1em 1.5em 0.5em;
-}
+
 #contenthome {
 	overflow: hidden;
+}
+
+#contenthome h1 {
+	color: rgb(0, 0, 0);
 }
 /*FINE HOME*/
 
@@ -1846,19 +1881,58 @@ html{
 }
 
 .recipeTitle{
-	color:  rgb(0, 0, 0); /*anche negli altri casi??*/
+	color:  rgb(0, 0, 0); 
 	padding: .3em;
 	padding-left: .5em;
 }
 
-
-#content dd{
-	padding-bottom: 0.5em;
-	border-top: none;
-	margin-bottom: .5em;
-	border: 2px solid rgb(0, 0, 0);
+#alimentationcontent dd p a{
+	color: rgb(0, 0, 0);
 }
 
+#alimentationcontent dd p a:visited{
+	color: rgb(0, 0, 0);
+}
+/*WORKOUT GENERALE*/
+
+#splitsMenu ul li a{
+	color:  rgb(0, 0, 0); 
+}
+
+#splitsMenu ul li a:visited{
+	color:  rgb(0, 0, 0); 
+}
+
+#whatis h2{
+	border: none;
+}
+
+#why h2{
+	border: none;
+}
+
+#example h2{
+	border: none;
+}
+
+#premise h2{
+	border: none;
+}
+
+#introToWS h2{
+	border: none;
+}
+
+#benefits h2 {
+	border: none;
+}
+
+#whichSplit h2 {
+	border: none;
+}
+
+
+/*FINE WORKOUT*/
 
 /* INIZIO PAGINA RICETTA SINGOLA*/
 
@@ -1876,25 +1950,6 @@ html{
 
 /* INIZIO PAGINA FORUM*/
 
-.AccessButton{
-	margin-top: 1.5em;
-	margin-left: 17em;
-	padding: 1.25em 0.5em 1.25em 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-}
-
-#bannedFromForum{
-	margin-top: 1em;
-}
-
-.commenti{
-	margin-bottom: 4em;
-}
-.commenti button{
-	padding: 1em;
-
-}
 
 .forumFieldset{
 
@@ -1902,9 +1957,6 @@ html{
 	border: 2px solid rgb(0, 0, 0);
 }
 
-.answerPostTextarea{
-	width: 80%;
-}
 
 .forumTextarea{
 	display: block;
@@ -1914,9 +1966,6 @@ html{
 
 }
 
-.block{
-	display:block;
-}
 
 .post textarea {
 	margin-left: 1em;
@@ -1929,16 +1978,6 @@ html{
 .confirmLeaveAnswer{
 	margin-left: 1em;
 }
-
-.commenti textarea{
-	width: 96%;
-	display:block;
-	resize: none;
-	padding: 1em;
-
-	resize: none;
-}
-
 
 .post{
 	margin-top: 1.5em;
@@ -1967,22 +2006,11 @@ html{
 	font-weight: bold;
 }
 
-
 .likeBicipite{
 	height: 10%;
 	max-height: 3em;
 	max-width: 90%;
 	margin: auto;
-	background-color: transparent;
-}
-
-.miPiaceButton {
-	margin-left: 1em;
-	margin-right: 0.5em;
-}
-
-.LikeCount{
-	font-size: large;
 }
 
 .othersComment{
@@ -2006,21 +2034,15 @@ html{
 
 .answer textarea{
 	width: 85%;
-
 	margin-right: 3em;
 	margin-left: 3em;
 	resize: none;
 }
 
-textarea .text{
-	margin-top: 9em;
-}
 
 #creazionePost{
-	font-weight: bold;
-	display:block;
-	margin-top: 1em;
-	margin-bottom: 0.3em;
+	text-align: left;
+	margin-bottom: 0.5em;
 }
 
 
@@ -2030,145 +2052,176 @@ textarea .text{
 /* INIZIO PAGINA NEWS*/
 
 .news a:link:after, a:visited:after {
+	color: rgb(0, 0, 0);
     content: " [" attr(href) "] ";
 	font-size:90%;
-	/*QUA LA PROF AVEVA DETTO A LEZ CHE E' MEGLIO USARE CSS3 CON QUESTO 
-	a[href^="/"]:after{
-		content: " (http://www.sito.it" attr(href) ") ";
-	} 
-	MA A ME NON FUNZIONA QUINDI BOH*/
 }
 
-#sottotitolonews{
-	border: 3px solid rgba(0, 0, 0);
-	padding-left: 0.5em;
-	padding-top: 0.25em;
-	padding-bottom: 0.25em;
-}
 .sottotitolonews{
 	padding-bottom: 0.5em;
-	border: 3px solid rgba(0, 0, 0);
 	padding-left: 0.5em;
 	padding-top: 0.25em;
-}
-#minititolonews{
-    padding-left: 0.5em;
-	padding-top: 0.25em;
-	border-bottom: 2px solid rgba(0, 0, 0);
-	border-left: 3px solid rgba(0, 0, 0);
-    border-right: 3px solid rgba(0, 0, 0);
-    margin-top: -1.5em;
-}
-.minititolonews{
-	padding-left: 1em;
-	padding-top: 0.25em;
-	padding-bottom: 0.25em;
-	border-bottom: 2px solid rgba(0, 0, 0);
-	border-left: 3px solid rgba(0, 0, 0);
-	border-right: 3px solid rgba(0, 0, 0);
-	margin-top: -1.1em;
-}
-.news p {
-	padding-left: 0.5em;
-	border-bottom: 3px solid rgba(0, 0, 0);
-	border-left: 3px solid rgba(0, 0, 0);
-	border-right: 3px solid rgba(0, 0, 0);
-	padding-bottom: 0.30em;
-	padding-top: 0.25em;
-    margin-top: -1.3em;
 }
 
-#navnews {
-    margin-left: -2.5em;
+.minititolonews{
+	padding-left: 0.5em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
 }
-#navnews ul li{
-	margin-left: 0.01em;
+
+.news{
+	margin-bottom: 1em;
+	list-style-type: none;
+}
+#NewsList li p a:visited {
+	color: rgb(0, 0, 0);
+}
+#NewsList li p a {
+	color: rgb(0, 0, 0);
+}
+.news p {
+	padding-top: 0.25em;
+	padding-left: 0.5em;
+	
+	padding-bottom: 0.25em;
+}
+.testonotizia {
+	padding-bottom: 0.25em;
+}
+
+
+
+#navnews{
+	padding-top: 1em;
+	padding-bottom: 2em;
+}
+#navnews li{
+
+	margin-right: 0.5em;
 	display: inline;
 	padding : 0.25em;
-	font-weight: bolder;   
-    border: 2px solid rgba(0, 0, 0);
+	font-weight: bolder;
+}
+#navnews li a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+#navnews li a:visited{
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+#forminsertnews fieldset{
+		padding-top: 1em;
+		padding-left: 1em;
+		padding-bottom: 1em;
+}
+
+#forminsertnews fieldset label {
+	margin-bottom: 2em;
+}
+
+#titoloform {
+	font-size: x-large;
+	font-weight: bolder;
+}
+
+.titololabel{
+	font-size: large;
+	font-weight: bold;
+}
+
+#buttonnews{
+	padding: 0.25em;
+	font-size: medium;
+	font-weight: bold;
 }
 
 /* FINE PAGINA NEWS*/
 
-/*INIZIO LOGIN*/
-.contentLogin{     /* non so se lasciarlo al centro o fare come le altre che sono a sinistra e spostare tutto un po' più su */
-	text-align:center;
+/*INIZIO LOGIN e SIGN UP*/
+#notLoggedIn h2 {
+	border: none;
 }
-
-#notLoggedIn textarea{
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.7em;
-	resize: none;
-}
-
-.loginButton{
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: 0.75em 0.5em 0.75em 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	display:block;
-	margin-left:5.5em;
-}
-
-#notLoggedIn label{
-	display: block;
-	margin-top:0.5em;
-	margin-bottom:0.5em;
-}
-
-#notLoggedIn fieldset{
-	border: 2px solid rgba(0, 0, 0);
-	margin-left: 12em;
-	margin-right: 12em;
-}
-
-#loggedIn h3{
-	margin-top:2em;
-}
-
 /*FINE LOGIN*/
+ 
+/*PANNELLO UTENTE*/
 
-/*INIZIO SIGN UP*/
-
-.contentSignUp{
-	text-align:center;
+#change label{
+	text-align: left;
 }
 
-#nonRegistrato textarea{
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	padding-left: 0.7em;
+#change input{
+	width: auto;
+}
+/*FINE PANNELLO UTENTE*/
+
+/*PANNELLO ADMIN*/
+#promotion h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#deleteRecipe h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#deleteNews h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#deletePost h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#deleteAnswer h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#addNews h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#addRecipe h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#revokeBan h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#banUserFromForum h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#removeAccount h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+
+#deletePost textarea {
 	resize: none;
 }
 
-.signUpButton{
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	padding: 0.75em 0.5em 0.75em 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	display:block;
-	margin-left:4.5em;
+#deleteAnswer textarea {
+	resize: none;
 }
 
-#nonRegistrato label{
-	display: block;
-	margin-top:0.5em;
-	margin-bottom:0.5em;
+#addNews textarea {
+	resize: none;
 }
 
-#nonRegistrato fieldset{
-	border: 2px solid rgba(0, 0, 0);
-	margin-left: 12em;
-	margin-right: 12em;
+#addRecipe textarea {
+	resize: none;
 }
-
-#registrato h3{
-	margin-top:2em;
-}
-
-/*FINE SIGN UP*/
-}
+/*FINE PANNELLO ADMIN*/
