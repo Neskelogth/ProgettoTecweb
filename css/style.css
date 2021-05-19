@@ -1557,9 +1557,13 @@ tbody th{
 		margin-bottom: 0em;
 		padding-right: 0em;
 		padding-left: .25em;
+		text-align: center;
 	}
 
-	th[data-title].
+	th[data-title]:before, td[data-title]:before {
+		content: attr(data-title) ":\00A0";
+		font-weight: bold;
+	}
 
 	tr, td, th{
 		display: block;
@@ -1667,9 +1671,7 @@ tbody th{
 		margin-left: .25em;
 		max-width: 100%;
 		min-width: 0em;
-
 	}
-	
 
 	#loggato{
 
