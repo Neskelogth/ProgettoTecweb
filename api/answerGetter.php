@@ -1,4 +1,4 @@
- <?php
+<?php
 
 require_once "../libs/DBaccess.php";
 
@@ -21,6 +21,8 @@ foreach ($result as $item) {
 
     array_push($response['result'], $item);
 }
+
+//var_dump($response['result']);
 
 $response = json_encode($response);
 

@@ -544,7 +544,6 @@ a:hover{
 	box-sizing:border-box;
 	width: 95%;
 	height: 50%;
-	overflow: scroll;
 }
 
 .block{
@@ -636,7 +635,7 @@ a:hover{
 .answer{
 	/*display:inline-block;*/
 	margin-top: 1em;
-	overflow:scroll;
+
 }
 
 .answer p{
@@ -1493,7 +1492,7 @@ tbody th{
 		margin: .5em;
 		padding: 0em;
 		max-width: 100%;
-		overflow: scroll;
+
 	}
 
 	textarea{
@@ -1551,7 +1550,11 @@ tbody th{
 		width: 100%;
 		max-width: 100%;
 		margin-bottom: 0em;
+		padding-right: 0em;
+		padding-left: .25em;
 	}
+
+	th[data-title].
 
 	tr, td, th{
 		display: block;
@@ -1564,6 +1567,7 @@ tbody th{
 		border-collapse: collapse;
 		margin-top: .5em;
 		width: 100%;
+
 	}
 
 	.primaCella{
@@ -1658,7 +1662,7 @@ tbody th{
 		margin-left: .25em;
 		max-width: 100%;
 		min-width: 0em;
-		overflow:scroll;
+
 	}
 	
 
@@ -1801,7 +1805,7 @@ html{
 
 #content{
     padding:0.1em 1.5em 0.5em;
-	overflow: hidden;
+
 }
 
 .aiuti{
@@ -1893,7 +1897,7 @@ html{
 }
 
 .forumFieldset{
-	overflow: hidden;
+
 	max-width: 100%;
 	border: 2px solid rgb(0, 0, 0);
 }
@@ -1907,7 +1911,7 @@ html{
 	box-sizing:border-box;
 	width: 95%;
 	height: 50%;
-	overflow: hidden;
+
 }
 
 .block{
@@ -1990,7 +1994,7 @@ html{
 .answer{
 	/*display:inline-block;*/
 	margin-top: 1em;
-	overflow: hidden;
+
 }
 
 .answer p{
