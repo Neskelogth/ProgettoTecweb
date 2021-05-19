@@ -726,6 +726,11 @@ textarea .text{
 	margin-left: .5em;
 }
 
+tbody th{
+
+	font-weight: normal;
+	text-align: left;
+}
 
 #splitsMenu{
 	margin-top: 0.5em;
@@ -805,6 +810,7 @@ textarea .text{
 #splitTable table{
 	margin-bottom: 1em;
 	border-collapse: collapse;
+	width: 100%;
 }
 
 #splitTable td, th{
@@ -828,6 +834,11 @@ textarea .text{
 	padding-right: 1em;
 }
 
+#splitTable tbody th{
+
+	width: 70%;
+}
+
 .setrep{
 	text-align:center;
 }
@@ -835,7 +846,6 @@ textarea .text{
 #splitTable td{
 	padding-top: 0.25em;
 	table-layout: auto;
-	width: 100%
 }
 
 #elencobs li {
@@ -1529,18 +1539,43 @@ textarea .text{
 		padding: 0em;
 	}
 
+	thead{
+
+		display: none;
+	}
+
+	#splitTable tbody th{
+
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 0em;
+	}
+
+	tr, td, th{
+		display: block;
+		width: 100%;
+
+	}
+
 	#splitTable table{
 
 		border-collapse: collapse;
 		margin-top: .5em;
+		width: 100%;
 	}
 
+	.primaCella{
+
+		color: rgb(255, 255, 255);
+		background-color: rgb(0, 110, 204);
+	}
+/*
 	#splitTable th{
 
 		padding-left: .2em;
 		padding-right: .2em;
 	}
-
+*/
 	/*FINE ALLENAMENTO SPECIFICO*/
 
 	/*INZIO ALIMENTAZIONE*/
@@ -1665,7 +1700,7 @@ textarea .text{
 	}
 
 	.answer{
-		
+
 		display: block;
 	}
 
