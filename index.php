@@ -138,7 +138,8 @@ $parser-> addRoute('singleRecipe', function (string $data){
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/?".http_build_query($_GET)),
-    'admin' => $_SESSION['admin'] ?? false
+    'admin' => $_SESSION['admin'] ?? false,
+    'recipename' => '<recipeTitlePlaceholder />'
 ));
 
 $parser-> addRoute('forum', function (string $data){
