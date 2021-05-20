@@ -869,6 +869,12 @@ tbody th{
 	margin-bottom: 0.5em;
 }
 
+.workoutcaption{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	font-weight: bold;
+}
+
 /*Immagini workout interne*/
 
 #arnold{
@@ -1574,8 +1580,9 @@ tbody th{
 	#splitTable table{
 
 		border-collapse: collapse;
-		margin-top: .5em;
+		margin-top: 5em;
 		width: 100%;
+
 
 	}
 
