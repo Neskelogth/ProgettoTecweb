@@ -14,7 +14,7 @@ function createAlimentationContent(string $data): string{
             $recipes .= $renderer-> renderFile('alimentation/recipeTemplate', array(
 
                 'name' => $recipe['Nome'],
-                'singlerecipe' => '/?r=singleRecipe&id='.$recipe['ID'],
+                'singlerecipe' => '/?r=singleRecipe&amp;id='.$recipe['ID'],
                 'path' => $recipe['NomeImmagine'],
                 'alt' => $recipe['AltImmagine'],
                 'recipead' => $recipe['Descrizione']
@@ -153,17 +153,17 @@ function createNavMenuNews(string $data, string $type): string{
     ));
 
     $menuItemWorkout = $renderer->renderFile('news/singleNavElement', array(
-        'getlink' => '/?r=news&type=workout',
+        'getlink' => '/?r=news&amp;type=workout',
         'navtext' => '%%Workout news%%'
     ));
 
     $menuItemAlimentation = $renderer->renderFile('news/singleNavElement', array(
-        'getlink' => '/?r=news&type=alimentazione',
+        'getlink' => '/?r=news&amp;type=alimentazione',
         'navtext' => 'Alimentazione %%news%%'
     ));
 
     $menuItemSite = $renderer->renderFile('news/singleNavElement', array(
-        'getlink' => '/?r=news&type=sito',
+        'getlink' => '/?r=news&amp;type=sito',
         'navtext' => '%%News%% del sito'
     ));
 
