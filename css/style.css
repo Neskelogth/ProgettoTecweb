@@ -1977,10 +1977,6 @@ html{
 	resize: none;
 }
 
-.confirmLeaveAnswer{
-	margin-left: 1em;
-}
-
 .post{
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
@@ -2016,23 +2012,16 @@ html{
 }
 
 .othersComment{
-
 	margin-left: 2.4em;
 	margin-bottom: 0.5em;
 }
 
 .answer{
-	/*display:inline-block;*/
 	margin-top: 1em;
+	margin-bottom: 1em;
 
 }
 
-.answer p{
-
-	margin-left:1em;
-	font-weight: bold;
-
-}
 
 .answer textarea{
 	width: 85%;
@@ -2059,39 +2048,12 @@ html{
 	font-size:90%;
 }
 
-.sottotitolonews{
-	padding-bottom: 0.5em;
-	padding-left: 0.5em;
-	padding-top: 0.25em;
-}
-
-.minititolonews{
-	padding-left: 0.5em;
-	padding-top: 0.25em;
-	padding-bottom: 0.25em;
-}
-
-.news{
-	margin-bottom: 1em;
-	list-style-type: none;
-}
 #NewsList li p a:visited {
 	color: rgb(0, 0, 0);
 }
 #NewsList li p a {
 	color: rgb(0, 0, 0);
 }
-.news p {
-	padding-top: 0.25em;
-	padding-left: 0.5em;
-	
-	padding-bottom: 0.25em;
-}
-.testonotizia {
-	padding-bottom: 0.25em;
-}
-
-
 
 #navnews{
 	padding-top: 1em;
@@ -2112,32 +2074,6 @@ html{
 #navnews li a:visited{
 	text-decoration: none;
 	color: rgb(0, 0, 0);
-}
-
-#forminsertnews fieldset{
-		padding-top: 1em;
-		padding-left: 1em;
-		padding-bottom: 1em;
-}
-
-#forminsertnews fieldset label {
-	margin-bottom: 2em;
-}
-
-#titoloform {
-	font-size: x-large;
-	font-weight: bolder;
-}
-
-.titololabel{
-	font-size: large;
-	font-weight: bold;
-}
-
-#buttonnews{
-	padding: 0.25em;
-	font-size: medium;
-	font-weight: bold;
 }
 
 /* FINE PAGINA NEWS*/
