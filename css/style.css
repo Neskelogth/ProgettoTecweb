@@ -272,8 +272,8 @@ a:hover{
 	width: 50%;
 	display: block;
 	margin: auto;
-	/*padding-top:1em;
-	margin-bottom:1em;*/
+	padding-top: .5em;
+	padding-bottom: .5em;
 }
 
 
