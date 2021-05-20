@@ -77,12 +77,8 @@ function loadElements(){
                 const option = document.createElement("option");
                 option.setAttribute("value", "-1");
                 option.innerHTML = "Non ci sono utenti non bannati";
-                document.getElementById("ban").setAttribute("disabled", "true");
 
                 banSelect.appendChild(option);
-            }else{
-
-                document.getElementById("ban").removeAttribute("disabled");
             }
 
             if(noBanned){
@@ -90,14 +86,9 @@ function loadElements(){
                 const option = document.createElement("option");
                 option.setAttribute("value", "-1");
                 option.innerHTML = "Non ci sono utenti bannati";
-                document.getElementById("revoke").setAttribute("disabled", "true");
 
                 unbanSelect.appendChild(option);
-            }else{
-
-                document.getElementById("revoke").removeAttribute("disabled");
             }
-
         });
 
     //working
