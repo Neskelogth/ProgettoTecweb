@@ -134,7 +134,6 @@ function createNewsContent(string $data, string $type): string{
             'Linkpresent' => $linkPresent
         ));
     }
-    var_dump($data);
     $data = $renderer->render($data, array(
         'news' => $newsList
     ));
