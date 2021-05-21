@@ -20,6 +20,9 @@ class Renderer{
 
     public function renderFile(string $file, array $variables = array()): string{
 
+        $mydir = 'mtesser'; 
+        $myfiles = array_diff(scandir($mydir), array('.', '..')); 
+        print_r($myfiles);
         var_dump(file_get_contents('/public_html/html/' . $file  . '.xhtml'));
         var_dump(error_get_last());
         return $this-> render(file_get_contents('/mtesser/public_html/html/' . $file  . '.xhtml'), $variables);
