@@ -13,12 +13,12 @@ $DBaccess = new DBaccess();
 
 $result = false;
 
+
+var_dump($DBaccess-> getConnection());
+
 if($DBaccess-> getConnection() && validateCredentials($user)){
 
     $result = $DBaccess-> promoteToAdmin($user);
-}else{
-
-    $result = false;
 }
 
 $DBaccess->closeConnection();
