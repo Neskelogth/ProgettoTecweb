@@ -96,7 +96,7 @@ function getComments(){
                                     button.setAttribute("type", "button");
                                     button.setAttribute("name", "miPiace");
                                     button.onclick = ()=>{
-                                        fetch("/mtesser/api/leavelike.php", {method: 'POST',
+                                        fetch("/mtesser/api/leaveLike.php", {method: 'POST',
                                             credentials: 'same-origin',
                                             body: JSON.stringify({leavingLike: !res[commentIndex].LeftLike, idPost: res[commentIndex].IDPost})
                                         })
