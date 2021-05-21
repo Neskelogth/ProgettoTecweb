@@ -96,7 +96,7 @@ function getComments(){
                                     button.setAttribute("type", "button");
                                     button.setAttribute("name", "miPiace");
                                     button.onclick = ()=>{
-                                        fetch("/api/leavelike.php", {method: 'POST',
+                                        fetch("/mtesser/api/leavelike.php", {method: 'POST',
                                             credentials: 'same-origin',
                                             body: JSON.stringify({leavingLike: !res[commentIndex].LeftLike, idPost: res[commentIndex].IDPost})
                                         })
@@ -158,7 +158,7 @@ function getComments(){
 
                                         el.onclick = ()=>{
 
-                                            fetch("/api/answerSender.php",{method: 'POST',
+                                            fetch("/mtesser/api/answerSender.php",{method: 'POST',
                                                 credentials: 'same-origin',
                                                 body: JSON.stringify({val: document.getElementById("answer_post" + res[commentIndex].IDPost).value, idPost : res[commentIndex].IDPost})})
                                                 .then(response=> response.json())
