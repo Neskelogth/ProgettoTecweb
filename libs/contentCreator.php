@@ -216,11 +216,10 @@ function createNavMenuNews(string $data, string $type): string{
         $navList .= $menuItemAlimentationNonLink;
         $navList .= $menuItemSite;
     }
-    var_dump($navList);
     $data = $renderer->render($data, array(
        'navnews' => $navList
     ));
-
+    var_dump($data);
 
     return $data;
 }
