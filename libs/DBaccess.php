@@ -340,7 +340,7 @@ class DBaccess{
     public function promoteToAdmin(string $user): bool{
 
         $user = base64_encode($user);
-        $query = "UPDATE Utente SET Amministratore = 1 WHERE IDUtente='$user'";
+        $query = "UPDATE utente SET Amministratore = 1 WHERE IDUtente='$user'";
 
         return $this-> connection-> query($query);
     }
