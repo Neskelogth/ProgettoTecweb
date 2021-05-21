@@ -22,7 +22,7 @@ class Renderer{
 
         $mydir = 'mtesser'; 
         $myfiles = array_diff(scandir(__DIR__), array('.', '..'));
-        var_dump(__DIR__); 
+        var_dump(__DIR__ . '../html'); 
         var_dump($myfiles);
         var_dump(file_get_contents('/public_html/html/' . $file  . '.xhtml'));
         var_dump(error_get_last());
