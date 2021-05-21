@@ -9,7 +9,7 @@ $response = array();
 
 //$input = json_decode(file_get_contents("php://input"), true);
 
-$toRedirect = cleanFromTags($_POST['redirect'] ?? urlencode('/?r=login'));
+$toRedirect = cleanFromTags($_POST['redirect'] ?? urlencode('/mtesser/?r=login'));
 $userName = cleanFromTags($_POST['username'] ?? "");
 $password = cleanFromTags($_POST['password'] ?? "");
 
@@ -53,7 +53,7 @@ if($validuserName && $validpassword && !$sqlinjectiontry){
         }
 
         $response['ok']= false;
-        $redirect = '/?' . http_build_query($elements);
+        $redirect = '/mtesser/?' . http_build_query($elements);
         $response['red'] = $redirect;
         $DBaccess->closeConnection();        
     }
@@ -79,7 +79,7 @@ if($validuserName && $validpassword && !$sqlinjectiontry){
         $elements['sqlit'] = 'error';
     }
     
-    $redirect = '/?' . http_build_query($elements);
+    $redirect = '/mtesser/?' . http_build_query($elements);
 
     $response['red'] = $redirect;
 }
