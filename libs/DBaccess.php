@@ -485,8 +485,10 @@ class DBaccess{
 
         $query1 = "DELETE FROM risposta WHERE IDPost = $idPost";
         $query2 = "DELETE FROM post WHERE IDPost = $idPost";
+        $query3 = "DELETE FROM likes WHERE IDPost = $idPost";
 
         $result1 = $this->connection-> query($query1);
+        $result3 = $this->connection-> query($query3);
         $result2 = $this->connection-> query($query2);
 
         return $result2;
