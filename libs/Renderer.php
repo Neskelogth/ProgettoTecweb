@@ -51,7 +51,7 @@ class Renderer{
 
         foreach (($matches[0] ?? array()) as $match) {
             $data = str_replace($match, $this->replaceInclude(self::removeComments(file_get_contents(
-                    '/mtessser/html/' . strtolower(str_replace('<include', '', str_replace('Placeholder />', '', $match) . '.xhtml'))
+                    '/mtesser/html/' . strtolower(str_replace('<include', '', str_replace('Placeholder />', '', $match) . '.xhtml'))
             ))), $data);
         }
 
