@@ -5,7 +5,7 @@ function createAlimentationContent(string $data): string{
     $renderer = new Renderer();
     $DBaccess = new DBaccess();
     $contentArray = ($DBaccess->getConnection() !== false ? $DBaccess->getRecipeQuery() : null);
-
+    var_dump($DBaccess->getConnection());
     if($contentArray !== null){
 
         $recipes = "";

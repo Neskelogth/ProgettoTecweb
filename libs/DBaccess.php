@@ -25,8 +25,6 @@ class DBaccess{
         $this-> connection = new mysqli(DBaccess::HOST_DB, DBaccess::USERNAME,
             DBaccess::PASSWORD, DBaccess::DATABASE_NAME);
 
-        var_dump($this->connection);
-
         if(!$this->connection-> connect_error){
 
             return true;
