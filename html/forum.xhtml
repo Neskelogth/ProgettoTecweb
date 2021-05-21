@@ -6,11 +6,15 @@
 <h1>Forum</h1>
 
 <ifNotloggedPlaceholder />
-<p><a xml:lang="en" href="/mtesser/?r=login">Login</a> <span tabindex="-1" id="spacer"></span> <a xml:lang="en" href="/mtesser/?r=signup">Signup</a></p>
+<p>
+    <a xml:lang="en" href="/mtesser/?r=login&amp;prev=<redirectPlaceholder />">Login</a> 
+    <span tabindex="-1" id="spacer"></span> 
+    <a xml:lang="en" href="/mtesser/?r=signup&amp;prev=<redirectPlaceholder />">Signup</a>
+</p>
 <endIfPlaceholder />
 
 <ifLoggedPlaceholder />
-<p><a xml:lang="en" href="/mtesser/?r=logout">Logout</a></p>
+<p><a xml:lang="en" href="/mtesser/?r=logout&amp;prev=<redirectPlaceholder />">Logout</a></p>
 <endIfPlaceholder />
 
 <blockEndPlaceholder />
