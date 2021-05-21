@@ -14,7 +14,9 @@ $DBaccess = new DBaccess();
 
 if($DBaccess-> getConnection()){
 
+    
     $result = $DBaccess-> deletePost($idPost) ?? false;
+    var_dump($result);
 }
 
 $response = array('ok'=> $result);
