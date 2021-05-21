@@ -25,7 +25,7 @@ function loadElements(){
     deleteUserSelect.innerHTML = "";
 
     //working
-    fetch('/api/userGetter.php')
+    fetch('/mtesser/api/userGetter.php')
         .then(response => response.json())
         .then(json => {
 
@@ -92,7 +92,7 @@ function loadElements(){
         });
 
     //working
-    fetch('/api/recipeGetter.php')
+    fetch('/mtesser/api/recipeGetter.php')
         .then(response => response.json())
         .then(json => {
 
@@ -109,7 +109,7 @@ function loadElements(){
         });
 
     //working
-    fetch('/api/newsGetter.php')
+    fetch('/mtesser/api/newsGetter.php')
         .then(response => response.json())
         .then(json => {
 
@@ -126,7 +126,7 @@ function loadElements(){
         });
 
     //wokring
-    fetch('/api/commentGetter.php')
+    fetch('/mtesser/api/commentGetter.php')
         .then(response => response.json())
         .then(json => {
 
@@ -153,7 +153,7 @@ function loadElements(){
         });
 
     //working
-    fetch('/api/newsTypesGetter.php')
+    fetch('/mtesser/api/newsTypesGetter.php')
         .then(response => response.json())
         .then(json => {
 
@@ -206,7 +206,7 @@ function noUserBanned(users, current){
 //tested
 function promote(){
 
-    fetch('/api/promoteUser.php',{
+    fetch('/mtesser/api/promoteUser.php',{
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({user: document.getElementById("userToPromote").value})
@@ -226,7 +226,7 @@ function promote(){
 //tested
 function deleteRecipe(){
 
-    fetch('/api/deleteRecipe.php',{
+    fetch('/mtesser/api/deleteRecipe.php',{
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify(
@@ -248,7 +248,7 @@ function deleteRecipe(){
 //tested
 function deleteNews(){
 
-    fetch('/api/deleteNews.php',{
+    fetch('/mtesser/api/deleteNews.php',{
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify(
@@ -270,7 +270,7 @@ function deleteNews(){
 //tested
 function sendNews(){
 
-    fetch('/api/newsSender.php',{
+    fetch('/mtesser/api/newsSender.php',{
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({
@@ -294,7 +294,7 @@ function findText(){
     const postId = document.getElementById("post").value;
     const textArea = document.getElementById("postText");
 
-    fetch('/api/textFinder.php', {
+    fetch('/mtesser/api/textFinder.php', {
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({
@@ -314,7 +314,7 @@ function deletePost(){
     const postId = document.getElementById("post").value;
     document.getElementById("postText").innerHTML = "";
 
-    fetch('/api/deletePost.php', {
+    fetch('/mtesser/api/deletePost.php', {
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({
@@ -342,7 +342,7 @@ function sendRecipe(){
 
     console.log()
 
-    fetch('/api/recipeSender.php', {
+    fetch('/mtesser/api/recipeSender.php', {
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({
@@ -369,7 +369,7 @@ function banUser(){
 
     const userToBan = document.getElementById("notBanned").value;
 
-    fetch('/api/banUser.php', {
+    fetch('/mtesser/api/banUser.php', {
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({
@@ -392,7 +392,7 @@ function unbanUser(){
 
     const userToUnban = document.getElementById("banned").value;
 
-    fetch('/api/unbanUser.php', {
+    fetch('/mtesser/api/unbanUser.php', {
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({
@@ -417,7 +417,7 @@ function findAnswers(id){
     const answerSelect = document.getElementById("answer");
     answerSelect.innerHTML = "";
 
-    fetch("/api/answerGetter.php?IDPost=" + id)
+    fetch("/mtesser/api/answerGetter.php?IDPost=" + id)
         .then(response => response.json())
         .then(json => {
 
@@ -456,7 +456,7 @@ function findAnswerText(){
 
     console.log(answerId);
 
-    fetch('/api/answerGetter.php?IDPost=' + id)
+    fetch('/mtesser/api/answerGetter.php?IDPost=' + id)
         .then(response => response.json())
         .then(json => {
 
@@ -488,7 +488,7 @@ function findTextAndAnswer(){
     const textArea = document.getElementById("postText1");
 
 
-    fetch('/api/commentsGetter.php')
+    fetch('/mtesser/api/commentsGetter.php')
         .then(response => response.json())
         .then(json => {
 
@@ -510,7 +510,7 @@ function deleteAnswer(){
 
     const idAnswer = document.getElementById("answer").value;
 
-    fetch('/api/deleteAnswer.php', {
+    fetch('/mtesser/api/deleteAnswer.php', {
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({
@@ -537,7 +537,7 @@ function deleteAnswer(){
 //tested
 function deleteAccount(){
 
-    fetch('/api/deleteAccount.php',{
+    fetch('/mtesser/api/deleteAccount.php',{
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({

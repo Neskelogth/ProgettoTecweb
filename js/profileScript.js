@@ -4,7 +4,7 @@ function loadElements(){
     const surnameInput = document.getElementById("surname");
     const emailInput = document.getElementById("email");
 
-    fetch('/api/userDataGetter.php')
+    fetch('/mtesser/api/userDataGetter.php')
         .then(response => response.json())
         .then(json => {
 
@@ -16,7 +16,7 @@ function loadElements(){
 
 function changeValues(){
 
-    fetch('/api/changeData.php',{
+    fetch('/mtesser/api/changeData.php',{
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify({
