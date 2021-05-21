@@ -15,7 +15,7 @@ $parser-> addRoute('login', function(string $data){
     return $data;
 }, array(
     'title' => 'Login - La Palestra',
-    'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
+    'redirect' => $_GET['prev'] ?? urlencode('/mtesser/?r=home'),
     'admin' => $_SESSION['admin'] ?? false,
     'id' => 'content',
     'errorusernamenonvalido' => ($_GET['eusnv'] ?? "") == "error",
@@ -28,7 +28,7 @@ $parser-> addRoute('login', function(string $data){
 $parser-> addRoute('logout', function(string $data){
 
     session_destroy();
-    $toRedirect = urldecode($_GET['prev'] ?? urlencode('/?r=home'));
+    $toRedirect = urldecode($_GET['prev'] ?? urlencode('/mtesser/?r=home'));
 
     header("location: $toRedirect");
 });
@@ -37,7 +37,7 @@ $parser-> addRoute('signup', function(string $data){
     return $data;
 }, array(
     'title' => 'Signup - La Palestra',
-    'redirect' => $_GET['prev'] ?? urlencode('/?r=home'),
+    'redirect' => $_GET['prev'] ?? urlencode('/mtesser/?r=home'),
     'admin' => $_SESSION['admin'] ?? false,
     'id' => 'content',
     'errorusernamenonvalido' => ($_GET['eusnv'] ?? "") == "error",
@@ -58,7 +58,7 @@ $parser-> addRoute('home', function (string $data){
     'id' => 'contenthome',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false
 ));
 
@@ -69,7 +69,7 @@ $parser-> addRoute('workout', function (string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false
 ));
 
@@ -80,7 +80,7 @@ $parser-> addRoute('adminPanel', function (string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false,
     'notadmin' => !($_SESSION['admin'] ?? false)
 ));
@@ -94,7 +94,7 @@ $parser-> addRoute('profile', function(string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' => !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false
 ));
 
@@ -113,7 +113,7 @@ $parser-> addRoute('split', function (string $data){
                 (($_GET['type'] ?? "") == "fb" ? "Full body" : "")))),
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false
 ));
 
@@ -125,7 +125,7 @@ $parser-> addRoute('alimentation', function (string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false
 ));
 
@@ -137,7 +137,7 @@ $parser-> addRoute('singleRecipe', function (string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false,
     'recipename' => '<recipeTitlePlaceholder />'
 ));
@@ -150,7 +150,7 @@ $parser-> addRoute('forum', function (string $data){
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false,
     'banned' => $_SESSION['banned'] ?? false,
     'loggednotbanned' => ($_SESSION['username'] ?? false) && !($_SESSION['banned'] ?? false)
@@ -166,7 +166,7 @@ $parser-> addRoute('news', function (string $data){
     'type' => ($_GET['type'] ?? '%%All%%'),
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
-    'redirect' => urlencode("/?".http_build_query($_GET)),
+    'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
     'admin' => $_SESSION['admin'] ?? false
 ));
 
