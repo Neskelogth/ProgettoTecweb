@@ -1588,8 +1588,8 @@ tbody th{
 		text-align: center;
 	}
 
-	th[data-title]:before, td[data-title]:before {
-		content: attr(data-title) ":\00A0";
+	th[title]:before, td[title]:before {
+		content: attr(title) ":\00A0";
 		font-weight: bold;
 	}
 
