@@ -186,6 +186,7 @@ a:hover{
 	padding-left: 0.7em;
 	padding-right: 0.7em;
 	padding-top: 1em;
+	min-height: 30em;
 }
 
 #content a:visited {
@@ -992,11 +993,6 @@ tbody th{
 
 
 /*Pagina profilo*/
-
-.readonly{
-
-	readonly: readonly;
-}
 
 #change label{
 	padding-right: .5em;
@@ -2200,4 +2196,3 @@ html{
 #addRecipe textarea {
 	resize: none;
 }
-/*FINE PANNELLO ADMIN*/
