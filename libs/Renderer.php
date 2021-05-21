@@ -20,6 +20,7 @@ class Renderer{
 
     public function renderFile(string $file, array $variables = array()): string{
 
+        var_dump('/mtesser/public_html/html/' . $file  . '.xhtml');
         return $this-> render(file_get_contents('/mtesser/public_html/html/' . $file  . '.xhtml'), $variables);
     }
 
