@@ -16,7 +16,7 @@ $nomeUtente = cleanFromTags($_SESSION["username"] ?? "");
 $leavingLike = $input["leavingLike"] ?? false;
 $idPost = intval($input["idPost"] ?? -1);
 
-if(validateCredentials($nomeUtente) && is_bool($leavingLike) && $idPost > -1) {
+if(validateCredentials($nomeUtente) && is_bool($leavingLike) && $idPost > -1 && $_SESSION['username'] ?? false && !$_SESSION['banned']) {
 
     if($dbaccess-> getConnection()){
 

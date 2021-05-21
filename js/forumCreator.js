@@ -170,8 +170,8 @@ function getComments(){
                                     };
                                     button2.innerText = "Aggiungi una risposta";
                                     button2.classList.remove("confirmLeaveAnswer");
-                                    if(!json.logged){
-
+                                    if(!json.logged || json.banned){
+                                        
                                         button2.classList.add("nascosto");
                                         button2.classList.remove("leaveAnswer");
                                     }
