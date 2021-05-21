@@ -14,7 +14,7 @@ $parser-> addRoute('login', function(string $data){
 
     return $data;
 }, array(
-    'title' => 'Login - La Palestra',
+    'title' => 'Login - Physique',
     'redirect' => $_GET['prev'] ?? urlencode('/mtesser/?r=home'),
     'admin' => $_SESSION['admin'] ?? false,
     'id' => 'content',
@@ -36,7 +36,7 @@ $parser-> addRoute('logout', function(string $data){
 $parser-> addRoute('signup', function(string $data){
     return $data;
 }, array(
-    'title' => 'Signup - La Palestra',
+    'title' => 'Signup - Physique',
     'redirect' => $_GET['prev'] ?? urlencode('/mtesser/?r=home'),
     'admin' => $_SESSION['admin'] ?? false,
     'id' => 'content',
@@ -54,7 +54,7 @@ $parser-> addRoute('signup', function(string $data){
 $parser-> addRoute('home', function (string $data){
     return $data;
 }, array(
-    'title' => 'Home - La Palestra',
+    'title' => 'Home - Physique',
     'id' => 'contenthome',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
@@ -65,7 +65,7 @@ $parser-> addRoute('home', function (string $data){
 $parser-> addRoute('workout', function (string $data){
     return $data;
 }, array(
-    'title' => 'Workout - La Palestra',
+    'title' => 'Workout - Physique',
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
@@ -76,7 +76,7 @@ $parser-> addRoute('workout', function (string $data){
 $parser-> addRoute('adminPanel', function (string $data){
     return createAdminContent($data);
 }, array(
-    'title' => 'Pannello amministratore - La Palestra',
+    'title' => 'Pannello amministratore - Physique',
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
@@ -90,7 +90,7 @@ $parser-> addRoute('profile', function(string $data){
         return createProfileContent($data);
 },array(
 
-    'title' => 'Profilo utente - La palestra',
+    'title' => 'Profilo utente - Physique',
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' => !($_SESSION['username'] ?? false),
@@ -101,7 +101,7 @@ $parser-> addRoute('profile', function(string $data){
 $parser-> addRoute('split', function (string $data){
     return $data;
 }, array(
-    'title' => '<typePlaceholder /> - Workout - La Palestra',
+    'title' => '<typePlaceholder /> - Workout - Physique',
     'id' => 'content',
     'brosplit' => ($_GET['type'] ?? "") == "bro",
     'ppl' => ($_GET['type'] ?? "") == "ppl",
@@ -121,7 +121,7 @@ $parser-> addRoute('alimentation', function (string $data){
 
     return createAlimentationContent($data);
 }, array(
-    'title' => 'Alimentazione - La Palestra',
+    'title' => 'Alimentazione - Physique',
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
@@ -133,7 +133,7 @@ $parser-> addRoute('singleRecipe', function (string $data){
 
     return createSingleRecipeContent($data, $_GET['id']);
 }, array(
-    'title' => '<recipeTitlePlaceholder /> - Alimentazione - La Palestra',
+    'title' => '<recipeTitlePlaceholder /> - Alimentazione - Physique',
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
@@ -146,7 +146,7 @@ $parser-> addRoute('forum', function (string $data){
 
     return $data;
 }, array(
-    'title' => 'Forum - La Palestra',
+    'title' => 'Forum - Physique',
     'id' => 'content',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
@@ -161,7 +161,7 @@ $parser-> addRoute('news', function (string $data){
     $data = createNavMenuNews($data, $_GET['type'] ?? 'All');
     return createNewsContent($data, $_GET['type'] ?? 'All');
 }, array(
-    'title' => 'News - La Palestra',
+    'title' => 'News - Physique',
     'id' => 'content',
     'type' => ($_GET['type'] ?? '%%All%%'),
     'logged' => $_SESSION['username'] ?? false,
