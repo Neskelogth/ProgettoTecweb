@@ -134,7 +134,7 @@ function createNewsContent(string $data, string $type): string{
             'Linkpresent' => $linkPresent
         ));
     }
-
+    var_dump($data);
     $data = $renderer->render($data, array(
         'news' => $newsList
     ));
@@ -219,7 +219,6 @@ function createNavMenuNews(string $data, string $type): string{
     $data = $renderer->render($data, array(
        'navnews' => $navList
     ));
-    var_dump($data);
 
     return $data;
 }
