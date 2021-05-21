@@ -20,13 +20,7 @@ class Renderer{
 
     public function renderFile(string $file, array $variables = array()): string{
 
-        $mydir = 'mtesser'; 
-        $myfiles = array_diff(scandir(__DIR__ . '/../html'), array('.', '..'));
-        var_dump(__DIR__ . '/../html'); 
-        var_dump($myfiles);
-        var_dump(file_get_contents(__DIR__ . '/../html/' . $file  . '.xhtml'));
-        var_dump(error_get_last());
-        return $this-> render(file_get_contents('/mtesser/public_html/html/' . $file  . '.xhtml'), $variables);
+        return $this-> render(file_get_contents(__DIR__ . '/../html/' . $file  . '.xhtml'), $variables);
     }
 
     private static function removeComments(string $data): string {
