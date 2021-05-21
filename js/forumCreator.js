@@ -95,8 +95,10 @@ function getComments(){
                                     button.classList.add("miPiaceButton");
                                     button.setAttribute("type", "button");
                                     button.setAttribute("name", "miPiace");
-                                    console.log(json);
                                     button.onclick = ()=>{
+                                        if(json.banned){
+                                            return;
+                                        }
                                         fetch("/mtesser/api/leaveLike.php", {method: 'POST',
                                             credentials: 'same-origin',
                                             body: JSON.stringify({leavingLike: !res[commentIndex].LeftLike, idPost: res[commentIndex].IDPost})
