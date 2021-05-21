@@ -20,7 +20,7 @@ class Renderer{
 
     public function renderFile(string $file, array $variables = array()): string{
 
-        return $this-> render(file_get_contents('/mtesser/html/' . $file  . '.xhtml'), $variables);
+        return $this-> render(file_get_contents('/mtesser/public_html/html/' . $file  . '.xhtml'), $variables);
     }
 
     private static function removeComments(string $data): string {
@@ -51,7 +51,7 @@ class Renderer{
 
         foreach (($matches[0] ?? array()) as $match) {
             $data = str_replace($match, $this->replaceInclude(self::removeComments(file_get_contents(
-                    '/mtesser/html/' . strtolower(str_replace('<include', '', str_replace('Placeholder />', '', $match) . '.xhtml'))
+                    '/mtesser/public_html/html/' . strtolower(str_replace('<include', '', str_replace('Placeholder />', '', $match) . '.xhtml'))
             ))), $data);
         }
 
