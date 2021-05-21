@@ -8,14 +8,14 @@
 
 <ifNotloggedPlaceholder />
     <p>
-        <a xml:lang="en" href="/?r=login&amp;prev=<redirectPlaceholder />">Login</a>
+        <a xml:lang="en" href="/mtesser/?r=login&amp;prev=<redirectPlaceholder />">Login</a>
         <span tabindex="-1" id="spacer"></span>
-        <a xml:lang="en" href="/?r=signup&prev=<redirectPlaceholder />">Signup</a>
+        <a xml:lang="en" href="/mtesser/?r=signup&prev=<redirectPlaceholder />">Signup</a>
     </p>
 <endIfPlaceholder />
 
 <ifLoggedPlaceholder />
-<p><a xml:lang="en" href="/?r=logout&amp;prev=<redirectPlaceholder />">Logout</a></p>
+<p><a xml:lang="en" href="/mtesser/?r=logout&amp;prev=<redirectPlaceholder />">Logout</a></p>
 <endIfPlaceholder />
 
 
@@ -25,7 +25,7 @@
 <!-- Breadcrumb -->
 <blockDefBreadcrumbPlaceholder />
 
-<p>Ti trovi in <a href = "/?r=home" xml:lang="en">Home</a>  » %%Workout%% </p>
+<p>Ti trovi in <a href = "/mtesser/?r=home" xml:lang="en">Home</a>  » %%Workout%% </p>
 
 <blockEndPlaceholder />
 
@@ -42,16 +42,16 @@
 
 <ul>
 
-<li xml:lang="en"><a href = "/?r=home">Home</a></li>
+<li xml:lang="en"><a href = "/mtesser/?r=home">Home</a></li>
 <li xml:lang="en" id="currentLink">Workout</li>
-<li><a href = "/?r=alimentation">Alimentazione</a></li>
-<li xml:lang="en"><a href = "/?r=forum">Forum</a></li>
-<li xml:lang="en"><a href = "/?r=news">News</a></li>
+<li><a href = "/mtesser/?r=alimentation">Alimentazione</a></li>
+<li xml:lang="en"><a href = "/mtesser/?r=forum">Forum</a></li>
+<li xml:lang="en"><a href = "/mtesser/?r=news">News</a></li>
 <ifLoggedPlaceholder />
-<li><a href = "/?r=profile">Profilo</a></li>
+<li><a href = "/mtesser/?r=profile">Profilo</a></li>
 <endIfPlaceholder />
 <ifAdminPlaceholder />
-<li><a href="/?r=adminPanel">Pannello admin</a></li>
+<li><a href="/mtesser/?r=adminPanel">Pannello admin</a></li>
 <endIfPlaceholder />
 </ul>
 
