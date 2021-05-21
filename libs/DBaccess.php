@@ -39,7 +39,7 @@ class DBaccess{
 
     public function getRecipeQuery(){
 
-        $querySelect = "SELECT ID, Nome, Descrizione, NomeImmagine, AltImmagine FROM ALIMENTAZIONE ORDER BY ID ASC";
+        $querySelect = "SELECT ID, Nome, Descrizione, NomeImmagine, AltImmagine FROM alimentazione ORDER BY ID ASC";
         $queryResult = $this-> connection-> query($querySelect);
 
         if($queryResult-> num_rows == 0){

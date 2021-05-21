@@ -3,7 +3,7 @@ function sendComment(){
     const val = document.getElementById("post0").value;
     document.getElementById("post0").value = "";
 
-    fetch("/api/commentSubmitter.php", {method: 'POST',
+    fetch("/mtesser/api/commentSubmitter.php", {method: 'POST',
             credentials: 'same-origin',
             body: JSON.stringify({val: val, submit: true})})
         .then(response => response.json())
@@ -14,7 +14,7 @@ function sendComment(){
 
 function getComments(){
 
-    fetch("/api/commentsGetter.php")
+    fetch("/mtesser/api/commentsGetter.php")
         .then(response => response.json())
         .then(json=> {
 
@@ -200,7 +200,7 @@ function getComments(){
 
 function loadAnswers(idPost){
 
-    fetch("/api/answerGetter.php?IDPost=" + idPost)
+    fetch("/mtesser/api/answerGetter.php?IDPost=" + idPost)
         .then(response=> response.json())
         .then(json=> {
             if(json.ok){
