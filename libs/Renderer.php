@@ -50,7 +50,11 @@ class Renderer{
 
         $matches = PcreRegex::getAll("/<include(.)*Placeholder \/>/", $data);
 
+
+
         foreach (($matches[0] ?? array()) as $match) {
+
+            var_dump('/mtesser/public_html/html/' . strtolower(str_replace('<include', '', str_replace('Placeholder />', '', $match) . '.xhtml')));
             $data = str_replace($match, $this->replaceInclude(self::removeComments(file_get_contents(
                     '/mtesser/public_html/html/' . strtolower(str_replace('<include', '', str_replace('Placeholder />', '', $match) . '.xhtml'))
             ))), $data);
