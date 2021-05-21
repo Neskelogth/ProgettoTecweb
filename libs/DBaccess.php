@@ -4,7 +4,7 @@ class DBaccess{
 
     private const HOST_DB = "127.0.0.1";
     private const USERNAME = "mtesser";
-    private const PASSWORD = "ikee4Doongaem7ju";
+    private const PASSWORD = "2x5ccKN7AdcQWY8j";
     private const DATABASE_NAME = "mtesser";
 
     private $connection;

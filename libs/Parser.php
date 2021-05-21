@@ -32,7 +32,11 @@ class Parser{
 
         if ($route === false) {
 
-            header("Location: /?r=".$this->default."&".http_build_query($_GET));
+            $location = "/mtesser/?r=" . $this->default . "&" . http_build_query($_GET);
+            header("Location: $location");
+            /*header("Location: /?r=".$this->default."&".http_build_query($_GET));*/
+
+
         }else{
 
             $routeExists = array_key_exists($route, $this->routes);
