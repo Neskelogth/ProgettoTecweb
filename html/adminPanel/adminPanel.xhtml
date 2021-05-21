@@ -4,7 +4,9 @@
 
 <label for = "userToPromote">Utente da promuovere: </label>
 
-<select id="userToPromote"></select>
+<select id="userToPromote">
+    <option class= "nascosto"></option>
+</select>
 
 <button onclick="promote()">Promuovi utente</button>
 
@@ -19,7 +21,9 @@
 
 <label for = "recipe">Ricetta da eliminare: </label>
 
-<select id = "recipe"></select>
+<select id = "recipe">
+    <option class= "nascosto"></option>
+</select>
 
 <button onclick="deleteRecipe()">Elimina ricetta</button>
 
@@ -34,7 +38,9 @@
 
 <label for = "news">Notizia da eliminare: </label>
 
-<select id = "news"></select>
+<select id = "news">
+    <option class= "nascosto"></option>
+</select>
 
 <button onclick="deleteNews()">Elimina news</button>
 
@@ -48,7 +54,9 @@
 
 <label for = "post">Post da eliminare: </label>
 
-<select id = "post" onchange = "findText() "></select>
+<select id = "post" onchange = "findText() ">
+    <option class= "nascosto"></option>
+</select>
 
 <label for = "postText">Testo del post da eliminare: </label>
 
@@ -64,12 +72,16 @@
 <h2>Elimina risposta</h2>
 
 <label for = "post1">Post selezionato: </label>
-<select id = "post1" onchange = "findTextAndAnswer()"></select>
+<select id = "post1" onchange = "findTextAndAnswer()">
+    <option class= "nascosto"></option>
+</select>
 <label for = "postText1">Testo del post selezionato: </label>
 <textarea readonly="readonly" rows="10" cols="90" id = "postText1"></textarea>
 
 <label for = "answer">Risposta da eliminare: </label>
-<select id = "answer" onchange="findAnswerText()"></select>
+<select id = "answer" onchange="findAnswerText()">
+    <option class= "nascosto"></option>
+</select>
 <label for = "answerText1">Testo della risposta da eliminare: </label>
 <textarea readonly="readonly" rows="10" cols="90" id = "answerText1"></textarea>
 
@@ -94,7 +106,9 @@
 
 <label for="type" id="newsTypeLabel">Inserisci il tipo della news</label>
 
-<select id = "type"></select>
+<select id = "type">
+    <option class= "nascosto"></option>
+</select>
 
 <ifEtiPlaceholder />
 
@@ -112,7 +126,7 @@
 <endIfPlaceholder />
 
 <label for="newsText" id="newsTextLabel">Inserisci il testo della news</label>
-<textarea rows="10" cols="90" id = "newsText" maxlength="50"></textarea>
+<textarea rows="10" cols="90" id = "newsText"></textarea>
 
 <ifErrorlinkPlaceholder />
 
@@ -202,7 +216,9 @@
 
 <label for = "banned">Utente a cui revocare il ban: </label>
 
-<select id="banned"></select>
+<select id="banned">
+    <option class= "nascosto"></option>
+</select>
 
 <p id="errorUnbanMessage" class="rosso nascosto">
     L'utente non è stato sbannato a causa di un errore, si prega di riprovare.</p>
@@ -216,7 +232,9 @@
 
 <label for = "notBanned">Utente da bannare: </label>
 
-<select id="notBanned"></select>
+<select id="notBanned">
+    <option class= "nascosto"></option>
+</select>
 
 <p id="errorBanMessage" class="rosso nascosto">
     L'utente non è stato bannato a causa di un errore, si prega di riprovare.</p>
@@ -233,7 +251,9 @@
 
 <label for = "remove">Utente a cui rimuovere l'account: </label>
 
-<select id="remove"></select>
+<select id="remove">
+    <option class= "nascosto"></option>
+</select>
 
 <input type="button" onclick="deleteAccount()" id="removingAccount" value = "Rimouvi account" />
 
