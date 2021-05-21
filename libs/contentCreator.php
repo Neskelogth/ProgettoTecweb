@@ -5,7 +5,6 @@ function createAlimentationContent(string $data): string{
     $renderer = new Renderer();
     $DBaccess = new DBaccess();
     $contentArray = ($DBaccess->getConnection() !== false ? $DBaccess->getRecipeQuery() : null);
-    var_dump($DBaccess->getConnection());
     if($contentArray !== null){
 
         $recipes = "";
@@ -14,7 +13,7 @@ function createAlimentationContent(string $data): string{
             $recipes .= $renderer-> renderFile('alimentation/recipeTemplate', array(
 
                 'name' => $recipe['Nome'],
-                'singlerecipe' => '/?r=singleRecipe&amp;id='.$recipe['ID'],
+                'singlerecipe' => '/mtesser/?r=singleRecipe&amp;id='.$recipe['ID'],
                 'path' => $recipe['NomeImmagine'],
                 'alt' => $recipe['AltImmagine'],
                 'recipead' => $recipe['Descrizione']
