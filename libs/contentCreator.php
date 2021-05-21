@@ -147,22 +147,22 @@ function createNavMenuNews(string $data, string $type): string{
     $renderer = new Renderer();
 
     $menuItemAll = $renderer->renderFile('news/singleNavElement', array(
-       'getlink' => '/?r=news',
+       'getlink' => '/mtesser/?r=news',
        'navtext' => '%%All news%%'
     ));
 
     $menuItemWorkout = $renderer->renderFile('news/singleNavElement', array(
-        'getlink' => '/?r=news&amp;type=workout',
+        'getlink' => '/mtesser/?r=news&amp;type=workout',
         'navtext' => '%%Workout news%%'
     ));
 
     $menuItemAlimentation = $renderer->renderFile('news/singleNavElement', array(
-        'getlink' => '/?r=news&amp;type=alimentazione',
+        'getlink' => '/mtesser/?r=news&amp;type=alimentazione',
         'navtext' => 'Alimentazione %%news%%'
     ));
 
     $menuItemSite = $renderer->renderFile('news/singleNavElement', array(
-        'getlink' => '/?r=news&amp;type=sito',
+        'getlink' => '/mtesser/?r=news&amp;type=sito',
         'navtext' => '%%News%% del sito'
     ));
 
