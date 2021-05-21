@@ -563,12 +563,14 @@ class DBaccess{
 
         $queryLikes = "DELETE FROM likes WHERE IDUtente = '$user'";
         $queryAnswers = "DELETE FROM risposta WHERE IDUtente = '$user'";
+        $queryOtherAnswers = "DELETE FROM answer WHERE IDPost IN (SELECT IDPost FROM post WHERE IDUtente = '$user')";
         $queryPosts = "DELETE FROM post WHERE IDUtente = '$user' ";
         $queryUser = "DELETE FROM utente WHERE IDUtente = '$user'";
         $queryUsersLikes = "DELETE FROM likes WHERE IDPost IN (SELECT IDPost FROM post WHERE IDUtente = '$user')";
 
         $resultLikes = $this-> connection-> query($queryLikes);
         $resultAnswers = $this-> connection-> query($queryAnswers);
+        $resultOtherAnswers = $this-> connection-> query($queryOtherAnswers);
         $resultUsersLikes = $this-> connection-> query($queryUsersLikes);
         $resultPosts = $this-> connection-> query($queryPosts);
         $resultUser = $this-> connection-> query($queryUser);
