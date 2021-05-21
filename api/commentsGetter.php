@@ -17,7 +17,7 @@ if($DBaccess-> getConnection()) {
 
 $DBaccess-> closeConnection();
 
-$response = array('ok'=> true, 'result' => array());
+$response = array('ok'=> true, 'result' => array(),'logged' => $_SESSION['username'] ?? false);
 
 foreach ($result as $item) {
 
