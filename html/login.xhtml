@@ -44,7 +44,7 @@
 
     <div id="notLoggedIn">
         <h2>Accedi al Sito</h2>
-        <form method="POST" action = "api/login.php" onsubmit = "return verifylogin();">
+        <form method="post" action = "api/login.php" onsubmit = "return verifylogin();">
             <fieldset>
 
                 <!--input id = "valueerror"type="hidden" tabindex="-1" value="false"/-->
@@ -74,7 +74,7 @@
                 <endIfPlaceholder />
 
                 <label id="loginUsername" for="usernameInputArea">Inserisci il tuo %%Username%%</label>
-                <input id="usernameInputArea" rows="1" cols="17" name="username" ></input>
+                <input id="usernameInputArea" type = "text" name="username" ></input>
                 <p id = "errorepassword" class = "nascosto rosso">La password non è valida</p>
 
                 
@@ -89,7 +89,7 @@
 
                 <endIfPlaceholder />
                 <label id="loginPassword" for="passwordInputArea">Inserisci la tua %%Password%%</label>
-                <input type = "password" id="passwordInputArea" rows="1" cols="17" name="password" ></input>
+                <input type = "password" id="passwordInputArea" name="password" ></input>
                 <input type="hidden" tabindex="-1" value="<redirectPlaceholder />" name="redirect" />
                 <input type="submit" class="loginButton" name="login" value="Accedi"/>
             </fieldset>
