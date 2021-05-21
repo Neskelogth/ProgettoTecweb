@@ -45,7 +45,7 @@ if($validAlt && $validDescription && $validHints && $validIngredients && $validI
         $response['ok'] = false;
     }
 
-    $response['red'] = '/?r=adminPanel';
+    $response['red'] = '/mtesser/?r=adminPanel';
 
 }else{
 
@@ -93,7 +93,7 @@ if($validAlt && $validDescription && $validHints && $validIngredients && $validI
         $elements['era'] = 'error';
     }
 
-    $redirect = '/?' . http_build_query($elements);
+    $redirect = '/mtesser/?' . http_build_query($elements);
 
     $response['red'] = $redirect;
 }

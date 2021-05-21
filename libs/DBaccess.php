@@ -2,9 +2,9 @@
 
 class DBaccess{
 
-    private const HOST_DB = "127.0.0.1:3306";
+    private const HOST_DB = "127.0.0.1:30080";
     private const USERNAME = "mtesser";
-    private const PASSWORD = "2x5ccKN7AdcQWY8j";
+    private const PASSWORD = "Ylbstr3!";
     private const DATABASE_NAME = "mtesser";
 
     private $connection;

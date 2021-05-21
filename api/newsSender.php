@@ -36,7 +36,7 @@ if($validLink && $validText && $validTitle && $validType) {
         $response['ok'] = false;
     }
     $DBaccess-> closeConnection();
-    $response['red'] = '/?r=adminPanel';
+    $response['red'] = '/mtesser/?r=adminPanel';
 
 }else{
 
@@ -65,7 +65,7 @@ if($validLink && $validText && $validTitle && $validType) {
         $elements['ety'] = 'error';
     }
 
-    $redirect = '/?' . http_build_query($elements);
+    $redirect = '/mtesser/?' . http_build_query($elements);
 
     $response['red'] = $redirect;
 }

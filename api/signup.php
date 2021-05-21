@@ -13,7 +13,7 @@ $surname = cleanFromTags($_POST['surname']);
 $mail = cleanFromTags($_POST['mail'], true);
 $password = cleanFromTags($_POST['password']);
 $rePassword = cleanFromTags($_POST['rePassword']);
-$toRedirect = urldecode(cleanFromTags($_POST['redirect'] ?? urlencode('/?r=home')));
+$toRedirect = urldecode(cleanFromTags($_POST['redirect'] ?? urlencode('/mtesser/?r=home')));
 
 $validusername = validateCredentials($username);
 $validemail = validateCredentials($mail);
@@ -43,13 +43,10 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
             $SESSION['admin'] = false;
 
             $response['red'] = $toRedirect;
-            //$response['red'] = '/?r=home';
 
         }else{
             
             $response['ok']= false;
-
-            //$response['red'] = "/?r=signup";
 
             $elements = array(
                 'r' => 'signup'
@@ -57,7 +54,7 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
 
             $elements['edbfa'] = 'error';
 
-            $redirect = '/?' . http_build_query($elements);
+            $redirect = '/mtesser/?' . http_build_query($elements);
             $response['red'] = $redirect;
         }
 
@@ -85,7 +82,7 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
         }
 
         $response['ok']= false;
-        $redirect = '/?' . http_build_query($elements);
+        $redirect = '/mtesser/?' . http_build_query($elements);
         $response['red'] = $redirect;
         $DBaccess->closeConnection();  
     }    
@@ -123,34 +120,10 @@ if($validusername && $validemail && $validnome && $validcognome && $validpasswor
         $elements['epanc'] = 'error';
     }
 
-    $redirect = '/?' . http_build_query($elements);
+    $redirect = '/mtesser/?' . http_build_query($elements);
 
     $response['red'] = $redirect;
 }
 
 $toRedirect = $response['red'];
 header("location: $toRedirect");
-
-
-
-/*if(!$existingUsername && !$existingMail && $password == $rePassword && $mail != "Fatal error"){
-
-    $insertResult = $DBaccess-> insertUser($username, $mail, $name, $surname, hash('sha512', $password));
-    $DBaccess->closeConnection();
-    if($insertResult){
-        $_SESSION['username'] = $username;
-        $SESSION['admin'] = false;
-
-    }else{
-
-        header("Location: /?r=singup");
-    }
-    header("location: $toRedirect");
-
-}else{
-
-    $DBaccess->closeConnection();
-    header("location: /?r=signup");
-}*/
-
-
