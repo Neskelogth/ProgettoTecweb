@@ -9,7 +9,6 @@ require_once "vendor/autoload.php";
 session_start();
 
 $parser = new Parser();
-//var_dump($_GET);
 $parser-> addRoute('login', function(string $data){
 
     return $data;
@@ -18,6 +17,9 @@ $parser-> addRoute('login', function(string $data){
     'redirect' => $_GET['prev'] ?? urlencode('/mtesser/?r=home'),
     'admin' => $_SESSION['admin'] ?? false,
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina di login del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Login, Accedi, Autenticazione',
     'errorusernamenonvalido' => ($_GET['eusnv'] ?? "") == "error",
     'errorpasswordnonvalido' => ($_GET['epanv'] ?? "") == "error",
     'errorusernamenonesistente' => ($_GET['eusne'] ?? "") == "error",
@@ -40,6 +42,9 @@ $parser-> addRoute('signup', function(string $data){
     'redirect' => $_GET['prev'] ?? urlencode('/mtesser/?r=home'),
     'admin' => $_SESSION['admin'] ?? false,
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina di signup del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Signup, Registrazione, Autenticazione',
     'errorusernamenonvalido' => ($_GET['eusnv'] ?? "") == "error",
     'errorusernameesistente' => ($_GET['euses'] ?? "") == "error",
     'erroremailnonvalida' => ($_GET['eemnv'] ?? "") == "error",
@@ -56,6 +61,9 @@ $parser-> addRoute('home', function (string $data){
 }, array(
     'title' => 'Home - Physique',
     'id' => 'contenthome',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina principale del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Physique, Home, Palestra, Alimentazione, Fitness, Forum, News',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
@@ -67,6 +75,9 @@ $parser-> addRoute('workout', function (string $data){
 }, array(
     'title' => 'Workout - Physique',
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina relativa alla sezione workout del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Workout, Allenamento, Fitness, Esercizio, Dimagrire, Muscoli, Palestra',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
@@ -78,6 +89,9 @@ $parser-> addRoute('adminPanel', function (string $data){
 }, array(
     'title' => 'Pannello amministratore - Physique',
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina relativa alla sezione pannello amministratore del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Amministratore, Admin',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
@@ -92,6 +106,9 @@ $parser-> addRoute('profile', function(string $data){
 
     'title' => 'Profilo utente - Physique',
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina relativa alla sezione profilo del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Profilo, Utente, Modifica',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' => !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
@@ -103,6 +120,9 @@ $parser-> addRoute('split', function (string $data){
 }, array(
     'title' => '<typePlaceholder /> - Workout - Physique',
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina relativa alla sezione split del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Workout, Split, Allenamento, Esercizi, Palestra',
     'brosplit' => ($_GET['type'] ?? "") == "bro",
     'ppl' => ($_GET['type'] ?? "") == "ppl",
     'ul' => ($_GET['type'] ?? "") == "ul",
@@ -123,6 +143,9 @@ $parser-> addRoute('alimentation', function (string $data){
 }, array(
     'title' => 'Alimentazione - Physique',
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina relativa alla sezione alimentazione del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Alimentazione, Ricette, Dimagrire, Calorie, Peso',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
@@ -135,6 +158,9 @@ $parser-> addRoute('singleRecipe', function (string $data){
 }, array(
     'title' => '<recipeTitlePlaceholder /> - Alimentazione - Physique',
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina relativa alla sezione ricetta singola del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Alimentazione, Ricetta, Dimagrire, Calorie, Peso',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
@@ -148,6 +174,9 @@ $parser-> addRoute('forum', function (string $data){
 }, array(
     'title' => 'Forum - Physique',
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina relativa alla sezione forum del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Forum, Discussione, Consigli, Risposte, Alimentazione, Workout, Palestra, Dimagrire',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
     'redirect' => urlencode("/mtesser/?".http_build_query($_GET)),
@@ -163,6 +192,9 @@ $parser-> addRoute('news', function (string $data){
 }, array(
     'title' => 'News - Physique',
     'id' => 'content',
+    'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
+    'description' => 'Pagina relativa alla sezione notizie del sito <span xml:lang = "fr">Physique</span>',
+    'keywords' => 'Notizie, Aggiornamenti, Workout, Alimentazione, Sito',
     'type' => ($_GET['type'] ?? '%%All%%'),
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
