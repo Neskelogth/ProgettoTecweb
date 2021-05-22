@@ -62,7 +62,7 @@ $parser-> addRoute('home', function (string $data){
     'title' => 'Home - Physique',
     'id' => 'contenthome',
     'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
-    'description' => 'Pagina principale del sito <span xml:lang = "fr">Physique</span>',
+    'description' => 'Pagina principale del sito Physique',
     'keywords' => 'Physique, Home, Palestra, Alimentazione, Fitness, Forum, News',
     'logged' => $_SESSION['username'] ?? false,
     'notlogged' =>  !($_SESSION['username'] ?? false),
