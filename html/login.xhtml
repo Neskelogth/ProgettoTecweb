@@ -9,7 +9,7 @@
 <!--Breadcumb-->
 <blockDefBreadcrumbPlaceholder />
 
-<p>Ti trovi in <a href = "/mtesser/?r=home" xml:lang="en" lang = "en">Home</a>  » Login </p>
+<p>Ti trovi in <a href = "/mtesser/?r=home" xml:lang="en" lang = "en">Home</a>  » %%Login%% </p>
 
 <blockEndPlaceholder />
 
@@ -32,7 +32,7 @@
     <li><a href = "/mtesser/?r=profile">Profilo</a></li>
     <endIfPlaceholder />
     <ifAdminPlaceholder />
-    <li><a href="/mtesser/?r=adminPanel">Pannello admin</a></li>
+    <li><a href="/mtesser/?r=adminPanel">Pannello %%admin%%</a></li>
     <endIfPlaceholder />
     
 </ul>
@@ -51,41 +51,41 @@
 
                 <ifSqlPlaceholder />
 
-                <p id="sqlError" class="rosso">Si ricorda che non sono permessi apostrofi o doppi apici nel login</p>
+                <p id="sqlError" class="rosso">Si ricorda che non sono permessi apostrofi o doppi apici nel %%login%%</p>
 
                 <endIfPlaceholder />
 
-                <p id = "erroreusername" class = "rosso nascosto">Questo username non è valido</p>
+                <p id = "erroreusername" class = "rosso nascosto">Questo %%username%% non è valido</p>
 
                 <ifErrorusernamenonvalidoPlaceholder />
                 
-                    <p class = "rosso" id="invalidUser">Lo username non è valido</p>
+                    <p class = "rosso" id="invalidUser">Lo %%username%% non è valido</p>
 
                 <endIfPlaceholder />
                 <ifErrorusernamenonesistentePlaceholder />
                 
-                    <p class = "rosso" id="unknownUser">Questo username non esiste</p>
+                    <p class = "rosso" id="unknownUser">Questo %%username%% non esiste</p>
 
                 <endIfPlaceholder />
                 <ifErrorsqlinjectiontryPlaceholder />
                 
-                    <p class = "rosso" id="sql">SQL injection try</p>
+                    <p class = "rosso" id="sql">%%SQL injection try%%</p>
 
                 <endIfPlaceholder />
 
                 <label id="loginUsername" for="usernameInputArea">Inserisci il tuo %%Username%%</label>
                 <input id="usernameInputArea" type = "text" name="username" ></input>
-                <p id = "errorepassword" class = "nascosto rosso">La password non è valida</p>
+                <p id = "errorepassword" class = "nascosto rosso">La %%password%% non è valida</p>
 
                 
                 <ifErrorpasswordnonvalidoPlaceholder />
                 
-                    <p class = "rosso" id="invalidPass">La password non è valida</p>
+                    <p class = "rosso" id="invalidPass">La %%password%% non è valida</p>
 
                 <endIfPlaceholder />
                 <ifErrorpasswordnonesistentePlaceholder />
                 
-                    <p class = "rosso" id="wrongPass">Questa password non è corretta</p>
+                    <p class = "rosso" id="wrongPass">Questa %%password%% non è corretta</p>
 
                 <endIfPlaceholder />
                 <label id="loginPassword" for="passwordInputArea">Inserisci la tua %%Password%%</label>
