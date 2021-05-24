@@ -129,7 +129,7 @@ class Renderer{
 
     private function replaceEnglish(string &$data){
 
-        $matches = PcreRegex::getAll("/%%[^\/<>]*%%/", $data);
+        $matches = PcreRegex::getAll("/%%[^\/<>%%]*%%/", $data);
         foreach(($matches[0] ?? array()) as $match) {
 
             $word = substr($match, 2, strlen($match) - 4);
