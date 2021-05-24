@@ -64,7 +64,7 @@ input[type=button]:hover{
 input[type=password]{
 	margin-bottom: 1em;
 	border: 1px solid rgb(25, 25, 112);
-
+	padding: .2em;
 }
 
 
