@@ -34,7 +34,7 @@
     <li><a href = "/mtesser/?r=profile">Profilo</a></li>
     <endIfPlaceholder />
     <ifAdminPlaceholder />
-    <li><a href="/mtesser/?r=adminPanel">Pannello admin</a></li>
+    <li><a href="/mtesser/?r=adminPanel">Pannello %%admin%%</a></li>
     <endIfPlaceholder />
     
 </ul>
@@ -56,7 +56,7 @@
             <p id = "edbfa" class = "rosso">Il %%database%% non è raggiungibile</p>
 
         <endIfPlaceholder />
-        <p id = "erroreusername" class = "rosso nascosto">Questo username non è valido</p>
+        <p id = "erroreusername" class = "rosso nascosto">Questo %%username%% non è valido</p>
         <ifErrorusernamenonvalidoPlaceholder />
                 
             <p id = "eusnv" class = "rosso">Lo %%username%% non è valido</p>
@@ -69,7 +69,7 @@
         <endIfPlaceholder />
         <label for="username">Inserisci il tuo %%username%%</label>
         <input type="text" id="username" name="username"/>
-        <p id = "emailnonvalida" class = "rosso nascosto">Questa email non è valida</p>
+        <p id = "emailnonvalida" class = "rosso nascosto">Questa %%email%% non è valida</p>
         <ifErroremailnonvalidaPlaceholder />
                 
             <p id = "eemnv" class = "rosso">L'%%email%% non è valida</p>
@@ -98,7 +98,7 @@
         <endIfPlaceholder />
         <label for="surname">Inserisci il tuo cognome</label>
         <input type="text" id="surname" name="surname"/>
-        <p id = "errorepassword" class = "nascosto rosso">La password non è valida</p>
+        <p id = "errorepassword" class = "nascosto rosso">La %%password%% non è valida</p>
         <ifErrorpasswordnonvalidaPlaceholder />
                 
             <p id = "epanv" class = "rosso">La %%password%% non è valida</p>
