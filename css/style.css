@@ -193,7 +193,7 @@ a:hover{
 }
 
 #content{
-	flex-shrink: inherit;
+	min-width: 75%;
 	border-left: 2px solid rgb(0, 0, 0);
 	padding-left: 0.7em;
 	padding-right: 0.7em;
