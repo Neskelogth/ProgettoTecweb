@@ -18,7 +18,7 @@ $parser-> addRoute('login', function(string $data){
     'admin' => $_SESSION['admin'] ?? false,
     'id' => 'content',
     'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
-    'description' => 'Pagina di login del sito  Physique',
+    'description' => 'Pagina di login del sito Physique',
     'keywords' => 'Login, Accedi, Autenticazione',
     'errorusernamenonvalido' => ($_GET['eusnv'] ?? "") == "error",
     'errorpasswordnonvalido' => ($_GET['epanv'] ?? "") == "error",
