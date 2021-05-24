@@ -259,7 +259,7 @@ a:hover{
 }
 
 #fotochisiamo {
-	
+
 	margin: auto;
 	margin-top: 2em;
 	width: 80%;
@@ -1558,6 +1558,11 @@ tbody th{
 
 		/*margin: 0.2em;*/
 		padding: .5em;
+	}
+
+	#fotochisiamo{
+		margin-left: 0.5em;
+		margin-right: 0.5em;
 	}
 	/*FINE HOME */
 
