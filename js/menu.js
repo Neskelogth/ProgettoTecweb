@@ -17,6 +17,9 @@ window.addEventListener('resize',function(event){
     loadmenu();
 })
 
+window.addEventListener('load',function(event){
+    loadmenu();
+})
 function openmenu(){
         document.getElementById('menuhamburger').classList.add('nascosto');
         document.getElementById('menuhamburger').classList.remove('float');
