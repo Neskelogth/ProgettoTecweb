@@ -1,0 +1,6 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {section}{\numberline {1}Fase di analisi}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Analisi delle caratteristiche dell'utenza}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Destinatari}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Funzionalità}{2}{subsubsection.1.1.2}%
