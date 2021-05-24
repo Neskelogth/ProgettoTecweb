@@ -57,7 +57,11 @@ input[type=button]:hover{
 	opacity: 0.8;
 }
 
+.float{
 
+	float:right;
+
+}
 /*INPUT GENERALI*/
 
 
@@ -152,8 +156,11 @@ a:hover{
 
 #menu{
 
-    float: left;
 	width: 19%;
+}
+
+.floatleft{
+	float: left;
 }
 
 #menu ul{
@@ -1493,8 +1500,6 @@ tbody th{
 	}
 
 	#menu{
-
-		float: none;
 		width: 100%;
 	}
 
