@@ -14,11 +14,14 @@ $name = cleanFromTags($input['name']);
 $surname = cleanFromTags($input['surname']);
 $email = cleanFromTags($input['email']);
 $user = cleanFromTags($_SESSION['username']);
+$password = cleanFromTags($input['password']);
+
 
 $dbaccess = new DBaccess();
-if($dbaccess-> getConnection() && validateCredentials($user) && validateText($name) && validateText($surname) && validateEmail($email)){
+if($dbaccess-> getConnection() && validateCredentials($user) && validateText($name) && validateText($surname) 
+    && validateEmail($email) && validateCredentials($password)){
 
-    $response['ok'] = $dbaccess-> changeData($user, $name, $surname, $email);
+    $response['ok'] = $dbaccess-> changeData($user, $name, $surname, $email,hash("sha512",$password));
     $dbaccess-> closeConnection();
 }else{
 

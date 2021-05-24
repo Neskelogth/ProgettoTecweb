@@ -22,7 +22,8 @@ function changeValues(){
         body: JSON.stringify({
             name: document.getElementById("name").value,
             surname: document.getElementById("surname").value,
-            email: document.getElementById("email").value
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
         })
     })
         .then(response => response.json())

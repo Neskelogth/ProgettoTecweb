@@ -578,14 +578,15 @@ class DBaccess{
         return $resultUser;
     }
 
-    public function changeData(string $user, string $name, string $surname, string $email): bool{
+    public function changeData(string $user, string $name, string $surname, string $email, string $password): bool{
 
         $user = base64_encode($user);
         $name = base64_encode($name);
         $surname = base64_encode($surname);
         $email = base64_encode($email);
 
-        $query = "UPDATE utente SET Nome = '$name', Cognome = '$surname', Email = '$email' WHERE IDUtente = '$user'";
+
+        $query = "UPDATE utente SET Nome = '$name', Cognome = '$surname', Email = '$email', Password = '$password' WHERE IDUtente = '$user'";
 
         return $this-> connection-> query($query);
     }
