@@ -28,7 +28,6 @@ body{
     margin: auto;
     background-color:rgb(255, 255, 255);
 	font-family: "Arial", "Helvetica" ,sans-serif;
-	min-height: 100vh;
 }
 
 
@@ -189,6 +188,7 @@ a:hover{
 	padding-top: 1em;
 	min-height: 100%;
 	margin-bottom: 0em;
+	min-height: 100vh;
 }
 
 #content a:visited {
