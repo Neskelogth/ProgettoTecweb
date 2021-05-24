@@ -1544,6 +1544,13 @@ tbody th{
 		padding-left: .5em;
 	}
 
+	#menuhamburger{
+		width: 5%;
+	}
+
+	#close{
+		width: 5%;
+	}
 	/*FINE PARTE COMUNE*/
 
 	/*INIZIO HOME*/
