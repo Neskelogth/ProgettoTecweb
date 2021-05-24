@@ -187,18 +187,6 @@ a:hover{
 	padding-left: 0.7em;
 	padding-right: 0.7em;
 	padding-top: 1em;
-	position: absolute;
-	height: 60%;
-}
-
-#header{
-	position: absolute;
-	height: 30%;
-}
-
-#breadcrumb{
-	position: absolute;
-	height: 10%;
 }
 #content a:visited {
 	color: rgb(120, 0, 120);
