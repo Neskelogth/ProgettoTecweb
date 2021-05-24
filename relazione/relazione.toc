@@ -4,3 +4,11 @@
 \contentsline {subsection}{\numberline {1.1}Analisi delle caratteristiche dell'utenza}{2}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}Destinatari}{2}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}Funzionalità}{2}{subsubsection.1.1.2}%
+\contentsline {section}{\numberline {2}Fase di progettazione}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Progettazione}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Struttura}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Header}{3}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Breadcrumb}{3}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Container}{3}{subsubsection.2.2.3}%
+\contentsline {paragraph}{\numberline {2.2.3.1}Menù}{3}{paragraph.2.2.3.1}%
+\contentsline {paragraph}{\numberline {2.2.3.2}Content}{3}{paragraph.2.2.3.2}%
