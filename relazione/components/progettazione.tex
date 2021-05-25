@@ -38,12 +38,12 @@ Le pagine split sono 4:
 \end{itemize}           
 Tutte e 4 hanno una struttura simile tra di loro.
 Sono suddivise in paragrafi in cui viene spiegato in cosa consiste lo split, per poi elencare i suoi vantaggi e svantaggi ed infine mostrarne un esempio in forma tabellare.
-In tutte le pagine è presente un link "Indietro" che riporta alla pagina workout principale. 
+In tutte le pagine è presente un link \textit{Indietro} che riporta alla pagina workout principale. 
 \subparagraph{Alimentazione}
 La pagina di alimentazione contiene un elenco di ricette, che sono presentate in riquadri contenenti il nome della ricetta, l’immagine
 del piatto ed infine il link che apre la pagina completa della ricetta. 
 \subparagraph{Ricetta}
-La pagina della ricetta completa riporta il titolo della stessa seguito da una foto del risultato finale del piatto. Successivamente vengono elencati gli ingredienti necessari alla preparazione, viene illustrato il procedimento da seguire ed, eventualmente, vengono dati dei consigli per agevolare la riuscita della ricetta.
+La pagina della ricetta completa riporta il titolo della stessa seguito da una foto del risultato finale del piatto. Successivamente vengono elencati gli ingredienti necessari alla preparazione, viene illustrato il procedimento da seguire ed, eventualmente, vengono dati dei consigli per agevolare la riuscita della ricetta. In tutte le pagine è presente un link \textit{Indietro} che riporta alla pagina alimentazione principale.
 \subparagraph{Forum}
 La pagina del forum, nel caso in cui l'utente non abbia effettuato l'accesso, chiederà all'utente di accedere o registrarsi per lasciare commenti. Nel caso in cui questo non avvenga l'utente avrà solo la possibilità di leggere i commenti lasciati dagli altri utenti e non potrà interagire con il forum.
 Al contrario, nel caso in cui l'utente abbia effettuato l'accesso, come prima cosa verrà visualizzato un form per lasciare un commento e successivamente, come nel caso precedente, l'elenco di tutti i post con ora anche la possibilità di rispondere a questi e di lasciare eventualmente un like.
@@ -66,9 +66,32 @@ La seconda scheda, ossia il breadcrumb,contiene il percorso effettuato per arriv
 La terza scheda, ossia il menu,elenca le pagine principali del sito.
 La quarta scheda, ossia il content, racchiude il contenuto che si adatta in base alla grandezza della schermata.
 \paragraph{Mobile}
-Nella visualizzazione mobile è stato implementato il menù adhamburger al fine di gestire al meglio lo spazio disponibile.
+Nella visualizzazione mobile è stato implementato il menù ad hamburger al fine di gestire al meglio lo spazio disponibile. Questo compare all'interno del breadcrumb, a destra, e per espanderlo è necessario cliccare sull'icona. Una volta espanso, il menù si sviluppa in verticale. Per chiuderlo, bisogna cliccare sul simbolo di "\textit{X}" che si trova al posto dell'icona del menù. \\
+Il resto delle pagine ha il medesimo layout della versione desktop, fanno eccezione le tabelle presenti nelle singole pagine \textit{Split}. Infatti, per realizzare le tabelle nella visualizzazione mobile è stata seguita l'approccio \textit{Responsive table}. 
+%mettere foto tabella e menù con media query
+\paragraph{Stampa}
+Per quanto riguarda la stampa, sono stati tenuti solo gli elementi fondamentali, ovvero il contenuto della pagina, tralasciando, quindi, gli elementi di presentazione (immagini e
+background). È stato rimosso il menù, il logo del sito, perché non necessari, mentre è stato mantenuti il breadcrumb, per specificare il percorso alla pagina corrente. Le pagine sono in bianco e nero per
+enfatizzare il contenuto anziché la presentazione, è stato rimosso il bordo nei titoli dei paragrafi ed è stato aggiunto il link completo per i link che portano al di fuori del sito. Infine, il font, che nella visualizzazione a schermo era sans-serif,  è diventato serif per una migliore leggibilità su carta stampata.
+
+\subsection{Accessibilità}
+Si sono seguite le linee giuda del WCAG in modo da sviluppare un sito web che abbia un alto livello di accessibilità. Fondamentale è stata la suddivisione fra contenuto, presentazione e comportamento, che garantisce un buon posizionamento nei motori di ricerca e una buona interazione con gli utenti che presentano disabilità visive.
+
+\subsubsection{Contenuto}
+Il breadcrumb, presente in ciascuna pagina, permette all'utente di sapere in ogni momento dove si trova all'interno del sito e il percorso che ha fatto per raggiungere tale pagina. Per evitare link circolari, l'ultimo campo del breadcrumb (che corrisponde alla pagina corrente) e la voce del menù della pagina corrente, non sono cliccabili. L'utente può conoscere quale altre pagine può raggiungere da quella in cui si trova perchè i link che si trovano all'interno di questa sono sottolineati. 
+Per aiutare gli utenti che utlizzazno lo screen reader, è presente un link nascosto che gli permette di andare direttamente al contenuto della pagina corrente, saltando il menù. Inoltre per ogni immagine, incapsulate nel tag img, è presente il tag alt che fornisce una  descrizione alternativa per gli screen reader. 
+All'interno del sito si trovano parole in lingua straniera le quali sono accompagnate dal tag span che ne specifica tramita \textit{xml:lang="..."} la lingua della parola in questione. 
 
 
+\subsubsection{Presentazione}
+Il desgin del sito è stato implementato, tramite CSS, usando classi he definiscono il contenuto
+dell’oggetto e non il comportamento, in modo da mantenere la separazione tra comportamento e presentazione. E' presente un foglio di stile unico in cui si trova il codice dedicato alla visualizzazione desktop, stampa e mobile. Questi ultimi due sono stati effettuati tramite \textit{media query}. Vengono usate pricipalemte misure  misure relative (em) o in percentuale per permettere una corretta visualizzazione delle pagine su schermi di dimensioni diverse. 
+Il colore principale del sito è l'azzurro, che contrasta le scritte, per esempio dei titoli, che sono in bianco. Per distinguere i link già visitati, si è deciso di evidenziare quest'ultimi con il colore viola, mentre i link non ancora visitati richiamano il colore che domina il sito, cioè l'azzurro. 
 
-  
-       
+
+\subsubsection{Comportamento}
+Le informazioni all'interno del sito sono reperibili con un numero
+limitato di click, infatti la maggior parte delle informazioni sono raggiungibili tramite il menù. 
+Per facilitare la navigazione, nelle pagine che possono portare a altre pagine, come workout e alimentazione, presentano, all'inizio della pagina, il link \textit{Indietro} che riporta l'utente alla pagina principale della relativa sezione. 
+I dati inseriti in input dall'utente sono stati validati per garantirne il corretto inserimento. Nel caso un input non superi la validazione, viene mostrato un messaggio d'errore, con spiegazione dell’errore commesso.
+

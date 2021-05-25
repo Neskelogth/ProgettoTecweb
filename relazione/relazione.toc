@@ -18,3 +18,15 @@
 \contentsline {subparagraph}{Alimentazione}{4}{section*.5}%
 \contentsline {subparagraph}{Ricetta}{4}{section*.6}%
 \contentsline {subparagraph}{Forum}{4}{section*.7}%
+\contentsline {subparagraph}{News}{4}{section*.8}%
+\contentsline {subparagraph}{Profilo}{4}{section*.9}%
+\contentsline {subparagraph}{Pannello admin}{5}{section*.10}%
+\contentsline {subparagraph}{Signup e login}{5}{section*.11}%
+\contentsline {subsection}{\numberline {2.3}Visualizzazione}{5}{subsection.2.3}%
+\contentsline {paragraph}{\numberline {2.3.0.1}Desktop}{5}{paragraph.2.3.0.1}%
+\contentsline {paragraph}{\numberline {2.3.0.2}Mobile}{5}{paragraph.2.3.0.2}%
+\contentsline {paragraph}{\numberline {2.3.0.3}Stampa}{5}{paragraph.2.3.0.3}%
+\contentsline {subsection}{\numberline {2.4}Accessibilità}{5}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Contenuto}{6}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Presentazione}{6}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Comportamento}{6}{subsubsection.2.4.3}%
