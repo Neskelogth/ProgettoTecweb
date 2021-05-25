@@ -1,13 +1,13 @@
 \section{Fase di progettazione}
 \subsection{Progettazione}
-In una prima fase, il gruppo si è riunito per decidere il tema del sito web da sviluppare. Si sono raccolte le varie idee, decise le funzionalità e gli obiettivi da raggiungere, quali tipologie di argomenti trattare in ciascuna pagina, impostato il layout del sito e decisi i colori da utilizzare. Inoltre sono state decise le tecnologie da usare e c'è stata una prima suddivisione dei compiti individuali. \\
-Successivamente è stato progettato il database, nel quale vengono immagazzinate e organizzate le informazioni relative agli utenti e ai contenuti pubblicati sul sito web. In corrispondenza è stato portato avanti lo sviluppo della parte di front end, prestando particolare attenzione anche all'accessibilità e alla visualizzazione del sito su dispositivi di diverse dimensioni. \\
-Infine, il sito è stato testato per la risoluzione di eventuali bug e per la compatibilità con i differenti browser e dispositivi.
+In una prima fase, il gruppo si è riunito per decidere il tema del sito web da sviluppare. Sono state raccolte le varie idee, decise le funzionalità e gli obiettivi da raggiungere, quali tipologie di argomenti trattare in ciascuna pagina, impostato il layout del sito e decisi i colori da utilizzare. Inoltre sono state decise le tecnologie da usare e si è decisa una prima suddivisione dei compiti individuali. \\
+Successivamente è stato progettato il database, nel quale vengono immagazzinate e organizzate le informazioni relative agli utenti e ai contenuti pubblicati sul sito web. Allo stesso tempo, è stato portato avanti lo sviluppo della parte front end del sito, prestando particolare attenzione anche all'accessibilità e alla visualizzazione del sito su dispositivi di diverse dimensioni. \\
+Infine, il sito è stato approfonditamente testato al fine di rilevare e risolvere eventuali bug e di validare la compatibilità con i differenti browser e dispositivi.
 \subsection{Struttura}
 \subsubsection{Header}
-L'header contiene il logo, il titolo della pagina su cui ci si trova e due link, uno per il login e l'altro per il signup. Questi ultimi due link sono visibili solo nel caso in cui l'utente non abbia ancora effettuato l'accesso. Dopo che l'utente è acceduto, al posto dei due link login e signup, sarà presente un solo link, ovvero quello per il logout, il quale, una volta cliccato, scollegherà l'utente e lo riporterà alla home page. 
+L'header contiene il logo, il titolo della pagina su cui ci si trova e due link, uno per il login e l'altro per il signup. Questi ultimi due link sono visibili solo nel caso in cui l'utente non abbia ancora effettuato l'accesso. Dopo che l'utente ha eseguito l'accesso, al posto dei due link login e signup, sarà presente un solo link, ovvero quello per il logout, il quale, una volta cliccato, scollegherà l'utente e lo riporterà alla home page. 
 \subsubsection{Breadcrumb}
-Il breadcrumb serve a indicare all'utente dove si trova all'interno del sito e il percorso per arrivare in tale pagina, in modo che sia più facile orientarsi nella navigazione all'interno del sito e che possa facilmente tornare indietro. L'ultimo campo, infatti, corrisponde alla pagina corrente e, per evitare link circolari, questo non è cliccabile.
+Lo scopo del breadcrumb è quello di indicare all'utente dove si trova all'interno del sito e il percorso per arrivare in tale pagina, in modo che gli sia più facile orientarsi durante la navigazione all'interno del sito e che possa facilmente tornare indietro. L'ultimo campo, infatti, corrisponde alla pagina corrente e, per evitare link circolari, questo non è cliccabile.
 \subsubsection{Container}
 La classe container comprende il menù e il contenuto del sito.
 \paragraph{Menù}
@@ -19,5 +19,5 @@ Il menù è posizionato sulla sinstra e contiene tutte le pagine raggiungibili t
 	\item \textit{Forum};
 	\item \textit{News}.
 \end{itemize}
-Nel caso in cui l'utente abbia effettuato l'accesso, nel menù sara presente anche il link alla pagina \textit{Profilo}. Se l'utente è anche amministratore ci sarà il link per il \textit{Pannello admin}.
+Nel caso in cui l'utente abbia effettuato l'accesso, nel menù sarà presente anche il link alla pagina \textit{Profilo}. Se l'utente è anche amministratore verrà visualizzato anche il link per il \textit{Pannello admin}.
 \paragraph{Content}
