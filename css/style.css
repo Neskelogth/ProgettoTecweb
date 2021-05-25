@@ -194,15 +194,7 @@ a:hover{
 /*General Content div*/
 
 #container{
-
 	display: flex;
-	min-height: 72.25vh;
-}
-#border{
-	border-left:2px solid rgb(0,0,0);
-	width: 0px;
-	height: 70vh;
-	flex: 0 0 22%;
 }
 #content{
 	min-width: 75%;
