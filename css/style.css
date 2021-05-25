@@ -109,11 +109,12 @@ a:hover{
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
-	width:30%
+	width:20%;
+	max-height : 17vh;	
 }
 
 #heading{
-	height: 30vh;
+	max-height: 30vh;
 }
 
 
