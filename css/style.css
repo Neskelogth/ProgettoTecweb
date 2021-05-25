@@ -112,6 +112,11 @@ a:hover{
 	width:30%
 }
 
+#heading{
+	height: 30vh;
+}
+
+
 #header h1{
 
     color:  rgb(0, 110, 204);
@@ -190,6 +195,7 @@ a:hover{
 #container{
 
 	display: flex;
+	min-height: 70vh;
 }
 
 #content{
