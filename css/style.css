@@ -1377,7 +1377,385 @@ tbody th{
 
 
 
+/*MEDIA QUERY PER STAMPA*/
+@media print {
 
+/*GENERALE*/
+
+#menu{
+    display: none;
+}
+
+html{
+	font-family: "Times New Roman", Times, serif;
+	font-size:12pt;
+}
+
+#header{
+	padding:0.1em 1.5em 0.5em;
+}
+
+#header a{
+	padding: .2em;
+	border-radius: 6px;
+	text-decoration: underline;
+	border: none;
+	color: rgb(0, 0, 0);
+}
+
+#header h1{
+    text-align: center;
+	color: rgb(0, 0, 0);
+}
+#logo{
+    display:none;
+}
+#breadcrumb{
+	color: rgb(0, 0, 0);
+    margin-top: -3em;
+    padding:1em 1.5em;
+}
+
+#breadcrumb a{
+	color: rgb(0, 0, 0);
+}
+
+#content{
+    padding:0.1em 1.5em 0.5em;
+
+}
+
+.aiuti{
+	display: none;
+}
+
+#content h1{
+	margin-top: 0em;
+	margin-bottom: 0em;
+	text-align: center;
+	border: none;
+	color: rgb(0, 0, 0);
+}
+
+
+#content h2{
+	color: rgb(0, 0, 0);
+}
+/*FINE GENERALE*/
+
+/*INIZIO HOME*/
+
+
+#contenthome {
+	overflow: hidden;
+}
+
+#contenthome h1 {
+	color: rgb(0, 0, 0);
+}
+/*FINE HOME*/
+
+
+
+/*INIZIO ALIMENTAZIONE PAGINA GENERALE*/
+
+.recipeImage{
+	width: 30%;
+	display: block;
+    margin: auto;
+}
+
+.recipeTitle{
+	color:  rgb(0, 0, 0); 
+	padding: .3em;
+	padding-left: .5em;
+}
+
+#alimentationcontent dd p a{
+	color: rgb(0, 0, 0);
+}
+
+#alimentationcontent dd p a:visited{
+	color: rgb(0, 0, 0);
+}
+/*WORKOUT GENERALE*/
+
+#splitsMenu ul li a{
+	color:  rgb(0, 0, 0); 
+}
+
+#splitsMenu ul li a:visited{
+	color:  rgb(0, 0, 0); 
+}
+
+#whatis h2{
+	border: none;
+}
+
+#why h2{
+	border: none;
+}
+
+#example h2{
+	border: none;
+}
+
+#premise h2{
+	border: none;
+}
+
+#introToWS h2{
+	border: none;
+}
+
+#benefits h2 {
+	border: none;
+}
+
+#whichSplit h2 {
+	border: none;
+}
+
+#arnold{
+	display: none;
+}
+
+/*FINE WORKOUT*/
+
+/* INIZIO PAGINA RICETTA SINGOLA*/
+
+#recipeInnerImage{
+	height: 60%;
+	max-height: 20em;
+    max-width: 60%;
+	margin-bottom: 1.5em;
+}
+#back{
+    display: none;
+}
+
+#singlerecipetitle {
+	border: none;
+}
+
+.recipesubtitle{
+	border: none;
+	color: rgb(0, 0, 0);
+}
+/* FINE PAGINA RICETTA SINGOLA*/
+
+/* INIZIO PAGINA FORUM*/
+
+
+.forumFieldset{
+
+	max-width: 100%;
+	border: 2px solid rgb(0, 0, 0);
+}
+
+
+.forumTextarea{
+	display: block;
+	box-sizing:border-box;
+	width: 95%;
+	height: 50%;
+
+}
+
+
+.post textarea {
+	margin-left: 1em;
+	margin-top: 1em;
+	margin-bottom: .5em;
+	padding: .3em;
+	resize: none;
+}
+
+.post{
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+.post h3{
+	margin-top:.5em;
+	margin-left: 15em;
+}
+.post label{
+	font-weight: bold;
+	display:block;
+	margin-left: 1em;
+	margin-top: 0em;
+	margin-bottom: 0.3em;
+}
+
+
+.miPiaceButton, .leaveAnswer{
+	display: inline-block;
+	margin-top: 0.5em;
+	margin-bottom: 0.7em;
+	padding: 0.3em 0.3em 0.3em 0.3em;
+	font-weight: bold;
+}
+
+.likeBicipite{
+	height: 10%;
+	max-height: 3em;
+	max-width: 90%;
+	margin: auto;
+}
+
+.othersComment{
+	margin-left: 2.4em;
+	margin-bottom: 0.5em;
+}
+
+.answer{
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+}
+
+
+.answer textarea{
+	width: 85%;
+	margin-right: 3em;
+	margin-left: 3em;
+	resize: none;
+}
+
+
+#creazionePost{
+	text-align: left;
+	margin-bottom: 0.5em;
+}
+
+
+/* FINE PAGINA FORUM*/
+
+
+/* INIZIO PAGINA NEWS*/
+
+.news a:link:after, a:visited:after {
+	color: rgb(0, 0, 0);
+    content: " [" attr(href) "] ";
+	font-size:90%;
+}
+
+#NewsList li p a:visited {
+	color: rgb(0, 0, 0);
+}
+#NewsList li p a {
+	color: rgb(0, 0, 0);
+}
+
+#navnews{
+	padding-top: 1em;
+	padding-bottom: 2em;
+}
+#navnews li{
+
+	margin-right: 0.5em;
+	display: inline;
+	padding : 0.25em;
+	font-weight: bolder;
+}
+#navnews li a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+#navnews li a:visited{
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+/* FINE PAGINA NEWS*/
+
+/*INIZIO LOGIN e SIGN UP*/
+#notLoggedIn h2 {
+	border: none;
+}
+/*FINE LOGIN*/
+ 
+/*PANNELLO UTENTE*/
+
+#change label{
+	text-align: left;
+}
+
+#change input{
+	width: auto;
+}
+/*FINE PANNELLO UTENTE*/
+
+/*PANNELLO ADMIN*/
+#promotion h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#deleteRecipe h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#deleteNews h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#deletePost h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#deleteAnswer h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#addNews h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#addRecipe h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#revokeBan h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#banUserFromForum h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+#removeAccount h2 {
+	margin-left: -0.5em;
+	margin-bottom: 0em;
+	border: none;
+}
+
+#deletePost textarea {
+	resize: none;
+}
+
+#deleteAnswer textarea {
+	resize: none;
+}
+
+#addNews textarea {
+	resize: none;
+}
+
+#addRecipe textarea {
+	resize: none;
+}
 
 
 
@@ -1855,379 +2233,3 @@ tbody th{
 
 
 
-/*MEDIA QUERY PER STAMPA*/
-@media print {
-
-/*GENERALE*/
-
-#menu{
-    display: none;
-}
-
-html{
-	font-family: "Times New Roman", Times, serif;
-	font-size:12pt;
-}
-
-#header{
-	padding:0.1em 1.5em 0.5em;
-}
-
-#header a{
-	padding: .2em;
-	border-radius: 6px;
-	text-decoration: underline;
-	border: none;
-	color: rgb(0, 0, 0);
-}
-
-#header h1{
-    text-align: center;
-	color: rgb(0, 0, 0);
-}
-#logo{
-    display:none;
-}
-#breadcrumb{
-	color: rgb(0, 0, 0);
-    margin-top: -3em;
-    padding:1em 1.5em;
-}
-
-#breadcrumb a{
-	color: rgb(0, 0, 0);
-}
-
-#content{
-    padding:0.1em 1.5em 0.5em;
-
-}
-
-.aiuti{
-	display: none;
-}
-
-#content h1{
-	margin-top: 0em;
-	margin-bottom: 0em;
-	text-align: center;
-	border: none;
-	color: rgb(0, 0, 0);
-}
-
-
-#content h2{
-	color: rgb(0, 0, 0);
-}
-/*FINE GENERALE*/
-
-/*INIZIO HOME*/
-
-
-#contenthome {
-	overflow: hidden;
-}
-
-#contenthome h1 {
-	color: rgb(0, 0, 0);
-}
-/*FINE HOME*/
-
-
-
-/*INIZIO ALIMENTAZIONE PAGINA GENERALE*/
-
-.recipeImage{
-	width: 30%;
-	display: block;
-    margin: auto;
-}
-
-.recipeTitle{
-	color:  rgb(0, 0, 0); 
-	padding: .3em;
-	padding-left: .5em;
-}
-
-#alimentationcontent dd p a{
-	color: rgb(0, 0, 0);
-}
-
-#alimentationcontent dd p a:visited{
-	color: rgb(0, 0, 0);
-}
-/*WORKOUT GENERALE*/
-
-#splitsMenu ul li a{
-	color:  rgb(0, 0, 0); 
-}
-
-#splitsMenu ul li a:visited{
-	color:  rgb(0, 0, 0); 
-}
-
-#whatis h2{
-	border: none;
-}
-
-#why h2{
-	border: none;
-}
-
-#example h2{
-	border: none;
-}
-
-#premise h2{
-	border: none;
-}
-
-#introToWS h2{
-	border: none;
-}
-
-#benefits h2 {
-	border: none;
-}
-
-#whichSplit h2 {
-	border: none;
-}
-
-
-/*FINE WORKOUT*/
-
-/* INIZIO PAGINA RICETTA SINGOLA*/
-
-#recipeInnerImage{
-	height: 60%;
-	max-height: 20em;
-    max-width: 60%;
-	margin-bottom: 1.5em;
-}
-#back{
-    display: none;
-}
-
-#singlerecipetitle {
-	border: none;
-}
-
-.recipesubtitle{
-	border: none;
-	color: rgb(0, 0, 0);
-}
-/* FINE PAGINA RICETTA SINGOLA*/
-
-/* INIZIO PAGINA FORUM*/
-
-
-.forumFieldset{
-
-	max-width: 100%;
-	border: 2px solid rgb(0, 0, 0);
-}
-
-
-.forumTextarea{
-	display: block;
-	box-sizing:border-box;
-	width: 95%;
-	height: 50%;
-
-}
-
-
-.post textarea {
-	margin-left: 1em;
-	margin-top: 1em;
-	margin-bottom: .5em;
-	padding: .3em;
-	resize: none;
-}
-
-.post{
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
-	padding-top: 1em;
-	padding-bottom: 1em;
-}
-.post h3{
-	margin-top:.5em;
-	margin-left: 15em;
-}
-.post label{
-	font-weight: bold;
-	display:block;
-	margin-left: 1em;
-	margin-top: 0em;
-	margin-bottom: 0.3em;
-}
-
-
-.miPiaceButton, .leaveAnswer{
-	display: inline-block;
-	margin-top: 0.5em;
-	margin-bottom: 0.7em;
-	padding: 0.3em 0.3em 0.3em 0.3em;
-	font-weight: bold;
-}
-
-.likeBicipite{
-	height: 10%;
-	max-height: 3em;
-	max-width: 90%;
-	margin: auto;
-}
-
-.othersComment{
-	margin-left: 2.4em;
-	margin-bottom: 0.5em;
-}
-
-.answer{
-	margin-top: 1em;
-	margin-bottom: 1em;
-
-}
-
-
-.answer textarea{
-	width: 85%;
-	margin-right: 3em;
-	margin-left: 3em;
-	resize: none;
-}
-
-
-#creazionePost{
-	text-align: left;
-	margin-bottom: 0.5em;
-}
-
-
-/* FINE PAGINA FORUM*/
-
-
-/* INIZIO PAGINA NEWS*/
-
-.news a:link:after, a:visited:after {
-	color: rgb(0, 0, 0);
-    content: " [" attr(href) "] ";
-	font-size:90%;
-}
-
-#NewsList li p a:visited {
-	color: rgb(0, 0, 0);
-}
-#NewsList li p a {
-	color: rgb(0, 0, 0);
-}
-
-#navnews{
-	padding-top: 1em;
-	padding-bottom: 2em;
-}
-#navnews li{
-
-	margin-right: 0.5em;
-	display: inline;
-	padding : 0.25em;
-	font-weight: bolder;
-}
-#navnews li a {
-	text-decoration: none;
-	color: rgb(0, 0, 0);
-}
-
-#navnews li a:visited{
-	text-decoration: none;
-	color: rgb(0, 0, 0);
-}
-
-/* FINE PAGINA NEWS*/
-
-/*INIZIO LOGIN e SIGN UP*/
-#notLoggedIn h2 {
-	border: none;
-}
-/*FINE LOGIN*/
- 
-/*PANNELLO UTENTE*/
-
-#change label{
-	text-align: left;
-}
-
-#change input{
-	width: auto;
-}
-/*FINE PANNELLO UTENTE*/
-
-/*PANNELLO ADMIN*/
-#promotion h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-#deleteRecipe h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-#deleteNews h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-#deletePost h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-#deleteAnswer h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-#addNews h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-#addRecipe h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-#revokeBan h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-#banUserFromForum h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-#removeAccount h2 {
-	margin-left: -0.5em;
-	margin-bottom: 0em;
-	border: none;
-}
-
-#deletePost textarea {
-	resize: none;
-}
-
-#deleteAnswer textarea {
-	resize: none;
-}
-
-#addNews textarea {
-	resize: none;
-}
-
-#addRecipe textarea {
-	resize: none;
-}
