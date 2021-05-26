@@ -30,3 +30,12 @@
 \contentsline {subsubsection}{\numberline {2.4.1}Contenuto}{6}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Presentazione}{6}{subsubsection.2.4.2}%
 \contentsline {subsubsection}{\numberline {2.4.3}Comportamento}{6}{subsubsection.2.4.3}%
+\contentsline {section}{\numberline {3}Fase di implementazione}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Linguaggi}{7}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}HTML}{7}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}CSS}{7}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}SQL}{7}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}PHP}{7}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Javascript}{7}{subsubsection.3.1.5}%
+\contentsline {section}{\numberline {4}Fase di testing}{8}{section.4}%
+\contentsline {section}{\numberline {5}Organizzazione interna}{9}{section.5}%
