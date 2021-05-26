@@ -1888,6 +1888,7 @@ html{
 
 	#menu{
 		width: 100%;
+		display: block;
 	}
 
 	#menu ul{
@@ -1911,6 +1912,8 @@ html{
 		background-color:  rgb(0, 110, 204);
 		color: rgb(255, 255, 255);
 	}
+
+
 
 	#content{
 		border: none;
