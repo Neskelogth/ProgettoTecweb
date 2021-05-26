@@ -26,7 +26,7 @@
 \contentsline {paragraph}{\numberline {2.3.0.1}Desktop}{5}{paragraph.2.3.0.1}%
 \contentsline {paragraph}{\numberline {2.3.0.2}Mobile}{5}{paragraph.2.3.0.2}%
 \contentsline {paragraph}{\numberline {2.3.0.3}Stampa}{5}{paragraph.2.3.0.3}%
-\contentsline {subsection}{\numberline {2.4}Accessibilità}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Accessibilità}{6}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}Contenuto}{6}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Presentazione}{6}{subsubsection.2.4.2}%
 \contentsline {subsubsection}{\numberline {2.4.3}Comportamento}{6}{subsubsection.2.4.3}%

@@ -23,10 +23,10 @@ Nel caso in cui l'utente abbia effettuato l'accesso, nel menù sarà presente an
 \paragraph{Content}
 Lo scopo di content è quello di esporre i contenuti proposti dal sito.
 \subparagraph{Home}
-La pagina home è quella principale, ovvero la prima che si vede quando si visita il sito. Al suo interno sono presenti una descrizone del sito, le funzionalità che possono essere trovate all'interno del sito ed infine la foto del team.
+La pagina home è quella principale, ovvero la prima che si vede quando si visita il sito. Al suo interno sono presenti una descrizione del sito, le funzionalità che possono essere trovate all'interno del sito ed infine la foto del team.
 \subparagraph{Workout}
 La pagina workout espone i concetti basilari ed imprescindibili della programmazione dell'allenamento. E' perciò rivolta al principiante che ha intenzione di entrare in palestra per la prima volta, o che si è finora allenato in modo non ottimale.
-La pagina è suddivisa in paragrafi che danno un'introduzione al motivo per cui è da preferirsi una programmazione di allenamento studiata.
+La pagina è suddivisa in paragrafi che danno un'introduzione al motivo per cui è da preferire una programmazione di allenamento studiata.
 In fondo alla pagina si possono trovare dei link che rimandano alle principali tipologie di suddivisione dell'allenamento.
 \subparagraph{Split}
 Le pagine split sono 4:
@@ -45,17 +45,23 @@ del piatto ed infine il link che apre la pagina completa della ricetta.
 \subparagraph{Ricetta}
 La pagina della ricetta completa riporta il titolo della stessa seguito da una foto del risultato finale del piatto. Successivamente vengono elencati gli ingredienti necessari alla preparazione, viene illustrato il procedimento da seguire ed, eventualmente, vengono dati dei consigli per agevolare la riuscita della ricetta. In tutte le pagine è presente un link \textit{Indietro} che riporta alla pagina alimentazione principale.
 \subparagraph{Forum}
-La pagina del forum, nel caso in cui l'utente non abbia effettuato l'accesso, chiederà all'utente di accedere o registrarsi per lasciare commenti. Nel caso in cui questo non avvenga l'utente avrà solo la possibilità di leggere i commenti lasciati dagli altri utenti e non potrà interagire con il forum.
-Al contrario, nel caso in cui l'utente abbia effettuato l'accesso, come prima cosa verrà visualizzato un form per lasciare un commento e successivamente, come nel caso precedente, l'elenco di tutti i post con ora anche la possibilità di rispondere a questi e di lasciare eventualmente un like.
+La pagina del forum, nel caso in cui l'utente non abbia effettuato l'accesso, chiederà all'utente di accedere o registrarsi per lasciare commenti. Nel caso in cui questo non avvenga l'utente avrà solo la possibilità di leggere i post ed i commenti lasciati dagli altri utenti e non potrà interagire con il forum in alcun modo.
+Al contrario, nel caso in cui l'utente abbia effettuato l'accesso, per primo verrà visualizzato un form per lasciare un commento e sotto, come nel caso precedente, l'elenco di tutti i post con ora anche la possibilità di rispondere a questi e di lasciare eventualmente un like.
 \subparagraph{News}
 La pagina delle news riporta, al primo accesso, una lista con tutte le notizie del sito di ogni categoria. Queste, successivamente potranno essere filtrate, e quindi ci sarà la possibilità di visualizzare solo le news relative a: workout, alimentazione o notizie del sito.
 \subparagraph{Profilo}
 La pagina del profilo permette all'utente di visualizzare e modificare alcune informazioni relative al suo account come: nome, cognome, email e password.
 \subparagraph{Pannello admin}
-La pagina del pannello admin permette all'amministratore di effettuare delle modifiche,rimozioni od inserimenti all'interno del sito, tra cui: promuovere un utente da standard ad amministratore, eliminare ricette, news, post ed eventualmente relative risposte.
-Inoltre potrà anche aggiungere news e ricette, bannare un utente dal forum, per poi eventualmente anche rimuovere il ban, ed infine potrà rimuovere anche degli account.
+La pagina del pannello admin permette all'amministratore di effettuare delle modifiche, rimozioni od inserimenti all'interno del sito, tra cui: 
+\begin{itemize}
+	\item promuovere un utente da standard ad amministratore;
+	\item eliminare ricette, news, post ed eventualmente relative risposte;
+	\item aggiungere news e ricette;
+	\item bannare un utente dal forum, rimuovere il ban;
+	\item rimuovere anche degli account;
+\end{itemize}     
 \subparagraph{Signup e login}
-Le pagine di signup e login permettono all'utente rispettivamente di  registrarsi o accedere con le proprie credenziali al sito. Nella pagina signup sono presenti dei campi per inserire username, indirizzo email, nome ,cognome e la password (quest’ultima da inserire due volte per confermare la correttezza). Per il login invece è necessario solamente inserire l'username e la password.
+Le pagine di signup e login permettono all'utente rispettivamente di  registrarsi o accedere con le proprie credenziali al sito. Nella pagina signup sono presenti dei campi per inserire username, indirizzo email, nome, cognome e la password (quest’ultima da inserire due volte per confermare la correttezza). Per il login invece è necessario solamente inserire l'username e la password.
 \subsection{Visualizzazione}
 Il sito è stato pensato in modo da avere una visualizzazione adatta ad ogni tipologia di dispositivo ed in modo da avere pagine accessibili ad una categoria di utenti più ampia possibile.
 Sono state quindi realizzate tre tipologie di visualizzazione del sito: desktop, mobile e stampa.
@@ -79,19 +85,19 @@ Si sono seguite le linee giuda del WCAG in modo da sviluppare un sito web che ab
 
 \subsubsection{Contenuto}
 Il breadcrumb, presente in ciascuna pagina, permette all'utente di sapere in ogni momento dove si trova all'interno del sito e il percorso che ha fatto per raggiungere tale pagina. Per evitare link circolari, l'ultimo campo del breadcrumb (che corrisponde alla pagina corrente) e la voce del menù della pagina corrente, non sono cliccabili. L'utente può conoscere quale altre pagine può raggiungere da quella in cui si trova perchè i link che si trovano all'interno di questa sono sottolineati. 
-Per aiutare gli utenti che utlizzazno lo screen reader, è presente un link nascosto che gli permette di andare direttamente al contenuto della pagina corrente, saltando il menù. Inoltre per ogni immagine, incapsulate nel tag img, è presente il tag alt che fornisce una  descrizione alternativa per gli screen reader. 
-All'interno del sito si trovano parole in lingua straniera le quali sono accompagnate dal tag span che ne specifica tramita \textit{xml:lang="..."} la lingua della parola in questione. 
+Per aiutare gli utenti che utilizzano lo screen reader, è presente un link nascosto che gli permette di andare direttamente al contenuto della pagina corrente, saltando il menù. Inoltre per ogni immagine, incapsulate nel tag img, è presente il tag alt che fornisce una  descrizione alternativa per gli screen reader. 
+All'interno del sito si trovano parole in lingua straniera le quali sono accompagnate dal tag span che ne specifica tramite \textit{xml:lang="..."} la lingua della parola in questione. 
 
 
 \subsubsection{Presentazione}
 Il desgin del sito è stato implementato, tramite CSS, usando classi he definiscono il contenuto
 dell’oggetto e non il comportamento, in modo da mantenere la separazione tra comportamento e presentazione. E' presente un foglio di stile unico in cui si trova il codice dedicato alla visualizzazione desktop, stampa e mobile. Questi ultimi due sono stati effettuati tramite \textit{media query}. Vengono usate principalmente misure  misure relative (em) o in percentuale per permettere una corretta visualizzazione delle pagine su schermi di dimensioni diverse. 
-Il colore principale del sito è l'azzurro, che contrasta le scritte, per esempio dei titoli, che sono in bianco. Per distinguere i link già visitati, si è deciso di evidenziare quest'ultimi con il colore viola, mentre i link non ancora visitati richiamano il colore che domina il sito, cioè l'azzurro. 
+Il colore principale del sito è l'azzurro, che contrasta le scritte, per esempio dei titoli, i quali sono in bianco. Per distinguere i link già visitati, si è deciso di evidenziare quest'ultimi con il colore viola, mentre i link non ancora visitati richiamano il colore che domina il sito, cioè l'azzurro. 
 
 
 \subsubsection{Comportamento}
 Le informazioni all'interno del sito sono reperibili con un numero
 limitato di click, infatti la maggior parte delle informazioni sono raggiungibili tramite il menù. 
 Per facilitare la navigazione, nelle pagine che possono portare a altre pagine, come workout e alimentazione, presentano, all'inizio della pagina, il link \textit{Indietro} che riporta l'utente alla pagina principale della relativa sezione. 
-I dati inseriti in input dall'utente sono stati validati per garantirne il corretto inserimento. Nel caso un input non superi la validazione, viene mostrato un messaggio d'errore, con spiegazione dell’errore commesso.
+I dati inseriti in input dall'utente sono stati validati per garantirne il corretto inserimento. Nel caso un input non superi la validazione, viene mostrato un messaggio d'errore, contenente la spiegazione dell’errore commesso.
 
