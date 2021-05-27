@@ -1870,6 +1870,7 @@ tbody th{
 
 	#menu{
 		width: 100%;
+		flex: none;
 	}
 
 	#menu ul{
