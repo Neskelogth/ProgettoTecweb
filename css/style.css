@@ -1915,7 +1915,6 @@ tbody th{
 	#content p{
 
 		padding-left: .5em;
-		padding-left: .5em;
 	}
 
 	#menuhamburger{
@@ -2057,7 +2056,7 @@ tbody th{
 	}
 
 	#back{
-
+		padding-top: 1em;
 		font-size: .95em;
 	}
 
