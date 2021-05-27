@@ -1922,10 +1922,16 @@ tbody th{
 		width: 100%;
 	}
 
-	#content, #newscontent{
+	#content{
 		border: none;
 		width: 96%;
 		padding-left: 0.45em;
+	}
+
+	#newscontent{
+		border: none;
+		width: 96%;
+		padding-left: 0.75em;
 	}
 
 	textarea{
