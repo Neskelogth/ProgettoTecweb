@@ -26,6 +26,7 @@ function openmenu() {
   document.getElementById("chiudimenu").classList.remove("nascosto");
   document.getElementById("chiudimenu").classList.add("float");
   document.getElementById("menu").classList.remove("nascosto");
+  decidePadding();
 }
 
 function closemenu() {
@@ -44,7 +45,7 @@ function decidePadding(){
 
     let padding = window.location.href.split("&").slice(1).forEach((element) => {
 
-        if(element.indexOf("split") != -1 || element.indexOf("singleRecipe") != -1){
+        if(element.indexOf("singleRecipe") != -1){
 
             document.getElementById("menu").classList.add("padding");
         }
