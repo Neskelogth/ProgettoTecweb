@@ -1920,9 +1920,10 @@ tbody th{
 
 	#content, #newscontent{
 		border: none;
-		width: 100%;
-		margin: .5em;
-		padding: 0em;
+		width: 96%;
+		padding-left: 0.75em;
+		padding-top: 1em;
+
 	}
 
 	textarea{
