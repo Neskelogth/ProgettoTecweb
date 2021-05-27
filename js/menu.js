@@ -45,6 +45,8 @@ function decidePadding(){
 
     let padding = window.location.href.split("&").slice(1).forEach((element) => {
 
+        console.log(element);
+
         if(element.indexOf("singleRecipe") != -1){
 
             document.getElementById("menu").classList.add("padding");
