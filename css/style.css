@@ -2012,54 +2012,6 @@ html{
 	display: none;
 }
 
-#splitTable{
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	padding-top: 0.25em;
-}
-
-#splitTable table{
-	margin-bottom: 1em;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-#splitTable td, th{
-		border: 1px solid rgb(25, 25, 112);
-}
-
-#splitTable td{
-	padding-left:0.25em;
-}
-
-.day{
-	background-color:rgb(135, 206, 235);
-}
-
-#splitTable th{
-	padding-bottom: 0.25em;
-	padding-top: 0.25em;
-	margin-top:1em;
-	margin-bottom: 3em;
-	padding-left: 1em;
-	padding-right: 1em;
-}
-
-#splitTable tbody th{
-
-	width: 70%;
-}
-
-.setrep{
-	text-align:center;
-}
-
-#splitTable td{
-	padding-top: 0.25em;
-	table-layout: auto;
-}
-
 
 /*FINE WORKOUT*/
 
