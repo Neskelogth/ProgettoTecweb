@@ -6,6 +6,7 @@ function loadmenu() {
     document.getElementById("menu").classList.add("floatleft");
     document.getElementById("menuhamburger").classList.remove("float");
     document.getElementById("chiudimenu").classList.remove("float");
+    document.getElementById("menu").classList.remove("padding");
     return;
   }
   document.getElementById("menu").classList.add("nascosto");
@@ -14,6 +15,7 @@ function loadmenu() {
   document.getElementById("menu").classList.remove("floatleft");
   document.getElementById("menuhamburger").classList.add("float");
   document.getElementById("chiudimenu").classList.remove("float");
+  decidePadding();
 }
 window.addEventListener("resize", function (event) {
   loadmenu();
@@ -37,3 +39,14 @@ function closemenu() {
 document.addEventListener("DOMContentLoaded", function (event) {
   loadmenu();
 });
+
+function decidePadding(){
+
+    let padding = window.location.href.slice(1).forEach((element) => {
+
+        if(element.indexOf("split") != -1 || element.indexOf("news") != -1){
+
+            document.getElementById("menu").classList.add("padding");
+        }
+    })
+}
