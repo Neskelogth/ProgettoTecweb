@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Mag 27, 2021 alle 08:36
+-- Creato il: Mag 27, 2021 alle 16:23
 -- Versione del server: 10.1.48-MariaDB-0ubuntu0.18.04.1
 -- Versione PHP: 7.2.24-0ubuntu0.18.04.7
 
@@ -109,7 +109,8 @@ CREATE TABLE `post` (
 
 INSERT INTO `post` (`IDPost`, `IDUtente`, `numeroLike`, `Testo`) VALUES
 (1, 'TWFyY29Eag==', 0, 'Q2lhbyBhIHR1dHRpIQpIbyBwcm92YXRvIGEgY3VjaW5hcmUgbGEgdG9ydGEgYWwgcGlzdGFjY2hpbyBsZWdnZXJhIG1hIGhvIHJpc2NvbnRyYXRvIGFsY3VuZSBkaWZmaWNvbHRhIGNvbiBsYSBwcmVwYXJhemlvbmUuLi4KUXVhbGN1bm8gcHXDsiBhaXV0YXJtaT8/CkdyYXppZWVlIDop'),
-(2, 'U2FtdWVsSw==', 0, 'SG8gc2VndWl0byBpIGNvbnNpZ2xpIGRlZ2xpIGFsbGVuYW1lbnRpIHByb3Bvc3RpLiBIbyBzcGVyaW1lbnRhdG8gaWwgYnJvIHNwbGl0IGUgaSByaXN1bGF0YXRpIGluaXppYW5vIGEgZmFyc2kgdmVkZXJl');
+(2, 'U2FtdWVsSw==', 0, 'SG8gc2VndWl0byBpIGNvbnNpZ2xpIGRlZ2xpIGFsbGVuYW1lbnRpIHByb3Bvc3RpLiBIbyBzcGVyaW1lbnRhdG8gaWwgYnJvIHNwbGl0IGUgaSByaXN1bGF0YXRpIGluaXppYW5vIGEgZmFyc2kgdmVkZXJl'),
+(48, 'YWRtaW4=', 0, 'UE9SQ0EgUFVUVEFOQSBSQUdB');
 
 -- --------------------------------------------------------
 
@@ -227,7 +228,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT per la tabella `post`
 --
 ALTER TABLE `post`
-  MODIFY `IDPost` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `IDPost` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT per la tabella `risposta`
 --
