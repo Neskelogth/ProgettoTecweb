@@ -570,6 +570,9 @@ a:hover{
 	margin-top: 1em;
 }
 
+#post0{
+	width: 96%;
+}
 .commenti{
 	margin-bottom: 4em;
 }
@@ -2115,7 +2118,7 @@ tbody th{
 
 	#post0{
 
-		width: 90%;
+		width: 80%;
 		max-width: 100%;
 		min-width: 0em;
 		margin: auto;
