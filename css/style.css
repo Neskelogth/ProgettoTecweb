@@ -1895,7 +1895,9 @@ tbody th{
 		color: rgb(255, 255, 255);
 	}
 
-
+	#container{
+		display: block;
+	}
 
 	#content{
 		border: none;
