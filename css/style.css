@@ -203,7 +203,7 @@ a:hover{
 	padding-left: 0.7em;
 	padding-right: 0.7em;
 	padding-top: 1em;
-
+	width: 100%;
 }
 #content a:visited {
 	color: rgb(120, 0, 120);
