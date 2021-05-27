@@ -1905,7 +1905,7 @@ tbody th{
 		margin: .5em;
 		padding: 0em;
 		max-width: 100%;
-
+		overflow: hidden;
 	}
 
 	textarea{
