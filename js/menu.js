@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 function decidePadding(){
 
-    let padding = window.location.href.slice(1).forEach((element) => {
+    let padding = window.location.href.split("&").slice(1).forEach((element) => {
 
         if(element.indexOf("split") != -1 || element.indexOf("singleRecipe") != -1){
 
