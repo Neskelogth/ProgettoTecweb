@@ -1378,7 +1378,11 @@ tbody th{
 }
 
 
-
+.adminarea{
+	width: 100%;
+    min-width: 0em;
+	resize: none;
+}
 
 
 
