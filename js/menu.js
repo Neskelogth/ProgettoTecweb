@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 function decidePadding(){
 
-    let padding = window.location.href.split("&").slice(1).forEach((element) => {
+    let padding = window.location.href.split("&").forEach((element) => {
 
         console.log(element);
 
