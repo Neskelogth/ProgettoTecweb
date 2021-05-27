@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.6.6deb5ubuntu0.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Creato il: Mag 08, 2021 alle 09:19
--- Versione del server: 10.4.13-MariaDB
--- Versione PHP: 7.3.21
+-- Host: localhost:3306
+-- Creato il: Mag 27, 2021 alle 08:36
+-- Versione del server: 10.1.48-MariaDB-0ubuntu0.18.04.1
+-- Versione PHP: 7.2.24-0ubuntu0.18.04.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -27,9 +26,8 @@ SET time_zone = "+00:00";
 -- Struttura della tabella `alimentazione`
 --
 
-DROP TABLE IF EXISTS `alimentazione`;
-CREATE TABLE IF NOT EXISTS `alimentazione` (
-  `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `alimentazione` (
+  `ID` int(11) UNSIGNED NOT NULL,
   `Nome` varchar(150) NOT NULL,
   `Descrizione` text NOT NULL,
   `NomeImmagine` varchar(150) NOT NULL,
@@ -37,9 +35,8 @@ CREATE TABLE IF NOT EXISTS `alimentazione` (
   `Ingredienti` text NOT NULL,
   `Procedimento` text NOT NULL,
   `Consigli` text NOT NULL,
-  `Persone` varchar(30) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+  `Persone` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `alimentazione`
@@ -59,12 +56,9 @@ INSERT INTO `alimentazione` (`ID`, `Nome`, `Descrizione`, `NomeImmagine`, `AltIm
 -- Struttura della tabella `likes`
 --
 
-DROP TABLE IF EXISTS `likes`;
-CREATE TABLE IF NOT EXISTS `likes` (
+CREATE TABLE `likes` (
   `IDPost` int(11) UNSIGNED NOT NULL,
-  `IDUtente` varchar(150) NOT NULL,
-  PRIMARY KEY (`IDPost`,`IDUtente`),
-  KEY `LIKES_ibfk_2` (`IDUtente`)
+  `IDUtente` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -80,28 +74,21 @@ INSERT INTO `likes` (`IDPost`, `IDUtente`) VALUES
 -- Struttura della tabella `news`
 --
 
-DROP TABLE IF EXISTS `news`;
-CREATE TABLE IF NOT EXISTS `news` (
-  `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `news` (
+  `ID` int(11) UNSIGNED NOT NULL,
   `Tipo` enum('Alimentazione','Workout','Sito') NOT NULL,
   `Titolo` varchar(150) NOT NULL,
   `Testo` text NOT NULL,
-  `Link` varchar(150) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=252 DEFAULT CHARSET=utf8mb4;
+  `Link` varchar(150) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `news`
 --
 
 INSERT INTO `news` (`ID`, `Tipo`, `Titolo`, `Testo`, `Link`) VALUES
-(12, 'Workout', 'YQ==', 'YQ==', 'https://en.wikipedia.org/wiki/92nd_Academy_Awards'),
-(236, 'Workout', 'aw==', 'aw==', 'https://mail.google.com/mail/u/1/#inbox'),
 (239, 'Alimentazione', 'YW5hdHJh', 'YW5hdHJh', 'https://en.wikipedia.org/wiki/Anatra'),
-(240, 'Workout', 'c3Nzcw==', 'c3Nzcw==', ''),
-(241, 'Sito', 'ZGRk', 'ZGRk', ''),
-(242, 'Alimentazione', 'bW9vZGxl', 'bW9vZGxl', 'https://elearning.unipd.it/math/course/index.php?categoryid=39'),
-(251, 'Workout', 'ZWlvaWs=', 'c2RmZ2hqaw==', NULL);
+(242, 'Alimentazione', 'bW9vZGxl', 'bW9vZGxl', 'https://elearning.unipd.it/math/course/index.php?categoryid=39');
 
 -- --------------------------------------------------------
 
@@ -109,15 +96,12 @@ INSERT INTO `news` (`ID`, `Tipo`, `Titolo`, `Testo`, `Link`) VALUES
 -- Struttura della tabella `post`
 --
 
-DROP TABLE IF EXISTS `post`;
-CREATE TABLE IF NOT EXISTS `post` (
-  `IDPost` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE `post` (
+  `IDPost` int(11) UNSIGNED NOT NULL,
   `IDUtente` varchar(150) NOT NULL,
   `numeroLike` int(11) NOT NULL,
-  `Testo` text NOT NULL,
-  PRIMARY KEY (`IDPost`),
-  KEY `IDUtente` (`IDUtente`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4;
+  `Testo` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `post`
@@ -133,16 +117,12 @@ INSERT INTO `post` (`IDPost`, `IDUtente`, `numeroLike`, `Testo`) VALUES
 -- Struttura della tabella `risposta`
 --
 
-DROP TABLE IF EXISTS `risposta`;
-CREATE TABLE IF NOT EXISTS `risposta` (
-  `IDRisposta` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `risposta` (
+  `IDRisposta` int(11) NOT NULL,
   `IDutente` varchar(150) NOT NULL,
   `Testo` text NOT NULL,
-  `IDPost` int(11) UNSIGNED NOT NULL,
-  PRIMARY KEY (`IDRisposta`),
-  KEY `IDPost` (`IDPost`),
-  KEY `IDutente` (`IDutente`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+  `IDPost` int(11) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `risposta`
@@ -157,16 +137,14 @@ INSERT INTO `risposta` (`IDRisposta`, `IDutente`, `Testo`, `IDPost`) VALUES
 -- Struttura della tabella `utente`
 --
 
-DROP TABLE IF EXISTS `utente`;
-CREATE TABLE IF NOT EXISTS `utente` (
+CREATE TABLE `utente` (
   `IDUtente` varchar(150) NOT NULL,
   `Nome` varchar(150) NOT NULL,
   `Cognome` varchar(150) NOT NULL,
   `Email` varchar(150) NOT NULL,
   `Password` text NOT NULL,
   `Amministratore` tinyint(1) NOT NULL,
-  `Bannato` tinyint(1) NOT NULL,
-  PRIMARY KEY (`IDUtente`)
+  `Bannato` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -174,12 +152,87 @@ CREATE TABLE IF NOT EXISTS `utente` (
 --
 
 INSERT INTO `utente` (`IDUtente`, `Nome`, `Cognome`, `Email`, `Password`, `Amministratore`, `Bannato`) VALUES
-('Q2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'a0c299b71a9e59d5ebb07917e70601a3570aa103e99a7bb65a58e780ec9077b1902d1dedb31b1457beda595fe4d71d779b6ca9cad476266cc07590e31d84b206', 1, 0),
+('dW92bw==', 'aGZoc2Z2aGJzZGhmYnZmZHNi', 'IGRmemprdmRmamtiamtudg==', 'dW92b0BnbWFpbC5jb20=', '119a7a63f6bda3c96eeff52cf0376b2a0199753aa2da144bf313aeeded199f708d8a108948aa06c3ff94e468e842de1e0c0f3498b994be1bb1711e2efb65a647', 1, 0),
+('dW92YQ==', 'dW92YQ==', 'dW92YQ==', 'dW92YQ==', 'c87ae11f9c2fef8ebb7c8e6b647d475e82eda2d4398bb7c917d6e58333c07d6906cbfbd5ca1b9addefc2689cf2700ea08ee37c97079130e1d6c156472640b6b7', 0, 0),
+('dXNlcg==', 'dXNlcg==', 'dXNlcg==', 'dXNlckBnbWFpbC5jb20=', 'b14361404c078ffd549c03db443c3fede2f3e534d73f78f77301ed97d4a436a9fd9db05ee8b325c0ad36438b43fec8510c204fc1c1edb21d0941c00e9e2c1ce2', 0, 0),
+('Q2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'a0c299b71a9e59d5ebb07917e70601a3570aa103e99a7bb65a58e780ec9077b1902d1dedb31b1457beda595fe4d71d779b6ca9cad476266cc07590e31d84b206', 1, 1),
 ('RW1tYVJvdmVyb25p', 'RW1tYQ==', 'Um92ZXJvbmk=', 'RW1tYVJvdmVAZ21haWwuY29t', '4c805fb46914992490f05b904e30b2a3840ad5dd48336b21addd503474866a11ab2ce1147f4b1c51de3d35bcd28a55c09054b7953887c66e014fddba9cdb2944', 1, 0),
+('TVVkZXJ6bw==', 'TWFyY28=', 'VWRlcnpv', 'bWFyY28udWRlcnpvQGdtYWlsLmNvbQ==', '9c719c2044254f06215ba5000ba02ac37fd08aad50905a11b95314d3807efea5164e75823801a9d789b35e08f0b1e14fce7c9cff1c3fcdf5400f11c2ff0bf136', 0, 0),
 ('TWFyY29Eag==', 'TWFyY28=', 'VWRlcnpv', 'TWFyY29VZEBnbWFpbC5jb20=', '11c724908c020116ef6776ee0c627f7d8df5bc9caf4face309f0486ed7e6205c404a8b2c4548753787a917edd8b5e63c136557ee047c3fad859aecdc15c58dfa', 1, 0),
 ('TWFyY29UZXNzZXI=', 'TWFyY28=', 'VGVzc2Vy', 'TWFyY29UOVRAZ21haWwuY29t', '7350746c2106c01ec4b85b75fc5d9e9d32e1103667bd11fe45b5d983a8ba12bf7a6d2f14ec6a92de176cdfe90bb4bc6e9efcd5ea37316af5d3b52033172bc041', 1, 0),
-('U2FtdWVsSw==', 'U2FtdWVs', 'S29zdGFkaW5vdg==', 'ZGVyS29zdGFAZ21haWwuY29t', '3330e27b41e71af747cb6bde4ac8078d4d7339f30309fe4578263f1a750cb68168d5f1fc8c2e275d338e7bbf9520a8c5f9019eb8ac3e93e3a5b4012599df7f56', 0, 0);
+('U2FtdWVsSw==', 'U2FtdWVs', 'S29zdGFkaW5vdg==', 'ZGVyS29zdGFAZ21haWwuY29t', '3330e27b41e71af747cb6bde4ac8078d4d7339f30309fe4578263f1a750cb68168d5f1fc8c2e275d338e7bbf9520a8c5f9019eb8ac3e93e3a5b4012599df7f56', 1, 0),
+('Yg==', 'Yg==', 'Yg==', 'YkBnbWFpbC5jb20=', '5267768822ee624d48fce15ec5ca79cbd602cb7f4c2157a516556991f22ef8c7b5ef7b18d1ff41c59370efb0858651d44a936c11b7b144c48fe04df3c6a3e8da', 0, 0),
+('YQ==', 'YQ==', 'YQ==', 'YUBnbWFpbC5jb20=', '1f40fc92da241694750979ee6cf582f2d5d7d28e18335de05abc54d0560e0f5302860c652bf08d560252aa5e74210546f369fbbbce8c12cfc7957b2652fe9a75', 0, 0),
+('YWRtaW4=', 'YWRtaW4=', 'YWRtaW4=', 'YWRtaW5AZ21haWwuY29t', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', 1, 0);
 
+--
+-- Indici per le tabelle scaricate
+--
+
+--
+-- Indici per le tabelle `alimentazione`
+--
+ALTER TABLE `alimentazione`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indici per le tabelle `likes`
+--
+ALTER TABLE `likes`
+  ADD PRIMARY KEY (`IDPost`,`IDUtente`),
+  ADD KEY `LIKES_ibfk_2` (`IDUtente`);
+
+--
+-- Indici per le tabelle `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indici per le tabelle `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`IDPost`),
+  ADD KEY `IDUtente` (`IDUtente`);
+
+--
+-- Indici per le tabelle `risposta`
+--
+ALTER TABLE `risposta`
+  ADD PRIMARY KEY (`IDRisposta`),
+  ADD KEY `IDPost` (`IDPost`),
+  ADD KEY `IDutente` (`IDutente`);
+
+--
+-- Indici per le tabelle `utente`
+--
+ALTER TABLE `utente`
+  ADD PRIMARY KEY (`IDUtente`);
+
+--
+-- AUTO_INCREMENT per le tabelle scaricate
+--
+
+--
+-- AUTO_INCREMENT per la tabella `alimentazione`
+--
+ALTER TABLE `alimentazione`
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT per la tabella `news`
+--
+ALTER TABLE `news`
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
+--
+-- AUTO_INCREMENT per la tabella `post`
+--
+ALTER TABLE `post`
+  MODIFY `IDPost` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+--
+-- AUTO_INCREMENT per la tabella `risposta`
+--
+ALTER TABLE `risposta`
+  MODIFY `IDRisposta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- Limiti per le tabelle scaricate
 --
@@ -203,7 +256,6 @@ ALTER TABLE `post`
 ALTER TABLE `risposta`
   ADD CONSTRAINT `RISPOSTA_ibfk_1` FOREIGN KEY (`IDPost`) REFERENCES `post` (`IDPost`),
   ADD CONSTRAINT `RISPOSTA_ibfk_2` FOREIGN KEY (`IDutente`) REFERENCES `utente` (`IDUtente`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
