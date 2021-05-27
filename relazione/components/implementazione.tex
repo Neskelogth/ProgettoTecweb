@@ -21,5 +21,84 @@ Con lo scopo di garandire la corretta separazione fra contenuto e presentazione,
 Come unità di misura si è scelto di utilizzare quelle relative per la loro adattabilità.
 %non so cos'altro scrivere
 \subsubsection{SQL}
-\subsubsection{PHP}
+
+Il database mantiene le informazioni di tutte le pagine costruite dinamicamente, quindi alimentazione, news e forum. Mantiene inoltre una tabella con tutti gli utenti del sito e i relativi dati.\\
+Le chiavi delle tabelle sono nella quasi totalità dei casi degli indici autoincrementali, tranne nel caso di utente che ha come chiave primaria lo username (chiamato IDUtente nella tabella) e nel caso di likes, in cui la chiave primaria è 
+la combinazione di utente e id del post a cui è stato messo il like.
+
+Lo schema relazionale del database è il seguente: 
+
+%inserite l'immagine del database please
+
+Al fine di evitare problematiche causate dall'eliminazione dei post, quando uno di questi viene cancellato vengono tolte anche tutte le risposte e tutti i like. Allo stesso modo vengono eliminati anche tutti i post, tutti i like e tutte le risposte
+quando un utente viene eliminato.
+
+\subsubsection{PHP}\label{subs:php}
+
+Tutte le pagine del sito sono costruite dinamicamente, nella maggior parte dei casi utilizzando solamente il linguaggio php.\\
+Ogni pagina ha un template, riconoscibile tra i file .xhtml in quanto ha la parola "base" nel nome. Ci sono 4 basi nel progetto:
+
+\begin{itemize}
+    
+	\item adminBase.xhtml
+    \item profileBase.xhtml
+	\item forumBase.xhtml
+	\item base.xhtml
+	
+\end{itemize}
+
+La differenza tra le varie pagine che ci ha portati a definire 4 basi sono gli script javascript che dovevano essere inclusi in alcune pagine ma non nelle altre. Queste pagine contengono la struttura base dei div che fungeranno 
+da contenitori per tutti gli elementi del sito e che vengono costruiti dinamicamente. Tramite alcuni tag vuoti non validi riusciamo infatti a sostituire i contenuti della pagina molto velocemente tramite i parametri get del php.\\
+
+Il cuore di questo sistema sono le due classi php Renderer e Parser, che permettono creare i contenuti delle varie pagine in base al parametro get 'r' e ad una serie di convenzioni utilizzate per i tag vuoti. La classe Parser, infatti
+tiene in un campo privato tutte le possibili route indicate nel file index.php, una funzione e un array di variabili. Nel file index.php alla fine viene chiamata la funzione parse, che, se il parametro get 'r' esiste ed è presente nel campo apposito del parser, 
+renderizza il file corrispondente (tramite la classe Renderer, spiegata nel paragrafo successivo) e chiama una funzione passata durante il setup fatto in index.php. Questo permette di creare dinamicamente i contenuti utilizzando i file .xhtml.
+
+Il file renderer, insieme a parser, è il cuore pulsante della costruzione dinamica delle pagine. Questa classe si occupa di renderizzare i file in base ai diversi tipi di placeholder, ovvero i tag vuoti, disponibili e i vari simboli speciali 
+tramite delle funzioni di utility. 
+I vari tipi di placeholder sono 4:
+
+\begin{itemize}
+    
+	\item includePlacholder
+    \item blockPlaceholder
+	\item ifPlaceholder
+	\item variablePlaceholder
+	
+\end{itemize}
+
+Ognuno di questi placholder ha un preciso significato, riportato di seguito:
+
+\begin{itemize}
+    
+	\item includePlacholder: questo placeholder, obbligatorio, indentifica una base alla pagina corrente. Si trova all'inizio della pagina e ha la forma <includeBasePlacholder />. Il renderer quando trova un tag in questa forma, tramite un'espressione
+	regolare prende il file con il nome corrispondente alla sottostringa compresa tra include e Placeholder e ne inserisce i contenuti nella pagina.
+	
+    \item blockPlaceholder: questo placeholder ha la forma <blockSetMenuPlaceholder /> e si trovano in tutte le pagine. Questo placeholder indica che in quel particolare punto della pagina va inserito un blocco di codice html. Il blocco è identificato dal 
+	nome, ovvero la sottostringa compresa tra Set e Placholder. L'identificativo è infatti usato nella sostituzione del tag vuoto, in quanto il tag <blockSetBlocknamePlaceholder /> viene sostituito da tutto ciò che è compreso tra i tag <blockDefBlockanamePlaceholder /> 
+	e <blockEndPlaceholder />, rimuovendo dopo la sostituzione i tag non validi e il contenuto del blocco per non avere un pezzo di codice html duplicato. I tag blockDef e blockEnd devono tuttavia essere nello stesso codice 
+	sorgente in cui si trova <blockSetPlaceholder />
+	
+	\item ifPlaceholder: questi placeholder hanno la forma <ifconditionPlacholder />. Questo tipo di blocchi viene usato quando un segmento di codice deve essere renderizzato in base ad una condizione. Infatti il codice compreso tra il tag <ifconditionPlaceholder /> 
+	e il tag <endIfPlaceholder /> viene inserito nel codice effettivo solamente a patto che si verifichi una certa condizione. La condizione è data dalla sottostringa compresa tra if e Placeholder. Il renderer infatti cerca una variabile che deve essere passata
+	al renderer e che deve essere di tipo booleano. Se la condizione è vera la parte viene renderizzato il blocco, altrimenti no.
+	
+	\item variablePlaceholder: questi placeholder hanno la forma <variablePlaceholder />. Questo tipo di blocchi sono presenti in grande quantità per parametrizzare alcune parti della pagina, come per esempio il titolo delle diverse pagine. Le variabili vengono 
+	passate al renderer dal parser, e al parser dall'utente dal file index.php.
+	
+\end{itemize}
+
+I contenuti dinamici vengono gestiti tramite una classe DBaccess che permette di accedere al database e di eseguire delle query tramite la chiamata dei metodi della classe stessa.\\
+il file helper.php contiene invece una serie di funzioni che permettono di pulire l'input.\\
+Il file contentCreator.php infine contiene una serie di funzioni che creano i contenuti di alcune delle pagine utilizzando la funzione renderFile di renderer e seguendo lo stesso principio descritto precedentemente.\\
+
+Ci sono inoltre molti file .php nella cartella api che vengono sfruttati per il login/signup o per le chiamate asincrone di javascript (come spiegato in \S\ref{subs:js}.
+
+
+
+
+
+
+
+
 \subsubsection{Javascript}
