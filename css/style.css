@@ -2235,7 +2235,7 @@ tbody th{
 
 	#change input{
 		width: 95%;
-
+		margin: auto;
 	}
 
 	#change input[type=button]{
