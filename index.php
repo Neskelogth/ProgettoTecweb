@@ -191,7 +191,7 @@ $parser-> addRoute('news', function (string $data){
     return createNewsContent($data, $_GET['type'] ?? 'All');
 }, array(
     'title' => 'News - Physique',
-    'id' => 'content',
+    'id' => 'newscontent',
     'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
     'description' => 'Pagina relativa alla sezione notizie del sito Physique',
     'keywords' => 'Notizie, Aggiornamenti, Workout, Alimentazione, Sito',

@@ -205,21 +205,31 @@ a:hover{
 	padding-top: 1em;
 	width: 70%;
 }
-#content a:visited {
+
+#newscontent{
+	border-left: 2px solid rgb(0, 0, 0);
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	padding-top: 1em;
+	width: 100%;
+}
+
+#content a:visited, #newscontent a:visited
+{
 	color: rgb(120, 0, 120);
 }
 
-#content a {
+#content a, #newscontent a{
 	text-decoration: underline;
 	color: rgb(0, 0, 255);
 }
 
-#content button:hover{
+#content button:hover, #newscontent button:hover{
 	opacity: 0.8;
 }
 
 
-#content h1{
+#content h1, #newscontent h1{
 	padding-bottom: 0.5em;
 	padding-top: 0.25em;
 	padding-left: 0.25em;
@@ -229,17 +239,15 @@ a:hover{
 	border: 3px solid rgb(25, 25, 112);
 	margin-bottom: 0.5em;
 }
-    
 
-
-
-#content h2{
+#content h2, #newscontent h2{
 	background-color:  rgb(0, 110, 204);
 	color: rgb(255, 255, 255);
 	padding: .3em;
 	padding-left: .5em;
 	border: 3px solid rgb(25, 25, 112);
 }
+
 
 #back{
 
@@ -1467,7 +1475,7 @@ tbody th{
 		color: rgb(0, 0, 0);
 	}
 	
-	#content{
+	#content , #newscontent {
 		padding:0.1em 1.5em 0.5em;
 	
 	}
@@ -1476,7 +1484,7 @@ tbody th{
 		display: none;
 	}
 	
-	#content h1{
+	#content h1 , #newscontent h1{
 		margin-top: 0em;
 		margin-bottom: 0em;
 		text-align: center;
@@ -1485,7 +1493,7 @@ tbody th{
 	}
 	
 	
-	#content h2{
+	#content h2, #newscontent h2{
 		color: rgb(0, 0, 0);
 	}
 	/*FINE GENERALE*/
@@ -1909,7 +1917,7 @@ tbody th{
 		width: 100%;
 	}
 
-	#content{
+	#content, #newscontent{
 		border: none;
 		width: 100%;
 		margin: .5em;
@@ -1920,7 +1928,7 @@ tbody th{
 		width:95%
 	}
 
-	#content p{
+	#content p, #newscontent p{
 
 		padding-left: .5em;
 	}
