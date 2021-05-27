@@ -565,6 +565,8 @@ a:hover{
 
 /*Inizio Forum*/
 
+
+
 .AccessButton{
 	margin-top: 1.5em;
 	margin-left: 17em;
@@ -2087,6 +2089,10 @@ tbody th{
 	/*FINE SINGOLA RICETTA*/
 
 	/*INZIO FORUM*/
+
+	#bottoneinvio{
+		margin-left: 1.5em;
+	}
 
 
 	.commenti{
