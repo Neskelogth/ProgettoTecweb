@@ -9,9 +9,11 @@ function loadmenu() {
     return;
   }
   document.getElementById("menu").classList.add("nascosto");
+  document.getElementById("chiudimenu").classList.add("nascosto");
   document.getElementById("menuhamburger").classList.remove("nascosto");
   document.getElementById("menu").classList.remove("floatleft");
   document.getElementById("menuhamburger").classList.add("float");
+  document.getElementById("chiudimenu").classList.remove("float");
 }
 window.addEventListener("resize", function (event) {
   loadmenu();
