@@ -1902,6 +1902,7 @@ tbody th{
 	#container{
 		display: block;
 		overflow: hidden;
+		width: 100%;
 	}
 
 	#content{
@@ -1922,11 +1923,11 @@ tbody th{
 	}
 
 	#menuhamburger{
-		width: 5%;
+		width: 1.2en;
 	}
 
 	#chiudimenu{
-		width: 5%;
+		width: 1.2em;
 	}
 
 	#close{
@@ -2088,6 +2089,10 @@ tbody th{
 		text-align: center;
 	}
 
+	.post{
+		margin: auto;
+	}
+
 	.post h2{
 		margin-bottom: 1.5em;
 		text-align: center;
@@ -2111,6 +2116,7 @@ tbody th{
 		width: 90%;
 		max-width: 100%;
 		min-width: 0em;
+		margin: auto;
 	}
 
 	.forumFieldset h3{
