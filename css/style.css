@@ -2087,6 +2087,8 @@ tbody th{
 		margin: 0em;
 		padding: 0em;
 		text-align: center;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
 	}
 
 	.post{
