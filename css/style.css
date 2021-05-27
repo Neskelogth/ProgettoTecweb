@@ -202,7 +202,7 @@ a:hover{
 	border-left: 2px solid rgb(0, 0, 0);
 	padding-left: 0.7em;
 	padding-right: 0.7em;
-	padding-top: 1em;
+	/*padding-top: 1em;*/
 	width: 70%;
 }
 
@@ -2074,7 +2074,6 @@ tbody th{
 	}
 
 	#back{
-		padding-top: 1em;
 		font-size: .95em;
 	}
 
