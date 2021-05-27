@@ -1868,10 +1868,13 @@ tbody th{
 		font-size: 1em;
 	}
 
+	.padding{
+		padding-top: 2em;
+	}
+
 	#menu{
 		width: 100%;
 		flex: none;
-		padding-top: 2em;
 	}
 
 	#menu ul{
