@@ -2238,6 +2238,15 @@ tbody th{
 
 	}
 
+	#change input[type=button]{
+		margin: auto;
+		margin-top: 3em;
+		display: block;
+	}
+
+
+	/*ADMIN*/
+
 	.adminarea{
 		width: 96%;
 	}	
