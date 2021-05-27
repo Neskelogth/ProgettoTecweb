@@ -1871,6 +1871,7 @@ tbody th{
 	#menu{
 		width: 100%;
 		flex: none;
+		padding-top: 2em;
 	}
 
 	#menu ul{
