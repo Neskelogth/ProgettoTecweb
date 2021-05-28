@@ -1952,11 +1952,11 @@ th {
     text-align: left;
   }
   
-  #change input {
+  #change input [type="text"]{
     padding-right: 0.5em;
     width: auto;
     display: block;
-    align-items: left;
+    align-self: left;
   }
   
   #change input[type="button"] {
