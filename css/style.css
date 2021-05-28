@@ -1953,15 +1953,11 @@ th {
   }
   
   #change input{
-    padding-right: 0.5em;
+    margin-top: 0.5em;
     width: auto;
     display: block;
     margin-left: 0em;
-  }
-  
-  #change input[type="button"] {
-    margin-top: 3em;
-    display: block;
+
   }
   /*FINE PANNELLO UTENTE*/
 
