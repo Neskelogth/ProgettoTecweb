@@ -1850,7 +1850,7 @@ th {
     width: 100%;
   }
 
-  #splitTable tbody tr{
+  #splitTable tbody tr, #splitTable thead tr{
     width: 100%;
     display: table-row;
   }
@@ -1865,6 +1865,7 @@ th {
 
   #splitTable thead{
     display: block;
+    width: 100%;
   }
 
   #splitTable thead th{
