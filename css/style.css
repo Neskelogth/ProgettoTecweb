@@ -1834,6 +1834,9 @@ th {
     height: 50%;
   }
 
+  #post0{
+    margin-left: 0em;
+  }
   .post textarea {
     margin-left: 1em;
     margin-top: 1em;
