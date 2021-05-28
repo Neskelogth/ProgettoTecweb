@@ -1809,12 +1809,12 @@ th {
     width: 100%;
   }
   
-  #splitTable td,
+  #splitTable tbody td,
   th {
     border: 1px solid rgb(25, 25, 112);
   }
   
-  #splitTable td {
+  #splitTable tbody td {
     padding-left: 0.25em;
   }
   
@@ -1822,7 +1822,7 @@ th {
     background-color: rgb(135, 206, 235);
   }
   
-  #splitTable th {
+  #splitTable tbody th {
     padding-bottom: 0.25em;
     padding-top: 0.25em;
     margin-top: 1em;
@@ -1839,9 +1839,13 @@ th {
     text-align: center;
   }
   
-  #splitTable td {
+  #splitTable tbody td {
     padding-top: 0.25em;
     table-layout: auto;
+  }
+
+  #splitTable thead{
+    display: block;
   }
   /*FINE WORKOUT*/
 
