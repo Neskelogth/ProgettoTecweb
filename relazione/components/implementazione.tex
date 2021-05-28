@@ -27,8 +27,11 @@ Le chiavi delle tabelle sono nella quasi totalità dei casi degli indici autoinc
 
 Lo schema relazionale del database è il seguente: 
 
-%inserite l'immagine del database please
-
+\begin{figure}
+	\centering
+	\includegraphics[width=18cm]{img/database.png}
+\end{figure}
+\newpage
 Al fine di evitare problematiche causate dall'eliminazione dei post, quando uno di questi viene cancellato, vengono rimosse anche tutte le risposte e tutti i like. Allo stesso modo vengono eliminati anche tutti i post, tutti i like e tutte le risposte quando un utente viene eliminato.
 
 \subsubsection{PHP}\label{subs:php}
@@ -102,4 +105,47 @@ Ci sono inoltre molti file .php nella cartella api che vengono sfruttati per il 
 
 
 
-\subsubsection{Javascript}
+\subsubsection{Javascript}\label{subs:js}
+
+Il linguaggio javascript è stato utilizzato per il comportamento dinamico lato client delle pagine. In particolare è stato utilizzato per: 
+
+\begin{itemize}
+    
+	\item Gestire il menù in modalità mobile;
+    \item Controllare l'input;
+	\item Popolare la pagina del forum con gli elementi che la caratterizzano nella sezione dei commenti;
+	\item Popolare con i dati dell'utente la pagina del profilo;
+	\item Popolare con i dati necessari la pagina del pannello admin.
+	
+\end{itemize}
+
+Nonostante ci sia la possibilità che un utente del sito abbia disattivato il javascript la possibilità che questa condizione si verifichi è estremamente bassa, perciò è stato deciso di gestire con questo linguaggio alcune delle pagine. 
+Sappiamo inoltre che i contenuti generati con javascript non sono indicizzati dal motore di ricerca, perciò è stato utilizzato solamente per i contenuti non devono essere necessariamente indicizzati. Di seguito i dettagli.
+
+\paragraph{Menu mobile}
+
+Il menu mobile è stato realizzato con il linguaggio CSS. Lo script si occupa solamente di applicare o togliere alcune classi dal menu stesso in modo che sia sempre visibile in modalità desktop, e che diventi visibile o nascosto in base al click su un'immagine 
+presente nel breadcrumb.
+
+\paragraph{Controllo dell'inpout}
+
+Lo script di autenticazione è molto semplice e controlla solamente che i campi non siano vuoti. La maggior parte dei controlli è infatti eseguita usando il linguaggio php nel backend. Nel caso in cui il controllo effettuato non venisse passato dall'input 
+verrebbe visualizzato un messaggio che spiega qual è stato l'errore. 
+
+\paragraph{Script della pagina profilo}
+
+Lo script della pagina profilo si occupa solamente di popolare i diversi campi input della pagina. I campi disponibili che possono essere cambiati sono: il nome, il cognome, la mail e la password. Il campo password è volutamente non compilato a causa 
+del fatto che nel database è memorizzato l'hash della password. Questo script fa uso della funzione built-in di javascript fetch, una funzione asincrona che permette di far uso di codice del backend (in questo caso con il linguaggio php) per modificare il 
+front end. Tutti i file php utilizzati da questa pagina sono raccolti nella cartella api.
+
+\paragraph{Script della pannello admin}
+
+Lo script del pannello admin si occupa, come nel caso della pagina del profilo, solamente di popolare i diversi campi della pagina. Questo script, come il precedente, fa uso della funzione built-in di javascript fetch. 
+Tutti i file php utilizzati da questa pagina sono raccolti nella cartella api.
+
+\paragraph{Script della forum}
+
+Lo script del forum genera la maggior parte della pagina, avvalendosi, come nei casi precedenti, di diverse funzioni fetch per prendere dal database tutti i post, le risposte e i like e costruire dinamicamente l'intera pagina, utilizzando document.createElement 
+per creare gli elementi della pagina stessa e nidificandoli uno dentro l'altro con delle funzioni anonime e ritornando gli elementi creati. 
+
+
