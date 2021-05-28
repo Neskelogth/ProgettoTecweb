@@ -110,6 +110,7 @@ function createNewsContent(string $data, string $type): string{
 
     $newsList = "";
     $linkPresent = false;
+    $all = $type == 'All';
 
     if($contentArray !== null){
 
@@ -120,6 +121,7 @@ function createNewsContent(string $data, string $type): string{
             $newsList .= $renderer-> renderFile('news/newsTemplate', array(
 
                 'newstitle' => $element['Titolo'],
+                'all' => $all,
                 'type' => $element['Tipo'],
                 'text' => $element['Testo'],
                 'linkpresent' => $linkPresent,
