@@ -1852,6 +1852,7 @@ th {
 
   #splitTable tbody tr{
     width: 100%;
+    display: table-row;
   }
   .setrep {
     text-align: center;
