@@ -17,26 +17,24 @@ si comporta similmente al tipo email di HTML5.
 
 \subsubsection{CSS}
 Per la realizzazione del design del sito è stato adottato CSS3. 
-Con lo scopo di garandire la corretta separazione fra contenuto e presentazione, è stato usato un foglio di stile esterno anziché ricorrere ai tag di stile all'interno del codice XHTML. 
+Con lo scopo di garantire la corretta separazione fra contenuto e presentazione, è stato usato un foglio di stile esterno anziché ricorrere ai tag di stile all'interno del codice XHTML. 
 Come unità di misura si è scelto di utilizzare quelle relative per la loro adattabilità.
 %non so cos'altro scrivere
 \subsubsection{SQL}
 
-Il database mantiene le informazioni di tutte le pagine costruite dinamicamente, quindi alimentazione, news e forum. Mantiene inoltre una tabella con tutti gli utenti del sito e i relativi dati.\\
-Le chiavi delle tabelle sono nella quasi totalità dei casi degli indici autoincrementali, tranne nel caso di utente che ha come chiave primaria lo username (chiamato IDUtente nella tabella) e nel caso di likes, in cui la chiave primaria è 
-la combinazione di utente e id del post a cui è stato messo il like.
+Il database contiene le informazioni di tutte le pagine costruite dinamicamente, ovvero \textit{Alimentazione}, \textit{News} e \textit{Forum}. E' inoltre presente una tabella con tutti gli utenti del sito e i relativi dati.\\
+Le chiavi delle tabelle sono nella quasi totalità dei casi degli indici autoincrementali, tranne nel caso di utente che ha come chiave primaria lo username (chiamato \textit{IDUtente} nella tabella) e nel caso di \textit{likes}, in cui la chiave primaria è la combinazione di utente e id del post a cui è stato messo il like.
 
 Lo schema relazionale del database è il seguente: 
 
 %inserite l'immagine del database please
 
-Al fine di evitare problematiche causate dall'eliminazione dei post, quando uno di questi viene cancellato vengono tolte anche tutte le risposte e tutti i like. Allo stesso modo vengono eliminati anche tutti i post, tutti i like e tutte le risposte
-quando un utente viene eliminato.
+Al fine di evitare problematiche causate dall'eliminazione dei post, quando uno di questi viene cancellato, vengono rimosse anche tutte le risposte e tutti i like. Allo stesso modo vengono eliminati anche tutti i post, tutti i like e tutte le risposte quando un utente viene eliminato.
 
 \subsubsection{PHP}\label{subs:php}
 
-Tutte le pagine del sito sono costruite dinamicamente, nella maggior parte dei casi utilizzando solamente il linguaggio php.\\
-Ogni pagina ha un template, riconoscibile tra i file .xhtml in quanto ha la parola "base" nel nome. Ci sono 4 basi nel progetto:
+Tutte le pagine del sito sono costruite dinamicamente, nella maggior parte dei casi utilizzando solamente il linguaggio PHP.\\
+Ogni pagina ha un template, riconoscibile tra i file .xhtml in quanto contiene la parola \textit{base} nel nome. Ci sono 4 template nel progetto:
 
 \begin{itemize}
     
@@ -47,15 +45,18 @@ Ogni pagina ha un template, riconoscibile tra i file .xhtml in quanto ha la paro
 	
 \end{itemize}
 
-La differenza tra le varie pagine che ci ha portati a definire 4 basi sono gli script javascript che dovevano essere inclusi in alcune pagine ma non nelle altre. Queste pagine contengono la struttura base dei div che fungeranno 
-da contenitori per tutti gli elementi del sito e che vengono costruiti dinamicamente. Tramite alcuni tag vuoti non validi riusciamo infatti a sostituire i contenuti della pagina molto velocemente tramite i parametri get del php.\\
+La differenza tra le varie pagine che ci ha portati a definire 4 template sono gli script Javascript che dovevano essere inclusi soltanto in alcune pagine. Queste pagine contengono la struttura base dei div, i quali fungono da contenitori per tutti gli elementi del sito, e che vengono costruiti dinamicamente. Tramite alcuni tag vuoti non validi riusciamo infatti a sostituire i contenuti della pagina molto velocemente tramite i parametri \textit{get} di PHP.\\
 
-Il cuore di questo sistema sono le due classi php Renderer e Parser, che permettono creare i contenuti delle varie pagine in base al parametro get 'r' e ad una serie di convenzioni utilizzate per i tag vuoti. La classe Parser, infatti
-tiene in un campo privato tutte le possibili route indicate nel file index.php, una funzione e un array di variabili. Nel file index.php alla fine viene chiamata la funzione parse, che, se il parametro get 'r' esiste ed è presente nel campo apposito del parser, 
+Il cuore di questo sistema sono le due classi PHP \textit{Renderer} e \textit{Parser}, che permettono creare i contenuti delle varie pagine in base al parametro get 'r' e ad una serie di convenzioni utilizzate per i tag vuoti. La classe Parser, infatti,
+tiene in un campo privato tutte le possibili route indicate nel file index.php, una funzione e un array di variabili. Nel file index.php alla fine viene chiamata la funzione \textit{parse}, che, se il parametro get 'r' esiste ed è presente nel campo apposito del parser, 
 renderizza il file corrispondente (tramite la classe Renderer, spiegata nel paragrafo successivo) e chiama una funzione passata durante il setup fatto in index.php. Questo permette di creare dinamicamente i contenuti utilizzando i file .xhtml.
 
+--------- ripetizione?
 Il file renderer, insieme a parser, è il cuore pulsante della costruzione dinamica delle pagine. Questa classe si occupa di renderizzare i file in base ai diversi tipi di placeholder, ovvero i tag vuoti, disponibili e i vari simboli speciali 
 tramite delle funzioni di utility. 
+----------
+
+
 I vari tipi di placeholder sono 4:
 
 \begin{itemize}
@@ -67,11 +68,11 @@ I vari tipi di placeholder sono 4:
 	
 \end{itemize}
 
-Ognuno di questi placholder ha un preciso significato, riportato di seguito:
+Ognuno di questi placeholder ha un preciso significato, riportato di seguito:
 
 \begin{itemize}
     
-	\item includePlacholder: questo placeholder, obbligatorio, indentifica una base alla pagina corrente. Si trova all'inizio della pagina e ha la forma <includeBasePlacholder />. Il renderer quando trova un tag in questa forma, tramite un'espressione
+	\item includePlacholder: questo placeholder, obbligatorio, indentifica una base alla pagina corrente. Si trova all'inizio della pagina e ha la forma <includeBasePlacholder />. Il renderer, quando trova un tag in questa forma, tramite un'espressione
 	regolare prende il file con il nome corrispondente alla sottostringa compresa tra include e Placeholder e ne inserisce i contenuti nella pagina.
 	
     \item blockPlaceholder: questo placeholder ha la forma <blockSetMenuPlaceholder /> e si trovano in tutte le pagine. Questo placeholder indica che in quel particolare punto della pagina va inserito un blocco di codice html. Il blocco è identificato dal 

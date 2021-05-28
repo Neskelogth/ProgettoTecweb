@@ -14,7 +14,7 @@ $parser-> addRoute('login', function(string $data){
     return $data;
 }, array(
     'title' => 'Login - Physique',
-    'redirect' => $_GET['prev'] ?? urlencode('/mtesser/?r=home'),
+    'redirect' => str_replace('&','&amp;',($_GET['prev'] ?? urlencode('/mtesser/?r=home'))),
     'admin' => $_SESSION['admin'] ?? false,
     'id' => 'content',
     'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
@@ -39,7 +39,7 @@ $parser-> addRoute('signup', function(string $data){
     return $data;
 }, array(
     'title' => 'Signup - Physique',
-    'redirect' => $_GET['prev'] ?? urlencode('/mtesser/?r=home'),
+    'redirect' => str_replace('&','&amp;',($_GET['prev'] ?? urlencode('/mtesser/?r=home'))),
     'admin' => $_SESSION['admin'] ?? false,
     'id' => 'content',
     'author' => 'Samuel Kostadinov, Emma Roveroni, Marco Tesser, Marco Uderzo',
