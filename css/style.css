@@ -1824,6 +1824,11 @@ th {
     width: 15%;
   }
   
+  th[title]:before,
+  td[title]:before {
+    content: "";
+  }
+
   .day {
     background-color: rgb(135, 206, 235);
   }
@@ -1835,19 +1840,20 @@ th {
     margin-bottom: 3em;
     padding-left: 1em;
     padding-right: 1em;
-  }
-  
-  #splitTable tbody th {
     width: 70%;
+    display: table-cell;
   }
   
+  #splitTable tbody{
+    display: table-row-group;
+  }
   .setrep {
     text-align: center;
   }
   
   #splitTable tbody td {
     padding-top: 0.25em;
-    table-layout: auto;
+    display: table-cell;
   }
 
   #splitTable thead{
