@@ -1954,8 +1954,8 @@ th {
   
   #change input {
     padding-right: 0.5em;
-    width: auto;
     display: block;
+    align-items: left;
   }
   
   #change input[type="button"] {
