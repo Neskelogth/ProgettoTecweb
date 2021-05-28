@@ -1864,8 +1864,8 @@ th {
   }
 
   #splitTable thead{
-    display: block;
     width: 100%;
+    display: table-row-group;
   }
 
   #splitTable thead th{
