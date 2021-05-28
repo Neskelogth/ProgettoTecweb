@@ -1947,11 +1947,20 @@ th {
   /*PANNELLO UTENTE*/
 
   #change label {
-    text-align: left;
+    padding-right: 0.5em;
+    margin-bottom: 0.5em;
+    display: block;
   }
-
+  
   #change input {
-    width: auto;
+    padding-right: 0.5em;
+  
+    display: block;
+  }
+  
+  #change input[type="button"] {
+    margin-top: 3em;
+    display: block;
   }
   /*FINE PANNELLO UTENTE*/
 
