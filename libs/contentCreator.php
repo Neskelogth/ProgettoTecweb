@@ -112,6 +112,7 @@ function createNewsContent(string $data, string $type): string{
     $linkPresent = false;
     $all = $type == 'All';
 
+    var_dump($all);
     if($contentArray !== null){
 
         foreach ($contentArray as $element){
