@@ -1945,16 +1945,16 @@ th {
   /*FINE LOGIN*/
 
   /*PANNELLO UTENTE*/
-
   #change label {
     padding-right: 0.5em;
     margin-bottom: 0.5em;
     display: block;
+    text-align: left;
   }
   
   #change input {
     padding-right: 0.5em;
-  
+    width: auto;
     display: block;
   }
   
