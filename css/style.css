@@ -1842,6 +1842,7 @@ th {
     padding-right: 1em;
     width: 70%;
     display: table-cell;
+    color: rgb(0, 0, 0);
   }
   
   #splitTable tbody{
@@ -1858,6 +1859,10 @@ th {
 
   #splitTable thead{
     display: block;
+  }
+
+  #splitTable thead th{
+    display: table-cell;
   }
   /*FINE WORKOUT*/
 
