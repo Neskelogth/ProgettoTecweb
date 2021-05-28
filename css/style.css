@@ -1849,6 +1849,10 @@ th {
     display: table-row-group;
     width: 100%;
   }
+
+  #splitTable tbody tr{
+    width: 100%;
+  }
   .setrep {
     text-align: center;
   }
