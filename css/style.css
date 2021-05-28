@@ -1796,6 +1796,10 @@ th {
     display: none;
   }
 
+  #splitTable .primaCella{
+    width: 70%;
+  }
+
   #splitTable {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -1807,6 +1811,7 @@ th {
     margin-bottom: 1em;
     border-collapse: collapse;
     width: 100%;
+    display: table;
   }
   
   #splitTable tbody td,
@@ -1816,6 +1821,7 @@ th {
   
   #splitTable tbody td {
     padding-left: 0.25em;
+    width: 15%;
   }
   
   .day {
