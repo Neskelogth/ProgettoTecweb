@@ -1828,10 +1828,6 @@ th {
   td[title]:before {
     content: "";
   }
-
-  .day {
-    background-color: rgb(135, 206, 235);
-  }
   
   #splitTable tbody th {
     padding-bottom: 0.25em;
@@ -1843,6 +1839,7 @@ th {
     width: 70%;
     display: table-cell;
     color: rgb(0, 0, 0);
+    text-align: left;
   }
   
   #splitTable tbody{
