@@ -1948,6 +1948,7 @@ th {
   #change label {
     padding-right: 0.5em;
     margin-bottom: 0.5em;
+    margin-top: 0.5em;
     display: block;
     text-align: left;
   }
@@ -1957,7 +1958,10 @@ th {
     width: auto;
     display: block;
     margin-left: 0em;
+  }
 
+  #change input[type="button"]{
+    margin-left: 0em;
   }
   /*FINE PANNELLO UTENTE*/
 
