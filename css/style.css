@@ -967,6 +967,10 @@ th {
 
 /* Pannello amministratore*/
 
+.select{
+  max-width: 100%;
+}
+
 #notAdmin {
   margin-top: 1em;
 }

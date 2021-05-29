@@ -4,7 +4,7 @@
 
 <label for = "userToPromote">Utente da promuovere: </label>
 
-<select id="userToPromote">
+<select id="userToPromote" class = "select">
     <option class= "nascosto"></option>
 </select>
 
@@ -21,7 +21,7 @@
 
 <label for = "recipe">Ricetta da eliminare: </label>
 
-<select id = "recipe">
+<select id = "recipe" class = "select">
     <option class= "nascosto"></option>
 </select>
 
@@ -38,7 +38,7 @@
 
 <label for = "news">Notizia da eliminare: </label>
 
-<select id = "news">
+<select id = "news" class = "select">
     <option class= "nascosto"></option>
 </select>
 
@@ -54,7 +54,7 @@
 
 <label for = "post">%%Post%% da eliminare: </label>
 
-<select id = "post" onchange = "findText() ">
+<select id = "post"  class = "select" onchange = "findText() ">
     <option class= "nascosto"></option>
 </select>
 
@@ -72,14 +72,14 @@
 <h2>Elimina risposta</h2>
 
 <label for = "post1">%%Post%% selezionato: </label>
-<select id = "post1" onchange = "findTextAndAnswer()">
+<select id = "post1"  class = "select" onchange = "findTextAndAnswer()">
     <option class= "nascosto"></option>
 </select>
 <label for = "postText1">Testo del %%post%% selezionato: </label>
 <textarea readonly="readonly" rows="10" cols="90" id = "postText1" class = "adminarea"></textarea>
 
 <label for = "answer">Risposta da eliminare: </label>
-<select id = "answer" onchange="findAnswerText()">
+<select id = "answer"  class = "select" onchange="findAnswerText()">
     <option class= "nascosto"></option>
 </select>
 <label for = "answerText1">Testo della risposta da eliminare: </label>
@@ -106,7 +106,7 @@
 
 <label for="type" id="newsTypeLabel">Inserisci il tipo della %%news%%</label>
 
-<select id = "type">
+<select id = "type" class = "select">
     <option class= "nascosto"></option>
 </select>
 
@@ -215,7 +215,7 @@
 
 <label for = "banned">Utente a cui revocare il ban: </label>
 
-<select id="banned">
+<select id="banned" class = "select">
     <option class= "nascosto"></option>
 </select>
 
@@ -231,7 +231,7 @@
 
 <label for = "notBanned">Utente da bannare: </label>
 
-<select id="notBanned">
+<select id="notBanned" class = "select">
     <option class= "nascosto"></option>
 </select>
 
@@ -250,7 +250,7 @@
 
 <label for = "remove">Utente a cui rimuovere l'%%account%%: </label>
 
-<select id="remove">
+<select id="remove" class = "select">
     <option class= "nascosto"></option>
 </select>
 
