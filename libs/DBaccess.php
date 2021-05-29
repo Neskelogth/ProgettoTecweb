@@ -390,7 +390,7 @@ class DBaccess{
             $user = array(
 
                 'id' => $element['ID'],
-                'title' => base64_decode($element['titolo'])
+                'title' => str_replace('%%','',(base64_decode($element['titolo'])))
             );
 
             array_push($newsList, $user);
