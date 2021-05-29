@@ -1696,6 +1696,8 @@ th {
   #content,
   #newscontent {
     padding: 0.1em 1.5em 0.5em;
+    border-left: none;
+    width: 100%;
   }
 
   .aiuti {
@@ -1721,6 +1723,8 @@ th {
 
   #contenthome {
     overflow: hidden;
+    border-left: none;
+    width: 100%;
   }
 
   #contenthome h1 {
