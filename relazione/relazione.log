@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.9)  30 MAY 2021 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.9)  30 MAY 2021 13:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,46 +417,37 @@ map} <./img/unipd.png> <./img/logo.png>] (./relazione.toc)
 <img/database.png, id=197, 621.522pt x 384.2355pt>
 File: img/database.png Graphic file (type png)
 <use img/database.png>
-Package pdftex.def Info: img/database.png  used on input line 32.
+Package pdftex.def Info: img/database.png  used on input line 33.
 (pdftex.def)             Requested size: 512.1496pt x 316.62883pt.
 
-Overfull \hbox (28.45273pt too wide) in paragraph at lines 32--33
+Overfull \hbox (28.45273pt too wide) in paragraph at lines 33--34
  [][] 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
+Underfull \hbox (badness 10000) in paragraph at lines 53--55
 
  []
 
 [8 <./img/database.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 96--101
+Underfull \hbox (badness 10000) in paragraph at lines 98--103
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 102--106
+Underfull \hbox (badness 10000) in paragraph at lines 104--108
 
  []
 
 [10]) [11] (./components/test.tex) [12] (./components/organizzazione.tex)
 [13] (./relazione.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `relazione.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `relazione.out':
-(rerunfilecheck)             Before: F5F1B6E1A1C68ABE77EAABAE94DF6D90;3098
-(rerunfilecheck)             After:  F5F67E8D47E786B0F3F8DD88B3DC7AAE;3073.
+Package rerunfilecheck Info: File `relazione.out' has not changed.
+(rerunfilecheck)             Checksum: F5F67E8D47E786B0F3F8DD88B3DC7AAE;3073.
  ) 
 Here is how much of TeX's memory you used:
  9744 strings out of 478994
  143746 string characters out of 5851611
- 473026 words of memory out of 5000000
+ 472026 words of memory out of 5000000
  27020 multiletter control sequences out of 15000+600000
  415741 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -475,7 +466,7 @@ frm1200.pfb><d:/Variabili d'ambiente/texlive/2021/texmf-dist/fonts/type1/public
 ype1/public/cm-super/sfrm2074.pfb><d:/Variabili d'ambiente/texlive/2021/texmf-d
 ist/fonts/type1/public/cm-super/sfti1095.pfb><d:/Variabili d'ambiente/texlive/2
 021/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on relazione.pdf (15 pages, 704803 bytes).
+Output written on relazione.pdf (15 pages, 704925 bytes).
 PDF statistics:
  287 PDF objects out of 1000 (max. 8388607)
  251 compressed objects within 3 object streams
