@@ -80,11 +80,11 @@ Ognuno di questi placeholder ha un preciso significato, riportato di seguito:
 	regolare prende il file con il nome corrispondente alla sottostringa compresa tra include e Placeholder e ne inserisce i contenuti nella pagina.
 	
     \item blockPlaceholder: questo placeholder ha la forma <blockSetMenuPlaceholder /> e si trovano in tutte le pagine. Questo placeholder indica che in quel particolare punto della pagina va inserito un blocco di codice html. Il blocco è identificato dal 
-	nome, ovvero la sottostringa compresa tra Set e Placholder. L'identificativo è infatti usato nella sostituzione del tag vuoto, in quanto il tag <blockSetBlocknamePlaceholder /> viene sostituito da tutto ciò che è compreso tra i tag <blockDefBlockanamePlaceholder /> 
+	nome, ovvero la sottostringa compresa tra Set e Placeholder. L'identificativo è infatti usato nella sostituzione del tag vuoto, in quanto il tag <blockSetBlocknamePlaceholder /> viene sostituito da tutto ciò che è compreso tra i tag <blockDefBlockanamePlaceholder /> 
 	e <blockEndPlaceholder />, rimuovendo dopo la sostituzione i tag non validi e il contenuto del blocco per non avere un pezzo di codice html duplicato. I tag blockDef e blockEnd devono tuttavia essere nello stesso codice 
 	sorgente in cui si trova <blockSetPlaceholder />
 	
-	\item ifPlaceholder: questi placeholder hanno la forma <ifconditionPlacholder />. Questo tipo di blocchi viene usato quando un segmento di codice deve essere renderizzato in base ad una condizione. Infatti il codice compreso tra il tag <ifconditionPlaceholder /> 
+	\item ifPlaceholder: questi placeholder hanno la forma <ifconditionPlaceholder />. Questo tipo di blocchi viene usato quando un segmento di codice deve essere renderizzato in base ad una condizione. Infatti il codice compreso tra il tag <ifconditionPlaceholder /> 
 	e il tag <endIfPlaceholder /> viene inserito nel codice effettivo solamente a patto che si verifichi una certa condizione. La condizione è data dalla sottostringa compresa tra if e Placeholder. Il renderer infatti cerca una variabile che deve essere passata
 	al renderer e che deve essere di tipo booleano. Se la condizione è vera la parte viene renderizzato il blocco, altrimenti no.
 	
@@ -97,11 +97,11 @@ Esistono inoltre tre funzioni, messe a disposizione da Renderer, che permettono 
 inglese. Questo metodo infatti ricerca tutti i segmenti di codice html compresi tra 2 simboli \% (come per esempio \%\%english word\%\%)e lo inserisce all'interno di uno span con attributi \textit{xml:lang="en"} e \textit{lang="en"}.\\ La seconda funzione permette
 di rimuovere tutti i commenti dal codice HTML per rendere la pagina più leggera e avere un miglior posizionamento nei motori di ricerca. Questo è particolarmente utile nella pagina split.xhtml, in cui ci sono 4 includePlacholder che vengono sostituiti con il 
 contenuto specifico di tutte le possibili split. Questo contenuto viene poi sostituito tramite degli ifPlaceholder e infine viene rimosso il commento contenente il codice HTML di tutte le pagine.\\ La terza funzione elimina tutti i tag non validi che contengono 
-la parola Placeholder, in quanto è nostro interesse far si che la pagina sia valida anche nel caso in cui qualcuno di questi tag non sia sostituito per errore.\\
+il termine Placeholder, in quanto è nostro interesse far si che la pagina sia valida anche nel caso in cui qualcuno di questi tag non sia sostituito per errore.\\
 
-I contenuti dinamici vengono gestiti tramite una classe DBaccess che permette di accedere al database e di eseguire delle query tramite la chiamata dei metodi della classe stessa, ognuno dei quali esegue una o più query al database con lo scopo di modficiare 
+I contenuti dinamici vengono gestiti tramite una classe DBaccess che permette di accedere al database e di eseguire delle query tramite la chiamata dei metodi della classe stessa, ognuno dei quali esegue una o più query al database con lo scopo di modificare 
 dinamicamente i contenuti del sito sia nella creazione delle pagine che, per esempio, nelle azioni di modifica del sito che possono essere performate da un utente o da un amministratore.\\
-il file helper.php contiene invece una serie di funzioni che permettono di pulire l'input lato backend in modo da avere un livello di sicurezza superiore nel caso in cui un utente riesca ad aggirare i controlli di javascript.\\
+il file helper.php contiene invece una serie di funzioni che permettono di pulire l'input nel lato backend in modo da avere un livello di sicurezza superiore nel caso in cui un utente riesca ad aggirare i controlli di javascript.\\
 Il file contentCreator.php infine contiene una serie di funzioni che creano i contenuti di alcune delle pagine utilizzando la funzione renderFile di renderer e seguendo lo stesso principio descritto precedentemente.\\
 
 Ci sono inoltre molti file .php nella cartella api che vengono sfruttati per il login/signup o per le chiamate asincrone di javascript (come spiegato in \S\ref{subs:js}.
@@ -122,23 +122,25 @@ Il linguaggio javascript è stato utilizzato per il comportamento dinamico lato 
 	
 \end{itemize}
 
+%------ ...questa condizione si verifichi è estremamente bassa... - Potrebbe triggerare la prof?
 Nonostante ci sia la possibilità che un utente del sito abbia disattivato il javascript, la possibilità che questa condizione si verifichi è estremamente bassa, perciò è stato deciso di gestire con questo linguaggio alcune delle pagine. 
+%------
+
 Sappiamo inoltre che i contenuti generati con javascript non sono indicizzati dal motore di ricerca, perciò è stato utilizzato solamente per i contenuti non devono essere necessariamente indicizzati. Di seguito i dettagli.
 
-\paragraph{Menu mobile}
+\paragraph{Menu mobile} % se il js è disattivato il menù si vede lo stesso in mobile?
 
 Il menu mobile è stato realizzato con il linguaggio CSS. Lo script si occupa solamente di applicare o togliere alcune classi dal menu stesso in modo che sia sempre visibile in modalità desktop, e che diventi visibile o nascosto in base al click su un'immagine 
 presente nel breadcrumb.
 
 \paragraph{Controllo dell'inpout}
 
-Lo script di autenticazione è molto semplice e controlla solamente che i campi non siano vuoti. La maggior parte dei controlli è infatti eseguita usando il linguaggio php nel backend. Nel caso in cui il controllo effettuato non venisse passato dall'input 
-verrebbe visualizzato un messaggio che spiega qual è stato l'errore. 
+Lo script di autenticazione è molto semplice e controlla solamente che i campi non siano vuoti. La maggior parte dei controlli è infatti eseguita usando il linguaggio php nel backend. Nel caso in cui il controllo effettuato rilevi un errore di input da parte dell'utente, viene visualizzato un messaggio che spiega qual è stato l'errore. 
 
 \paragraph{Script della pagina profilo}
 
 Lo script della pagina profilo si occupa solamente di popolare i diversi campi input della pagina. I campi disponibili che possono essere cambiati sono: il nome, il cognome, la mail e la password. Il campo password è volutamente non compilato a causa 
-del fatto che nel database è memorizzato l'hash della password. Questo script fa uso della funzione built-in di javascript fetch, una funzione asincrona che permette di far uso di codice del backend (in questo caso con il linguaggio php) per modificare il 
+del fatto che nel database è memorizzato l'hash della password. Questo script fa uso della funzione asincrona built-in di javascript, fetch, che permette di far uso di codice del backend (in questo caso con il linguaggio php) per modificare il 
 front end. Tutti i file php utilizzati da questa pagina sono raccolti nella cartella api.
 
 \paragraph{Script della pannello admin}
