@@ -1597,6 +1597,7 @@ th {
   #navnews {
     width: 97.5%;
     margin-top: 0.4em;
+    font-size: 0.93em;
   }
 
   #navnews li {
@@ -1683,13 +1684,8 @@ th {
     color: rgb(0, 0, 0);
   }
 
-  /*#container{
-    width: 12cm;  
-  }*/
-
   #content,
   #newscontent {
-    /*padding: 0.1em 1.5em 0.5em;*/
     margin-left: 0em;
     border-left: none;
   }
