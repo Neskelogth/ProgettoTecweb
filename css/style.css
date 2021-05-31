@@ -478,7 +478,6 @@ a:hover {
 #navnews {
   padding-top: 1em;
   padding-bottom: 2em;
-  font-size: 0.93em;
 }
 #navnews li {
   margin-right: 0.5em;
@@ -489,6 +488,7 @@ a:hover {
 }
 #navnews li a {
   text-decoration: none;
+  font-size: 0.96em;
 }
 
 #forminsertnews fieldset {
