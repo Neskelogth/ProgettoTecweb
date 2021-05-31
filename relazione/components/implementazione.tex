@@ -22,7 +22,7 @@ Come unità di misura si è scelto di utilizzare quelle relative per la loro ada
 %non so cos'altro scrivere
 \subsubsection{SQL}
 
-Il database contiene le informazioni di tutte le pagine costruite dinamicamente, ovvero \textit{Alimentazione}, \textit{News} e \textit{Forum}. E' inoltre presente una tabella con tutti gli utenti del sito e i relativi dati.\\
+Il database contiene le informazioni di tutte le pagine costruite dinamicamente, ovvero \textit{Alimentazione}, \textit{News} e \textit{Forum}. É inoltre presente una tabella con tutti gli utenti del sito e i relativi dati.\\
 Le chiavi delle tabelle sono nella quasi totalità dei casi degli indici autoincrementali, tranne nel caso di utente che ha come chiave primaria lo username (chiamato \textit{IDUtente} nella tabella) e nel caso di \textit{likes}, 
 in cui la chiave primaria è la combinazione di utente e id del post a cui è stato messo il like.
 
@@ -53,21 +53,15 @@ Ogni pagina ha un template, riconoscibile tra i file .xhtml in quanto contiene l
 La differenza tra le varie pagine che ci ha portati a definire 4 template sono gli script Javascript che dovevano essere inclusi soltanto in alcune pagine. Queste pagine contengono la struttura base dei div, 
 i quali fungono da contenitori per tutti gli elementi del sito, e che vengono costruiti dinamicamente. Tramite alcuni tag vuoti non validi riusciamo infatti a sostituire i contenuti della pagina molto velocemente tramite i parametri \textit{get}.\\
 
-Il cuore di questo sistema sono le due classi PHP \textit{Renderer} e \textit{Parser}, che permettono creare i contenuti delle varie pagine in base al parametro get 'r' e ad una serie di convenzioni utilizzate per i tag vuoti. La classe Parser, infatti,
-tiene in un campo privato tutte le possibili route indicate nel file index.php, una funzione e un array di variabili per ogni route. Nel file index.php alla fine viene chiamata la funzione \textit{parse}, che, se il parametro get 'r' esiste ed è presente nel campo apposito 
+Il cuore di questo sistema sono le due classi PHP \textit{Renderer} e \textit{Parser}, che permettono di creare i contenuti delle varie pagine in base al parametro \textit{get 'r'} e ad una serie di convenzioni utilizzate per i tag vuoti. La classe Parser, infatti,
+tiene in un campo privato tutte le possibili route indicate nel file index.php, una funzione e un array di variabili per ogni route. Nel file index.php alla fine viene chiamata la funzione \textit{parse}, che, se il parametro \textit{get 'r'} esiste ed è presente nel campo apposito 
 del parser, renderizza il file corrispondente (tramite la classe Renderer, spiegata nel paragrafo successivo) e chiama una funzione passata durante il setup fatto in index.php. Questo permette di creare dinamicamente i contenuti utilizzando i file .xhtml.
-
-% --------- ripetizione? in realtà prima l'attenzione era su parser e ora su renderer, mi fido delle vostre modifiche
-Il file renderer, insieme a parser, è il cuore pulsante della costruzione dinamica delle pagine. Questa classe si occupa di renderizzare i file in base ai diversi tipi di placeholder, ovvero i tag vuoti, e i vari simboli speciali 
-tramite delle funzioni di utility. 
-% ----------
-
-
+La classe Renderer si occupa di renderizzare i file in base ai diversi tipi di placeholder, ovvero i tag vuoti, e i vari simboli speciali tramite delle funzioni di utility. 
 I vari tipi di placeholder sono 4:
 
 \begin{itemize}
     
-	\item includePlacholder
+	\item includePlaceholder
     \item blockPlaceholder
 	\item ifPlaceholder
 	\item variablePlaceholder
@@ -78,33 +72,30 @@ Ognuno di questi placeholder ha un preciso significato, riportato di seguito:
 
 \begin{itemize}
     
-	\item includePlacholder: questo placeholder, obbligatorio, indentifica una base alla pagina corrente. Si trova all'inizio della pagina e ha la forma <includeBasePlacholder />. Il renderer, quando trova un tag in questa forma, tramite un'espressione
-	regolare prende il file con il nome corrispondente alla sottostringa compresa tra include e Placeholder e ne inserisce i contenuti nella pagina;
+	\item includePlaceholder: questo placeholder, obbligatorio, identifica una base alla pagina corrente. Si trova all'inizio della pagina e ha la forma <includeBasePlaceholder />. Il Renderer, quando trova un tag in questa forma, tramite un'espressione regolare prende il file con il nome corrispondente alla sottostringa compresa tra include e Placeholder e ne inserisce i contenuti nella pagina;
 	
     \item blockPlaceholder: questo placeholder ha la forma <blockSetBlocknamePlaceholder /> e si trova in tutte le pagine. Questo placeholder indica che in quel particolare punto della pagina va inserito un blocco di codice html. Il blocco è identificato dal 
-	nome, ovvero la sottostringa compresa tra Set e Placeholder. L'identificativo è infatti usato nella sostituzione del tag vuoto, in quanto il tag <blockSetBlocknamePlaceholder /> viene sostituito da tutto ciò che è compreso tra i tag <blockDefBlockanamePlaceholder /> 
+	nome, ovvero la sottostringa compresa tra Set e Placeholder. L'identificativo è infatti usato nella sostituzione del tag vuoto, in quanto il tag <blockSetBlocknamePlaceholder /> viene sostituito da tutto ciò che è compreso tra i tag <blockDefBlocknamePlaceholder /> 
 	e <blockEndPlaceholder />, rimuovendo dopo la sostituzione i tag non validi e il contenuto del blocco per non avere un pezzo di codice html duplicato. I tag blockDef e blockEnd devono tuttavia essere nello stesso codice 
-	sorgente in cui si trova <il tag BlockSet;
+	sorgente in cui si trova il tag BlockSet;
 	
 	\item ifPlaceholder: questi placeholder hanno la forma <ifConditionPlaceholder />. Questo tipo di blocchi viene usato quando un segmento di codice deve essere renderizzato in base ad una condizione. Infatti il codice compreso tra il tag <ifConditionPlaceholder /> 
-	e il tag <endIfPlaceholder /> viene inserito nel codice effettivo solamente a patto che si verifichi una certa condizione. La condizione è data dalla sottostringa compresa tra if e Placeholder. Il renderer infatti cerca una variabile che deve essere passata
-	al renderer stesso e che deve essere di tipo booleano. Se la condizione è vera viene renderizzato il blocco, altrimenti no;
+	e il tag <endIfPlaceholder /> viene inserito nel codice effettivo solamente a patto che si verifichi una certa condizione. La condizione è data dalla sottostringa compresa tra if e Placeholder. Il Renderer infatti cerca una variabile che deve essere passata al Renderer stesso e che deve essere di tipo booleano. Se la condizione è vera viene renderizzato il blocco, altrimenti no;
 	
 	\item variablePlaceholder: questi placeholder hanno la forma <variablePlaceholder />. Questo tipo di blocchi sono presenti in grande quantità per parametrizzare alcune parti della pagina, come per esempio il titolo delle diverse pagine. Le variabili vengono 
-	passate al renderer dal parser, e al parser dall'utente dal file index.php.
+	passate al Renderer dal Parser, e al Parser dall'utente dal file index.php.
 	
 \end{itemize}
 
 Esistono inoltre tre funzioni, messe a disposizione da Renderer, che permettono di avere un output finale valido e pulito.\\ La prima si chiama replaceEnglish ed è pensata per automatizzare l'inserimento di elementi inline, come lo span, per le parole in lingua
 inglese. Questo metodo infatti ricerca tutti i segmenti di codice html compresi tra 2 simboli \% (come per esempio \%\%english word\%\%)e lo inserisce all'interno di uno span con attributi \textit{xml:lang="en"} e \textit{lang="en"}.\\ La seconda funzione permette
-di rimuovere tutti i commenti dal codice HTML per rendere la pagina più leggera e avere un miglior posizionamento nei motori di ricerca. Questo è particolarmente utile nella pagina split.xhtml, in cui ci sono 4 includePlacholder che vengono sostituiti con il 
+di rimuovere tutti i commenti dal codice HTML per rendere la pagina più leggera e avere un miglior posizionamento nei motori di ricerca. Questo è particolarmente utile nella pagina split.xhtml, in cui ci sono 4 includePlaceholder che vengono sostituiti con il 
 contenuto specifico di tutte le possibili split. Questo contenuto viene poi sostituito tramite degli ifPlaceholder e infine viene rimosso il commento contenente il codice HTML di tutte le pagine.\\ La terza funzione elimina tutti i tag non validi che contengono 
 il termine Placeholder, in quanto è nostro interesse far si che la pagina sia valida anche nel caso in cui qualcuno di questi tag non sia sostituito per errore.\\
-
 I contenuti dinamici vengono gestiti tramite una classe DBaccess che permette di accedere al database e di eseguire delle query tramite la chiamata dei metodi della classe stessa, ognuno dei quali esegue una o più query al database con lo scopo di modificare 
 dinamicamente i contenuti del sito sia nella creazione delle pagine che, per esempio, nelle azioni di modifica del sito che possono essere performate da un utente o da un amministratore.\\
-il file helper.php contiene invece una serie di funzioni che permettono di pulire l'input nel lato backend in modo da avere un livello di sicurezza superiore nel caso in cui un utente riesca ad aggirare i controlli di javascript.\\
-Il file contentCreator.php infine contiene una serie di funzioni che creano i contenuti di alcune delle pagine utilizzando la funzione renderFile di renderer e seguendo lo stesso principio descritto precedentemente.\\
+Il file helper.php contiene invece una serie di funzioni che permettono di pulire l'input nel lato backend in modo da avere un livello di sicurezza superiore nel caso in cui un utente riesca ad aggirare i controlli di javascript.\\
+Il file contentCreator.php infine contiene una serie di funzioni che creano i contenuti di alcune delle pagine utilizzando la funzione renderFile di Renderer e seguendo lo stesso principio descritto precedentemente.\\
 
 Ci sono inoltre molti file .php nella cartella api che vengono sfruttati per il login/signup o per le chiamate asincrone di javascript (come spiegato in \S\ref{subs:js}).
 
@@ -124,24 +115,21 @@ Il linguaggio javascript è stato utilizzato per il comportamento dinamico lato 
 	\item Gestire le modifiche o gli inserimenti fatti nella pagina profilo o nel pannello admin.
 \end{itemize}
 
-%------ ...questa condizione si verifichi è estremamente bassa... - Potrebbe triggerare la prof? EDIT: Me lo ha detto lei in una mail quindi non credo
-Nonostante ci sia la possibilità che un utente del sito abbia disattivato il javascript, la possibilità che questa condizione si verifichi è estremamente bassa, perciò è stato deciso di gestire con questo linguaggio alcune delle pagine. 
-%------
-
-Sappiamo inoltre che i contenuti generati con javascript non sono indicizzati dal motore di ricerca, perciò è stato utilizzato solamente per i contenuti non devono essere necessariamente indicizzati. Di seguito i dettagli.
+Nonostante ci sia la possibilità che un utente del sito abbia disattivato javascript, la possibilità che questa condizione si verifichi è estremamente bassa, perciò è stato deciso di gestire con questo linguaggio alcune delle pagine. 
+Sappiamo inoltre che i contenuti generati con javascript non sono indicizzati dal motore di ricerca, perciò è stato utilizzato solamente per i contenuti che non devono essere necessariamente indicizzati. Di seguito i dettagli.
 
 \paragraph{Menu mobile} % se il js è disattivato il menù si vede lo stesso in mobile? EDIT: no
 
 Il menu mobile è stato realizzato con il linguaggio CSS. Lo script si occupa solamente di applicare o togliere alcune classi dal menu stesso in modo che sia sempre visibile in modalità desktop, e che diventi visibile o nascosto in base al click su un'immagine 
 presente nel breadcrumb.
 
-\paragraph{Controllo dell'inpout}
+\paragraph{Controllo dell'input}
 
 Lo script di autenticazione è molto semplice e controlla solamente che i campi non siano vuoti. La maggior parte dei controlli è infatti eseguita usando il linguaggio php nel backend. Nel caso in cui il controllo effettuato rilevi un errore di input da parte dell'utente, viene visualizzato un messaggio che spiega qual è stato l'errore. 
 
 \paragraph{Script della pagina profilo}
 
-Lo script della pagina profilo si occupa solamente di popolare i diversi campi input della pagina e di richiamare il php in caso di modifiche. I campi disponibili che possono essere cambiati sono: il nome, il cognome, la mail e la password. Il campo password è volutamente non compilato a causa 
+Lo script della pagina profilo si occupa solamente di popolare i diversi campi input della pagina e di richiamare il php in caso di modifiche. I campi disponibili che possono essere cambiati sono: il nome, il cognome, l'email e la password. Il campo password è volutamente non compilato a causa 
 del fatto che nel database è memorizzato l'hash della password. Questo script fa uso della funzione asincrona built-in di javascript, fetch, che permette di far uso di codice del backend (in questo caso con il linguaggio php) per modificare il 
 front end. Tutti i file php utilizzati da questa pagina sono raccolti nella cartella api.
 
