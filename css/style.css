@@ -1690,7 +1690,7 @@ th {
   #content,
   #newscontent {
     /*padding: 0.1em 1.5em 0.5em;*/
-    margin-left: -1em;
+    margin-left: 0em;
     border-left: none;
   }
 
