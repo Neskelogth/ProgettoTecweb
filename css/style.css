@@ -135,7 +135,6 @@ a:hover {
   font-size: 1.2em;
   padding: 0.3em;
   padding-left: 0.8em;
-  /*margin-bottom: .3em;*/
 }
 
 #breadcrumb a {
@@ -240,7 +239,7 @@ a:hover {
   margin-bottom: 1em;
 }
 
-/*Fine General Content div*/
+/* Fine General Content div*/
 
 /* Inizio Home*/
 
@@ -329,7 +328,7 @@ a:hover {
   padding-bottom: 1em;
 }
 
-/*Singola ricetta*/
+/* Singola ricetta*/
 
 #recipeContent {
   margin-left: 17%;
@@ -352,7 +351,6 @@ a:hover {
 
 #back a {
   color: rgb(0, 110, 204);
-  /*text-decoration: none;*/
 }
 
 #recipeInnerImage {
@@ -679,8 +677,6 @@ textarea .text {
 
 /*Inizio parte Workout*/
 
-/* Workout */
-
 #premise h2 {
   margin-bottom: 1em;
 }
@@ -885,7 +881,7 @@ th {
 
 /*Fine parte workout*/
 
-/*LOGIN e SIGNUP*/
+/*Login e Signup*/
 
 
 #notLoggedIn h2 {
@@ -964,6 +960,7 @@ th {
   display: block;
 }
 
+/* Fine pagina profilo */
 /* Pannello amministratore*/
 
 .select{
@@ -1292,11 +1289,11 @@ th {
   min-width: 0em;
   resize: none;
 }
-
+/*Fine Pannello Admin*/
 /*MEDIA QUERY*/
 
 @media (max-width: 640px) {
-  /*INZIO PARTE COMUNE*/
+  /*INIZIO PARTE COMUNE*/
   html {
     background-image: url("../images/sfondo.png");
     background-color: rgb(255, 255, 255);
@@ -1401,7 +1398,6 @@ th {
   }
 
   #chisiamo p {
-    /*margin: 0.2em;*/
     padding: 0.5em;
   }
 
@@ -1412,9 +1408,9 @@ th {
   }
   /*FINE HOME */
 
-  /*INIZIO WORKOUT*/
-
-  /*FINE WORKOUT*/
+  /*INIZIO WORKOUT
+  Non c'è CSS in questa sezione.  
+  FINE WORKOUT*/
 
   /*INIZIO ALLENAMENTO SPECIFICO*/
 
@@ -1460,16 +1456,10 @@ th {
     color: rgb(255, 255, 255);
     background-color: rgb(0, 110, 204);
   }
-  /*
-	#splitTable th{
 
-		padding-left: .2em;
-		padding-right: .2em;
-	}
-*/
   /*FINE ALLENAMENTO SPECIFICO*/
 
-  /*INZIO ALIMENTAZIONE*/
+  /*INIZIO ALIMENTAZIONE*/
 
   .recipeImage {
     width: 100%;
@@ -1477,7 +1467,6 @@ th {
 
   .recipeTitle {
     border: 3px solid rgb(25, 25, 112);
-    /*border-bottom: none;*/
   }
 
   .linkricetta {
@@ -1513,7 +1502,7 @@ th {
 
   /*FINE SINGOLA RICETTA*/
 
-  /*INZIO FORUM*/
+  /*INIZIO FORUM*/
 
   #bottoneinvio {
     margin-left: 1.5em;
@@ -1602,7 +1591,7 @@ th {
 
   /*FINE FORUM*/
 
-  /*INZIO NEWS*/
+  /*INIZIO NEWS*/
 
   #navnews {
     width: 97.5%;
@@ -1626,7 +1615,9 @@ th {
 
   /*FINE NEWS*/
 
-  /*LOGIN*/
+  /*LOGIN
+  Non c'è CSS in questa fase.
+  FINE LOGIN*/
 
   /*PROFILO*/
 
@@ -1645,11 +1636,16 @@ th {
     display: block;
   }
 
+  /*FINE PROFILO*/
+
   /*ADMIN*/
 
   .adminarea {
     width: 96%;
   }
+
+  /*FINE ADMIN*/
+
 }
 
 /*MEDIA QUERY PER STAMPA*/
@@ -1761,6 +1757,7 @@ th {
   #alimentationcontent dd p a:visited {
     color: rgb(0, 0, 0);
   }
+
   /*WORKOUT GENERALE*/
 
   #splitsMenu ul li a {
@@ -2131,4 +2128,5 @@ th {
   #addRecipe textarea {
     resize: none;
   }
+  /*FINE PANNELLO ADMIN*/
 }
