@@ -1727,6 +1727,10 @@ th {
   #fotochisiamo{
     display: none;
   }
+
+  #h2home , #scrittahome{
+    display: none;
+  }
   /*FINE HOME*/
 
   /*INIZIO ALIMENTAZIONE PAGINA GENERALE*/
