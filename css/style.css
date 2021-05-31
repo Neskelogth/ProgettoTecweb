@@ -1684,15 +1684,14 @@ th {
   }
 
   #container{
-    width: 19cm;
-    max-width: 100%;  
+    width: 10cm;  
   }
 
   #content,
   #newscontent {
     /*padding: 0.1em 1.5em 0.5em;*/
-    margin-left: -10em;
-    width: 19cm;
+    margin-left: -1em;
+    width: 10cm;
     border-left: none;
   }
 
