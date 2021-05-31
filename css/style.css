@@ -485,10 +485,10 @@ a:hover {
   padding: 0.25em;
   font-weight: bolder;
   border: 2px solid rgb(0, 0, 0);
+  font-size: 0.93em;
 }
 #navnews li a {
   text-decoration: none;
-  font-size: 0.93em;
 }
 
 #forminsertnews fieldset {
