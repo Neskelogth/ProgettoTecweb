@@ -159,7 +159,7 @@ a:hover {
 #menu ul {
   list-style-type: none;
   padding-top: 9.5em;
-  padding-bottom: 0.1em;
+  margin-bottom: 10.14em;
 }
 
 #menu ul li {
