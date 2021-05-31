@@ -1691,7 +1691,7 @@ th {
   #content,
   #newscontent {
     /*padding: 0.1em 1.5em 0.5em;*/
-    margin-left: 10em;
+    margin-left: -10em;
     width: 19cm;
     border-left: none;
   }
