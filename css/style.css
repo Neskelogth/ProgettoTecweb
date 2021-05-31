@@ -252,16 +252,19 @@ a:hover {
 #contenthome p {
   padding-top: 1em;
   padding-left: 2em;
+  text-align: center;
 }
 
 #contenthome h1 {
   margin-bottom: 1em;
   color: rgb(0, 110, 204);
   font-size: 3em;
+  text-align: center;
 }
 
 #contenthome h2 {
   margin-top: 1em;
+  text-align: center;
 }
 
 #fotochisiamo {
