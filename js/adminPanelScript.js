@@ -24,7 +24,6 @@ function loadElements(){
     postTextArea1.innerHTML = "";
     deleteUserSelect.innerHTML = "";
 
-    //working
     fetch('/mtesser/api/userGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -91,7 +90,6 @@ function loadElements(){
             }
         });
 
-    //working
     fetch('/mtesser/api/recipeGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -108,7 +106,6 @@ function loadElements(){
 
         });
 
-    //working
     fetch('/mtesser/api/newsGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -125,7 +122,6 @@ function loadElements(){
 
         });
 
-    //wokring
     fetch('/mtesser/api/commentGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -152,7 +148,6 @@ function loadElements(){
 
         });
 
-    //working
     fetch('/mtesser/api/newsTypesGetter.php')
         .then(response => response.json())
         .then(json => {
@@ -203,7 +198,7 @@ function noUserBanned(users, current){
     return noBanned;
 }
 
-//tested
+
 function promote(){
 
     fetch('/mtesser/api/promoteUser.php',{
@@ -223,7 +218,7 @@ function promote(){
     clearErrors();
 }
 
-//tested
+
 function deleteRecipe(){
 
     fetch('/mtesser/api/deleteRecipe.php',{
@@ -245,7 +240,7 @@ function deleteRecipe(){
     clearErrors();
 }
 
-//tested
+
 function deleteNews(){
 
     fetch('/mtesser/api/deleteNews.php',{
@@ -267,7 +262,7 @@ function deleteNews(){
     clearErrors();
 }
 
-//tested
+
 function sendNews(){
 
     fetch('/mtesser/api/newsSender.php',{
@@ -288,7 +283,7 @@ function sendNews(){
         })
 }
 
-//tested
+
 function findText(){
 
     const postId = document.getElementById("post").value;
@@ -308,7 +303,6 @@ function findText(){
         });
 }
 
-//tested
 function deletePost(){
 
     const postId = document.getElementById("post").value;
@@ -337,7 +331,6 @@ function deletePost(){
     clearErrors();
 }
 
-//tested
 function sendRecipe(){
 
     console.log()
@@ -411,7 +404,7 @@ function unbanUser(){
     clearErrors();
 }
 
-//tested
+
 function findAnswers(id){
 
     const answerSelect = document.getElementById("answer");
@@ -447,7 +440,7 @@ function findAnswers(id){
         });
 }
 
-//tested
+
 function findAnswerText(){
 
     const id = document.getElementById("post1").value;
@@ -481,7 +474,7 @@ function findAnswerText(){
         });
 }
 
-//tested
+
 function findTextAndAnswer(){
 
     const idPost = document.getElementById("post1").value;
@@ -505,7 +498,7 @@ function findTextAndAnswer(){
         });
 }
 
-//tested
+
 function deleteAnswer(){
 
     const idAnswer = document.getElementById("answer").value;
@@ -534,7 +527,7 @@ function deleteAnswer(){
 }
 
 
-//tested
+
 function deleteAccount(){
 
     fetch('/mtesser/api/deleteAccount.php',{
@@ -560,10 +553,9 @@ function deleteAccount(){
     clearErrors();
 }
 
-//tested
+
 function clearErrors(){
 
-    //clearing news Errors
     if(document.getElementById("typeError")){
 
         document.getElementById("typeError").remove();
@@ -583,8 +575,6 @@ function clearErrors(){
 
         document.getElementById("newsLinkError").remove();
     }
-
-    //clearing recipe errors
 
     if(document.getElementById("recipeNameError")){
 
@@ -617,7 +607,6 @@ function clearErrors(){
     }
 }
 
-//working
 document.addEventListener('DOMContentLoaded', function(event) {
 
     loadElements();

@@ -40,7 +40,6 @@ function changeValues(){
         })
 }
 
-//working
 document.addEventListener('DOMContentLoaded', function(event) {
 
     loadElements();

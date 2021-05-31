@@ -81,7 +81,6 @@ function getComments(){
                                     textarea.classList.add("text");
                                     textarea.classList.add("forumTextarea");
                                     textarea.setAttribute("rows", "10");
-                                    //textarea.setAttribute("cols", "100");
                                     textarea.setAttribute("name", "post" + res[commentIndex].IDPost);
                                     textarea.setAttribute("readonly", "readonly");
                                     textarea.innerText = res[commentIndex].Testo;
@@ -117,7 +116,6 @@ function getComments(){
                                         let img = document.createElement("img");
                                         img.classList.add("likeBicipite");
                                         img.setAttribute("src", !res[commentIndex].LeftLike ? "images/WhiteBicio.png" : "images/RedBicio.png");
-                                        //img.setAttribute("alt", "Like non dato, bicipite bianco");
 
                                         return img;
 
@@ -138,7 +136,6 @@ function getComments(){
                                     textarea.classList.add("text");
                                     textarea.classList.add("answerPostTextarea")
                                     textarea.setAttribute("rows", "3");
-                                    //textarea.setAttribute("cols", "70");
                                     textarea.setAttribute("name", "answer_post" + res[commentIndex].IDPost);
                                     textarea.classList.add("nascosto");
 
@@ -156,7 +153,6 @@ function getComments(){
                                         document.getElementById("answer_post" + res[commentIndex].IDPost).classList.remove("nascosto");
                                         document.getElementById("answer_post" + res[commentIndex].IDPost).classList.add("block");
                                         let el = document.getElementsByClassName("leaveAnswer")[commentIndex];
-                                        //el.style.marginLeft = "5em";
                                         el.innerText = "Invia Risposta";
 
                                         el.onclick = ()=>{
@@ -225,7 +221,6 @@ function loadAnswers(idPost){
                         let textarea = document.createElement("textarea");
                         textarea.classList.add("text");
                         textarea.setAttribute("rows", "3");
-                        //textarea.setAttribute("cols", "90");
                         textarea.setAttribute("readonly", "readonly");
                         textarea.value = res[answerIndex].Text;
 
