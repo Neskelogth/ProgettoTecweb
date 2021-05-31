@@ -1683,15 +1683,14 @@ th {
     color: rgb(0, 0, 0);
   }
 
-  #container{
-    width: 10cm;  
-  }
+  /*#container{
+    width: 12cm;  
+  }*/
 
   #content,
   #newscontent {
     /*padding: 0.1em 1.5em 0.5em;*/
     margin-left: -1em;
-    width: 10cm;
     border-left: none;
   }
 
