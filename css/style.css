@@ -647,7 +647,6 @@ a:hover {
 }
 
 .answer {
-  /*display:inline-block;*/
   margin-top: 1em;
 }
 
@@ -674,19 +673,6 @@ textarea .text {
   margin-top: 1em;
   margin-bottom: 0.3em;
 }
-
-/*
-.Inviabutton{
-	margin-left: 2em;
-	margin-bottom: 0.5em;
-	margin-top: 0.5em;
-	font-size: 100%;
-	font-weight: bold;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-}
-
-*/
 /*Fine Forum*/
 
 /*Inizio parte Workout*/
