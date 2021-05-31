@@ -1692,8 +1692,8 @@ th {
   #newscontent {
     /*padding: 0.1em 1.5em 0.5em;*/
     margin: 0em;
+    width: 19cm;
     border-left: none;
-    width: 100%;
   }
 
   .aiuti {
