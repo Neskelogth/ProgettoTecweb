@@ -363,7 +363,7 @@ class DBaccess{
             $user = array(
 
                 'id' => $element['ID'],
-                'name' => base64_decode($element['nome'])
+                'name' => str_replace('%%','',base64_decode($element['nome']))
             );
 
             array_push($recipeList, $user);
