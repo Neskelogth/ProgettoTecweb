@@ -159,6 +159,7 @@ a:hover {
 #menu ul {
   list-style-type: none;
   padding-top: 9.5em;
+  padding-bottom: 0.1em;
   position: sticky;
   top: 0em;
   bottom: 0em;
