@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Mag 27, 2021 alle 16:23
--- Versione del server: 10.1.48-MariaDB-0ubuntu0.18.04.1
--- Versione PHP: 7.2.24-0ubuntu0.18.04.7
+-- Generation Time: Jun 01, 2021 at 08:30 AM
+-- Server version: 10.1.48-MariaDB-0ubuntu0.18.04.1
+-- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `alimentazione`
+-- Table structure for table `alimentazione`
 --
 
 CREATE TABLE `alimentazione` (
@@ -39,7 +39,7 @@ CREATE TABLE `alimentazione` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `alimentazione`
+-- Dumping data for table `alimentazione`
 --
 
 INSERT INTO `alimentazione` (`ID`, `Nome`, `Descrizione`, `NomeImmagine`, `AltImmagine`, `Ingredienti`, `Procedimento`, `Consigli`, `Persone`) VALUES
@@ -53,7 +53,7 @@ INSERT INTO `alimentazione` (`ID`, `Nome`, `Descrizione`, `NomeImmagine`, `AltIm
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `likes`
+-- Table structure for table `likes`
 --
 
 CREATE TABLE `likes` (
@@ -62,16 +62,28 @@ CREATE TABLE `likes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `likes`
+-- Dumping data for table `likes`
 --
 
 INSERT INTO `likes` (`IDPost`, `IDUtente`) VALUES
-(1, 'RW1tYVJvdmVyb25p');
+(49, 'RW1tYVJvdmVyb25p'),
+(49, 'TWFyY29VZGVyem8='),
+(49, 'U2FtdWVsS29zdGFkaW5vdg=='),
+(49, 'YWRtaW4='),
+(50, 'RW1tYVJvdmVyb25p'),
+(50, 'U2FtdWVsS29zdGFkaW5vdg=='),
+(51, 'RW1tYVJvdmVyb25p'),
+(51, 'YWRtaW4='),
+(52, 'RW1tYVJvdmVyb25p'),
+(52, 'TWFyY29VZGVyem8='),
+(52, 'U2FtdWVsS29zdGFkaW5vdg=='),
+(52, 'YWRtaW4='),
+(54, 'YWRtaW4=');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
@@ -83,17 +95,23 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`ID`, `Tipo`, `Titolo`, `Testo`, `Link`) VALUES
-(239, 'Alimentazione', 'YW5hdHJh', 'YW5hdHJh', 'https://en.wikipedia.org/wiki/Anatra'),
-(242, 'Alimentazione', 'bW9vZGxl', 'bW9vZGxl', 'https://elearning.unipd.it/math/course/index.php?categoryid=39');
+(253, 'Sito', 'TWFudXRlbnppb25lIHNpdG8=', 'Q2lhbyBhIHR1dHRpISBWb2xldmFtbyBhdnZpc2FyZSBjaGUgaWwgc2l0byBzYXLDoCBmdW9yaSBzZXJ2aXppbyBkYWxsZSAxMjowMCBhbGxlIDEzOjAwIGRpIG1hcnRlZMOsIDEgZ2l1Z25vIHBlciB1bmEgbWFudXRlbnppb25lIHN0cmFvcmRpbmFyaWEuIENpIHNjdXNpYW1vIHBlciBpbCBkaXNhZ2lvLg==', NULL),
+(254, 'Alimentazione', 'UmlzbyBjb24gZ2FtYmVyZXR0aSBlIHp1Y2NoaW5l', 'Q2lhbyByYWdhenppISBPZ2dpIHZvbGV2YW1vIGNvbmRpdmlkZXJ2aSBxdWVzdGEgcmljZXR0YSBjaGUgYWJiaWFtbyB0cm92YXRvIHN1bCBzaXRvIGRlaSBub3N0cmkgYW1pY2kgZGkgR2lhbGxvWmFmZmVyYW5vISBMYSByaWNldHRhIGNvbnNpc3RlIGluIHVuIHJpc28gdmVuZXJlIGNvbiBnYW1iZXJldHRpIGUgenVjY2hpbmUsIHNxdWlzaXRvIGUgYWxsbyBzdGVzc28gdGVtcG8gb3R0aW1vIHBlciBjaGkgw6ggaW4gZGlldGEhIA==', 'https://ricette.giallozafferano.it/Riso-Venere-con-gamberetti-e-zucchine.html'),
+(255, 'Workout', 'U2NvbnRvIHByb3RlaW5lIEJ1bGsgUG93ZGVy', 'Q2lhbyByYWdhenppISBWb2xldmFtbyBhdnZpc2FydmkgY2hlIGkgbm9zdHJpIGFtaWNpIGRpIEJ1bGtQb3dkZXJzIHN0YW5ubyBmYWNlbmRvIHVubyBzY29udG8gc3UgdHV0dGEgbGEgbG9ybyBzZXppb25lIHByb3RlaW5lLCBxdWluZGkgc2Ugc2lldGUgaW50ZXJlc3NhdGkgYXBwcm9maXR0YXRlbmUgb3JhIQ==', 'https://www.bulk.com/it/proteine.html'),
+(256, 'Workout', 'UGFuY2EgU2NvdHQ=', 'Q2lhbyByYWdhenppISBPZ2dpIHZvbGV2YW1vIGNvbmRpdmlkZXJ2aSBxdWVzdG8gZXNlcmNpemlvIGNvbiBsJ3V0aWxpenpvIGRlbGxhIFBhbmNhIFNjb3R0IGNoZSBhYmJpYW1vIHRyb3ZhdG8gc3UgWW91VHViZSEgU3BlcmlhbW8gcG9zc2EgZXNzZXJ2aSB1dGlsaSBwZXIgaSB2b3N0cmkgd29ya291dCE=', 'https://www.youtube.com/watch?v=2eHd_qBndYw'),
+(257, 'Alimentazione', 'UGFzdGEgYWwgY2hpbGk=', 'Q2lhbyBSYWdhenppISBWb2xldmFtbyBhdnZpc2FydmkgY2hlIHRyYSBwb2NvIHB1YmJsaWNoZXJlbW8gc3VsIHNpdG8gdW5hIG51b3ZhIHJpY2V0dGEgcGVyIGxhIFBhc3RhIGFsIENoaWxpISBRdWluZGkgY29udHJvbGxhdGUgbGEgcGFnaW5hIGFsaW1lbnRhemlvbmUgaW4gcXVlc3RpIGdpb3JuaSE=', NULL),
+(259, 'Sito', 'QWdnaW9ybmFtZW50byBpbnRlcmZhY2NpYQ==', 'Q2lhbyBSYWdhenppISBWb2xldmFtbyBhdnZpc2FydmkgY2hlIHRyYSBxdWFsY2hlIGdpb3JubyBjaSBzYXLDoCB1biBhZ2dpb3JuYW1lbnRvIGRlbGwnaW50ZXJmYWNjaWEgZ3JhZmljYSBkZWwgc2l0by4gU3BlcmlhbW8gdmkgcGlhY2NpYS4gQ2lhbyEg', NULL),
+(260, 'Workout', 'TGEgTW9udGFnbmEgaGEgc3RhY2NhdG8gNTAxa2chIA==', 'SWwgJSVyZWNvcmQlJSBkaSBzdGFjY28gZGEgdGVycmEgKDUwMGtnKSwgZGVudGVudXRvIGRhICUlRWRkaWUgSGFsbCUlIGRhbCAyMDE2LCDDqCBzdGF0byBvZ2dpIHN1cGVyYXRvIGRhIEhhZnRob3IgSnVsaXVzICJUaG9yIiBCam9ybnNzb24sIGNvbm9zY2l1dG8gYW5jaGUgY29tZSAiTGEgTW9udGFnbmEiIGRpICUlR2FtZSBvZiBUaHJvbmVzJSUuIFJpY29yZGlhbW8gY2hlIHRyYSBpIGR1ZSBhdGxldGkgbm9uIHNjb3JyZSBidW9uIHNhbmd1ZSwgZSwgcHVyIHBvdGVuZG8gc3RhY2NhcmUgbW9sdG8gZGkgcGnDuSwgVGhvciBoYSB2b2x1dG8gYmF0dGVyZSBpbCBzdW8gcml2YWxlIHNvbGxldmFuZG8gdW4gc29sbyBrZyBpbiBwacO5IHJpc3BldHRvIGFsIHJlY29yZCBkaSAlJUVkZGllJSUuICg1MDFrZyku', 'https://www.youtube.com/watch?v=2kEC7X1FUIg'),
+(261, 'Workout', 'JSVDaHJpcyBCdW1zdGVhZCUlIMOoIGlsIG51b3ZvICUlQ2xhc3NpYyBQaHlzaXF1ZSUl', 'JSVDaHJpcyBCdW1zdGVhZCUlIMOoIGlsIG51b3ZvICUlTXIuIE9seW1waWElJSBkZWxsYSBkaXZpc2lvbmUgJSVDbGFzc2ljIFBoeXNpcXVlJSUuIEdpw6AgZHVyYW50ZSBsYSAlJVByZXNzIENvbmZlcmVuY2UlJSBsYSB0ZW5zaW9uZSB0cmEgbCdhdGxldGEgY2FuYWRlc2UgZSBpbCBjb250ZW5kZW50ZSAlJUJyZW9uIEFuc2xleSUlIGVyYSBwYWxwYWJpbGUuIEkgZHVlLCBjb21lIGRhIHRyYWRpemlvbmUsIGhhbm5vIHRlbnV0byB1biBkaWJhdHRpdG8gc3UgY2hpIGRvdmVzc2UgdmluY2VyZS4gJSVCcmVvbiUlLCBpbmZhdHRpLCBoYSBzb3N0ZW51dG8gZGkgZXNzZXJlIGlsICUlYm9keWJ1aWxkZXIlJSBwacO5IGNvbXBsZXRvLiBMYSByaXNwb3N0YSBkaSAlJUNocmlzJSUgw6ggc3RhdGEgdGFudG8gc2lsZW56aW9zYSBxdWFudG8gdGFnbGllbnRlLiBJbmZhdHRpLCBkYWwgc3VvIHNndWFyZG8gc2ljdXJvIHRyYXNwYXJpdmEgdW5hIGZlcm1hIGNvbnZpbnppb25lOiAlJUNsYXNzaWMgUGh5c2lxdWUlJSBub24gw6ggJSVCb2R5YnVpbGRpbmclJS4gRSwgZGFpIHJpc3VsdGF0aSBkaSBxdWVzdG8gJSVNci4gT2x5bXBpYSUlLCDDqCBldmlkZW50ZSBjaGUgYW5jaGUgaSBnaXVkaWNpIHNvbm8gZCdhY2NvcmRvIGNvbiBsdWksIGVkIGhhbm5vIGRlY2lzbyBpbCBudW92byAlJXN0YW5kYXJkJSUgcGVyIGNvbWUgaWwgcGVyZmV0dG8gY2FtcGlvbmUgZGkgcXVlc3RhIGRpdmlzaW9uZSBkb3ZyZWJiZSBlc3NlcmUu', 'https://www.evolutionofbodybuilding.net/chris-bumstead-wins-the-2020-olympia-classic-physique-title/');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `post`
+-- Table structure for table `post`
 --
 
 CREATE TABLE `post` (
@@ -104,18 +122,20 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `post`
+-- Dumping data for table `post`
 --
 
 INSERT INTO `post` (`IDPost`, `IDUtente`, `numeroLike`, `Testo`) VALUES
-(1, 'TWFyY29Eag==', 0, 'Q2lhbyBhIHR1dHRpIQpIbyBwcm92YXRvIGEgY3VjaW5hcmUgbGEgdG9ydGEgYWwgcGlzdGFjY2hpbyBsZWdnZXJhIG1hIGhvIHJpc2NvbnRyYXRvIGFsY3VuZSBkaWZmaWNvbHRhIGNvbiBsYSBwcmVwYXJhemlvbmUuLi4KUXVhbGN1bm8gcHXDsiBhaXV0YXJtaT8/CkdyYXppZWVlIDop'),
-(2, 'U2FtdWVsSw==', 0, 'SG8gc2VndWl0byBpIGNvbnNpZ2xpIGRlZ2xpIGFsbGVuYW1lbnRpIHByb3Bvc3RpLiBIbyBzcGVyaW1lbnRhdG8gaWwgYnJvIHNwbGl0IGUgaSByaXN1bGF0YXRpIGluaXppYW5vIGEgZmFyc2kgdmVkZXJl'),
-(48, 'YWRtaW4=', 0, 'UE9SQ0EgUFVUVEFOQSBSQUdB');
+(49, 'TWFyY29UZXNzZXI=', 0, 'SGV5IGNpYW8hIFF1YWxjdW5vIHNhIGNvbWUgZXNlZ3VpcmUgbmVsbGEgbWFuaWVyYSBtaWdsaW9yZSBwb3NzaWJpbGUgbCdlc2VyY2l6aW8gIlBhbmNhIHBpYW5hIGNvbiBiaWxhbmNpZXJlIiBldml0YW5kbyBhbmNoZSBkaSBpbmZvcnR1bmFyc2k/CkdyYXppZSBtaWxsZSBpbiBhbnRpY2lwbyE='),
+(50, 'RW1tYVJvdmVyb25p', 0, 'Q2lhbyBhIHR1dHRpISBBdnJlaSB1bmEgZG9tYW5kYSBkYSBmYXJlIHN1bGxhIHJpY2V0dGEgZGVsIHBvbGxvIEFzaGF0aS4gUXVhbGN1bm8gc2Egc2Ugw6ggcG9zc2liaWxlIHNvc3RpdHVpcmUgaWwgcXVhcnRvIGRpIHRhenphIGRpIGdyYXNzbyBzY2lvbHRvIGNvbiBxdWFsY29zJ2FsdHJvIGRpIG1lbm8gY2Fsb3JpY28/ClBlcmNow6ggw6ggbCd1bmljbyBpbmdyZWRpZW50ZSBjaGUgaG8gdHJvdmF0byBuZWxsYSByaWNldHRhIGNoZSBwb3RyZWJiZSBlc3NlcmUgcHJvYmxlbWF0aWNvIHBlciBsYSBtaWEgZGlldGEuIEdyYXppZSBtaWxsZSBjaWFvb28hIA=='),
+(51, 'TWFyY29VZGVyem8=', 0, 'UmFnYXp6aSwgZG9wbyB1bmEgbHVuZ2EgZmFzZSBkaSBhbGxlbmFtZW50byBpbCBtaW8gbnVvdm8gbWFzc2ltYWxlIGRpIHN0YWNjbyBkYSB0ZXJyYSDDqCBkaSAxNzBrZyBAIDYya2cgZGkgcGVzbyBjb3Jwb3JlbyE='),
+(52, 'U2FtdWVsS29zdGFkaW5vdg==', 0, 'Q2hlIG5lIHBlbnNhdGUgZGVsbGUgaW5mb3JtYXppb25pIGRpIE1QTUQ/'),
+(54, 'TWFyY29UZXNzZXI=', 0, 'RWhpbMOgLCBzdG8gY2VyY2FuZG8gZGkgc2VndWlyZSB1biBhbGxlbmFtZW50byBkaSB0aXBvIHB1c2ggcHVsbCBsZWdzIGUgc3RvIHVzYW5kbyBsYSBzY2hlZGEgZGkgYWxsZW5hbWVudG8gZGEgdm9pIHByb3Bvc3RhISBIbyBwZXLDsiBhbGN1bmUgZGlmZmljb2x0w6Agc3VsbCdlc2VjdXppb25lIGRlbCBjdXJsIGNvbiBtYW51YnJpIHN1IHBhbmNhIHNjb3R0LiBRdWFsY3VubyBwdcOyIGRhcm1pIHVuYSBkcml0dGE/');
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `risposta`
+-- Table structure for table `risposta`
 --
 
 CREATE TABLE `risposta` (
@@ -126,16 +146,21 @@ CREATE TABLE `risposta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `risposta`
+-- Dumping data for table `risposta`
 --
 
 INSERT INTO `risposta` (`IDRisposta`, `IDutente`, `Testo`, `IDPost`) VALUES
-(1, 'U2FtdWVsSw==', 'Q2lhb29vVGkgY29uc2lnbGlvIGRpIG1ldHRlcmUgcHJpbWEgbCdhbGJ1bWUgZSBsYSBmYXJpbmEgZSBkb3BvIGFnZ2l1bmdlcmUgYW5jaGUgaWwgcmVzdG8gZGVnbGkgaW5ncmVkaWVudGkhRmFjY2kgc2FwZXJlIWNpYW9vbyA6KQ==', 1);
+(25, 'TWFyY29VZGVyem8=', 'Q2lhbyEgUGVyIHByaW1hIGNvc2EgYXNzaWN1cmF0aSBzZW1wcmUgZGkgYXZlcmUgcXVhbGN1bm8gZGlldHJvIGRpIHRlLCBpbiBtb2RvIGNoZSBwb3NzYSBhc3Npc3RlcnRpIG5lbCBjYXNvIGZhbGxpc3NpIGwndWx0aW1hIHJpcGV0aXppb25lLiBQcmltYSBkaSBzdGFjY2FyZSBpbCBiaWxhbmNpZXJlLCBhZGR1Y2kgbGUgc2NhcG9sZS4gSW5hcmNhIGxhIHNjaGllbmEsIGluIG1vZG8gY2hlIGdsaSB1bmljaSBkdWUgcHVudGkgZGkgY29udGF0dG8gc2lhbm8gaSBnbHV0ZWkgZSBsZSBzY2Fwb2xlLiBEdXJhbnRlIGxhIGZhc2UgY29uY2VudHJpY2EgZGVsIHNvbGxldmFtZW50bywgY2VyY2EgZGkgZXNlcmNpdGFyZSBmb3J6YSBwcmVtZW5kbyBhIHRlcnJhIGUgaW5kaWV0cm8gY29uIGkgcXVhZHJpY2lwaXRpLCB0ZW5lbmRvIHNhbGRpIGkgcGllZGkgYSB0ZXJyYS4=', 49),
+(26, 'U2FtdWVsS29zdGFkaW5vdg==', 'U2Ugc2VpIGRpc3Bvc3RhIGEgcmludW5jaWFyZSBhZCB1biBwbycgZGkgZ3VzdG8gaW4gcGnDuSwgdGkgZGlyZWkgY2hlIHB1b2kgYmVuaXNzaW1vIG5vbiBtZXR0ZXJlIGlsIGdyYXNzbyBzY2lvbHRvIGUgcHJvc2VndWlyZSBjb24gbGEgcmljZXR0YS4=', 50),
+(27, 'YWRtaW4=', 'T3R0aW1vIE1hcmNvISBTaWFtbyBjb250ZW50aSBjaGUgY29uIGkgbm9zdHJpIGFsbGVuYW1lbnRpIHR1IHNpYSByaXVzY2l0byBhIHJhZ2dpdW5nZXJlIHF1ZXN0byB0cmFndWFyZG8h', 51),
+(29, 'TWFyY29VZGVyem8=', 'SW5mb3JtYXppb25pIGRpIHF1YWxpdMOgLCBzb25vIHNlbXByZSBiYXNhdGUgc3UgZm9udGkgc2NpZW50aWZpY2hlIGFmZmlkYWJpbGksIGNvbWUgZ2xpIHN0dWRpIHB1YmJsaWNhdGkgc3UgUHViTWVkLg==', 52),
+(30, 'RW1tYVJvdmVyb25p', 'Q29uZmVybW8gcXVlbGxvIGNoZSBoYSBkZXR0byBNYXJjbw==', 52),
+(31, 'YWRtaW4=', 'Q2lhbyBtYXJjbywgY29udHJvbGxhIGxlIG5ld3MgZGkgd29ya291dCEgTmUgYWJiaWFtbyBhZ2dpdW50YSB1bmEgZ2l1c3RvIGwnYWx0cm8gZ2lvcm5vIHJpZ3VhcmRvIGwnZXNlY3V6aW9uZSBkZWwgY3VybCBjb24gbWFudWJyaSBzdSBwYW5jYSBzY290dCwgY29uIHZpZGVvIGFubmVzc28hISBGYWNjaSBzYXBlcmUsIGNpYW9vbyA6KQ==', 54);
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `utente`
+-- Table structure for table `utente`
 --
 
 CREATE TABLE `utente` (
@@ -149,55 +174,49 @@ CREATE TABLE `utente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `utente`
+-- Dumping data for table `utente`
 --
 
 INSERT INTO `utente` (`IDUtente`, `Nome`, `Cognome`, `Email`, `Password`, `Amministratore`, `Bannato`) VALUES
-('dW92bw==', 'aGZoc2Z2aGJzZGhmYnZmZHNi', 'IGRmemprdmRmamtiamtudg==', 'dW92b0BnbWFpbC5jb20=', '119a7a63f6bda3c96eeff52cf0376b2a0199753aa2da144bf313aeeded199f708d8a108948aa06c3ff94e468e842de1e0c0f3498b994be1bb1711e2efb65a647', 1, 0),
-('dW92YQ==', 'dW92YQ==', 'dW92YQ==', 'dW92YQ==', 'c87ae11f9c2fef8ebb7c8e6b647d475e82eda2d4398bb7c917d6e58333c07d6906cbfbd5ca1b9addefc2689cf2700ea08ee37c97079130e1d6c156472640b6b7', 0, 0),
 ('dXNlcg==', 'dXNlcg==', 'dXNlcg==', 'dXNlckBnbWFpbC5jb20=', 'b14361404c078ffd549c03db443c3fede2f3e534d73f78f77301ed97d4a436a9fd9db05ee8b325c0ad36438b43fec8510c204fc1c1edb21d0941c00e9e2c1ce2', 0, 0),
-('Q2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'Y2lhbw==', 'a0c299b71a9e59d5ebb07917e70601a3570aa103e99a7bb65a58e780ec9077b1902d1dedb31b1457beda595fe4d71d779b6ca9cad476266cc07590e31d84b206', 1, 1),
-('RW1tYVJvdmVyb25p', 'RW1tYQ==', 'Um92ZXJvbmk=', 'RW1tYVJvdmVAZ21haWwuY29t', '4c805fb46914992490f05b904e30b2a3840ad5dd48336b21addd503474866a11ab2ce1147f4b1c51de3d35bcd28a55c09054b7953887c66e014fddba9cdb2944', 1, 0),
-('TVVkZXJ6bw==', 'TWFyY28=', 'VWRlcnpv', 'bWFyY28udWRlcnpvQGdtYWlsLmNvbQ==', '9c719c2044254f06215ba5000ba02ac37fd08aad50905a11b95314d3807efea5164e75823801a9d789b35e08f0b1e14fce7c9cff1c3fcdf5400f11c2ff0bf136', 0, 0),
-('TWFyY29Eag==', 'TWFyY28=', 'VWRlcnpv', 'TWFyY29VZEBnbWFpbC5jb20=', '11c724908c020116ef6776ee0c627f7d8df5bc9caf4face309f0486ed7e6205c404a8b2c4548753787a917edd8b5e63c136557ee047c3fad859aecdc15c58dfa', 1, 0),
-('TWFyY29UZXNzZXI=', 'TWFyY28=', 'VGVzc2Vy', 'TWFyY29UOVRAZ21haWwuY29t', '7350746c2106c01ec4b85b75fc5d9e9d32e1103667bd11fe45b5d983a8ba12bf7a6d2f14ec6a92de176cdfe90bb4bc6e9efcd5ea37316af5d3b52033172bc041', 1, 0),
-('U2FtdWVsSw==', 'U2FtdWVs', 'S29zdGFkaW5vdg==', 'ZGVyS29zdGFAZ21haWwuY29t', '3330e27b41e71af747cb6bde4ac8078d4d7339f30309fe4578263f1a750cb68168d5f1fc8c2e275d338e7bbf9520a8c5f9019eb8ac3e93e3a5b4012599df7f56', 1, 0),
-('Yg==', 'Yg==', 'Yg==', 'YkBnbWFpbC5jb20=', '5267768822ee624d48fce15ec5ca79cbd602cb7f4c2157a516556991f22ef8c7b5ef7b18d1ff41c59370efb0858651d44a936c11b7b144c48fe04df3c6a3e8da', 0, 0),
-('YQ==', 'YQ==', 'YQ==', 'YUBnbWFpbC5jb20=', '1f40fc92da241694750979ee6cf582f2d5d7d28e18335de05abc54d0560e0f5302860c652bf08d560252aa5e74210546f369fbbbce8c12cfc7957b2652fe9a75', 0, 0),
+('RW1tYVJvdmVyb25p', 'RW1tYQ==', 'Um92ZXJvbmk=', 'ZW1tYS5yb3Zlcm9uaUBnbWFpbC5jb20=', '4c805fb46914992490f05b904e30b2a3840ad5dd48336b21addd503474866a11ab2ce1147f4b1c51de3d35bcd28a55c09054b7953887c66e014fddba9cdb2944', 0, 0),
+('TWFyY29UZXNzZXI=', 'TWFyY28=', 'VGVzc2Vy', 'bWFyY28udGVzc2VyQGdtYWlsLmNvbQ==', '7350746c2106c01ec4b85b75fc5d9e9d32e1103667bd11fe45b5d983a8ba12bf7a6d2f14ec6a92de176cdfe90bb4bc6e9efcd5ea37316af5d3b52033172bc041', 0, 0),
+('TWFyY29VZGVyem8=', 'TWFyY28=', 'VWRlcnpv', 'bWFyY28udWRlcnpvQGdtYWlsLmNvbQ==', '11c724908c020116ef6776ee0c627f7d8df5bc9caf4face309f0486ed7e6205c404a8b2c4548753787a917edd8b5e63c136557ee047c3fad859aecdc15c58dfa', 0, 0),
+('U2FtdWVsS29zdGFkaW5vdg==', 'U2FtdWVs', 'S29zdGFkaW5vdg==', 'c2FtdWVsLmtvc3RhZGlub3ZAZ21haWwuY29t', '3330e27b41e71af747cb6bde4ac8078d4d7339f30309fe4578263f1a750cb68168d5f1fc8c2e275d338e7bbf9520a8c5f9019eb8ac3e93e3a5b4012599df7f56', 0, 0),
 ('YWRtaW4=', 'YWRtaW4=', 'YWRtaW4=', 'YWRtaW5AZ21haWwuY29t', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', 1, 0);
 
 --
--- Indici per le tabelle scaricate
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `alimentazione`
+-- Indexes for table `alimentazione`
 --
 ALTER TABLE `alimentazione`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indici per le tabelle `likes`
+-- Indexes for table `likes`
 --
 ALTER TABLE `likes`
   ADD PRIMARY KEY (`IDPost`,`IDUtente`),
   ADD KEY `LIKES_ibfk_2` (`IDUtente`);
 
 --
--- Indici per le tabelle `news`
+-- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indici per le tabelle `post`
+-- Indexes for table `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`IDPost`),
   ADD KEY `IDUtente` (`IDUtente`);
 
 --
--- Indici per le tabelle `risposta`
+-- Indexes for table `risposta`
 --
 ALTER TABLE `risposta`
   ADD PRIMARY KEY (`IDRisposta`),
@@ -205,54 +224,54 @@ ALTER TABLE `risposta`
   ADD KEY `IDutente` (`IDutente`);
 
 --
--- Indici per le tabelle `utente`
+-- Indexes for table `utente`
 --
 ALTER TABLE `utente`
   ADD PRIMARY KEY (`IDUtente`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `alimentazione`
+-- AUTO_INCREMENT for table `alimentazione`
 --
 ALTER TABLE `alimentazione`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT per la tabella `news`
+-- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=262;
 --
--- AUTO_INCREMENT per la tabella `post`
+-- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `IDPost` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `IDPost` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 --
--- AUTO_INCREMENT per la tabella `risposta`
+-- AUTO_INCREMENT for table `risposta`
 --
 ALTER TABLE `risposta`
-  MODIFY `IDRisposta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `IDRisposta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
--- Limiti per le tabelle scaricate
+-- Constraints for dumped tables
 --
 
 --
--- Limiti per la tabella `likes`
+-- Constraints for table `likes`
 --
 ALTER TABLE `likes`
   ADD CONSTRAINT `LIKES_ibfk_1` FOREIGN KEY (`IDPost`) REFERENCES `post` (`IDPost`),
   ADD CONSTRAINT `LIKES_ibfk_2` FOREIGN KEY (`IDUtente`) REFERENCES `utente` (`IDUtente`);
 
 --
--- Limiti per la tabella `post`
+-- Constraints for table `post`
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `POST_ibfk_1` FOREIGN KEY (`IDUtente`) REFERENCES `utente` (`IDUtente`);
 
 --
--- Limiti per la tabella `risposta`
+-- Constraints for table `risposta`
 --
 ALTER TABLE `risposta`
   ADD CONSTRAINT `RISPOSTA_ibfk_1` FOREIGN KEY (`IDPost`) REFERENCES `post` (`IDPost`),
