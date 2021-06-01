@@ -133,13 +133,13 @@ Lo script della pagina profilo si occupa solamente di popolare i diversi campi i
 del fatto che nel database è memorizzato l'hash della password. Questo script fa uso della funzione asincrona built-in di javascript, fetch, che permette di far uso di codice del backend (in questo caso con il linguaggio php) per modificare il 
 front end. Tutti i file php utilizzati da questa pagina sono raccolti nella cartella api.
 
-\paragraph{Script della pannello admin}
+\paragraph{Script del pannello admin}
 
 Lo script del pannello admin si occupa, similmente al caso della pagina del profilo, solamente di popolare i diversi campi della pagina e di richiamare il php in caso di modifiche o nel caso di nuovi inserimenti di news o ricette. 
 Questo script, come il precedente, fa uso della funzione built-in di javascript fetch. 
 Tutti i file php utilizzati da questa pagina sono raccolti nella cartella api.
 
-\paragraph{Script della forum}
+\paragraph{Script del forum}
 
 Lo script del forum genera la maggior parte della pagina, avvalendosi, come nei casi precedenti, di diverse funzioni fetch per prendere dal database tutti i post, le risposte e i like e costruire dinamicamente l'intera pagina, utilizzando 
 \textit{document.createElement} per creare gli elementi della pagina stessa e nidificandoli uno dentro l'altro con delle funzioni anonime e ritornando gli elementi creati. 
