@@ -7,7 +7,6 @@ session_start();
 
 $response = array();
 
-//Stream standard
 $input = json_decode(file_get_contents("php://input"), true);
 
 $name = cleanFromTags($input['name']);

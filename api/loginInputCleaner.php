@@ -1,7 +1,5 @@
 <?php
 
-//It's not necessary to clean from tags since info will never be displayed
-
 require_once "../libs/DBaccess.php";
 require_once "../libs/helper.php";
 

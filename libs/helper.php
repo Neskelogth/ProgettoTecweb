@@ -4,7 +4,6 @@ require_once 'DBaccess.php';
 require_once __DIR__ . "/../vendor/autoload.php";
 use \Gobie\Regex\Wrappers\Pcre\PcreRegex;
 
-//check if type is one of the existent types
 function validateType(string $type): bool{
 
     $DBaccess = new DBAccess();
@@ -17,13 +16,11 @@ function validateType(string $type): bool{
     return in_array($type, $types);
 }
 
-//Validation of the link
 function validateLink(string $link): bool{
 
     return filter_var($link, FILTER_VALIDATE_URL);
 }
 
-//validation of the text
 function validateText(string $text, array $options =null): bool{
 
     if($options['checkForFormat'] ?? false){
@@ -46,7 +43,6 @@ function validateText(string $text, array $options =null): bool{
     return strlen($text) > 0;
 }
 
-//strip tags for script injection problems
 function cleanFromTags(string $text): string{
 
     $prev = '';

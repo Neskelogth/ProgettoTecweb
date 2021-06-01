@@ -7,8 +7,6 @@ session_start();
 
 $response = array();
 
-//$input = json_decode(file_get_contents("php://input"), true);
-
 $toRedirect = cleanFromTags($_POST['redirect'] ?? urlencode('/mtesser/?r=login'));
 $userName = cleanFromTags($_POST['username'] ?? "");
 $password = cleanFromTags($_POST['password'] ?? "");

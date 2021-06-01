@@ -42,7 +42,6 @@ class Renderer{
         }
 
         return $data;
-        //return str_replace("\r", "", str_replace("\n", "", $data));
     }
 
     private function replaceInclude(string $data): string{
@@ -64,7 +63,6 @@ class Renderer{
     
     private function replaceBlocks(string &$data):void{
 
-        //$matches = array();
         $matches = PcreRegex::getAll("/<blockSet[^\/<>]*Placeholder \/>/", $data);
         foreach (($matches[0] ?? array()) as $match) {
 

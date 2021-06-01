@@ -9,7 +9,6 @@ $dbaccess = new DBaccess();
 
 $response = array();
 
-//Stream standard
 $input = json_decode(file_get_contents("php://input"), true);
 
 $nomeUtente = cleanFromTags($_SESSION["username"] ?? "");

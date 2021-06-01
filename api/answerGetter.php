@@ -22,8 +22,6 @@ foreach ($result as $item) {
     array_push($response['result'], $item);
 }
 
-//var_dump($response['result']);
-
 $response = json_encode($response);
 
 header("Content-Type: application/json; charset=UTF-8");

@@ -7,13 +7,12 @@ session_start();
 
 $response = array();
 
-//Stream standard
 $input = json_decode(file_get_contents("php://input"), true);
 
 $type = cleanFromTags($input['type'] ?? "Workout");
 $title = cleanFromTags($input['title'] ?? "");
 $text = cleanFromTags($input['text'] ?? "");
-$link = $input['link'] ?? ""; //it's not necessary to clean tags here since it would be not pass URL validation
+$link = $input['link'] ?? "";
 
 
 $validLink = true;

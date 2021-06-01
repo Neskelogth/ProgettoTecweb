@@ -68,7 +68,6 @@ function createSingleRecipeContent(string $data, string $id): string{
 
         if($hintPresent){
             $tmpHintArray = explode("\n", $contentArray['Consigli']);
-            //var_dump($tmpHintArray);
 
             foreach($tmpHintArray as $hint){
 
